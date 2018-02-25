@@ -2,7 +2,7 @@
 #+OPTIONS: broken-links:nil c:nil creator:nil d:(not "LOGBOOK") date:t e:t
 #+OPTIONS: email:nil f:t inline:t num:t p:nil pri:nil prop:nil stat:t
 #+OPTIONS: tags:nil tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
-#+TITLE: Compila (language and compiler skeleton)
+#+TITLE: Compila 18 (language and compiler skeleton)
 #+DATE: <2018-02-25 So>
 #+AUTHOR: Martin Steffen
 #+EMAIL: msteffen@ifi.uio.no
@@ -10,4 +10,13 @@
 #+SELECT_TAGS: export slides B_frame B_againframe
 #+EXCLUDE_TAGS: private noexport B_note todo handout ARCHIVE script
 #+CREATOR: Emacs 25.3.1 (Org mode 9.1.6)
+
+
+
+* Intro
+
+The repository host material for the /Compila 18/ compiler, which is the
+content of oblig 1 and 2 for the course ``compiler construction
+(INF5110/INF9110).
+
 
