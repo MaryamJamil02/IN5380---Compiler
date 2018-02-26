@@ -18,9 +18,9 @@
 The repository host material for the /Compila 18/ compiler, which is the
 content of oblig 1 and 2 for the course ``compiler construction''
 ([[http://www.uio.no/studier/emner/matnat/ifi/INF5110/][INF5110]]/INF9110). The material focuses on the code and the description and
-documentation of the compiler. /Not/ contained here are ``administrative''
-information concerning the course's obligs (deadlines, rules how to submit
-...) Those are kept in the respository of the course itself.
+documentation of the compiler. /Not/ contained here is the compiler course
+itself (the slides, the exercises etc.  Those are kept in the respository of
+the course itself.
 
 
 * Overview over the directory's structure
@@ -33,4 +33,6 @@ information concerning the course's obligs (deadlines, rules how to submit
   - byte code interpreter
   - instructions about the obligs
       
+
+
 
