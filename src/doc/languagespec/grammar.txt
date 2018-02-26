@@ -34,7 +34,7 @@ LOG_OP             -> "&&" | "||"
 
 REL_OP             -> "<" | "<=" | ">" | ">=" | "=" | "<>"
 
-ARIT_OP            -> "+" | "-" | "*" | "/" | "#"
+ARIT_OP            -> "+" | "-" | "*" | "/" | "^"
 
 LITERAL            -> FLOAT_LITERAL | INT_LITERAL | STRING_LITERAL
                     | "true" | "false" | "null"
