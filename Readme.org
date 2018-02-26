@@ -27,6 +27,10 @@ information concerning the course's obligs (deadlines, rules how to submit
 
   
 
-  [[./src]]: sources (of all kinds)
-
+- [[./src]]: sources (of all kinds, for the documention mostly)
+- [[./doc]]: generated documentation 
+  - language specification
+  - byte code interpreter
+  - instructions about the obligs
+      
 
