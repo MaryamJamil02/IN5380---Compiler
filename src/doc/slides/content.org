@@ -1,0 +1,64 @@
+* Oblig 1 
+
+
+
+*** Oblig 1                                                         :B_frame:
+    :PROPERTIES:
+    :BEAMER_env: frame
+    :END:
+
+
+- material based on previous years, including contributions from Eyvind
+  W. Axelsen, Henning Berg, Fredrik Sørensen, and others
+    
+
+- see also the course web-page, containing links to ``resources''
+
+
+*** Goal (of oblig 1)                                               :B_frame: 
+    :PROPERTIES:
+    :BEAMER_env: frame
+    :END:
+
+
+**** Parsing                                                        :B_block:
+     :PROPERTIES:
+     :BEAMER_env: block
+     :END:
+
+
+Determine if programs written in /Compila 18/ are syntactically correct: 
+
+- scanner
+- parser
+
+
+**** Rest                                                            :ignore:
+
+
+
+- first part of a compiler, oblig 2 will add to it
+- language spec provided separatly 
+
+
+*** Learning outcomes                                               :B_frame:
+    :PROPERTIES:
+    :BEAMER_env: frame
+    :END:
+
+
+- using *tools* for parser/scanner generation
+   - JFlex
+   - CUP
+
+- variants of a grammar for the same languages
+
+   - *transforming* one form (EBNF) to another (compatible with the used
+     tools)
+
+   - controlling *precedence* and *associativity*
+
+- designing and implementing an *AST*  data structure
+
+    - using the parsing tools to build such trees
+    - pretty-printing such trees

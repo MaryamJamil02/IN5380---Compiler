@@ -27,4 +27,6 @@ information concerning the course's obligs (deadlines, rules how to submit
 
   
 
+  [[./src]]: sources (of all kinds)
+
 
