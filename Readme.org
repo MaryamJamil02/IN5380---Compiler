@@ -41,8 +41,13 @@ system on the course's web-page.
 
 * Some relevant external links 
 
-   - JFlex
-   - CUP 
-   - ant 
 
+   - [[http://jflex.de][JFlex]], in particular the [[http://flex.de/manual.html][user manual]]
+   - [[http://www2.cs.tum.edu/projects/cup/][CUP]], also here the [[http://www.cs.princeton.edu/~appel/modern/java/CUP/manual.html][manual]] from Princeton, 
+   - [[http://ant.apache.org/][ant]]
+
+
+In the cases of the tools, especially the input syntax (for the lexer and
+for the parser) are relevant. Probably one learns a lot from examples, that
+are provided with those tools.
 
