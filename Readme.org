@@ -49,5 +49,6 @@ system on the course's web-page.
 
 In the cases of the tools, especially the input syntax (for the lexer and
 for the parser) are relevant. Probably one learns a lot from examples, that
-are provided with those tools.
+are provided with those tools. For ant, use the ~built.xml~ provided /here/
+as starting point, it should give a good start.
 
