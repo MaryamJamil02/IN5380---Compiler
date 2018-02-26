@@ -35,5 +35,14 @@ system on the course's web-page.
   - instructions about the obligs
       
 
+* Starting point for /your/ oblig (resp. your goup's)
+
+
+
+* Some relevant external links 
+
+   - JFlex
+   - CUP 
+   - ant 
 
 
