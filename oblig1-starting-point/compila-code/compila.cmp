@@ -1,11 +1,11 @@
 program ComplexAddition
 begin
-
+ 
   struct Complex
-  begin
+  {
      var Real : float;
      var Imag : float;
-  end;
+  };
 
   proc Swap(ref a : int, ref b : int)
   begin
