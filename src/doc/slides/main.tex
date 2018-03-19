@@ -1,4 +1,4 @@
-% Created 2018-02-26 Mon 09:15
+% Created 2018-02-27 Tue 07:02
 % Intended LaTeX compiler: pdflatex
 \documentclass{beamer}
  		 
@@ -32,14 +32,14 @@
 
 \maketitle
 \chapter{Oblig 1}
-\label{sec:org39cc23b}
+\label{sec:orgf66caac}
 
 
 
 \section{Compila 18}
-\label{sec:orgad67fcd}
+\label{sec:orgccdff3d}
 
-\begin{frame}[label={sec:org9898459}]{Oblig 1}
+\begin{frame}[label={sec:org8d65338}]{Oblig 1}
 \begin{itemize}
 \item material based on previous years, including contributions from Eyvind
 W. Axelsen, Henning Berg, Fredrik Sørensen, and others
@@ -52,7 +52,7 @@ W. Axelsen, Henning Berg, Fredrik Sørensen, and others
 \end{frame}
 
 
-\begin{frame}[label={sec:org9fb9241}]{Goal (of oblig 1)}
+\begin{frame}[label={sec:org773ea86}]{Goal (of oblig 1)}
 \begin{block}{Parsing}
 Determine if programs written in \emph{Compila 18} are syntactically correct: 
 
@@ -70,7 +70,7 @@ Determine if programs written in \emph{Compila 18} are syntactically correct:
 \end{frame}
 
 
-\begin{frame}[label={sec:org5dc4ea6}]{Learning outcomes}
+\begin{frame}[label={sec:orgb32706c}]{Learning outcomes}
 \begin{itemize}
 \item using \alert{tools} for parser/scanner generation
 \begin{itemize}
@@ -97,20 +97,20 @@ tools)
 \end{frame}
 
 
-\begin{frame}[label={sec:org7ffacfc}]{Compila language at a glance}
+\begin{frame}[label={sec:org488faa7}]{Compila language at a glance}
 
 \lstinputlisting[basicstyle=\scriptsize]{code/myprogram.cmp}
 \end{frame}
 
 
 
-\begin{frame}[plain,label={sec:org4d02408}]{Another glance}
+\begin{frame}[plain,label={sec:org628fb65}]{Another glance}
 
 \lstinputlisting[basicstyle=\scriptsize]{code/swap.cmp}
 \end{frame}
 
 
-\begin{frame}[plain,label={sec:org069d50a}]{Grammar (1): declarations}
+\begin{frame}[plain,label={sec:org5f184e3}]{Grammar (1): declarations}
 
 %~/cor/teaching/compila/src/doc/languagespec/
 \lstinputlisting[basicstyle=\scriptsize,lastline=14]{../../doc/languagespec/grammar.txt}
@@ -121,7 +121,7 @@ tools)
 
 
 
-\begin{frame}[plain,label={sec:org0a40727}]{Grammar (2): declarations}
+\begin{frame}[plain,label={sec:orgdad8105}]{Grammar (2): declarations}
 
 %~/cor/teaching/compila/src/doc/languagespec/
 \lstinputlisting[basicstyle=\scriptsize,firstline=15,lastline=40]{../../doc/languagespec/grammar.txt}
@@ -130,7 +130,7 @@ tools)
 
 
 
-\begin{frame}[plain,label={sec:org3fbbddf}]{Grammar (3): statements and types}
+\begin{frame}[plain,label={sec:org257c56d}]{Grammar (3): statements and types}
 
 %~/cor/teaching/compila/src/doc/languagespec/
 \lstinputlisting[basicstyle=\scriptsize,firstline=41]{../../doc/languagespec/grammar.txt}
@@ -140,9 +140,9 @@ tools)
 
 
 \section{Tools}
-\label{sec:org0fbc2e6}
+\label{sec:org297c7b1}
 
-\begin{frame}[fragile,label={sec:orgae431e9}]{Tools: JFlex}
+\begin{frame}[fragile,label={sec:orge1c8f3d}]{Tools: JFlex}
  \begin{itemize}
 \item scanner generator (or lexer generator) tool
 
@@ -164,13 +164,13 @@ tools)
 \end{frame}
 
 
-\begin{frame}[label={sec:org79ab370}]{Sample lex code}
+\begin{frame}[label={sec:org0ba9f75}]{Sample lex code}
 \includegraphics[width=\textwidth]{figures/snaps/lexcode}
 \end{frame}
 
 
 
-\begin{frame}[fragile,label={sec:orge772088}]{CUP: Construction of useful parsers (for Java)}
+\begin{frame}[fragile,label={sec:org1fd0dd6}]{CUP: Construction of useful parsers (for Java)}
  \begin{itemize}
 \item a tool to easily (ymmv) generate \emph{parsers}
 
@@ -196,13 +196,13 @@ var_decl ::= VAR ID:name COLON type:vtype
 \end{frame}
 
 
-\begin{frame}[label={sec:org48102cd}]{Sample CUP code}
+\begin{frame}[label={sec:orgdc36b9b}]{Sample CUP code}
 \includegraphics[width=\textwidth]{figures/snaps/cupcode}
 \end{frame}
 
 
 
-\begin{frame}[fragile,label={sec:org0eb6ce8}]{Build tool: ant}
+\begin{frame}[fragile,label={sec:org7ecd83f}]{Build tool: ant}
 
  \begin{center}
  \includegraphics[width=0.2\textwidth]{figures/snaps/antlogo}
@@ -230,7 +230,7 @@ var_decl ::= VAR ID:name COLON type:vtype
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org314e30d}]{AST data structure}
+\begin{frame}[label={sec:orgf631d42}]{AST data structure}
 
 \begin{center}
  \includegraphics[width=0.8\textwidth]{figures/snaps/astclasses}
@@ -240,7 +240,7 @@ var_decl ::= VAR ID:name COLON type:vtype
 
 
 
-\begin{frame}[label={sec:orgdeacbbc}]{Provides source code}
+\begin{frame}[label={sec:org81ee555}]{Provides source code}
 
 \begin{center}
  \includegraphics[width=0.8\textwidth]{figures/snaps/structureoverview}
@@ -248,7 +248,7 @@ var_decl ::= VAR ID:name COLON type:vtype
 \end{frame}
 
 
-\begin{frame}[label={sec:orgadddf00}]{Building: putting it together}
+\begin{frame}[label={sec:org729a955}]{Building: putting it together}
 
 \begin{center}
  \includegraphics[width=0.8\textwidth]{figures/snaps/buildprocess}
@@ -256,9 +256,9 @@ var_decl ::= VAR ID:name COLON type:vtype
 \end{frame}
 
 \section{Official}
-\label{sec:org37e42ec}
+\label{sec:orgde3d137}
 
-\begin{frame}[fragile,label={sec:orgef41ea8}]{Deadline}
+\begin{frame}[fragile,label={sec:orgd7096fc}]{Deadline}
  \begin{alertblock}{Deadline}
 \alert{Friday 23. 03. 2018, 23:59}
 \end{alertblock}
@@ -277,7 +277,7 @@ if sick etc
 \end{frame}
 
 
-\begin{frame}[fragile,label={sec:orgf35c9b9}]{Deliverables}
+\begin{frame}[fragile,label={sec:orgee7623a}]{Deliverables}
  \begin{itemize}
 \item see also the ``handout''
 \end{itemize}
@@ -306,7 +306,7 @@ precendence left AND;
 \end{frame}
 
 
-\begin{frame}[label={sec:org5f9bfd8}]{Deliverables}
+\begin{frame}[label={sec:org3a5756b}]{Deliverables}
 \begin{block}{Deliverables (2)}
 \begin{itemize}
 \item report (with name(s) and UiO user name(s)
@@ -328,7 +328,7 @@ If problems, \alert{ask in time}  (\alert{NOT} Friday at the deadline)
 
 
 
-\begin{frame}[fragile,label={sec:orgf2ad900}]{Hand-in procedure}
+\begin{frame}[fragile,label={sec:org206e870}]{Hand-in procedure}
  \begin{itemize}
 \item this year we try \emph{git}
 
@@ -354,6 +354,17 @@ If problems, \alert{ask in time}  (\alert{NOT} Friday at the deadline)
 
 
 
+\section{References}
+\label{sec:org0b19982}
+
+\begin{frame}[allowframebreaks]
+  \frametitle{References}
+  {\tiny
+    \bibliographystyle{apalike}
+%    \bibliography{extracted,local} 
+    \bibliography{string,semantics,etc,mobile,crossref}  %general PMA
+  }
+\end{frame}
 
 
 

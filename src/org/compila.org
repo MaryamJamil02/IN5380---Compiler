@@ -1,0 +1,27 @@
+
+
+
+** This to do (compila)
+
+*** TODO Error in the test files
+<2018-03-19 Mon 07:45>
+
+Are there any available test program to validate the correctness of our
+compiler? The repo provided "compila.cmp" seem to not fully cover all
+functionality of compila 18. 
+
+Also from the languange spec:
+
+REC_DECL -> "struct" NAME "{" { VAR_DECL ";" } "}"
+
+compila.cmp: 
+
+struct Complex
+begin
+var Real : float;
+var Imag : float;
+end;​
+
+begin and end has been switched out by brackets.
+
+
