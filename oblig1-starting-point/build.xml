@@ -8,7 +8,7 @@
 		<echo>compile-example-eval 		- Compile Example Eval</echo>
 		<echo>run-example-eval     		- Run Example Eval</echo>
 		<echo>compile-example-par  		- Compile Example Par</echo>
-		<echo>run-example-par      		- Run Example Par</echo>
+e		<echo>run-example-par      		- Run Example Par</echo>
 	</target>
 
 	<!-- Path definitions -->
