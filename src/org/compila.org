@@ -1,5 +1,57 @@
 
 
+* What to do better next year
+
+- maybe better structure of the starting point
+- make the handout for the oblig contain all the stuff
+   which is also on the slides
+- check the examples better.
+- perhaps don't do the stupid ant-stuff (or at least
+   get a better grip on it)
+
+- perhaps don't call it starting-point
+
+
+* Things to repair
+
+** TODO Typo in the laguage spec
+<2018-03-27 Tue 15:21>
+
+
+* This to do (compila)
+
+*** DONE Error in the test files
+    CLOSED: [2018-03-19 Mon 07:54]
+    :LOGBOOK:
+    - State "DONE"       from "TODO"       [2018-03-19 Mon 07:54]
+    :END:
+<2018-03-19 Mon 07:45>
+
+
+[[../../oblig1-starting-point/compila-code/compila.cmp  
+Are there any available test program to validate the correctness of our
+compiler? The repo provided "compila.cmp" seem to not fully cover all
+functionality of compila 18. 
+
+Also from the languange spec:
+
+REC_DECL -> "struct" NAME "{" { VAR_DECL ";" } "}"
+
+compila.cmp: 
+
+struct Complex
+begin
+var Real : float;
+var Imag : float;
+end;​
+
+begin and end has been switched out by brackets.
+
+
+
+
+
+
 
 ** This to do (compila)
 
