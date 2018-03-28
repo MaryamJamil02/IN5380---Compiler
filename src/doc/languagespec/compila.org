@@ -212,7 +212,7 @@ lowest precedence to the highest):
 ** Associativity 
 
 - The binary operations ~||~, ~&&~, ~+~, ~-~, ~*~, and ~.~ are
-  /left-associative/, but ~^~ are right-associative.
+  /left-associative/, but exponetiation ~^~ is right-associative.
 
 - Relation symbols are non-associative. That means that for example ~a < b + c < d~ is illegal.
 
@@ -274,7 +274,7 @@ front of the corresponding actual parameters when calling the procedure.
 #+include: "./code/example01.code" src compila
 
 
-* Standard library                                                   :
+* Standard library                                                   
 
 The programming language comes with a standard library which offers a
 number of IO-procedures. All reading, i.e., input, is done from standard
