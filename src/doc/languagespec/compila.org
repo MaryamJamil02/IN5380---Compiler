@@ -50,15 +50,16 @@ meta-symbols.
 
 
 
-Here, ~{...}~ represents iteration of zero or more times, ~[...]~
-representions /optional/ clauses. Everything else, written as contiguous
-sequences, are /terminal symbols/. Those with only /small/ letters are
-reserved /keywords/ of the meta-language.
+When writing down the grammar in some variant of EBNF,, ~{...}~ represents
+iteration of zero or more times, ~[...]~ represents /optional/
+clauses. Everything else, written as contiguous sequences, are /terminal
+symbols/. Those with only /small/ letters are reserved /keywords/ of the
+meta-language.
 
 Note that terminal symbols of the Compila-language are written in
-``string-quotes'' (with a ~"~ at the beginning and the end) to distinguish
-them from symbols from the meta-language. Some /specific/ terminal symbols
-are written in capitals, and /without/ quotes.  Those are 
+``string-quotes'' (with a ~"~ at the beginning and at the end) to
+distinguish them from symbols from the meta-language. Some /specific/
+terminal symbols are written in capitals, and /without/ quotes.  Those are
   - ~NAME~,
   - ~INT_LITERAL~,
   - ~FLOAT_LITERAL~ and
