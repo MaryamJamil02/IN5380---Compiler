@@ -45,7 +45,8 @@ non-terminals. As /meta-symbols/ for the grammar, we use the following:
    ->,  |,  (,  ), {,  },  [,  ], "  
 #+END_EXAMPLE
                                    
-Commas there are used as ``meta-meta symbols'' in the enumeration.
+Commas there are used as ``meta-meta symbols'' in the enumeration of the
+meta-symbols.
 
 
 
@@ -210,13 +211,12 @@ lowest precedence to the highest):
 ** Associativity 
 
 - The binary operations ~||~, ~&&~, ~+~, ~-~, ~*~, and ~.~ are
-  /left-associative/, but exponetiation ~^~ is right-associative.
+  /left-associative/, but exponentiation ~^~ is right-associative.
 
 - Relation symbols are non-associative. That means that for example ~a < b + c < d~ is illegal.
 
 - It's legal to write ~not not not b~, and it stands for ~(not (not (not
   b)))~.
-
 
 
 
@@ -342,7 +342,7 @@ that record,
     the field of the record.
 
 
-** Types and implicit type coversion
+** Types and implicit type conversion
 
 It is allowed to assign an expression of type ~int~ to a variable of type
 ~float~. The inverse situation is not allowed. There's no type cast
@@ -393,13 +393,14 @@ the expression is /not/ evaluated.
 
 - Declarations must be /unique/ per block. Two declarations (within one
   block) of a procedure, a record, or a variable with the same name are
-  considered as double declarations, which are forbidden.
+  considered as double declarations, which are /forbidden/.
 - The name of a formal parameter must not collide with names of local
   declarations within the procedure. Besides, the names of all formal
   parameters of one procedure must by distinct.
 - All names being used must be declared.
 - Each program must have a procedure named ~main~. This procedure is the one
   called upon start of the program.
+
 
 
 
