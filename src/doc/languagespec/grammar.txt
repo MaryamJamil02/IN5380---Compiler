@@ -9,7 +9,7 @@ PROC_DECL          -> "proc" NAME
                       [ ":" TYPE ]
                       "begin" { DECL ";" } { STMT ";" } "end"
 
-REC_DECL         -> "struct" NAME "{" { VAR_DECL ";" } "}"
+REC_DECL           -> "struct" NAME "{" { VAR_DECL ";" } "}"
 
 PARAM_DECL         -> NAME ":" TYPE
 
