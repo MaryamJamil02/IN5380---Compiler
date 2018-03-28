@@ -99,14 +99,14 @@ Compila supports /single line/ and /multi-line/ comments.
    C-dialects).
 2. Multi-line comments start with ~/*~ and end with ~*/~.
 
-The latter form cannot be nested. The first one is allowed to be nested (in
+The latter form cannot be nested. The first one is allowed to be ``nested'' (in
 the sense that a commented out line can contain another ~//~ or one of the
-multi-line comment delimiters, which are then ignored. 
+multi-line comment delimiters, which are then ignored.
 
 * Data types
 
 ** Built in data types
-The language has 4 built-in types and user-defined types:
+The language has four built-in types and user-defined types:
 
 - /Built-in types/ 
   1. floating point numbers (~"float"~),
@@ -115,12 +115,10 @@ The language has 4 built-in types and user-defined types:
   4. booleans (~"bool"~).
 
 - /User-defined/ types: 
-  1. Each (name of a) record represents a type
+  1. Each (name of a) record represents a type.
   2. Reference types, representing references to elements 
-     of the specified types. The reference type cosntructor
+     of the specified types. The reference type constructor
      can be nested.
-
-
 
 
 ** Records
