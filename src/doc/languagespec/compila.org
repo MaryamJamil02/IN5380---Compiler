@@ -138,8 +138,8 @@ record type or the special pointer value ~null~.[fn:classesandrecords]
 
 ** References
 
-The language allows variables can be declared to be reference types, 
-("pointers", if you will), by writing,  e.g.
+The language allows that variables can be declared to be of reference type
+("pointers", if you will) by writing, e.g., 
 
 
 #+BEGIN_SRC compila
