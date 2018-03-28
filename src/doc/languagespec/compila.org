@@ -123,13 +123,13 @@ The language has four built-in types and user-defined types:
 
 ** Records
 
-The language supports records. For people coming from Java/C++ etc, they
-can be seen as (very) simple form of classes, containing only contain
-instance variables as members, but neither supports /methods/ nor
+The language supports records. For people coming from Java/C++ etc.,
+records can be seen as (very) simple form of classes, containing only
+instance variables as members, but support neither /methods/ nor
 /inheritance/ nor explicitly programmable /constructors/. ``Instance
 variables'' are more commonly called record fields or just /fields/ when
-dealing with records. Records do support /instantiation/ via the ~new~
-keyword. Another aspect which resembles classes as in Java is that a
+dealing with records. Records do support /instantiation/, here via the
+~new~ keyword. Another aspect which resembles classes as in Java is that 
 variables of record type contains either a pointer to an object of that
 record type or the special pointer value ~null~.[fn:classesandrecords]
 
