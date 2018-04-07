@@ -57,7 +57,7 @@ symbols/. Those with only /small/ letters are reserved /keywords/ of the
 meta-language.
 
 Note that terminal symbols of the Compila-language are written in
-``string-quotes'' (with a ~"~ at the beginning and at the end) to
+``string-quotes'' (i.e., with a ~"~ at the beginning and at the end) to
 distinguish them from symbols from the meta-language. Some /specific/
 terminal symbols are written in capitals, and /without/ quotes.  Those are
   - ~NAME~,
@@ -108,6 +108,7 @@ multi-line comment delimiters, which are then ignored.
 * Data types
 
 ** Built in data types
+
 The language has four built-in types and user-defined types:
 
 - /Built-in types/ 
@@ -149,7 +150,7 @@ The language allows that variables can be declared to be of reference type
 #+END_SRC
 
 
-Variables like ~x~ can be assigned values that are references, so, e.g.,
+Variables,  like ~x~,  can be assigned values that are references, so, e.g.,
 the following is allowed:
 
 #+BEGIN_SRC compila
@@ -158,7 +159,7 @@ y := 42;
 x := ref(y);
 #+END_SRC
 
-Correspondingly, you can follow a reference ~r~ by using ~deref(r)~, so
+Correspondingly, one can ``follow'' a reference ~r~ by using ~deref(r)~, so
 that, given the previous definitions, the following is legal:
 
 #+BEGIN_SRC  compila
