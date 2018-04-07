@@ -16,6 +16,10 @@
 - perhaps don't call it starting-point
 
 
+- I don't like the clause for ~VAR~ (at least the name), it's not a ``variable''
+
+** Grammar
+
 * Things to repair
 
 ** TODO Typo in the laguage spec
