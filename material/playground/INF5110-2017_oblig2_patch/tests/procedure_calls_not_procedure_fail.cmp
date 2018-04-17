@@ -1,0 +1,14 @@
+program procedure_calls_not_procedure_fail
+begin
+
+	proc Main()
+	begin
+	    Test(0); // Fail: Call to class.
+	end;
+
+	class Test
+	begin
+	    var x : int;
+	end;
+
+end;

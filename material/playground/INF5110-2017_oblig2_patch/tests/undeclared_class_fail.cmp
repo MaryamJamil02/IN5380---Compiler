@@ -1,0 +1,9 @@
+program undeclared_class_fail
+begin
+
+    proc Main()
+    begin
+        (zot).bar := 42; // error, zot.bar not declared
+    end;
+
+end;
