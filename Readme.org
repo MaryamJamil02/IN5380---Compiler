@@ -82,7 +82,7 @@ together with the rest of your solution. Anyway,
 - here is the zip file for patch for oblig2: [[./oblig2_patch.zip]]
 
 
-it corresponds to the mentioned subdirectory.
+it corresponds to the mentioned [[./oblig2-patch][subdirectory oblig2-patch]].
 
 
 
