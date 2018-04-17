@@ -1,0 +1,3 @@
+This is the ``patch'' from 2017. I deleted the MAC specific administrative
+files. And I deleted the zip. Those are kept at the course page under
+"previoussemesters".
