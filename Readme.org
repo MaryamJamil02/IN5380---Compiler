@@ -77,8 +77,12 @@ the new subbidrectory and the new files into /your/ current state of
 development. And again, it's meant as insporational starting point, i,e.,
 by ``incorporating'' it's not meant that your solution should have a
 subdectory ~oblig2-patch~ what needs to ``filled out'' and compiled
-together with the rest of your solution.
+together with the rest of your solution. Anyway, 
 
+- here is the zip file for patch for oblig2: [[./oblig2_patch.zip]]
+
+
+it corresponds to the mentioned subdirectory.
 
 
 
