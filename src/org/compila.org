@@ -2,6 +2,10 @@
 
 * What to do better next year
 
+
+- Grammar: call_stmt -> call_expr
+
+
 - maybe better structure of the starting point
 - make the handout for the oblig contain all the stuff
    which is also on the slides
