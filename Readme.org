@@ -36,8 +36,24 @@ system on the course's web-page.
   - instructions about the obligs
       
 
-* Starting point for /your/ oblig (resp. your goup's)
+* Starting points for /your/ oblig (resp. your goup's)
 
+
+
+
+In general, the starting points are meant a the name implies. They are
+meant as /inspiration/ concerning the arragnement of code as well as an
+indication that the code may well be organized in packages or
+subdirectories. It's /not/ meant as mandatory structure or as files which
+need to be filled out. Indeed, once finished (with the first oblig or
+both), it's strange to have a compiler that resides in a directory called
+with the curious name ~oblig1-starting-point~. There are better choices
+(like ~compila~ or ~parser~ (for the first oblig) or similar. Of course a
+rearrangement would require adaptation of the build-file etc. Also, your
+solution will have a Readme (maybe like this ~Readme.org~ which is a kind
+of markdown solution), and again, /your/ readme reflect /your/ structure
+(and carries the name of the author(s)), not necessarily the one from the
+starting point.
 
 
 * Some relevant external links 
