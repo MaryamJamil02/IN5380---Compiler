@@ -79,7 +79,7 @@ by ``incorporating'' it's not meant that your solution should have a
 subdectory ~oblig2-patch~ what needs to ``filled out'' and compiled
 together with the rest of your solution. Anyway, 
 
-- here is the zip file for patch for oblig2: [[./oblig2_patch.zip]]
+- here is the zip file for patch for oblig2: [[./material/oblig2_patch.zip]]
 
 
 it corresponds to the mentioned [[./oblig2-patch][subdirectory oblig2-patch]].
