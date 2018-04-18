@@ -565,3 +565,22 @@ class Assignment extends Statement {
 
 #+end_src
 
+
+
+*** Code generation                                                 :B_frame:
+    :PROPERTIES:
+    :BEAMER_env: frame
+    :END:
+
+- lecture(s) of code gen start right now (so it might look puzzling, but
+  hopefully will become clearer)
+- byte code API and operations are described in the document ``Interpreter
+  and bytecode for INF5110''
+
+- *Task:* add bytecode generation methods to your AST classes
+  for instance
+
+#+begin_example 
+   Ast.Node.GenerateCode(...)
+#+end_example
+- again: if adaptations of the AST are called for or useful, go for it...
