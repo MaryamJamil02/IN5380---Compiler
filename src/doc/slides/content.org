@@ -470,3 +470,18 @@ If problems, *ask in time*  (*NOT* Friday at the deadline)
 
 *this time*: continue with you previous deliv (and repos)
 
+
+
+*** Learning outcome                                                :B_frame:
+    :PROPERTIES:
+    :BEAMER_env: frame
+    :END:
+
+
+- understand type checking, implementing a simmple variant
+
+
+- undertand (simple form of) bytecode and how to generate it from ``source
+  code'' (as AST)
+
+- extend an existing compiler code base with new functionality 
