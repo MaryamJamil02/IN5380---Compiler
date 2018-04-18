@@ -735,5 +735,7 @@ time before the exam.
 
   - printout of a test run (can be also checked in into the repos, but it n
      needs to be mentioned where it is)
+  - printout of the bytecode from ~runme.cmp~ (with a target like ~ant
+    list-runme~)
 
   - solution must ``build'' and be ``testable'' (typically via ~ant~)
