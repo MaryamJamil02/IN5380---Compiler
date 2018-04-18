@@ -607,7 +607,23 @@ class Assignment extends Statement {
 
 
 
-*** Code generation: creating a procedure
+*** Code generation: creating a procedure                           :B_frame:
+    :PROPERTIES:
+    :BEAMER_env: frame
+    :END:
+
+
+#+begin_src  hava
+CodeFile codeFile = new CodeFile();
+// add the procedure by name first
+codeFile.addProcedure("Main")
+// then define it
+CodeProcedure main = new 
+   CodeProcedure("Main", VoidType,TYPE, codeFile);
+main.addInstruction( new RETURN());
+//then update it in the code file
+codeFile.updateProcedure(main);
+#+end_src
 
 *** Code generation: assignment
 
