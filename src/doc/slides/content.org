@@ -610,6 +610,7 @@ class Assignment extends Statement {
 *** Code generation: creating a procedure                           :B_frame:
     :PROPERTIES:
     :BEAMER_env: frame
+    :BEAMER_opt: plain
     :END:
 
 
