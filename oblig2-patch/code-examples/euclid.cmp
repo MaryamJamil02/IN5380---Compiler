@@ -1,4 +1,4 @@
-program Euclid
+program euclid
 begin
 
   proc gcd( a : int , b : int )  : int 

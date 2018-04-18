@@ -1,4 +1,4 @@
-program RunMe
+program runme
 begin
   class Complex begin
       var Real : float;
