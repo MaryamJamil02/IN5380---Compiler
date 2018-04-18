@@ -584,3 +584,82 @@ class Assignment extends Statement {
    Ast.Node.GenerateCode(...)
 #+end_example
 - again: if adaptations of the AST are called for or useful, go for it...
+
+
+*** Code generation: limitations                                    :B_frame:
+    :PROPERTIES:
+    :BEAMER_env: frame
+    :END:
+
+
+- interpreter and byte code library somewhat *limited*
+   - cannot express full compila 18
+   - no block structure
+   - no reference types
+
+
+- your delivery should support generating correct bytecode
+  for the ~compila~ 18 source code file ~runme.cmp~
+
+
+
+*** Code generation: creating a procedure
+
+*** Code generation: assignment
+
+*** Code generation: writing to a file
+
+
+*** Testing                                                         :B_frame:
+    :PROPERTIES:
+    :BEAMER_env: frame
+    :END:
+
+
+- bunch of test files, for testing the /type checker/
+- preferable: make ~ant test~ workable 
+
+- test files ending with ~fail~ containt a syntactically correct but
+  erronous program (erroneous as the type system or generally the semantic
+  phase is concerned)  
+
+- => compiler returns error code 2 for semantic failure
+
+
+
+*** Provided source code                                            :B_frame:
+    :PROPERTIES:
+    :BEAMER_env: frame
+    :END:
+
+- look also at [[https://github.uio.no/msteffen/compila]]
+  and the Readme there
+
+
+
+#+begin_example 
+  <somewhere>/compila:
+  total used in directory 48 available 49462464
+  drwxrwxr-x.  9 msteffen ifi 2048 Apr 18 10:24 .
+  drwxrwxr-x. 10 msteffen ifi 2048 Apr  9 13:33 ..
+  drwxrwxr-x.  8 msteffen ifi 2048 Apr 18 10:16 .git
+  -rw-rw-r--.  1 msteffen ifi    2 Feb 26 06:09 .gitignore
+  drwxrwxr-x.  3 msteffen ifi 2048 Feb 26 13:26 2017start
+  -rw-rw-r--.  1 msteffen ifi 4278 Apr 18 07:02 Readme.org
+  drwxrwxr-x.  5 msteffen ifi 2048 Feb 26 09:24 doc
+  drwxrwxr-x.  3 msteffen ifi 2048 Apr 17 16:04 material
+  drwxrwxr-x. 11 msteffen ifi 2048 Mar 26 06:58 oblig1-starting-point
+  drwxrwxr-x.  4 msteffen ifi 2048 Apr 18 09:04 oblig2-patch
+  drwxrwxr-x.  4 msteffen ifi 2048 Apr  5 09:29 src
+
+  <somewhere>/compila/oblig2-patch:
+  total used in directory 24 available 49462464
+  drwxrwxr-x. 4 msteffen ifi 2048 Apr 18 09:04 .
+  drwxrwxr-x. 9 msteffen ifi 2048 Apr 18 10:24 ..
+  -rwxrwxr-x. 1 msteffen ifi  592 Apr 18 09:03 Readme-patch
+  -rwxrwxr-x. 1 msteffen ifi 1203 Apr 18 09:04 build.xml
+  drwxrwxr-x. 6 msteffen ifi 2048 Apr 18 07:02 src
+  drwxrwxr-x. 4 msteffen ifi 2048 Apr 18 09:02 src-compila
+
+#+end_example
+
