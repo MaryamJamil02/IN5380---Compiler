@@ -445,6 +445,10 @@ If problems, *ask in time*  (*NOT* Friday at the deadline)
 2. *code generation* for ~compila18~ (ish) programs
 
 
+
+
+
+
 *** Last time (O1)                                                  :B_frame:
     :PROPERTIES:
     :BEAMER_env: frame
@@ -633,33 +637,75 @@ class Assignment extends Statement {
     :END:
 
 - look also at [[https://github.uio.no/msteffen/compila]]
-  and the Readme there
+
+#+begin_export latex 
+ \includegraphics[width=0.76\textwidth]{figures/snaps/directorystruct}
+#+end_export
 
 
 
-#+begin_example 
-  <somewhere>/compila:
-  total used in directory 48 available 49462464
-  drwxrwxr-x.  9 msteffen ifi 2048 Apr 18 10:24 .
-  drwxrwxr-x. 10 msteffen ifi 2048 Apr  9 13:33 ..
-  drwxrwxr-x.  8 msteffen ifi 2048 Apr 18 10:16 .git
-  -rw-rw-r--.  1 msteffen ifi    2 Feb 26 06:09 .gitignore
-  drwxrwxr-x.  3 msteffen ifi 2048 Feb 26 13:26 2017start
-  -rw-rw-r--.  1 msteffen ifi 4278 Apr 18 07:02 Readme.org
-  drwxrwxr-x.  5 msteffen ifi 2048 Feb 26 09:24 doc
-  drwxrwxr-x.  3 msteffen ifi 2048 Apr 17 16:04 material
-  drwxrwxr-x. 11 msteffen ifi 2048 Mar 26 06:58 oblig1-starting-point
-  drwxrwxr-x.  4 msteffen ifi 2048 Apr 18 09:04 oblig2-patch
-  drwxrwxr-x.  4 msteffen ifi 2048 Apr  5 09:29 src
+*** Provided source code                                            :B_frame:
+    :PROPERTIES:
+    :BEAMER_env: frame
+    :END:
 
-  <somewhere>/compila/oblig2-patch:
-  total used in directory 24 available 49462464
-  drwxrwxr-x. 4 msteffen ifi 2048 Apr 18 09:04 .
-  drwxrwxr-x. 9 msteffen ifi 2048 Apr 18 10:24 ..
-  -rwxrwxr-x. 1 msteffen ifi  592 Apr 18 09:03 Readme-patch
-  -rwxrwxr-x. 1 msteffen ifi 1203 Apr 18 09:04 build.xml
-  drwxrwxr-x. 6 msteffen ifi 2048 Apr 18 07:02 src
-  drwxrwxr-x. 4 msteffen ifi 2048 Apr 18 09:02 src-compila
 
-#+end_example
 
+#+begin_export latex 
+
+\begin{center}
+ \includegraphics[width=0.75\textwidth]{figures/snaps/directory-src}
+\end{center}
+#+end_export
+
+
+
+- ~compiler~: updated compiler class
+- ~test~:   some code for performing tests
+- ~bytecode~: classes for constructing bytecode
+- ~runtime~: rte for executing the byte code
+
+
+
+*** Deadline                                                        :B_frame:
+    :PROPERTIES:
+    :BEAMER_env: frame
+    :END:
+
+
+
+
+**** Deadline                                                  :B_alertblock:
+     :PROPERTIES:
+     :BEAMER_env: alertblock
+     :END:
+
+      11th May  2018
+
+
+
+**** Rest                                            :B_ignoreheading:ignore:
+     :PROPERTIES:
+     :BEAMER_env: ignoreheading
+     :END:
+
+
+Note: end of semester, and I need to report the ones passing the oblig some
+time before the exam.
+
+
+**** delivs                                                         :B_block:
+     :PROPERTIES:
+     :BEAMER_env: block
+     :END:
+
+- working type checker
+- code generator (test with ~runme.cmp~)
+- report (including your name(s) etc.
+
+  - discussion of your solution, choices you made, assumptions you rely on
+
+  - printout of a test run (can be also checked in into the repos, but it n
+     needs to be mentioned where it is)
+
+  - solution must ``build'' and be ``testable'' (typically via ~ant~)
