@@ -14,9 +14,9 @@
 	<!-- Run compiler on example runme -->
 	<target name="compile-runme" depends="init">
 		<java classname="compiler.Compiler" classpathref="path-run">
-			<arg value="code-examples/runme.cmp"/>
-			<arg value="code-examples/runre.ast"/>
-			<arg value="code-examples/runme.bin"/>
+			<arg value="src-compila/test-examples/runme.cmp"/>
+			<arg value="src-compila/test-examples/runre.ast"/>
+			<arg value="src-compila/test-examples/runme.bin"/>
 		</java>
 	</target>
 
@@ -24,13 +24,13 @@
 	<target name="list-runme" depends="init">
 		<java classname="runtime.VirtualMachine" classpathref="path-run">
 			<arg value="-l"/>
-			<arg value="code-examples/runme.bin"/>
+			<arg value="src-compila/test-examples/runme.bin"/>
 		</java>
 	</target>
 
 	<!-- Run vm on example RunMe -->
 	<target name="run-runme" depends="init">
 		<java classname="runtime.VirtualMachine" classpathref="path-run">
-			<arg value="code-examples/runme.bin"/>
+			<arg value="src-compila/test-examples/runme.bin"/>
 		</java>
 	</target>
