@@ -6,7 +6,7 @@ begin
     return val1 + val2; 
 end;
 
-proc Main()
+proc main()
 begin
     printint( Add( 40 ) ); // error, procedure takes two arguments
 end;

@@ -6,7 +6,7 @@ begin
         return val1 + val2;
     end;
 
-    proc Main()
+    proc main()
     begin
         printint( Add( 42, true ) ); // error, second arg should be int
     end;

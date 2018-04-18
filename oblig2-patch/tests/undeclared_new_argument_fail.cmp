@@ -1,7 +1,7 @@
 program undeclared_new_argument_fail
 begin
 
-    proc Main()
+    proc main()
     begin
         return new foobar; // Error: argument of new is not declared.
     end;

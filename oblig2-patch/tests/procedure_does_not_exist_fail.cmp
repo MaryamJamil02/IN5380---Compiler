@@ -5,7 +5,7 @@ begin
 	begin
 	end;
     
-	proc Main()
+	proc main()
 	begin
 	   yy(); // Fail: Procedure does not exist.
 	end;

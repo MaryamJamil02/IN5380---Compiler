@@ -1,7 +1,7 @@
 program wrong_new_arg_type_fail
 begin
 
-    proc Main()
+    proc main()
     begin
         proc f() begin return; end;
         return new f; // Error: argument of new is not declared.

@@ -7,7 +7,7 @@ begin
 	   printint( a );
 	end;
 
-	proc Main()
+	proc main()
 	begin
 	   Proc();
 	end;

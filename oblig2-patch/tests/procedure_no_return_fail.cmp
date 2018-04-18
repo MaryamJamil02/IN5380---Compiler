@@ -1,7 +1,7 @@
 program procedure_no_return_fail
 begin
 
-    proc Main()
+    proc main()
     begin 
     end;
 

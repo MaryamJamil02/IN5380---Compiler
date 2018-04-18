@@ -2,7 +2,7 @@ program wrong_rel_operand_type_fail
 begin
 
     // Arguments of a relational operator not of the same types.
-    proc Main()
+    proc main()
     begin
         var b : bool;
         var s : string;

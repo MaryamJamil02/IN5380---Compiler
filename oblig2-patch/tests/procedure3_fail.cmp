@@ -6,7 +6,7 @@ begin
 	    return; // error, no return value
 	end;
 
-	proc Main()
+	proc main()
 	begin
 	    printint( Add( 40, 2 ) );
 	end;

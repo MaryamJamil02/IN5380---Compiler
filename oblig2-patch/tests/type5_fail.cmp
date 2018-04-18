@@ -1,7 +1,7 @@
 program type5_fail
 begin
 
-    proc Main()
+    proc main()
     begin
         var tmp : int;
         tmp := 42;

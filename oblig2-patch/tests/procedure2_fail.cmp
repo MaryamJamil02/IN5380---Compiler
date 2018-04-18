@@ -6,7 +6,7 @@ begin
 	   return 42; // error, Proc declared as returning string
 	end;
 
-	proc Main()
+	proc main()
 	begin
 	   Proc();
 	end;

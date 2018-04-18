@@ -1,14 +1,14 @@
 program procedure_calls_not_procedure_fail
 begin
 
-	proc Main()
+	proc main()
 	begin
 	    Test(0); // Fail: Call to class.
 	end;
 
-	class Test
-	begin
+	struct Test
+	{
 	    var x : int;
-	end;
+	};
 
 end;

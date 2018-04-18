@@ -1,7 +1,7 @@
 program type1_fail
 begin
 
-    proc Main()
+    proc main()
     begin
         var tmp : bool;
         tmp := 42; // Error, can't assign int to bool

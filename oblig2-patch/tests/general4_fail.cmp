@@ -6,6 +6,6 @@ begin
 	    printstr( "Hello world!" );
 	end;
 
-// error, no procedure Main()
+// error, no procedure main()
 
 end;

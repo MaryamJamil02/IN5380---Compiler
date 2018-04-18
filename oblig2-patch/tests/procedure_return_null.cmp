@@ -1,7 +1,7 @@
 program procedure_return_null
 begin
 
-	proc Main()
+	proc main()
 	begin
 	end;
     

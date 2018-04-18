@@ -1,7 +1,7 @@
 program procedure1_fail
 begin
 
-	proc Main()
+	proc main()
 	begin
 	    var a : int;
 	    b := a; // Fail: The left side does not exist.

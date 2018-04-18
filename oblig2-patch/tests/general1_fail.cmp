@@ -1,7 +1,7 @@
 program general1_fail
 begin
 
-proc Main()
+proc main()
 begin
     proc Tmp() : String
     begin

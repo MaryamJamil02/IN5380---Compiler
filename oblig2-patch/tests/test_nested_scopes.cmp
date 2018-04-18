@@ -1,7 +1,7 @@
 program test_nested_scopes
 begin
 
-    proc Main()
+    proc main()
     begin
         var flag : bool;
     

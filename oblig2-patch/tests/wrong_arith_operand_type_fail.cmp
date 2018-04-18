@@ -1,8 +1,7 @@
 program wrong_arith_operand_type_fail
 begin
-
     // Arguments of an arithmetical operator not of arithmetical type.
-    proc Main()
+    proc main()
     begin
         var n : int;
         var s : string;

@@ -1,12 +1,12 @@
 program type7_fail
 begin
 
-    class Foo
-    begin
+    struct Foo
+    {
         var Attr : int;
-    end;
+    };
 
-    proc Main()
+    proc main()
     begin
         var foo : Foo;
         (foo).DoesntExist := 42; // error, no such attribute

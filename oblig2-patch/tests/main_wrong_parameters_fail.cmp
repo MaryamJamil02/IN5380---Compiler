@@ -1,7 +1,7 @@
 program main_wrong_parameters_fail
 begin
 
-	proc Main( errorhere : int ) // Fail: parameter to main.
+	proc main( errorhere : int ) // Fail: parameter to main.
 	begin
 	end;
 
