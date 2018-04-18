@@ -10,7 +10,7 @@
     :END:
 
 
-- material based on previous years, including contributions from Eyvind
+- material (also for oblig 2) based on previous years, including contributions from Eyvind
   W. Axelsen, Henning Berg, Fredrik Sørensen, and others
     
 
@@ -427,4 +427,46 @@ If problems, *ask in time*  (*NOT* Friday at the deadline)
 - code ready /tomorrow/
 
 
+
+
+
+* Oblig2 
+
+
+*** Goal                                                            :B_frame:
+    :PROPERTIES:
+    :BEAMER_env: frame
+    :END:
+
+1.  *semantic  analysis*, as far as 
+    - *typing* is concerned (``static semantics'')
+    - other coditions (no duplicate declaration etc)
+
+2. *code generation* for ~compila18~ (ish) programs
+
+
+*** Last time (O1)                                                  :B_frame:
+    :PROPERTIES:
+    :BEAMER_env: frame
+    :END:
+
+
+**** Syntactic analysis                                             :B_block:
+     :PROPERTIES:
+     :BEAMER_env: block
+     :END:
+
+   - lexer (scanner)
+   - parser
+   - abstract syntax tree
+
+
+
+**** Rest                                            :B_ignoreheading:ignore:
+     :PROPERTIES:
+     :BEAMER_env: ignoreheading
+     :END:
+
+
+*this time*: continue with you previous deliv (and repos)
 
