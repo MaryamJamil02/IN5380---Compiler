@@ -1,9 +1,9 @@
 program runme
 begin
-  class Complex begin
+  struct Complex {
       var Real : float;
       var Imag : float;
-  end;
+  };
   
   var dummy : Complex;
   
