@@ -20,6 +20,9 @@
 
 ** Grammar
 
+  - I don't like the call-statements: it's unclear
+    how to give back return values
+
 * Things to repair
 
 ** TODO Typo in the laguage spec
