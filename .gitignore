@@ -1,2 +1,8 @@
 *~
 *.vrb
+*.nav
+*.toc
+*.log
+*.dvi
+*.aux
+*.snm
