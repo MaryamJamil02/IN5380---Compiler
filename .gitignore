@@ -6,3 +6,5 @@
 *.dvi
 *.aux
 *.snm
+*.out
+auto
