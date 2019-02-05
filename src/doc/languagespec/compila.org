@@ -8,7 +8,7 @@
 #+TEXINFO_DIR_CATEGORY:
 #+TEXINFO_DIR_TITLE:
 #+TEXINFO_DIR_DESC:
-#+TEXINFO_PRINTED_TITLE: Compila 18
+#+TEXINFO_PRINTED_TITLE: Compila 19
 #+DESCRIPTION: Compila 18 language specification
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="compilastyle.css" />
 #+HTML_HEAD_EXTRA: <h1> Compila 18 language specification</h1>
