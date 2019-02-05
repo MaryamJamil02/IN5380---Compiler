@@ -1,4 +1,4 @@
-#+AUTHOR: INF5110, spring 2018
+#+AUTHOR: INF5110, spring 2019
 #+TEXINFO_FILENAME: compila.info
 #+TEXINFO_CLASS: info
 #+TEXINFO_HEADER: 
@@ -22,9 +22,9 @@
 * Introduction
 
 This document specifies and describes the syntax and the static semantics
-of the language /Compila 18/.  The dynamic semantics, i.e., the description
+of the language /Compila 19/.  The dynamic semantics, i.e., the description
 of the language's behavior when being executed, should be fairly clear even
-without explicit formal specification
+without explicit formal specification.
 
 
 
@@ -45,8 +45,8 @@ non-terminals. As /meta-symbols/ for the grammar, we use the following:
    ->,  |,  (,  ), {,  },  [,  ], "  
 #+END_EXAMPLE
                                    
-Commas there are used as ``meta-meta symbols'' in the enumeration of the
-meta-symbols.
+Commas in the previous line are used as ``meta-meta symbols'' in the
+enumeration of the meta-symbols.
 
 
 
@@ -66,7 +66,7 @@ terminal symbols are written in capitals, and /without/ quotes.  Those are
   - ~STRING_LITERAL~.
 
 See the following section about lexical aspects for what those terminal
-symbols exactly represent.
+symbols represent.
 
 * Lexical aspects
 ** Identifiers and literals
