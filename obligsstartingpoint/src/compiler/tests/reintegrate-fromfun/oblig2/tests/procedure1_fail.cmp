@@ -1,0 +1,10 @@
+program procedure1_fail
+begin
+
+	proc main()
+	begin
+	    var a : int;
+	    b := a; 
+	end;
+
+end;

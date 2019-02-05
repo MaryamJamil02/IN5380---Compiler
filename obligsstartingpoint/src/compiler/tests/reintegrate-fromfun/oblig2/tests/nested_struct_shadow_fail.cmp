@@ -1,0 +1,21 @@
+program nested_class_shadow_fail
+begin
+
+	struct Bogus { var outerScope : int; };
+
+	proc main()
+	begin
+	    var outer : Bogus;
+    
+	    proc dummy() begin
+	         struct Bogus { var innerScope : int ; };
+	         var inner : Bogus;
+	         inner := new Bogus;
+	         inner.outerScope := 123; 
+	    end;
+	    outer := new Bogus;
+	    outer.outerScope := 1337;
+	    dummy();
+	end;
+
+end;

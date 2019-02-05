@@ -1,0 +1,37 @@
+program Plog
+begin
+
+  proc symbols(n : int, zz : string) 
+  begin
+      var i : int;
+      i := 0;
+      while( i < n)  do 
+      begin
+          printstr(zz);
+          i:=i+1;
+      end;
+  end;
+  
+  proc skriv_plog() 
+  begin
+      var h : int ; 
+      var j : int ;
+      h := 5;
+      j := 0;
+
+      while(j < h) do 
+      begin
+        symbols(j, " ");
+        symbols(1, "X");
+        symbols((h-j-1)*2, " ");
+        symbols(1, "X");
+        printline("");
+        j:= j+1;
+      end;
+  end;
+  
+  proc Main() 
+  begin
+      skriv_plog();
+  end;
+end; 

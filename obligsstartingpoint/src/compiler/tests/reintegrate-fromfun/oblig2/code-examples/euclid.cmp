@@ -1,0 +1,38 @@
+program Euclid
+begin
+
+  proc gcd( a : int , b : int )  : int 
+  begin
+      var res : int ;
+      if a = 0 then 
+      begin
+          res := b;
+      end
+      else 
+      begin
+          while b <> 0 do 
+          begin
+              if (a > b) then 
+              begin
+                  a := a - b;
+	          end
+              else
+              begin
+                b := b - a;
+	          end;
+          end;
+        res := a;
+      end;
+      return res;
+  end;
+  
+  proc Main()
+  begin
+      printint(gcd(6, 19));
+      printline("");
+      printint(gcd(6, 9));
+      printline("");
+      printint(gcd(629, 592));
+      printline("");
+  end;
+end;

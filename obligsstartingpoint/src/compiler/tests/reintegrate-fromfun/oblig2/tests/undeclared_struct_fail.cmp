@@ -1,0 +1,9 @@
+program undeclared_struct_fail
+begin
+
+    proc main()
+    begin
+        (zot).bar := 42; 
+    end;
+
+end;

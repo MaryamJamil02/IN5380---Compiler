@@ -1,0 +1,10 @@
+program type1_fail
+begin
+
+    proc main()
+    begin
+        var tmp : bool;
+        tmp := 42; 
+    end;
+
+end;

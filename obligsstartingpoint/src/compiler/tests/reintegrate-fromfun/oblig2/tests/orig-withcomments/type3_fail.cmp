@@ -1,0 +1,10 @@
+program type3_fail
+begin
+
+    proc main()
+    begin
+        var tmp : int;
+        tmp := 21 + 21.0; // error, expression is float
+    end;
+
+end;

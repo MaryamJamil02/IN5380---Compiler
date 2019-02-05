@@ -1,0 +1,10 @@
+program general3_fail
+begin
+
+	proc main()
+	begin
+	    var foo : int;
+	    bar := 42; 
+	end;
+
+end;

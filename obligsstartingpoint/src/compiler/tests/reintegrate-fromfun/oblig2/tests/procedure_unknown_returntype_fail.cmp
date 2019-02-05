@@ -1,0 +1,13 @@
+program procedure_unknown_return_type_fail
+begin
+
+	proc main()
+	begin
+	end;
+    
+	proc test() : notexist 
+	begin
+	    return new notexist;
+	end;
+
+end;

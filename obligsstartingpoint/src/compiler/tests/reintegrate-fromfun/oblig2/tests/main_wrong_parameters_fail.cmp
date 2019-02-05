@@ -1,0 +1,8 @@
+program main_wrong_parameters_fail
+begin
+
+	proc main( errorhere : int ) 
+	begin
+	end;
+
+end;

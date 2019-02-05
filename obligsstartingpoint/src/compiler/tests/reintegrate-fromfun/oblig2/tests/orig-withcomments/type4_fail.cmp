@@ -1,0 +1,12 @@
+program type4_fail
+begin
+
+    proc main()
+    begin
+        while 42.0 do // error, expression not bool
+        begin
+            printstr( "Should not be here" );
+        end;
+    end;
+
+end;

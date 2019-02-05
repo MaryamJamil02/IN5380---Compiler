@@ -1,0 +1,14 @@
+program general1_fail
+begin
+
+proc main()
+begin
+    proc Tmp() : string
+    begin
+    end;
+
+    var Tmp : int; 
+
+end;
+
+end;

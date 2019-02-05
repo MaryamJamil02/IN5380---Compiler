@@ -1,0 +1,9 @@
+program return_contradicting_expression_fail
+begin
+
+    proc main()
+    begin
+        return 1234;
+
+    end;
+end;

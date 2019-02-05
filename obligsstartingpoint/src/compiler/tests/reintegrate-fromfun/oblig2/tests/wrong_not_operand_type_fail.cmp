@@ -1,0 +1,12 @@
+program wrong_not_operand_type_fail
+begin
+
+    proc main()
+    begin
+        var b : bool;
+        var s : string;
+        s := "bad operand";
+        b := not s;
+    end;
+
+end;
