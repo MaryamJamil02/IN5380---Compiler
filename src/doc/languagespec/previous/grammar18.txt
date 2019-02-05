@@ -47,9 +47,9 @@ STMT               -> ASSIGN_STMT
 
 ASSIGN_STMT        -> VAR ":=" EXP | DEREF_VAR ":=" EXP
 
-IF_STMT            -> "if" EXP "then" { STMT ";" } "fi"
-                      [ "else"  { STMT ";" } "fi" ]
-WHILE_STMT         -> "while" EXP "do"  { STMT ";" } "do"
+IF_STMT            -> "if" EXP "then" "begin" { STMT ";" } "end"
+                      [ "else" "begin" { STMT ";" } "end" ]
+WHILE_STMT         -> "while" EXP "do" "begin" { STMT ";" } "end"
 
 RETURN_STMT        -> "return" [ EXP ]
 

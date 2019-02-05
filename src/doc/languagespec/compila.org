@@ -132,9 +132,10 @@ instance variables as members, but support neither /methods/ nor
 /inheritance/ nor explicitly programmable /constructors/. ``Instance
 variables'' are more commonly called record fields or just /fields/ when
 dealing with records. Records do support /instantiation/, here via the
-~new~ keyword. Another aspect which resembles classes as in Java is that 
-variables of record type contains either a pointer to an object of that
-record type or the special pointer value ~null~.[fn:classesandrecords]
+~new~ keyword. Another aspect which resembles classes as in Java is that
+variables of record type contains either a pointer to an element
+(``object'') of that record type or the special pointer value
+~null~.[fn:classesandrecords]
 
 
 [fn:classesandrecords] Records are sometimes also called ``structs''.
@@ -166,8 +167,8 @@ that, given the previous definitions, the following is legal:
 y := deref(x);
 #+END_SRC
 
-Expressions with deref can also be used as L-values, so that we can assign
-values to the location that they are pointing to, e.g.:
+Expressions with ~deref~ can also be used as L-values, so that we can
+assign values to the location that they are pointing to, e.g.:
 
 
 #+BEGIN_SRC compila
@@ -402,6 +403,9 @@ the expression is /not/ evaluated.
 - All names being used must be declared.
 - Each program must have a procedure named ~main~. This procedure is the one
   called upon start of the program.
+
+
+
 
 
 
