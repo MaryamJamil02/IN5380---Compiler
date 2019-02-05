@@ -1,8 +1,7 @@
 program ComplexAddition
 begin
  
-  struct Complex
-  {
+  struct Complex {
      var Real : float;
      var Imag : float;
   };

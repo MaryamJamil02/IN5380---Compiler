@@ -1,4 +1,4 @@
-PROGRAM            -> "program" NAME "begin" { DECL ";" }  "end" ";"
+PROGRAM            -> "program" NAME "begin" [ DECL {";" DECL}]  "end"
 
 DECL               -> VAR_DECL | PROC_DECL | REC_DECL
 
@@ -7,9 +7,9 @@ VAR_DECL           -> "var" NAME ":" TYPE
 PROC_DECL          -> "proc" NAME 
                       "(" [ PARAM_DECL { "," PARAM_DECL } ] ")"
                       [ ":" TYPE ]
-                      "begin" { DECL ";" } { STMT ";" } "end"
+                      "begin" [DECL{";" DECL}] [STMT {";" STMT}] "end"
 
-REC_DECL           -> "struct" NAME "{" { VAR_DECL ";" } "}"
+REC_DECL           -> "struct" NAME "{" [ VAR_DECL {";" VAR_DECL }]  "}"
 
 PARAM_DECL         -> NAME ":" TYPE
 
@@ -17,13 +17,14 @@ EXP                -> EXP LOG_OP EXP
                     | "not" EXP
                     | EXP REL_OP EXP
                     | EXP ARIT_OP EXP
-                    | "(" EXP ")"
                     | LITERAL
                     | CALL_STMT
                     | "new" NAME
                     | VAR
                     | REF_VAR
                     | DEREF_VAR
+                    | "(" EXP ")"
+
 
 REF_VAR            -> "ref" "(" VAR ")"
 DEREF_VAR          -> "deref" "(" VAR ")" | "deref" "(" DEREF_VAR ")"

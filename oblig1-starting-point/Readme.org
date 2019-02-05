@@ -3,10 +3,14 @@
 
 
 This is the non-zipped version of the starting point. It's taken in the
-form from 2017, but has been adapted.
+form from earlier years, but has been adapted slighty.
+
+* What to do with this direction.
+
+The directory is intended as /inspiration/. It does not work as an ``out of
+the box'' build script.
 
 
-* Overview
 
 
 

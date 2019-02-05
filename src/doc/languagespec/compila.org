@@ -9,9 +9,9 @@
 #+TEXINFO_DIR_TITLE:
 #+TEXINFO_DIR_DESC:
 #+TEXINFO_PRINTED_TITLE: Compila 19
-#+DESCRIPTION: Compila 18 language specification
+#+DESCRIPTION: Compila 19 language specification
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="compilastyle.css" />
-#+HTML_HEAD_EXTRA: <h1> Compila 18 language specification</h1>
+#+HTML_HEAD_EXTRA: <h1> Compila 19 language specification</h1>
 
 
 
@@ -103,7 +103,7 @@ Compila supports /single line/ and /multi-line/ comments.
 
 The latter form cannot be nested. The first one is allowed to be ``nested'' (in
 the sense that a commented out line can contain another ~//~ or one of the
-multi-line comment delimiters, which are then ignored.
+multi-line comment delimiters, which are then ignored).
 
 * Data types
 
@@ -216,10 +216,9 @@ lowest precedence to the highest):
 - The binary operations ~||~, ~&&~, ~+~, ~-~, ~*~, and ~.~ are
   /left-associative/, but exponentiation ~^~ is right-associative.
 
-- Relation symbols are non-associative. That means that for example ~a < b + c < d~ is illegal.
+- Relation symbols are non-associative. That means that for instance ~a < b + c < d~ is illegal.
 
-- It's legal to write ~not not not b~, and it stands for ~(not (not (not
-  b)))~.
+- It's legal to write ~not not not b~ and it stands for ~(not (not (not b)))~.
 
 
 
@@ -314,7 +313,7 @@ program). The binding occurrence corresponding to the use occurence is the
 that way, the program is /erroneous/. Formal parameters count as
 declarations local to the procedure body.
 
-Use occurenccs of a name preceded by by a dot correspond to the clause ~EXP
+Use occurences of a name preceded  by a dot correspond to the clause ~EXP
 "." NAME~ in the production for the non-terminal ~VAR~ in the grammar.
 Those names are bound by looking at the type of ~EXP~ (which is required to
 be a record-type) and look up the field with name ~NAME~ in that record. It's
@@ -348,7 +347,7 @@ that record,
 ** Types and implicit type conversion
 
 It is allowed to assign an expression of type ~int~ to a variable of type
-~float~. The inverse situation is not allowed. There's no type cast
+~float~. The inverse situation is not allowed. There is no type cast
 operator. If an /arithmetic/ expression has at least one operand of type
 ~float~, the operation is evaluated using floating point arithmetic and the
 result is of type ~float~. Exponentiation is /always/ considered done with
