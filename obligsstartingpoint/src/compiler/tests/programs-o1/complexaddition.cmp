@@ -1,4 +1,23 @@
 program ComplexAddition
 begin 
+  struct Complex {
+     var Real : float;
+     var Imag : float
+  };
+  var x : int;
+  proc Swap(a : ref (int), b : ref(int))
+  begin
+     var tmp : int;
+     tmp := a;
+     a := b;
+     b := tmp
+  end;
+  proc Max (a : int, b : int) : int 
+  begin
+     if a > b then
+        return a
+     fi;
+     return b
+  end
 end
 
