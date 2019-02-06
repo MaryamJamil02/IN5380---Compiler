@@ -1,2 +1,3 @@
-program A_A begin 
+program R begin 
+  struct abc { }
 end  
