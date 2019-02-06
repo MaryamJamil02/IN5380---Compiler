@@ -1,3 +1,5 @@
 program A_A begin 
   var x : x;      /* no type checking yet */
+  var x : ref ( x );
+  var x : ref ( ref (x))
 end  
