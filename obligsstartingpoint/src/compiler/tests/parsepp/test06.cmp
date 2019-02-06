@@ -1,0 +1,15 @@
+program p begin   /* testing proc declarations */
+  proc a () begin 
+  end;
+  proc a () : int 
+  begin 
+  end;
+
+  proc a (a:int) : int 
+  begin 
+  end;
+
+  proc a (a:int,b:bool,) : int 
+  begin 
+  end
+end  
