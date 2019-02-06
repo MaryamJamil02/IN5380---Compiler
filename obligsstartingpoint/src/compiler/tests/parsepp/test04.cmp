@@ -1,3 +1,4 @@
-program R begin 
-  struct abc { }
+program R2 begin 
+  struct abc { };
+  struct def { x : int }
 end  
