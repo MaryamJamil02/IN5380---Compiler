@@ -1,12 +1,9 @@
-program p begin   /* testing statements */
+program p begin   /* testing expressions */
   proc a (a:int) : int 
   begin 
-    var x : int;
-    struct x {} ;
-    proc b (b:int)   /* syntactically allowed */
-    begin            /* later forbidden       */
-    end
     x := 5;
-    x := 5
+    x := 6+6+8;
+    x := 6+6*8;
+    x := not 6+6*8;  
   end
 end  
