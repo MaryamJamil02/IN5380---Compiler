@@ -9,7 +9,16 @@ program p begin   /* testing proc declarations */
   begin 
   end;
 
-  proc a (a:int,b:bool,) : int 
+  proc a (a:int,b:bool) : int 
   begin 
+  end;
+
+  proc a (a:int) : int 
+  begin 
+    var x : int;
+    struct x {} ;
+    proc b (b:int)   /* syntactically allowed */
+    begin            /* later forbidden */
+    end
   end
 end  
