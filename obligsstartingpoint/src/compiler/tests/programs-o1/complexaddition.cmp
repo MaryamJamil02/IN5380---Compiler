@@ -2,7 +2,7 @@ program ComplexAddition
 begin 
   struct Complex {
      var Real : float;
-     var Imag : float
+     var Imag : float;
   };
   var x : int;
   proc Swap(a : ref (int), b : ref(int))
