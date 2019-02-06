@@ -21,6 +21,7 @@ program p begin   /* testing expressions */
     do
        return;
        f(2);
+       f(4,4,4,5);
        return 1+2;
        if 2 then else fi
     od
