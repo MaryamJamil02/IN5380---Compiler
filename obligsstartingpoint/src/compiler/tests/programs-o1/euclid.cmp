@@ -1,6 +1,5 @@
 program euclid
 begin
-
   proc gcd( a : int , b : int )  : int 
   begin
       var res : int ;
