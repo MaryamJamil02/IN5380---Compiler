@@ -1,4 +1,5 @@
-program R2 begin 
+program R begin 
   struct abc { };
-  struct def { x : int }
+  struct ef { x : int };
+  struct a5 { x : int;              y : bool     }
 end  
