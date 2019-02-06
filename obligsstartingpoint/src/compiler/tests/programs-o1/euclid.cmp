@@ -19,7 +19,6 @@ begin
       fi;
       return res
   end;
-  
   proc Main()
   begin
       printint(gcd(6, 19));
