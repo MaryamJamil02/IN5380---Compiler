@@ -15,5 +15,6 @@ program p begin   /* testing expressions */
     x := e.x;
     x := (deref(deref(e.x)));
     x := "abs";
+    x := 01.0;
   end
 end  

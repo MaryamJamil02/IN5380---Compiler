@@ -1,0 +1,7 @@
+program p begin   /* testing expressions */
+  proc a ()
+  begin 
+    deref(x)        := 01.0;
+    deref(deref(x)) := 01.0;
+  end
+end  
