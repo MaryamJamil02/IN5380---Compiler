@@ -1,18 +1,4 @@
-program p begin   /* testing proc declarations */
-  proc a () begin 
-  end;
-  proc a () : int 
-  begin 
-  end;
-
-  proc a (a:int) : int 
-  begin 
-  end;
-
-  proc a (a:int,b:bool) : int 
-  begin 
-  end;
-
+program p begin   /* testing statements */
   proc a (a:int) : int 
   begin 
     var x : int;
