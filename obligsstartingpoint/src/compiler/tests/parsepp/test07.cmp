@@ -5,6 +5,13 @@ program p begin   /* testing expressions */
     x := 6+6+8;
     x := 6+6*8;
     x := not 6+6*8;  
-    x :=  a && b || c * 4 + 2^5 &&  not x
+    x :=  a && b || c * 4 + 2^5 &&  not x;
+    x := new a;
+    x := 5.5;
+    x := ref (x);
+    x := deref (x);
+    x := e.x;
+    x := (deref(deref(e.x)));
+    x := "abs";
   end
 end  
