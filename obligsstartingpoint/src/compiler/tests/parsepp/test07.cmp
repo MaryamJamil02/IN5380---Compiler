@@ -1,6 +1,7 @@
 program p begin   /* testing expressions */
   proc a ()
   begin 
+    body
     x := 5;
     x := 6+6+8;
     x := 6+6*8;

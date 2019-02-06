@@ -1,16 +1,20 @@
 program p begin   /* testing proc declarations */
   proc a () begin 
+  body
   end;
   proc a () : int 
   begin 
+  body
   end;
 
   proc a (a:int) : int 
-  begin 
+  begin
+  body  
   end;
 
   proc a (a:int,b:bool) : int 
-  begin 
+  begin
+  body  
   end;
 
   proc a (a:int) : int 
@@ -19,7 +23,9 @@ program p begin   /* testing proc declarations */
     struct x {} ;
     proc b (b:int)   /* syntactically allowed */
     begin            /* later forbidden       */
+      body
     end
+    body
     x := 5;
     x := 5
   end
