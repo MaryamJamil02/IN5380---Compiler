@@ -6,6 +6,6 @@ begin
 
     proc test() : string
     begin
-        // Fail: No return statement.
+        /* Fail: No return statement. */
     end;
-end;
+end
