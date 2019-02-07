@@ -3,11 +3,10 @@ begin
 
 	proc Add( val1 : int , val2 : int ) : int
 	begin
-	    return; // error, no return value
+	    return; /* error, no return value */
 	end;
-
 	proc main()
 	begin
 	    printint( Add( 40, 2 ) );
-	end;
-end;
+	end
+end
