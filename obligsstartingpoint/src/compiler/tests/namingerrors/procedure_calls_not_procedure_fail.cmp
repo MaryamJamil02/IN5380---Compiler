@@ -2,7 +2,7 @@ program procedure_calls_not_procedure_fail
 begin
   proc main()
   begin
-    Test(0); /* Fail: Call to struct. */
+    Test(0) /* Fail: Call to struct. */
    end;
-   struct Test {    var x : int }
+   struct Test {  x : int }
 end
