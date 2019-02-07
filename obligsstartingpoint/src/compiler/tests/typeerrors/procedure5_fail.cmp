@@ -8,7 +8,6 @@ begin
 
     proc main()
     begin
-        printint( Add( 42, true ) ); // error, second arg should be int
-    end;
-
-end;
+        printint( Add( 42, true ) ); /* error, second arg should be int */
+    end
+end
