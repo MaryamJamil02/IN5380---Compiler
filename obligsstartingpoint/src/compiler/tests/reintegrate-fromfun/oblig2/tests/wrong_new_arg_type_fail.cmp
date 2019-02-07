@@ -1,9 +1,0 @@
-program wrong_new_arg_type_fail
-begin
-
-    proc main()
-    begin
-        proc f() begin return; end;
-        return new f; 
-    end;
-end;
