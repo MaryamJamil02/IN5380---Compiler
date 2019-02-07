@@ -4,10 +4,9 @@ begin
 	proc xx()
 	begin
 	end;
-    
-	proc main()
+    	proc main()
 	begin
-	   yy(); // Fail: Procedure does not exist.
-	end;
+	   yy(); /* Fail: Procedure does not exist. */
+	end
 
-end;
+end
