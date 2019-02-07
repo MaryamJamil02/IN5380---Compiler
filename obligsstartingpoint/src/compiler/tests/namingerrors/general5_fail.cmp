@@ -1,6 +1,5 @@
 program general5_fail
 begin
-
 	proc Proc( a : ref ( int ) )
 	begin
 	    deref(a) := 42;
@@ -8,10 +7,10 @@ begin
 
 	proc main()
 	begin
-	    var tmp : int;
+	    var tmp : int
+        in 
 	    tmp := 32;
-	    Proc( tmp ); // error, ref type not used
-	    printint( tmp );
-	end;
-
-end;
+	    Proc( tmp ); /* error, ref type not used */
+	    printint( tmp )
+	end
+end
