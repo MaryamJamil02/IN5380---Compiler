@@ -3,6 +3,6 @@ begin
 
     proc main()
     begin
-       (42).Foo := 42; // error, 
+       42.Foo := 42; /* error */
     end;
-end;
+end
