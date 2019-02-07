@@ -4,5 +4,5 @@ begin
     proc main()
     begin
         return new foobar; /* Error: argument of new is not declared. */
-    end;
+    end
 end
