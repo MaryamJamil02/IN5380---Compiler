@@ -2,7 +2,8 @@ program plog
 begin
   proc symbols(n : int, zz : string) 
   begin
-      var i : int;
+      var i : int
+      in
       i := 0;
       while( i < n)  
       do 
@@ -14,7 +15,8 @@ begin
   proc skriv_plog() 
   begin
       var h : int ; 
-      var j : int ;
+      var j : int 
+      in
       h := 5;
       j := 0;
 
