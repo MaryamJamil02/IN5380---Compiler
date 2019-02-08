@@ -1,22 +1,5 @@
 program runme
 begin
-  struct Complex {
-      var Real : float;
-      var Imag : float;
-  };
-  
-  var dummy : Complex;
-  
-  proc Add ( a : Complex, b : Complex ) : Complex 
-  begin
-      var retval : Complex
-  in
-      retval := new Complex;
-      retval.Real := a.Real + b.Real;
-      retval.Imag := a.Imag + b.Imag;
-      return retval;
-  end;
- 
   proc Max ( a : int , b : int ) : int 
   begin
       var res : int
@@ -26,7 +9,7 @@ begin
           res := a
       else
          res := b
-      fi
+      fi;
       return res
   end;
   
@@ -37,7 +20,7 @@ begin
       printline("");
       printstr("Imag ");
       printfloat((pr).Imag);
-      printline("");
+      printline("")
   end;
   
   proc test()
