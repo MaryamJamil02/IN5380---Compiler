@@ -9,7 +9,8 @@ begin
   
   proc Add ( a : Complex, b : Complex ) : Complex 
   begin
-      var retval : Complex;
+      var retval : Complex
+  in
       retval := new Complex;
       retval.Real := a.Real + b.Real;
       retval.Imag := a.Imag + b.Imag;
@@ -18,7 +19,8 @@ begin
  
   proc Max ( a : int , b : int ) : int 
   begin
-      var res : int;
+      var res : int
+  in
       if a > b then 
       begin
          res := a;
