@@ -5,13 +5,13 @@ DECL               -> VAR_DECL | PROC_DECL | REC_DECL
 VAR_DECL           -> "var" NAME ":" TYPE
 
 PROC_DECL          -> "proc" NAME 
-                      "(" [ PARAM_DECL { "," PARAM_DECL } ] ")"
+                      "(" [ PARAMFIELD_DECL { "," PARAMFIELD_DECL } ] ")"
                       [ ":" TYPE ]
-                      "begin" [DECL{";" DECL}] [STMT {";" STMT}] "end"
+                      "begin" [DECL{";" DECL}] "in" [STMT {";" STMT}] "end"
 
-REC_DECL           -> "struct" NAME "{" [ VAR_DECL {";" VAR_DECL }]  "}"
+REC_DECL           -> "struct" NAME "{" [ PARAMFIELD_DECL {";" PARAMFIELD_DECL }]  "}"
 
-PARAM_DECL         -> NAME ":" TYPE
+PARAMFIELD_DECL     -> NAME ":" TYPE
 
 EXP                -> EXP LOG_OP EXP
                     | "not" EXP
@@ -50,7 +50,7 @@ ASSIGN_STMT        -> VAR ":=" EXP | DEREF_VAR ":=" EXP
 
 IF_STMT            -> "if" EXP "then" { STMT ";" } "fi"
                       [ "else"  { STMT ";" } "fi" ]
-WHILE_STMT         -> "while" EXP "do"  { STMT ";" } "do"
+WHILE_STMT         -> "while" EXP "do"  { STMT ";" } "od"
 
 RETURN_STMT        -> "return" [ EXP ]
 
