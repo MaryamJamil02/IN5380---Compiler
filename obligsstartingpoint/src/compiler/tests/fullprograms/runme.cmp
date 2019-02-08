@@ -21,15 +21,13 @@ begin
   begin
       var res : int
   in
-      if a > b then 
-      begin
-         res := a;
-      end
+      if a > b 
+      then  
+          res := a
       else
-      begin
-         res := b;
-      end;
-      return res;
+         res := b
+      fi
+      return res
   end;
   
   proc printCmplx( pr : Complex ) 
@@ -50,7 +48,8 @@ begin
 
       var x : int ;
       var y : int ;
-      var max: int ;
+      var max: int 
+  in
 
       c1 := new Complex;
       c2 := new Complex;
@@ -67,29 +66,30 @@ begin
   
   proc printStr(str : string) 
   begin
-  //    str := "Navn " + str;
+  /*    str := "Navn " + str; */
         printstr(str);
   end;
   
   proc inOutTest()
   begin
       var v1 : int ;
-      var v2 : int ;
-    
+      var v2 : int 
+  in
       printline("skriv v1");
       v1 := readint();
       printline("skriv v2");
       v2 := readint();
       printstr("Storst ");
       printint(Max(v1, v2));
-      printline("");
+      printline("")
   end;
   
   proc Main() 
   begin
       var num : float ;
       var num2 : int ;
-      var navn : string ;
+      var navn : string 
+  in
 
       num := 6.480740;
       printfloat( num );
@@ -111,6 +111,6 @@ begin
       dummy.Imag := 2.0;
       printCmplx(dummy);
 
-      printline("DONE");
-  end;
-end;
+      printline("DONE")
+  end
+end
