@@ -1,4 +1,4 @@
-program R begin 
+program R begin   /* some records */
   var x : x;      
   struct abc { };
   var x : ref ( ref (x));

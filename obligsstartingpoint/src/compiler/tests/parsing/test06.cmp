@@ -1,4 +1,4 @@
-program p begin   /* testing proc declarations */
+program p begin   /* some procedure declarations */
   proc a () begin 
   end;
   proc a () : int 
@@ -20,7 +20,7 @@ program p begin   /* testing proc declarations */
   begin 
     var x : int;
     struct x {} ;
-    proc b (b:int)   /* syntactically allowed */
+    proc b (b:int)   /* nesting: syntactically allowed */
     begin            /* later forbidden       */
       in
     end
