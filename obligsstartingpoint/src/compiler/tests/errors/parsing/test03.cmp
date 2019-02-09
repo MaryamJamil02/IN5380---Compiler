@@ -1,6 +1,5 @@
 program p begin   
   proc a ()
   begin 
-   f(4,4,4,5,)    /* should fail */
   end
 end  
