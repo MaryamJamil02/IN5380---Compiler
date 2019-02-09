@@ -1,5 +1,5 @@
 program p begin   
-  proc a (x:int)
+  proc a (x:int,)  /* not allowed, comma is a separator */
   begin 
   end
 end  
