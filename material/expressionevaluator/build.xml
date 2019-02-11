@@ -3,18 +3,16 @@
 	<target name="menu" >
 		<echo>Targets                             </echo>
 		<echo>clean                		- Cleans up the project</echo>
-		<echo>build                		- Build compiler</echo>
-		<echo>run                  		- Run compiler</echo>
 		<echo>compile-example-eval 		- Compile Example Eval</echo>
 		<echo>run-example-eval     		- Run Example Eval</echo>
-		<echo>compile-example-par  		- Compile Example Par</echo>
-		<echo>run-example-par      		- Run Example Par</echo>
+		<echo>compile-example-par  		- Compile Example Parse</echo>
+		<echo>run-example-par      		- Run Example Parse</echo>
 	</target>
 
 	<!-- Path definitions -->
 	<path id="path-cup">
-		<pathelement location="./lib/java-cup-11a.jar"/>
-		<pathelement location="./lib/JFlex.jar"/>
+		<pathelement location="../../src/lib/java-cup-11a.jar"/>
+		<pathelement location="../../src/lib/JFlex.jar"/>
 	</path>
 
 	<path id="path-run">
@@ -34,8 +32,6 @@
 		<property name="dir.src-gen" value="${dir.base}/src-gen"/>
 		<property name="dir.src-examples" value="${dir.base}/src-examples"/>
 		<property name="dir.src" value="${dir.base}/src"/>
-		<property name="dir.desc" value="${dir.base}/desc"/>
-
 		<!-- Directories and files to be created. -->
 		<property name="dir.classes" value="${dir.build}/classes"/>
 	</target>
