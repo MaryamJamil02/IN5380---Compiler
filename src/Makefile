@@ -1,4 +1,5 @@
 
 
 clean:
-	rm *~
+	\rm -f build/*
+	\rm -f src-gen/*
