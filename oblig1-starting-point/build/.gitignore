@@ -1,3 +1,6 @@
+# In the build directory, nothing should be versioned, except the 
+# .gitignore file itself.
+
 *
 
 !.gitignore
