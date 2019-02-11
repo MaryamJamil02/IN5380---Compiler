@@ -58,13 +58,13 @@ begin
 
       x:=3;
       y:=7;
-      max := Max(y, x);
+      max := Max(y, x)
   end;
   
   proc printStr(str : string) 
   begin
   /*    str := "Navn " + str; */
-        printstr(str);
+        printstr(str)
   end;
   
   proc inOutTest()
@@ -107,6 +107,7 @@ begin
       dummy.Real := 1.0;
       dummy.Imag := 2.0;
       printCmplx(dummy);
+
 
       printline("DONE")
   end
