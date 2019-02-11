@@ -8,7 +8,7 @@
 
 \handouttitle{Oblig 1}
 \handoutnumber{1}
-\issuedate{26.\ 02.\ 2018}
+\issuedate{12.\ 02.\ 2019}
 \topic{About the lecture}
 
 
@@ -42,7 +42,7 @@ Requirements:
   fine.
 \item the instructions under ``What and how to  hand-in'' need to be followed
 \item the solution needs to compile and run \emph{at the UiO
-    pool}.\footnote{statements like ``but on my laptop it works, I can show
+    pool}.\footnote{Statements like ``but on my laptop it worked, I can show
     you'' don't cut it \ldots.} Test it!
 \end{itemize}
 
@@ -65,8 +65,8 @@ This year, we try whether handing it in via
   \textsl{git}   
 \end{quote}
 is a good way. In previous years it was mostly via email, 2017 via devilry,
-but since it's about a a piece of software, let's try git this time.  I
-assume that most are in principle familiar with \texttt{git}, if not, ask
+but since it's about a a piece of software, this year we use git (as 2018).
+I assume that most are in principle familiar with \texttt{git}, if not, ask
 me (or bring yourself up to speed otherwise).  I suggest, that we use the
 uio-internal git server\footnote{Actually, it's the UiO enterprise github
   server. Github is just one particular ``web-interface'' on top of git and
@@ -119,7 +119,9 @@ In order to hand-in via git, each group has to do the following steps.
     \item \textsl{JFlex}-code for the scanner
     \item \textsl{CUP}-cpde for the 2 variants of the syntax
     \item the Java-classes for the syntax-tree
-    \item the build-script \texttt{build.xml}
+    \item the build-script \texttt{build.xml}\footnote{Alternatively, you
+        can use a makefile if you prefer that. In that case, remove the
+        \texttt{build.xml}-file.}
     \end{itemize}
   \end{itemize}
 
@@ -132,9 +134,10 @@ In order to hand-in via git, each group has to do the following steps.
 \label{sec:x}
 
 The goal of the task is to gather practical experience of the following
-tools and technquies.
+tools and technies.
 \begin{itemize}
-\item use scanner/lexer and parser tools. In this case \texttt{JFLex} and \texttt{CUP}.
+\item use scanner/lexer and parser tools. In this case \texttt{JFLex} and
+  \texttt{CUP}.
 \item rewrite and massage a grammar given in one form into another one so
   that it's accepted by the tools. In our case, the language is given in
   some EBNF, which has to be adequately rewritten so that it can be fit
@@ -175,7 +178,7 @@ provided.
 
 If, for some reason, you plan to deviate from the suggested tools, you
 \begin{enumerate}
-\item \textbf{MUST} discuss that first with the teacher
+\item \textbf{MUST} discuss that first with the lecturer/
 \item it \textbf{must} be a platform which is freely available at the
   university RHEL pool resp. is  platform independent. Proprietary tools or
   tools I don't have easy\footnote{I \emph{mean} easy and in the sense that
@@ -197,7 +200,7 @@ If, for some reason, you plan to deviate from the suggested tools, you
 The overal task is to 
 
 \begin{quote}
-  implement a parser for the \textsl{Compila 18} language.
+  implement a parser for the \textsl{Compila 19} language.
 \end{quote}
 The language specification is given in a separate document. Oblig 1 is
 concerned with checking \emph{syntactic correctness}, which means, not all
@@ -239,9 +242,9 @@ output. The two files are called
 \end{itemize}
 
 
-Note: the two files are meant as inspiration. Each year the syntax of
-\textsl{compila} slightly changes (wrt. keywords, associativity etc). So it
-might not 100\% in accordance with the 2018 version.
+Note: the two files are meant as \emph{inspiration.} Each year the syntax
+of \textsl{compila} slightly changes (wrt. keywords, associativity etc). So
+it might not 100\% in accordance with the 2019 version.
 
 It's allowed (but not necessary) to print it in other forms than prefix
 form. But the output must indicate the AST in readable form (``readable''
