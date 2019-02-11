@@ -36,6 +36,23 @@ system on the course's web-page.
   - instructions about the obligs
       
 
+* Overview over the directory
+
+
+  - [[Readme.org]]: this file
+  - [[.gitignore]]: git administrative file: things probably not intended to be
+                checked in
+  - [[./doc]]:      documentation. That basically is information provided
+                by the course leaders. 
+
+  - [[./src]]:     the sources for the project. At the beginning, since that
+               part is provided by the course management, it contains 
+	       mostly the sources for the documentation, /not/ much actual
+	       Java code.
+	       
+	       
+
+
 * Starting points for /your/ oblig (resp. your goup's)
 
 
