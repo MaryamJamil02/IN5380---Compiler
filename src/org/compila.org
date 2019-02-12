@@ -9,6 +9,8 @@
 
 
 
+*** TODO compile the program inside the document <2019-02-12 Tue 06:59>
+
 *** TODO remove dir.desc <2019-02-11 Mon 15:12>
 * What to do better next year
 
