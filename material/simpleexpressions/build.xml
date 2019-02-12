@@ -5,8 +5,8 @@
 		<echo>clean                		- Cleans up the project</echo>
 		<echo>compile-example-eval 		- Compile Example Eval</echo>
 		<echo>run-example-eval     		- Run Example Eval</echo>
-		<echo>compile-example-par  		- Compile Example Parse</echo>
-		<echo>run-example-par      		- Run Example Parse</echo>
+		<echo>compile-example-parse  		- Compile Example Parse</echo>
+		<echo>run-example-parse      		- Run Example Parse</echo>
 	</target>
 
 	<!-- Path definitions -->
