@@ -11,8 +11,8 @@
 
 	<!-- Path definitions -->
 	<path id="path-cup">
-		<pathelement location="../../src/lib/java-cup-11a.jar"/>
-		<pathelement location="../../src/lib/JFlex.jar"/>
+		<pathelement location="../../lib/java-cup-11a.jar"/>
+		<pathelement location="../../lib/JFlex.jar"/>
 	</path>
 
 	<path id="path-run">
