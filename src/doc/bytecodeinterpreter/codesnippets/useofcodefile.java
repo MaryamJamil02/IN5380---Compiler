@@ -10,3 +10,10 @@ main.addInstruction (new RETURN());
 codeFile.updateProcedure(main);
 
 // ... and more ....
+
+
+byte [] bytecode = codeFile.getBytecode();
+DataOutputStream stream = new DataOutputStream(
+					       new FileOuputStream(filename));
+stream.write(bytecode);
+stream.close();
