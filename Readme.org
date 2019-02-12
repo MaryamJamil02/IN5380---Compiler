@@ -29,12 +29,25 @@ system on the course's web-page.
 
   
 
-- [[./src]]: sources (of all kinds, including documentation)
+- [[./src]]: sources (of all kinds, including documentation).
 - [[./doc]]: generated documentation 
   - language specification
   - byte code interpreter
   - instructions about the obligs
+- [[./material]]: extra material, for example a test expression evaluator and parser
+      (a simple working example of making use of lex and yacc)
+- [[./lib]]: lexer and yaccer tools (jlex + cup), as jar files
+
+- [[./build.xml]]: simple /ant/ build file. Type ~ant~ in a command shell to see current
+              possible targets. One can adapt according to one's needs. Also for oblig2,
+	      one will have to add more ``targets'' (because then there will be more things
+	      to do, like type checking etc.) Alternative ``build'' methods are allowed as well
+	      if preferred (make, maven) as long as they are commonly available.
+
+. [[./previoussemesters]]: not relevant, for ``historical'' purposes only
       
+
+. [[./build]]: generated (if one uses the .build.xml)
 
 * Overview over the directory
 
