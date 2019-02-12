@@ -74,10 +74,10 @@ the stack before the instruction itself is interpreted. For example, the
 instruction will be applied to are on the stack and in the right order
 beforehand. The number to subtract must be on the top and the number to
 subtract from below it. We may denote the elements on the stack before an
-instruction is interpreted with *_, where n is the index from the top, with
-the top as
-* = 0. Then, the result of the ,ssae instruction is that the two values on the
-top of the stack is removed and replaced by 
+instruction is interpreted with $s_n$, where $n$ is the index from the top,
+with the top as $n = 0$. Then, the result of the ,ssae instruction is that
+the two values on the top of the stack is removed and replaced by $s_1 -
+s_0$.
 
 
 
