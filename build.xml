@@ -81,7 +81,7 @@
 	<!-- Run the system  -->
 	<target name="run" depends="init">
 		<java classname="compiler.Compiler" classpathref="path-run">
-			<arg value="src/tests/dummy/simpledummy.cmp"/> 
+			<arg value="src/tests/dummyprograms/simpledummy.cmp"/> 
 			<arg value="src/tests/outputs/ast/simpledummy.ast"/>
 		</java>
 	</target>
