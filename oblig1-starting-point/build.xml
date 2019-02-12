@@ -5,10 +5,6 @@
 		<echo>clean                		- Cleans up the project</echo>
 		<echo>build                		- Build compiler</echo>
 		<echo>run                  		- Run compiler</echo>
-		<echo>compile-example-eval 		- Compile Example Eval</echo>
-		<echo>run-example-eval     		- Run Example Eval</echo>
-		<echo>compile-example-par  		- Compile Example Par</echo>
-		<echo>run-example-par      		- Run Example Par</echo>
 	</target>
 
 	<!-- Path definitions -->
@@ -87,58 +83,6 @@
 		<java classname="compiler.Compiler" classpathref="path-run">
 			<arg value="compila-code/simple.cmp"/>
 			<arg value="compila-ast/simple.ast"/>
-		</java>
-	</target>
-
-
-
-
-
-	<!-- Generate scanner and parser for example eval -->
-	<target name="generate-example-eval" depends="init, mkdir">
-		<jflex file="./grammars/expression-eval.lex" destdir="src-gen"/>
-		<cup srcfile="./grammars/expression-eval.cup" destdir="src-gen" interface="true" />
-	</target>
-	
-	<!-- Compile code for example eval -->
-	<target name="compile-example-eval" depends="generate-example-eval">
-		<antcall target="generic-compile">
-			<param name="package-name" value="expression_eval"/>
-		</antcall>
-	</target>
-	
-	<!-- Run example eval. -->
-	<target name="run-example-eval" depends="init">
-		<java classname="expression_eval.parser" classpathref="path-run">
-			<arg value="2+3*3;
-				1 + 2 * 1 + 1;
-				1+2+3+4*2*3*2+1;
-				3/3+1;
-				1 + 5 / 2 + 9;"/>
-		</java>
-	</target>
-
-
-
-
-      	<!-- Generate scanner and parser for example par -->
-	<target name="generate-example-par" depends="init, mkdir">
-		<jflex file="./grammars/expression-par.lex" destdir="src-gen"/>
-		<cup srcfile="./grammars/expression-par.cup" destdir="src-gen" interface="true" />
-	</target>
-	
-	<!-- Compile code for example par -->
-	<target name="compile-example-par" depends="generate-example-par">
-		<antcall target="generic-compile-ast" />
-		<antcall target="generic-compile">
-			<param name="package-name" value="expression_par"/>
-		</antcall>
-	</target>
-	
-	<!-- Run example par -->
-	<target name="run-example-par" depends="init">
-		<java classname="expression_par.parser" classpathref="path-run">
-			<arg value="./input-examples/test-eval.txt"/>
 		</java>
 	</target>
 </project>
