@@ -12,7 +12,7 @@ codeFile.updateProcedure(main);
 // ... and more ....
 
 
-byte [] bytecode = codeFile.getBytecode();
+byte [] bytecode = codeFile.getBytecode();  // bytecode = array of bytes.
 DataOutputStream stream = new DataOutputStream(
 					       new FileOuputStream(filename));
 stream.write(bytecode);
