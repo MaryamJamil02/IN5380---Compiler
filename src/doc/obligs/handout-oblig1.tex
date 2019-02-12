@@ -1,4 +1,4 @@
-\documentclass[11pt,freeform]{handout}[2014/08/13]
+\documentclass[10pt,freeform]{handout}[2014/08/13]
 
 \input{coursedata}
 \input{preamble}
@@ -227,24 +227,37 @@ nodes and syntactic categories in the syntax tree.
 
 
 
+
+
 \subsection{Print out of the AST}
 \label{sec:print-out-ast}
 
 
 The AST should be ``printed''. The easiest and recommeded form of printout
-is in \emph{prefix form}. In the provided ``starting point'', there is an
-example compila input file and a corresping file containing a possible
-output. The two files are called
+is in \emph{prefix form}. Under \texttt{material/sample-compila-ast}, there
+is an example compila input file and a corresping file containing a
+possible output. The two files are called
 
 \begin{itemize}
-\item \texttt{compila.cmp}
-\item \texttt{compila.ast}
+\item \texttt{complexaddition.cmp}
+\item \texttt{complexaddition.ast}
 \end{itemize}
 
 
 Note: the two files are meant as \emph{inspiration.} Each year the syntax
 of \textsl{compila} slightly changes (wrt. keywords, associativity etc). So
-it might not 100\% in accordance with the 2019 version.
+the syntax is 100\% in accordance with the 2019 version (but pretty
+comparable).
+
+The one that should be used for this task (AST-printing) is the following
+
+\begin{quote}
+  \texttt{./src/tests/fullprograms/complexaddition.cmp}  
+\end{quote}
+
+and it should be consistent with this year's gammar (fingers crossed).
+
+
 
 It's allowed (but not necessary) to print it in other forms than prefix
 form. But the output must indicate the AST in readable form (``readable''
@@ -299,7 +312,7 @@ AST, plain \emph{checking} is sufficient.
 As mentioned, \textsl{JFLex} is the tool of choice for lexical analysis. It
 delivers a token to the parser via the method \texttt{next\_token()}.  
 
-As far the the ``theoretical'' task concerning \textsl{compila 18} is
+As far the the ``theoretical'' task concerning \textsl{compila 19} is
 concerned, the lexer is responsible for ignoring comment, white-space etc,
 find keywords and the like. 
 
@@ -328,13 +341,43 @@ not required for the oblig.
 
 
 
+\subsection{Tests}
+\label{sec:tests}
+
+For testing, there is a bunch of files under
+
+\begin{quote}
+  ./src/tests
+\end{quote}
+
+They are supposed to contain syntactically correct programs for this year's
+version, with exception of the ones under
+\begin{quote}
+  \texttt{./src/tests/errors}
+\end{quote}
+
+
+For oblig one, you are requested to generate the 
+\begin{quote}
+  \texttt{./src/tests/fullprograms/complexadditions.cmp}  
+\end{quote}
+as part of the oblig as mentioned, but you may of course use the other test
+program to see how robust your implementation is. Especially the
+error-programs later will become relevant for oblig2, when we do type
+checking; there, some syntactically ok programs should be flagged as
+erroneous by the type checker.
+
+
+
+
+
+
+
 \section{Resources}
 \label{sec:resources}
 
-The course web-page contais an html file \texttt{resources.html} which
-collects clickable links to \textsl{JFlex} \textsl{CUP} and corresponding
-manuals.
-
+The web-page (the git-one) will contain also links to \textsl{JFlex}
+\textsl{CUP} and corresponding manuals.
 
 
 
