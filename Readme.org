@@ -81,9 +81,10 @@ point for your project, and not to work in the common code base.
 
 Typically that means: create yourself a repos at ~github.uio.no~ called
 ~compila<xxx>~. If the project is non-public, add me (~msteffen~) as
-collaborator. It's a good idea to wait for that until the deadline for the
-oblig, but at that time I need access to your project. Make sure that the
-project is usable ``out-of-the-box'', like: a third person (like me) does
+collaborator. It's a good idea not to wait for that until the deadline for
+the oblig, but at that time I need access to your project. Make sure that
+the project is usable ``out-of-the-box'', like: a third person (like me)
+does
 
 #+begin_src 
   git clone <url to your project>
