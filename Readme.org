@@ -86,9 +86,9 @@ oblig, but at that time I need access to your project. Make sure that the
 project is usable ``out-of-the-box'', like: a third person (like me) does
 
 #+begin_src 
-  clone <your project>
-  cd compila<xxx>
-  ant build  // or whatever
+  git clone <url to your project>
+  cd compila<xxx>  
+  ant build        // or whatever
 #+end_src
 
 
