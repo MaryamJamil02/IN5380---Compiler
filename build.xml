@@ -65,8 +65,8 @@
 
 	<!-- Generate scanner and parser using JFlex and CUP  -->
 	<target name="generate" depends="mkdir">
-		<jflex file="./grammars/compila.lex" destdir="src-gen"/>
-		<cup srcfile="./grammars/compila.cup" destdir="src-gen" interface="true" />
+		<jflex file="./src/grammars/compila.lex" destdir="src-gen"/>
+		<cup srcfile="./src/grammars/compila.cup" destdir="src-gen" interface="true" />
 	</target>
 
 	<!-- Compile Java Files and store in /build/classes directory  -->
