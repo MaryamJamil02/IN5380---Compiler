@@ -85,11 +85,11 @@ collaborator. It's a good idea to wait for that until the deadline for the
 oblig, but at that time I need access to your project. Make sure that the
 project is usable ``out-of-the-box'', like: a third person (like me) does
 
-#+begin_quote
+#+begin_src 
   clone <your project>
   cd compila<xxx>
   ant build  // or whatever
-#+end_quote
+#+end_src
 
 
 
