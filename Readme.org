@@ -77,6 +77,42 @@ point for your project, and not to work in the common code base.
 
   
 
+** Some check to see if everything on your system is in place
+
+You should make sure that java runs (and the classpath is not messed up
+somehow etc).  Perhaps check if ~ant~ is running. 
+
+*** Check the simple evaluator
+
+Inside the compila-directory, do
+
+
+#+begin_src 
+   cd material/simpleexpression
+   ant 
+#+end_src
+watch the output, and try out the shown target (1 clean, 2 different
+programs that can be built and run).
+
+*** Check the dummy code
+
+Do the same for the dummy- and skeleton-classes provided as starting point
+for the real compiler. Again, inside the compila directory do
+
+#+begin_src 
+ ant   
+ ant build
+ and run
+#+end_src
+
+
+There might be warnings about ``non-reproducible builds'', but you can
+ignore that.
+
+
+
+
+
 ** Make it availabe via git
 
 Typically that means: create yourself a repos at ~github.uio.no~ called
