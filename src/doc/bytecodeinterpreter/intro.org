@@ -91,5 +91,11 @@ virtual machine interpreter.
 
 #+include: "codesnippets/useofcodefile.java" src java
 
+In that example, first an object of the class ~CodeFile~ is created. Then,
+the procedure ~"main"~ is added to it. More procedures, structs, global
+variables, and constants by be added to it. Then one can get the bytecode,
+which is an array of bytes, and write it to a file, as shown in the code
+snippet.
+
 [fn:bcel] ~http://commons.apache.org/proper/commons-bcel/~, formerly as
 part of the Jakarta project.
