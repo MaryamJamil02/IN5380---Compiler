@@ -1,7 +1,7 @@
 CodeFile codeFile = new CodeFile();
 String filename = "example.bin";
 
-// Building the bytecode with instructions like
+// Building the bytecode with instructions like the following
 codeFile.addProcedure("Main");
 CodeProcedure main = new CodeProcedure("Main",
 				       VoidType.TYPE,
