@@ -52,6 +52,33 @@ from the stack (0 or more), performs the task specified by the instruction,
 and leaves a number of result values on the stack (typically just one such
 value).
 
+The interpreter is not written for efficiency, by rather for readability
+and ease of creating runnable bytecode. For instance, the types are kept on
+the stack together with the calculated values and the interpreter decides
+what kind of operation to perform based on the types as well as the current
+instruction. For example, an ~ADD~ instruction, representing addition, will
+be performed differently if there are two integers on the stack, two
+floats, or one of each. That's different from Java bytecode, which has an
+~ADDINT~ and an ~ADDFLOAT~ instruction and wher type casting has to be done
+explicitly in the bytecode (for example with the ~i2f~ instruction, which
+does the corresponding conversion).
+
+** Interpreting bytecode
+
+
+As mentioned, the interpreter is stack based. The parameters from right to
+left in an operation (including user defined functions) must be placed on
+the stack with the leftmost on the bottom and the rightmost on the top of
+the stack before the instruction itself is interpreted. For example, the
+~SUB~ (subtraction) instruction requires that the two operands the ~SUB~
+instruction will be applied to are on the stack and in the right order
+beforehand. The number to subtract must be on the top and the number to
+subtract from below it. We may denote the elements on the stack before an
+instruction is interpreted with *_, where n is the index from the top, with
+the top as
+* = 0. Then, the result of the ,ssae instruction is that the two values on the
+top of the stack is removed and replaced by 
+
 
 
 [fn:bcel] ~http://commons.apache.org/proper/commons-bcel/~, formerly as
