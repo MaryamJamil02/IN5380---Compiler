@@ -79,7 +79,7 @@ with the top as $n = 0$. Then, the result of the ~SUB~ instruction is that
 the two values on the top of the stack is removed and replaced by $s_1 -
 s_0$.
 
-
+** The library
 
 [fn:bcel] ~http://commons.apache.org/proper/commons-bcel/~, formerly as
 part of the Jakarta project.
