@@ -88,5 +88,8 @@ progran with ``runnable'' sequences of instructions, i.e. a (binary or
 ~.bin~) file executable by the virtual machine, or more specifically by the
 virtual machine interpreter.
 
+
+#+include: "codesnippets/useofcodefile.java" src java
+
 [fn:bcel] ~http://commons.apache.org/proper/commons-bcel/~, formerly as
 part of the Jakarta project.
