@@ -4,7 +4,7 @@
 		<echo>Targets                             </echo>
 		<echo>clean                		- Cleans up the project</echo>
 		<echo>build                		- Build compiler</echo>
-		<echo>run                  		- Run compiler</echo>
+		<echo>run-dummy                  		- Run compiler</echo>
 	</target>
 
 	<!-- Path definitions -->
@@ -79,7 +79,7 @@
 	<target name="build" depends="compile"/>
 
 	<!-- Run the system  -->
-	<target name="run" depends="init">
+	<target name="run-dummy" depends="init">
 		<java classname="compiler.Compiler" classpathref="path-run">
 			<arg value="compila-code/simple.cmp"/>
 			<arg value="compila-ast/simple.ast"/>
