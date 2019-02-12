@@ -1,3 +1,5 @@
+#+LINK: srcbytecode ../../../material/oblig2-patch/src/bytecode/%s
+
 * Introduction
 
 This report presents the local variant of /bytecode/, /bytecode
@@ -80,6 +82,8 @@ the two values on the top of the stack is removed and replaced by $s_1 -
 s_0$.
 
 ** The library
+
+The library has a class [[srcbytecode:CodeFile.java][CodeFile]]
 
 [fn:bcel] ~http://commons.apache.org/proper/commons-bcel/~, formerly as
 part of the Jakarta project.
