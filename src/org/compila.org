@@ -9,7 +9,12 @@
 
 
 
-*** TODO compile the program inside the document <2019-02-12 Tue 06:59>
+*** TODO test a fresh checkedout simple examples <2019-02-12 Tue 07:31>
+*** DONE compile the program inside the document <2019-02-12 Tue 06:59>
+    CLOSED: [2019-02-12 Tue 07:30]
+    :LOGBOOK:
+    - State "DONE"       from "TODO"       [2019-02-12 Tue 07:30]
+    :END:
 
 *** TODO remove dir.desc <2019-02-11 Mon 15:12>
 * What to do better next year

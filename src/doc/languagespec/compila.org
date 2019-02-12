@@ -271,7 +271,7 @@ front of the corresponding actual parameters when calling the procedure.
 ** Small example for call-by-reference
 
 
-#+include: "./code/example01.code" src compila
+#+include: "./code/swap-cbr.code" src compila
 
 
 * Standard library                                                   
