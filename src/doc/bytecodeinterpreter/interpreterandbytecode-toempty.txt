@@ -23,25 +23,6 @@ virtual machine and run by its interpreter.
 
 A typical use of the flodeffiile class will be something like this:
 
-fflij`'^*` _ij`'^*` = *`, fflij`'^*`ssae;
-Soeo/^*AE OE^*`*O/` = "`!O/#*`$%^*";
-
-// &'^*j^*AE oe*` %+oe`_ij` ,^oe* ^*0oeo/'_oe^i*0 *^1`
-_ij`'^*`$O/jj2o/i_`j'o/`ss"MO/^*"ae;
-fflij`2o/i_`j'o/` O/^* = *`, fflij`2o/i_`j'o/`ss"MO/^*"3 Vi^j4+#`$4Y2E3
-
-_ij`'^*`ae;
-O/^*$O/jjI*0oeo/'_oe^i*ss*`, RE4URNssaeae;
-_ij`'^*`$'#jO/oe`2o/i_`j'o/`ssO/^*ae;
-
-// $$$ O/*j io/` $$$
-
-%+oe`[] %+oe`_ij` = _ij`'^*`$AE`oe&+oe`_ij`ssae;
-DO/oeO/5'oe#'oeSoeo/`O/ 0oeo/`O/ = *`, DO/oeO/5'oe#'oeSoeo/`O/ss
-
-*`, '^*`5'oe#'oeSoeo/`O/ ssOE^*`*O/`aeae;
-0oeo/`O/$,o/^oe`ss%+oe`_ij`ae;
-0oeo/`O/$_*i0`ssae;
 
 6n the example, an object of the class C\Gamma \Delta \Theta F\Lambda \Xi \Theta  is first created. Then, the
 
