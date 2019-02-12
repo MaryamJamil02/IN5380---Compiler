@@ -120,13 +120,18 @@ Typically that means: create yourself a repos at ~github.uio.no~ called
 collaborator. /Inform me via email about the url of the repos./ It's a good
 idea /not/ to wait for that until the deadline for the oblig, but at that
 time I need access to your project. Make sure that the project is usable
-``out-of-the-box'', like: a third person (like me) does
+``out-of-the-box'', like: if a third person (like me) does the following steps:
 
 #+begin_src 
   git clone <url to your project>
   cd compila<xxx>  
   ant build        // or whatever
 #+end_src
+it does the intended thing. There must also be a simple top-level
+Readme-file that instruct a user what to do. If wished you can edit and
+clean up the ~Readme.org~ file here to fit the needs of your project, or
+replace it but another Readme file (but no need to have 2 readme-files
+around).
 
 
 
