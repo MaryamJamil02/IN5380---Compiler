@@ -118,13 +118,13 @@
 
 
       	<!-- Generate scanner and parser for example par -->
-	<target name="generate-example-par" depends="init, mkdir">
+	<target name="generate-example-parse" depends="init, mkdir">
 		<jflex file="./grammars/expression-par.lex" destdir="src-gen"/>
 		<cup srcfile="./grammars/expression-par.cup" destdir="src-gen" interface="true" />
 	</target>
 	
 	<!-- Compile code for example par -->
-	<target name="compile-example-par" depends="generate-example-par">
+	<target name="compile-example-parse" depends="generate-example-parse">
 		<antcall target="generic-compile-ast" />
 		<antcall target="generic-compile">
 			<param name="package-name" value="expression_par"/>
@@ -132,7 +132,7 @@
 	</target>
 	
 	<!-- Run example par -->
-	<target name="run-example-par" depends="init">
+	<target name="run-example-parse" depends="init">
 		<java classname="expression_par.parser" classpathref="path-run">
 			<arg value="./input-examples/test-eval.txt"/>
 		</java>
