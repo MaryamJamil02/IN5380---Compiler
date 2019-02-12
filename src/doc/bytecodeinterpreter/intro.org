@@ -27,15 +27,32 @@ tool and very well designed.
 
 
 
-[fn:bcel] ~http://commons.apache.org/proper/commons-bcel/~, formerly as
-part of the Jakarta project.
 
 The bytecode library and the interpreter are, not surprisingly, written in
 Java. All the code is written in source form and consists of the following
 packages.
 
+- ~bytecode.*~:    classes to create bytecode
+- ~bytecode.instructions.*~  instruction classes, supporting the above
+- ~bytecode.type.*~  type classes, supporting the above
+- ~runtime.*~ : classes of the runtime system
 
 ** The interpreter
 
-the interpreter is /stack based/ and it interprets about 40 different
-instructions of our butycode. 
+The interpreter is /stack based/ and it interprets about 40 different
+instructions of our bytecode.  The interpreter ``automatically'' handles
+allocation of struct types, method calls and access of variables in a
+struct when instructed to, by the bytecode instructions. In the first
+version it does /not/ have a garbage collector and allocates memory
+sequentially as long as there is memory left.
+
+The operators or instructions are so called stack operations. It means that
+whe the intpreter executes an instruction, it pops off a number of operands
+from the stack (0 or more), performs the task specified by the instruction,
+and leaves a number of result values on the stack (typically just one such
+value).
+
+
+
+[fn:bcel] ~http://commons.apache.org/proper/commons-bcel/~, formerly as
+part of the Jakarta project.
