@@ -1,7 +1,6 @@
 package compiler;
 
 import java.io.*;
-
 import syntaxtree.*;
 import oblig1parser.*;
 

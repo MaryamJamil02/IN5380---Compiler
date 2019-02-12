@@ -1,5 +1,6 @@
-package syntaxtree;
-
+package syntaxtree;  // this is just an inspirational example, probably 
+                     // there will be no class ceclaration class, as 
+                     // compila 19 does not support class declarations.
 public class ClassDecl {
 
     String name;
