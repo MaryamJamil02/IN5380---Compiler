@@ -1,0 +1,37 @@
+* Introduction
+
+This report presents the local variant of /bytecode/, /bytecode
+interpreter/, and /bytecode construction library/ written for the compiler
+construction course INF5110 and the University of Oslo. The bytpecode
+library and intepreter were developed to be used in the /code generation/
+and /runtime/ part of the obligatory exercises in the course. The objective
+of this exercise is to write a compiler for a simple example language.
+
+
+Bytecodes in general similar to machine code, but instead of being run
+directly on a machine, they are usually interpreted by a bytecode
+interpreter. They may also be translated into machine code before being
+run. A bytpecode nstruction library is a library to simplify the task of
+generating bytecode for a bytecode interpreter. Bytecode is name exactly
+that because each instruction is the size of a byte.
+
+Our bytecode is quite similar to Java bytecode and our bytecode library is
+based on the [[http://commons.apache.org/proper/commons-bcel/][Byte Code Engineering Library]].[fn:bcel] We choose to write a
+simpler, stripped-down version that, for instance, does not support
+classes, virtual procedures, and all the other things that Java's bytecode
+has. We did that so that it would be simpler to work with, and there would
+be less code. For instance, one does not need to create classes like, since
+our language does not have them, just for ``some reasons
+unexplained''. Still, we encorange students to look at BCEL, as it's a nice
+tool and very well designed.
+
+
+
+[fn:bcel] ~http://commons.apache.org/proper/commons-bcel/~, formerly as
+part of the Jakarta project.
+
+
+** The interpreter
+
+the interpreter is /stack based/ and it interprets about 40 different
+instructions of our butycode. 
