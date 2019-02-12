@@ -83,7 +83,10 @@ s_0$.
 
 ** The library
 
-The library has a class [[srcbytecode:CodeFile.java][CodeFile]]
+The library has a class [[srcbytecode:CodeFile.java][CodeFile]] that is the based class for creating a
+progran with ``runnable'' sequences of instructions, i.e. a (binary or
+~.bin~) file executable by the virtual machine, or more specifically by the
+virtual machine interpreter.
 
 [fn:bcel] ~http://commons.apache.org/proper/commons-bcel/~, formerly as
 part of the Jakarta project.
