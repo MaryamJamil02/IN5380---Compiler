@@ -4,7 +4,7 @@
 		<echo>Targets                             </echo>
 		<echo>clean                		- Cleans up the project</echo>
 		<echo>build                		- Build compiler</echo>
-		<echo>run-dummy                  		- Run compiler</echo>
+		<echo>run                  		- Run compiler</echo>
 	</target>
 
 	<!-- Path definitions -->
@@ -65,8 +65,8 @@
 
 	<!-- Generate scanner and parser using JFlex and CUP  -->
 	<target name="generate" depends="mkdir">
-		<jflex file="./grammars/oblig1.lex" destdir="src-gen"/>
-		<cup srcfile="./grammars/oblig1.cup" destdir="src-gen" interface="true" />
+		<jflex file="./grammars/compila.lex" destdir="src-gen"/>
+		<cup srcfile="./grammars/compila.cup" destdir="src-gen" interface="true" />
 	</target>
 
 	<!-- Compile Java Files and store in /build/classes directory  -->
@@ -79,10 +79,10 @@
 	<target name="build" depends="compile"/>
 
 	<!-- Run the system  -->
-	<target name="run-dummy" depends="init">
+	<target name="run" depends="init">
 		<java classname="compiler.Compiler" classpathref="path-run">
-			<arg value="compila-code/simple.cmp"/>
-			<arg value="compila-ast/simple.ast"/>
+			<arg value="compila-code/simpledummy.cmp"/>
+			<arg value="compila-ast/simpledummy.ast"/>
 		</java>
 	</target>
 </project>

@@ -2,7 +2,7 @@ package compiler;
 
 import java.io.*;
 import syntaxtree.*;
-import oblig1parser.*;
+import parser.*;
 
 public class Compiler {
 	private String inFilename = null;
