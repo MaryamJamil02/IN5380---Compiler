@@ -30,6 +30,10 @@ tool and very well designed.
 [fn:bcel] ~http://commons.apache.org/proper/commons-bcel/~, formerly as
 part of the Jakarta project.
 
+The bytecode library and the interpreter are, not surprisingly, written in
+Java. All the code is written in source form and consists of the following
+packages.
+
 
 ** The interpreter
 
