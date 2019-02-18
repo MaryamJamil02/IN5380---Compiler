@@ -74,7 +74,7 @@ Determine if programs written in /Compila 19/ are syntactically correct:
 
 #+begin_export latex 
 
-\lstinputlisting[basicstyle=\scriptsize]{code/myprogram.cmp}
+\lstinputlisting[basicstyle=\scriptsize,emph={begin,end,in, proc,program,var,return,struct}]{code/myprogram.cmp}
 
 #+end_export
 
@@ -90,7 +90,7 @@ Determine if programs written in /Compila 19/ are syntactically correct:
 
 #+begin_export latex 
 
-\lstinputlisting[basicstyle=\scriptsize]{code/swap.cmp}
+\lstinputlisting[basicstyle=\scriptsize,emph={begin,end,in, proc,program,var,return,struct}]{code/swap.cmp}
 
 #+end_export
 
@@ -283,7 +283,21 @@ grammar in BNF with *action* code
 
 
 
-*** Provides source code                                            :B_frame:
+*** Overview over the directory + first steps                       :B_frame:
+    :PROPERTIES:
+    :BEAMER_env: frame
+    :END:
+
+- see the Readme at/from the ~github.uio.no~
+
+
+#+begin_export latex 
+ \includegraphics[width=0.66\textwidth]{figures/snaps/directorystruct}
+#+end_export
+
+
+
+*** Provided source code                                    :B_frame:ARCHIVE:
     :PROPERTIES:
     :BEAMER_env: frame
     :END:
@@ -392,7 +406,7 @@ grammar in BNF with *action* code
 **** Rest                                                            :ignore:
 
 - the code must /build/ (with ant) and run
-- test it on the  UiO RHEL platform
+- test it on the  UiO RHEL (linux) platform
 
 **** Ask                                                            :B_block:
      :PROPERTIES:
@@ -424,7 +438,7 @@ If problems, *ask in time*  (*NOT* Friday at the deadline)
 
 
 - see also the handout
-- code ready /tomorrow/
+# - code ready /tomorrow/
 
 
 
