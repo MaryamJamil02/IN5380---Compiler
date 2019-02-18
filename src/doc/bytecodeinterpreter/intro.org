@@ -90,7 +90,7 @@ progran with ``runnable'' sequences of instructions, i.e. a (binary or
 virtual machine interpreter.
 
 
-#+include: "codesnippets/useofcodefile.java" src java
+#+include: "codesnippets/useofcodefile.javaoid" src java
 
 In that example, first an object of the class ~CodeFile~ is created. Then,
 the procedure ~"main"~ is added to it. More procedures, structs, global
