@@ -273,8 +273,11 @@ For precedences and associativity of various constructs, see later.
      PROC_DECL          -> "proc" NAME
                            "(" [ PARAMFIELD_DECL { "," PARAMFIELD_DECL } ] ")"
                            [ ":" TYPE ]
-                           "begin" [DECL{";" DECL}] "in" [STMT {";" STMT}] "end"
+                           "begin" [DECL{";" DECL}] "in" STMT_LIST "end"
 
+
+
+     STMT_LIST          -> [STMT {";" STMT}]
      REC_DECL           -> "struct" NAME "{" [ PARAMFIELD_DECL
                                                {";" PARAMFIELD_DECL }]  "}"
 
@@ -315,9 +318,9 @@ For precedences and associativity of various constructs, see later.
 
      ASSIGN_STMT        -> VAR ":=" EXP | DEREF_VAR ":=" EXP
 
-     IF_STMT            -> "if" EXP "then" { STMT ";" }
-                            [ "else"  { STMT ";" } ] "fi"
-     WHILE_STMT         -> "while" EXP "do"  { STMT ";" } "od"
+     IF_STMT            -> "if" EXP "then" { STMT_LIST }
+                            [ "else"  { STMT_LIST } ] "fi"
+     WHILE_STMT         -> "while" EXP "do"  { STMT_LIST  } "od"
 
      RETURN_STMT        -> "return" [ EXP ]
 
@@ -606,20 +609,20 @@ Ref: Records-Footnote-16295
 Node: References6352
 Node: Syntax7183
 Node: Grammar7349
-Node: Precedence9718
-Node: Associativity10170
-Node: Parameter passing10663
-Node: Call-by-value11346
-Ref: Call-by-value-Footnote-111734
-Node: Small example for call-by-reference12048
-Node: Standard library12785
-Node: Static semantics / typing / evaluation13898
-Node: Binding of names14277
-Node: Typing of compound constructs15484
-Node: Types and implicit type conversion16802
-Node: Short-circuit evaluation17515
-Node: Procedures17975
-Node: Further conditions19758
+Node: Precedence9761
+Node: Associativity10213
+Node: Parameter passing10706
+Node: Call-by-value11389
+Ref: Call-by-value-Footnote-111777
+Node: Small example for call-by-reference12091
+Node: Standard library12828
+Node: Static semantics / typing / evaluation13941
+Node: Binding of names14320
+Node: Typing of compound constructs15527
+Node: Types and implicit type conversion16845
+Node: Short-circuit evaluation17558
+Node: Procedures18018
+Node: Further conditions19801
 
 End Tag Table
 
