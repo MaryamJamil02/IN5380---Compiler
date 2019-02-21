@@ -1,27 +1,4 @@
-*oe o/ *AE.
 
-1\Theta 3 OEO/\Upsilon  \Omega i\Phi !\Phi j
-The library has a class C#$%&\Gamma '% that is the base for creating a program
-with "runnable" sequences of instructions, that is, a (binary or .bin) file
-that can be executed by the virtual machine or more specifically by the
-
-*
-
-virtual machines interpreter.
-To create such a bytecode file, one must create an object of the class C\Gamma \Delta \Theta -
-F\Lambda \Xi \Theta , and add procedures, structs and global variables using the procedures
-
-of the C\Gamma \Delta \Theta F\Lambda \Xi \Theta  object. Objects that represent local variables and instruc\Pi 
-tions are created using the library and added to the procedure objects, which
-are of class C\Gamma \Delta \Theta P\Sigma \Gamma \Upsilon \Theta \Delta \Phi \Sigma \Theta . When the program is complete, that is, when
-all the elements of the program has been added to the C\Gamma \Delta \Theta F\Lambda \Xi \Theta  object and
-
-its C\Gamma \Delta \Theta P\Sigma \Gamma \Upsilon \Theta \Delta \Phi \Sigma \Theta  objects, the actual bytecode can be extracted by using
-the procedure \Psi \Theta \Omega Bff\Omega \Theta \Upsilon \Gamma \Delta \Theta () of a C\Gamma \Delta \Theta F\Lambda \Xi \Theta  object. The array of bytes that
-is then created, is usually written to a file, which can then be read by the
-virtual machine and run by its interpreter.
-
-A typical use of the flodeffiile class will be something like this:
 
 
 6n the example, an object of the class C\Gamma \Delta \Theta F\Lambda \Xi \Theta  is first created. Then, the

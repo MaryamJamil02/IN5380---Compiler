@@ -49,11 +49,13 @@ struct when instructed to, by the bytecode instructions. In the first
 version it does /not/ have a garbage collector and allocates memory
 sequentially as long as there is memory left.
 
-The operators or instructions are so called stack operations. It means that
+#+index: instruction
+#+index: operation
+The operators or instructions are so called /stack operations/. It means that
 whe the intpreter executes an instruction, it pops off a number of operands
 from the stack (0 or more), performs the task specified by the instruction,
-and leaves a number of result values on the stack (typically just one such
-value).
+and leaves a number of result values on the stack, typically just one such
+value.
 
 The interpreter is not written for efficiency, by rather for readability
 and ease of creating runnable bytecode. For instance, the types are kept on
@@ -84,10 +86,30 @@ s_0$.
 
 ** The library
 
-The library has a class [[srcbytecode:CodeFile.java][CodeFile]] that is the based class for creating a
-progran with ``runnable'' sequences of instructions, i.e. a (binary or
-~.bin~) file executable by the virtual machine, or more specifically by the
+The library has a class [[srcbytecode:CodeFile.java][CodeFile]] that is the base class for creating a
+program with ``runnable'' sequences of instructions, i.e. a (binary or
+~.bin~) file, executable by the virtual machine or more specifically by the
 virtual machine interpreter.
+
+
+To create such a bytecode file, one must create an object of the class
+~CodeFile~ and add procedures, structs and global variables using the
+procedures of the ~CodeFile~ object. Objects that represent local variables
+and instructions are created using the library and added to the procedure
+objects, which are of class ~CodeProcedure~. When the program is complete,
+that is, when all the elements of the program has been added to the
+~CodeFile~ object and
+
+------------------------
+its C\Gamma \Delta \Theta P\Sigma \Gamma \Upsilon \Theta \Delta \Phi \Sigma
+\Theta objects, the actual bytecode can be extracted by using the procedure
+\Psi \Theta \Omega Bff\Omega \Theta \Upsilon \Gamma \Delta \Theta () of a
+C\Gamma \Delta \Theta F\Lambda \Xi \Theta object. The array of bytes that
+is then created, is usually written to a file, which can then be read by
+the virtual machine and run by its interpreter.
+
+A typical use of the flodeffiile class will be something like this:
+
 
 
 #+include: "codesnippets/useofcodefile.javaoid" src java
