@@ -1,4 +1,5 @@
 * Finally, remember this.
+<<sec:rememberthis>>
 
 To sum up, here are some important points to remember
 
