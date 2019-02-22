@@ -182,6 +182,9 @@ STARTWITH: Main
 
 ** Source code overview 
 
+The most important classes and packages of the bytecode library are
+[[srcbytecode:CodeFile.java][~CodeFile~]], they main class for creating byte code, [[srcbytecode:CodeProcedure.java][~CodeProcedure~]]
+
 
 
 
