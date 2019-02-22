@@ -203,7 +203,8 @@ the types (as subclasses of the abstract [[srcbytecode:./type/CodeType.java][~Co
 contains all the types used in the byte code.
 
 Although usually not used by a programmer, it might be nice to know the
-main classes of the virtual machine, as well.
+main classes of the virtual machine resp. the run-time system, as well. See
+the package resp. directory [[srcruntime:][runtime]].
 
 
 
