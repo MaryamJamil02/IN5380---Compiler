@@ -8,6 +8,5 @@ To sum up, here are some important points to remember
 - add the library procedures (like ~print_int~ etc.) as procedures, but
   without instructions
 - if the reference on the stack is a null reference when trying to access a
-  field of it, the interpreter will print the error ~"Nullpointer at
-  GETFIELD"~ or the equivalent message for ~PUTFIELD~, and the virtual
+  field of it, the interpreter will print the error ="Nullpointer at GETFIELD"= or the equivalent message for ~PUTFIELD~, and the virtual
   machine will abort.
