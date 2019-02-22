@@ -204,7 +204,26 @@ contains all the types used in the byte code.
 
 Although usually not used by a programmer, it might be nice to know the
 main classes of the virtual machine resp. the run-time system, as well. See
-the package resp. directory [[srcruntime:][runtime]].
+the package resp. directory [[srcruntime:][runtime]]. The main classes are the following
+
+- [[srcruntime:VirtualMachine.java][~VirtualMachine~]]
+- [[srcruntime:Loader.java][~Loader~]]
+- [[srcruntime:Interpreter.java][~Interpreter~]]
+- [[srcruntime:Stack.java][~Stack~]]
+- [[srcruntime:Heap.java][~Heap~]]
+- [[srcruntime:ActivationBlock.java][~ActivationBlock~]]
+
+The virtual machine class is the starting point for running a program, the
+loader class loads a a program from a file. The actual interpretation of
+the byte code is provided by the interpreter class. The classes ~Heap~ and
+~Stack~ are responsible for management of the corresponding memory. Note
+that there is a single stack for each program (as the programs are
+single-threaded). The heap contains structs, and they allocation and access
+is maintained by the mentioned class. The class for activation blocks
+handles and stores the program counter, local variables etc. and also
+handles the call and return of a procedure in conjuction with the
+interpreter.
+
 
 
 
