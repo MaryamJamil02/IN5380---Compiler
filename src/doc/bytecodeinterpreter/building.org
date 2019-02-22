@@ -48,8 +48,7 @@ method is set, before the bytecode can be extracted to a file (VII),
 
 
 
-
-
+#+include: "codesnippets/simpleexample.javaoid" src java
 
 
 

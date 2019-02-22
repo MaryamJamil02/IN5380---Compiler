@@ -1,1 +1,14 @@
+// Make code:
+CodeFile codeFile = new CodeFile();
+codeFile.addProcedure("printFloat")
 
+//-------  (I) ---------------------
+codeFile.addProcedure("Main");
+codeFile.addVariable("myGlobalVar");
+codeFile.addProcedure("test");
+codeFile.addStruct("Complex");
+//-------- (II) --------------
+CodeProcedure main = 
+    new CodeProcedure("Main", 
+		      VoidType.TYPE, 	     
+		      codeFile);
