@@ -2,3 +2,8 @@
 #+LINK: srcruntime ../../../material/oblig2-patch/src/runtime/%s
 
 * Building a complete program
+
+We have shown the basics of how a bytecode program (binary file) is built
+using the bytecode library. In this section we will show some of the
+details by covering each of the classes in the library. Details about all
+the instructions will come in Section 
