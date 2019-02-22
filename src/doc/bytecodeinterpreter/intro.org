@@ -197,8 +197,9 @@ sub-packages (i.e., subdirectories), there are 2
 - [[srcbytecode:type/][~type~]]
 
 corresponding to the packages ~bytecode.instructions.*~ and
-~bytecode.type.*~.  The instructions in the first package are concrete
-subclasses of the abstract [[srcbytecode:./instructions/Instruction.java][~Instruction~]] class.
+~bytecode.type.*~.  The instructions in the first package are represented
+as concrete subclasses of the abstract [[srcbytecode:./instructions/Instruction.java][~Instruction~]] class.  Similarly for
+the types (as subclasses of the abstract [[srcbytecode:./type/CodeType.java][~CodeType~]] class.
 
 
 
