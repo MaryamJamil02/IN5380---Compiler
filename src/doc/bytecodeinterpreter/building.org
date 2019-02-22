@@ -31,6 +31,12 @@ following example.k
 
 ** A small example
 
+The example code creates a program and first adds the name of a library
+procedure to be used.  It then adds a procedure ~Main~, a global variable
+~myGlobalVar~, a procedure ~test~ and a struct ~Complex~ (I). The main
+procedure has the void return type, no parameters, no local variables and
+the body consists of a single instruction, namely ~return~ (II).
+
 
 
 
