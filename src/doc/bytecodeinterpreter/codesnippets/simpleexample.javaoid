@@ -12,3 +12,4 @@ CodeProcedure main =
     new CodeProcedure("Main", 
 		      VoidType.TYPE, 	     
 		      codeFile);
+main.addInstruction(new RETURN)---
