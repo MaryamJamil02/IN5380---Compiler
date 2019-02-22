@@ -182,9 +182,23 @@ STARTWITH: Main
 
 ** Source code overview 
 
-The most important classes and packages of the bytecode library are
-[[srcbytecode:CodeFile.java][~CodeFile~]], they main class for creating byte code, [[srcbytecode:CodeProcedure.java][~CodeProcedure~]]
+The [[srcbytecode:][bytecode library]] contains classes and sub-packages. The most important
+classes are the follwoing
 
+- [[srcbytecode:CodeFile.java][~CodeFile~]],
+- [[srcbytecode:CodeProcedure.java][~CodeProcedure~]], and
+- [[srcbytecode:CodeStruct.java][~CodeStruct~]].
+
+The first one is the the main class for creating byte code the other two
+for creating a procedure resp. a struct in the byte code. As for the
+sub-packages (i.e., subdirectories), there are 2
+
+- [[srcbytecode:./instructions/][~instructions~]] and
+- [[srcbytecode:type/][~type~]]
+
+corresponding to the packages ~bytecode.instructions.*~ and
+~bytecode.type.*~.  The instructions in the first package are concrete
+subclasses of the abstract [[srcbytecode:./instructions/Instruction.java][~Instruction~]] class.
 
 
 
