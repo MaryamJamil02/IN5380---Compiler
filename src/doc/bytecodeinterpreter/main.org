@@ -12,6 +12,7 @@
 #+CREATOR: Emacs 24.3.1 (Org mode 9.2)
 
 #+latex_header: \input{preamble} 
+#+latex_header: \input{macros} 
 
 #+LINK: srcbytecode ../../../material/oblig2-patch/src/bytecode/%s
 
@@ -20,3 +21,4 @@
 #+include: "intro.org" 
 #+include: "building.org" 
 #+include: "instructions.org" 
+#+include: "rememberthis.org" 

@@ -204,7 +204,7 @@ contains all the types used in the byte code.
 
 Although usually not used by a programmer, it might be nice to know the
 main classes of the virtual machine resp. the run-time system, as well. See
-the package resp. directory [[srcruntime:][runtime]]. The main classes are the following
+the package resp. directory [[srcruntime:][~runtime~]] The main classes are the following
 
 - [[srcruntime:VirtualMachine.java][~VirtualMachine~]]
 - [[srcruntime:Loader.java][~Loader~]]

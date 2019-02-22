@@ -6,4 +6,21 @@
 We have shown the basics of how a bytecode program (binary file) is built
 using the bytecode library. In this section we will show some of the
 details by covering each of the classes in the library. Details about all
-the instructions will come in Section 
+the instructions will come in Section [[sec:rememberthis]].
+
+The main parts for creating a new program are: create an object of the
+class ~CodeFile~. Afterwards add the procedures, i.e., objects of class
+~CodeProcedure~, structs, i.e., objects of class ~CodeStruct~, and so
+on. Finally, when calling the ~getBytecode()~ procedure, the bytecode
+library will generae the actual bytes from the object hat have been created
+and from the ``properties'' given to those objects.
+
+
+
+
+
+
+
+
+
+

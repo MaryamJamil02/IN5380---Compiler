@@ -1,6 +1,8 @@
 * Finally, remember this.
 <<sec:rememberthis>>
 
+# there are other ways to add a label here.
+
 To sum up, here are some important points to remember
 
 - Always add a return statement to the end of the instructions of a
