@@ -35,7 +35,11 @@ The example code creates a program and first adds the name of a library
 procedure to be used.  It then adds a procedure ~Main~, a global variable
 ~myGlobalVar~, a procedure ~test~ and a struct ~Complex~ (I). The main
 procedure has the void return type, no parameters, no local variables and
-the body consists of a single instruction, namely ~return~ (II).
+the body consists of a single instruction, namely ~return~ (II). The global
+variable is typed with the struct type ~Complex~ (III). The procedure
+~test~ has 2 parameters (of type float and a reference type to
+~Complex~). The procedure loads the first parameter onto the stack and then
+calls the (library) procedure ~print_float~ to print its value (IV).
 
 
 
