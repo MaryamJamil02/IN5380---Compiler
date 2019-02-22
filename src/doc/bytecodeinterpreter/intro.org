@@ -199,7 +199,11 @@ sub-packages (i.e., subdirectories), there are 2
 corresponding to the packages ~bytecode.instructions.*~ and
 ~bytecode.type.*~.  The instructions in the first package are represented
 as concrete subclasses of the abstract [[srcbytecode:./instructions/Instruction.java][~Instruction~]] class.  Similarly for
-the types (as subclasses of the abstract [[srcbytecode:./type/CodeType.java][~CodeType~]] class.
+the types (as subclasses of the abstract [[srcbytecode:./type/CodeType.java][~CodeType~]] class. That package
+contains all the types used in the byte code.
+
+Although usually not used by a programmer, it might be nice to know the
+main classes of the virtual machine, as well.
 
 
 
