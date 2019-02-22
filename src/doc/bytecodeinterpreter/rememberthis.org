@@ -11,3 +11,7 @@ To sum up, here are some important points to remember
   field of it, the interpreter will print the error =Nullpointer at
   GETFIELD= or the equivalent message for ~PUTFIELD~, and the virtual
   machine will abort.
+- do not hust add, but remember to update procedures, structs, and global
+  variables.
+- use the /list/ option (~-l~) to inspect your bytecode and even take a
+  look at it with an hex editor.
