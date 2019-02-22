@@ -1,0 +1,4 @@
+#+LINK: srcbytecode ../../../material/oblig2-patch/src/bytecode/%s
+#+LINK: srcruntime ../../../material/oblig2-patch/src/runtime/%s
+
+* Building a complete program
