@@ -15,6 +15,11 @@ on. Finally, when calling the ~getBytecode()~ procedure, the bytecode
 library will generae the actual bytes from the object hat have been created
 and from the ``properties'' given to those objects.
 
+Note that there a /four/ steps to create a procedure (or a struct, or
+global variable).
+
+1. add the definition to the ~CodeFile~ object via ~addProcedure~
+
 
 
 
