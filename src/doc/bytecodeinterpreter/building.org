@@ -26,6 +26,11 @@ global variable).
    ~updateProcedure~
 
 
+These four standard steps are illustrated in slightly more detail in the
+following example.k
+
+** A small example
+
 
 
 
