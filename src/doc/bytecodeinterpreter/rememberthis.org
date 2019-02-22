@@ -1,1 +1,13 @@
 * Finally, remember this.
+
+To sum up, here are some important points to remember
+
+- Always add a return statement to the end of the instructions of a
+  procedure.
+- Always set the main method
+- add the library procedures (like ~print_int~ etc.) as procedures, but
+  without instructions
+- if the reference on the stack is a null reference when trying to access a
+  field of it, the interpreter will print the error ~"Nullpointer at
+  GETFIELD"~ or the equivalent message for ~PUTFIELD~, and the virtual
+  machine will abort.
