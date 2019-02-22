@@ -39,7 +39,12 @@ the body consists of a single instruction, namely ~return~ (II). The global
 variable is typed with the struct type ~Complex~ (III). The procedure
 ~test~ has 2 parameters (of type float and a reference type to
 ~Complex~). The procedure loads the first parameter onto the stack and then
-calls the (library) procedure ~print_float~ to print its value (IV).
+calls the (library) procedure ~print_float~ to print its value (IV). The
+struct ~Complex~ is created and the two fields, both of floating point
+type, are added to it (V). The procedure ~print_float~ used in the program
+is a library procedure. Nonetheless, it needs to be added, but without
+instructions (VI). See Section [[sec:typicaltasks]] Finally, the mandatory main
+method is set, before the bytecode can be extracted to a file (VII),
 
 
 

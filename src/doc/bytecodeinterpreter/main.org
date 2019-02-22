@@ -3,8 +3,8 @@
 #+OPTIONS: email:nil f:t inline:t num:t p:nil pri:nil prop:nil stat:t
 #+OPTIONS: tags:nil tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
 #+TITLE: Bytecode interpreter
-#+DATE: <2019-02-12 Tue> 
-#+AUTHOR: Fredrik Sørensenx, Stein Krogdahl, Birger Møller-Pedersen
+#+DATE:  Spring semester 2019
+#+AUTHOR: Fredrik Sørensen, Stein Krogdahl, Birger Møller-Pedersen
 #+EMAIL: msteffen@ifi.uio.no
 #+LANGUAGE: en
 #+SELECT_TAGS: export handout slides
@@ -21,4 +21,5 @@
 #+include: "intro.org" 
 #+include: "building.org" 
 #+include: "instructions.org" 
+#+include: "typicaltasks.org" 
 #+include: "rememberthis.org" 
