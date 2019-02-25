@@ -74,7 +74,7 @@ element in the syntax tree is typically responsible for adding itself to
 the compiled result by using the procedures of the ~CodeFile~ or
 ~CodeProcedure~ classes.
 
-A /global variable/& is added by using the procedure ~void
+A /global variable/ is added by using the procedure ~void
 addVariable(String name)~. After a global variable has been added, its
 index (~id~) in the program may be found using its name, calling the
 procedure ~int globalVariableNumber(String name)~ The type of the variable
@@ -82,6 +82,9 @@ procedure ~int globalVariableNumber(String name)~ The type of the variable
 ~void uodateVariable(String name, CodeType type)~. All global variables
 must have unique names.
 
+
+A /procedure/ is added by using the procedure ~void addProcedure(String
+name)~
 
 
 
