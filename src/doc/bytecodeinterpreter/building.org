@@ -68,6 +68,21 @@ its index can be found and used, for example to crete a call to it, as we
 will see.
 
 
+An object of the ~CodeFile~ class is typically seen by all the nodes in the
+abstract syntax tree, by for example passign around a reference to it. An
+element in the syntax tree is typically responsible for adding itself to
+the compiled result by using the procedures of the ~CodeFile~ or
+~CodeProcedure~ classes.
+
+A /global variable/& is added by using the procedure ~void
+addVariable(String name)~. After a global variable has been added, its
+index (~id~) in the program may be found using its name, calling the
+procedure ~int globalVariableNumber(String name)~ The type of the variable
+/must/ be supplied before the bytecode is generated. It is done by calling
+~void uodateVariable(String name, CodeType type)~. All global variables
+must have unique names.
+
+
 
 
 
