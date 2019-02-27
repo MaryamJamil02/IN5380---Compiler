@@ -47,4 +47,8 @@ instruction. If a procedure found in the binary file at loadtime is without
 instruction, it is assumed to be a library procedure and a cll to it
 results in a lookup using a table of library procedures.
 
+#+index: initial value
+All variables (global and local ones, as well as field in structs) are
+allocated with initial values.
+
 
