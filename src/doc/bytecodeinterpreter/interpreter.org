@@ -80,4 +80,8 @@ address /within/ a procedure's instruction bytes.
 #+index: local address
 
 ** Allocating a struct on the heap
+When a struct is allocated on the heap, using the ~NEW~ instruction, a
+reference is left in the stack that can be passsed around and saved in
+variables. The ~NEW~ instruction is followed by the index of the struct to
+allocate.
 
