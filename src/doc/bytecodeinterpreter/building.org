@@ -153,6 +153,18 @@ of declarations.
 
 
 
+A ~CodeProcedure~ object can find the indices of elements using its
+~CodeFile~ object, so it also has the procedures ~globalVariableNumber~,
+~procedureNumber~, ~structNumber~, and ~fieldNumber~. It also has and
+delegates the ~addStringConstant~ procedure.
+
+
+*** Class ~CodeStruct~
+
+#+index: struct
+A /struct/
+
+
 
 
 
