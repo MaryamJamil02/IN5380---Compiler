@@ -37,3 +37,14 @@ corresponding addition is pushed to the stack, and since the size is only
 one (the instruction byte only), 1 is added to the program counter.
 
 
+#+index: block level
+
+/Block levels/ are not supported by the virtual machine and only either
+global or else local variables can be accessed (~LOADGLOBAL~, ~LOADLOCAL~,
+~STOREGLOBAL~, ~STORELOCAL~). All names for procedures, structs, and
+variables must be unique. A procedure must always end with a ~RETURN~
+instruction. If a procedure found in the binary file at loadtime is without
+instruction, it is assumed to be a library procedure and a cll to it
+results in a lookup using a table of library procedures.
+
+
