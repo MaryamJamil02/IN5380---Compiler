@@ -178,6 +178,16 @@ return a value and the reference type is for references to structs (i.e.,
 records).
 
 
+#+index: basic type
+#+index: type!basic
+The basic typs have a /singleton/ object (for instance ~StringType.TYPE~),
+which is used as actual parameter whenever that is needed, for examp,e to
+define the return type of a procedure or the type of a field in a
+struct. The is no singleton and its cosntructor has an integer parameter
+which is the index of the struct for which this type is a reference.
+
+
+
 
 
 
