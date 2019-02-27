@@ -162,7 +162,11 @@ delegates the ~addStringConstant~ procedure.
 *** Class ~CodeStruct~
 
 #+index: struct
-A /struct/
+A /struct/ is created with the constructor ~CodeStruct(String name)~
+providing the name of the struct. A field is added to the struct by using
+~void addVaraible(String name, CodeType type)~. To retrieve the index of a
+field added to the struct, one may use ~int fieldNumber(String name)~. See
+also the ~fieldNumber~ procedure of ~CodeFile~.
 
 
 
