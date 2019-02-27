@@ -104,7 +104,14 @@ index of a constant later.  The index is used fro string literals by the
 compiler.
 #+index: string literal
 
-After all the elements are 
+After all the elements are added, it is important to let the interpreter
+know which procedure to start with. This is done by using the the name of
+the procedure (typically ~"main"~) and calling ~void SetMain(String name)~.
+
+
+*** Class ~CodeProcedure~
+
+
 
 
 
