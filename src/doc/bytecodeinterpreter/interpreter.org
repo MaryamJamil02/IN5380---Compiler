@@ -49,6 +49,35 @@ results in a lookup using a table of library procedures.
 
 #+index: initial value
 All variables (global and local ones, as well as field in structs) are
-allocated with initial values.
+allocated with initial values, which depend on their types. An integer is
+set to $0$ a float to $0.0$, a string to the empty string, and a reference
+is set to the null reference.
 
+** Calling a procedure
+
+A procedure is alled with the ~CALL~ insturction. The byte instruction is
+followed by the index of the procedure being caled. The interpreter locates
+the procedure by using the intext, creates an activation block from the
+information it has, initializes the local variables, saves the program
+counter, and sets the program counter to the first byte of the called
+function.
+
+** Return 
+#+index: return 
+The activation blcok is popped off the stack and the program counter is set
+to where it was before the corresponding call. The return value, which the
+called precedure left on the statck, is again left on the top of the stack
+for the calling procedure.
+
+
+** Jumping
+
+#+index: jump
+
+Jumping is simply done by setting the program counter to the byte with the
+number that accompagnies the jump instruction. This is always a local
+address /within/ a procedure's instruction bytes.
+#+index: local address
+
+** Allocating a struct on the heap
 
