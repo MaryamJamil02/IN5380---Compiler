@@ -173,7 +173,9 @@ also the ~fieldNumber~ procedure of ~CodeFile~.
 
 This is an abstract class and it has as concrete subclasses the different
 classes of types: ~VoidType~, ~BoolType~, ~IntType~, ~FloatType~,
-~StringType~ and ~RefType~-
+~StringType~ and ~RefType~. The void type is used for procedures that don't
+return a value and the reference type is for references to structs (i.e.,
+records).
 
 
 
