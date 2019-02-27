@@ -168,6 +168,13 @@ providing the name of the struct. A field is added to the struct by using
 field added to the struct, one may use ~int fieldNumber(String name)~. See
 also the ~fieldNumber~ procedure of ~CodeFile~.
 
+*** Class ~CodeType~
+#+index: type
+
+This is an abstract class and it has as concrete subclasses the different
+classes of types: ~VoidType~, ~BoolType~, ~IntType~, ~FloatType~,
+~StringType~ and ~RefType~-
+
 
 
 
