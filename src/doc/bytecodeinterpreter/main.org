@@ -20,6 +20,7 @@
 
 #+include: "intro.org" 
 #+include: "building.org" 
+#+include: "interpreter.org" 
 #+include: "instructions.org" 
 #+include: "typicaltasks.org" 
 #+include: "rememberthis.org" 
