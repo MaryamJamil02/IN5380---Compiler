@@ -79,9 +79,17 @@ number that accompagnies the jump instruction. This is always a local
 address /within/ a procedure's instruction bytes.
 #+index: local address
 
-** Allocating a struct on the heap
+
+** Treating records
+*** Allocating a struct on the heap
 When a struct is allocated on the heap, using the ~NEW~ instruction, a
 reference is left in the stack that can be passsed around and saved in
 variables. The ~NEW~ instruction is followed by the index of the struct to
 allocate.
 
+
+*** Get and put fields
+
+
+The instruction ~GETFIELD~ is followed by the index of the struct and the
+index of the field within the that stuct
