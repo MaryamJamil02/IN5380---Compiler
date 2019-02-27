@@ -92,4 +92,9 @@ allocate.
 
 
 The instruction ~GETFIELD~ is followed by the index of the struct and the
-index of the field within the that stuct
+index of the field within the that stuct. When it is interpreted, the
+interpreter assumes that a reference to the struct is on top of the stack
+and that reference is then popped off from the stack, The heap is
+instructed to get the value of the field witin the struct and the
+interpreter pushes the value of the field onto the stack, If the reference
+is the null reference, the interpreter is aborted with an error message.
