@@ -183,10 +183,30 @@ records).
 The basic typs have a /singleton/ object (for instance ~StringType.TYPE~),
 which is used as actual parameter whenever that is needed, for examp,e to
 define the return type of a procedure or the type of a field in a
-struct. The is no singleton and its cosntructor has an integer parameter
-which is the index of the struct for which this type is a reference.
+struct. The is no singleton and its constructor has an integer parameter
+which is the index of the struct for which this type is a reference. The
+~RefType~ is use by creating an object with the index (~id~) for the struct
+as the single parameter. One may make many such objects for the same type
+(the same index) if that is more conventient, or just reuse the same object
+for the type. An object of the reference type to the struct ~"Complex"~ can
+be created like this.
 
 
+#+begin_src java
+CodeFile cf = <...> ;
+...
+cf.addStruct("Complex");
+...
+RefType rt =  new RefType(cf.structNumber("Complex");
+#+end_src
+
+
+
+*** Virtual machone listing of the example from earlier in this section
+
+#+begin_example
+    
+#+end_example
 
 
 
