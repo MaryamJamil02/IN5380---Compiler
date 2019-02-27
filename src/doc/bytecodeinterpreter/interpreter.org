@@ -1,1 +1,32 @@
 * How the interpeter works
+
+#+index: loader
+When the virtual machine is started, the interpreter is set up by the
+loader. It has a variable pool, which holds the type of each global
+variable. It has a procedure pool, which contains all the procedures: their
+parameter and local variable types, return type, and instructions. It has a
+struct pool with the layout of the structs; their names and the types (but
+not names) of the fields. It also has a constant pool with all the
+constants from the byte code file. All these pools are indexed by bumbers
+(~id~ s) which are the numbers used by the instructions.
+
+When the interpreter is started, space is allocated for the global
+variables and they are initialized with the initial values for their types
+(see further down for more information about initial values). The a /stack/
+and a /heap/ is created and an /activation block/ for the main procedure is
+created as well. Then the interpreter starts interpreting the byte code of
+that procedure at the first byte (setting the program counter (~pc~) to
+$0$)
+#+index: program counter
+#+index: stack
+#+index: heap
+#+index: activation block
+
+
+The instructions do things like loading a global variable onto the stack
+(~LOADGLOBAL~), The ~LOADGLOBAL~ instructions has 2 extra bytes which
+contain the id of the variable to push to the stack from the global
+variables. When that instruction is performed, the program ~pc~ must be
+incremented by 3 to move to the next instruction. The increment differs
+from instruction to instruction and is listed as the /size/ in the table
+with all instruction in Section XXX.
