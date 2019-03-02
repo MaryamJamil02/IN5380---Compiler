@@ -86,7 +86,7 @@ s_0$.
 
 ** The library
 
-The library has a class [[srcbytecode:CodeFile.java][CodeFile]] that is the base class for creating a
+The library has a class [[srcbytecode:CodeFile.java][CodeFile] that is the base class for creating a
 program with ``runnable'' sequences of instructions, i.e. a (binary or
 ~.bin~) file, executable by the virtual machine or more specifically by the
 virtual machine interpreter.
