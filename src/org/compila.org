@@ -112,6 +112,11 @@ begin and end has been switched out by brackets.
 
 ** This to do (compila)
 
+*** TODO Repair the thing from the test file (by group06)
+
+    #+begin_example
+    
+    #+end_example
 *** DONE Error in the test files
     CLOSED: [2018-03-19 Mon 07:54]
     :LOGBOOK:
