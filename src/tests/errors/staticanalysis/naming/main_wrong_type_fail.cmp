@@ -1,9 +1,0 @@
-program main_wrong_type_fail
-begin
-
-	proc main() : int /* Fail: Return type for main. */
-	begin 
-        in
-	    return 0
-	end
-end
