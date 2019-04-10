@@ -1,0 +1,8 @@
+program type6_fail
+begin
+
+    proc Main()
+    begin
+       (42).Foo := 42; // error, 
+    end;
+end;
