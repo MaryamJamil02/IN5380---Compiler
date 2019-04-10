@@ -1,6 +1,6 @@
 program p begin   /* testing expressions */
   proc a ()
-  begin 
+  begin
   in
     deref(x)        := 01.0;
     deref(deref(x)) := 01.0;

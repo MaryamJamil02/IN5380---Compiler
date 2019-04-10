@@ -10,3 +10,4 @@
 auto
 *.idx
 *.ps
+*.DS_Store
