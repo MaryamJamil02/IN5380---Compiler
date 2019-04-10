@@ -9,6 +9,6 @@ begin
      in 
         s := "bad operand";
     /*    n := s + s / s; */
-        n := true + b;
-    end;
+        n := true + b
+    end
 end

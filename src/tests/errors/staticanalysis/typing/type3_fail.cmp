@@ -5,7 +5,7 @@ begin
     begin
        var tmp : int
     in
-       tmp := 21 + 21.0; /* error, expression is float */
+       tmp := 21 + 21.0 /* error, expression is float */
     end
 
 end

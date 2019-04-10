@@ -3,8 +3,8 @@ begin
 
     proc main()
     begin
-        proc f() begin return; end
+        proc f() begin in return  end
      in
-        return new f; /* Error: argument of new is not declared. */
-    end;
+        return new f /* Error: argument of new is not declared. */
+    end
 end

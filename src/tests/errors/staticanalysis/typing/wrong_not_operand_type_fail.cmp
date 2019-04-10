@@ -8,7 +8,7 @@ begin
         var s : string
     in 
         s := "bad operand";
-        b := not s;
-    end;
+        b := not s
+    end
 
 end

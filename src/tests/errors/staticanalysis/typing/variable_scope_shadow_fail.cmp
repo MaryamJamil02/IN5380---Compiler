@@ -8,7 +8,7 @@ begin
         begin
              var flag : int
         in
-             flag := not flag; /* error, refers to local int, not outer level boolean! */
+             flag := not flag /* error, refers to local int, not outer level boolean! */
         end
      in 
         flag := false;    

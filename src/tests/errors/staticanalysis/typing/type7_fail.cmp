@@ -5,7 +5,7 @@ begin
     begin
         var foo : Foo
     in 
-        (foo).DoesntExist := 42; /* error, no such attribute */
+        (foo).DoesntExist := 42 /* error, no such attribute */
     end
 
 end

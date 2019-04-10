@@ -6,6 +6,6 @@ begin
        var zot : Zot
     in 
        zot := new Zot;
-       (zot).bar := 42; /* error, zot.bar not declared */
+       (zot).bar := 42 /* error, zot.bar not declared */
     end
 end
