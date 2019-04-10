@@ -2,6 +2,7 @@ program general4_fail /* error, no procedure main() */
 begin
   proc Proc()
   begin
-    printstr( "Hello world!" );
+    in
+    printstr( "Hello world!" )
   end
 end

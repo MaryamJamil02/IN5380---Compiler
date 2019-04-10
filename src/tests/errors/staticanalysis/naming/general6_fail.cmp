@@ -1,8 +1,9 @@
-program general6_fail
+program general6_fail /* type error */
 begin
 	proc Proc( a : int )
 	begin
-	    a := 42;
+        in
+	    a := 42
 	end;
 
 	proc main()

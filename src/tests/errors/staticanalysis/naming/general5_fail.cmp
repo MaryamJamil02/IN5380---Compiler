@@ -2,7 +2,8 @@ program general5_fail
 begin
 	proc Proc( a : ref ( int ) )
 	begin
-	    deref(a) := 42;
+        in
+	    deref(a) := 42
 	end;
 
 	proc main()

@@ -1,12 +1,13 @@
 program procedure_does_not_exist_fail
 begin
-
 	proc xx()
 	begin
+         in
 	end;
     	proc main()
 	begin
-	   yy(); /* Fail: Procedure does not exist. */
+        in
+	   yy() /* Fail: Procedure does not exist. */
 	end
 
 end
