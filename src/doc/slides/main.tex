@@ -1,8 +1,19 @@
-% Created 2019-02-18 Mon 08:17
+% Created 2019-04-10 Wed 14:55
 % Intended LaTeX compiler: pdflatex
 \documentclass{beamer}
- 		 
-
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
 \input{switches}
 \input{style/style-common}
 \input{style/style-presentation}
@@ -26,16 +37,20 @@
  pdftitle={INF5110 -- Oblig 1 + 2},
  pdfkeywords={compiler, compiler construction},
  pdfsubject={compiler construction},
- pdfcreator={Emacs 24.3.1 (Org mode 9.2.1)}, 
+ pdfcreator={Emacs 24.3.1 (Org mode 9.2.2)}, 
  pdflang={English}}
 \begin{document}
 
 \maketitle
+\section{Oblig 1}
+\label{sec:orgc60b42f}
 
-\section{Compila 19}
-\label{sec:orgf7ee371}
 
-\begin{frame}[label={sec:orge155560}]{Oblig 1}
+
+\subsection{Compila 19}
+\label{sec:orga73d465}
+
+\begin{frame}[label={sec:org33bd579}]{Oblig 1}
 \begin{itemize}
 \item material (also for oblig 2) based on previous years, including contributions from Eyvind
 W. Axelsen, Henning Berg, Fredrik Sørensen, and others
@@ -48,7 +63,7 @@ W. Axelsen, Henning Berg, Fredrik Sørensen, and others
 \end{frame}
 
 
-\begin{frame}[label={sec:org6b2a601}]{Goal (of oblig 1)}
+\begin{frame}[label={sec:orgf46450f}]{Goal (of oblig 1)}
 \begin{block}{Parsing}
 Determine if programs written in \emph{Compila 19} are syntactically correct: 
 
@@ -59,14 +74,16 @@ Determine if programs written in \emph{Compila 19} are syntactically correct:
 \end{block}
 
 
+\begin{block}{Rest}
 \begin{itemize}
 \item first part of a compiler, oblig 2 will add to it
 \item language spec provided separatly
 \end{itemize}
+\end{block}
 \end{frame}
 
 
-\begin{frame}[label={sec:org5996319}]{Learning outcomes}
+\begin{frame}[label={sec:org8b9c223}]{Learning outcomes}
 \begin{itemize}
 \item using \alert{tools} for parser/scanner generation
 \begin{itemize}
@@ -93,20 +110,20 @@ tools)
 \end{frame}
 
 
-\begin{frame}[label={sec:org4dcef09}]{Compila language at a glance}
+\begin{frame}[label={sec:org1c15c21}]{Compila language at a glance}
 
 \lstinputlisting[basicstyle=\scriptsize,emph={begin,end,in, proc,program,var,return,struct}]{code/myprogram.cmp}
 \end{frame}
 
 
 
-\begin{frame}[label={sec:org71d2569},plain]{Another glance}
+\begin{frame}[label={sec:org4c73df2},plain]{Another glance}
 
 \lstinputlisting[basicstyle=\scriptsize,emph={begin,end,in, proc,program,var,return,struct}]{code/swap.cmp}
 \end{frame}
 
 
-\begin{frame}[label={sec:org4d5e8a1},plain]{Grammar (1): declarations}
+\begin{frame}[label={sec:orge7549d3},plain]{Grammar (1): declarations}
 
 %~/cor/teaching/compila/src/doc/languagespec/
 \lstinputlisting[basicstyle=\scriptsize,lastline=14]{../../doc/languagespec/grammar.txt}
@@ -117,7 +134,7 @@ tools)
 
 
 
-\begin{frame}[label={sec:orgcac29ca},plain]{Grammar (2): declarations}
+\begin{frame}[label={sec:orgacab7e0},plain]{Grammar (2): declarations}
 
 %~/cor/teaching/compila/src/doc/languagespec/
 \lstinputlisting[basicstyle=\scriptsize,firstline=15,lastline=40]{../../doc/languagespec/grammar.txt}
@@ -126,7 +143,7 @@ tools)
 
 
 
-\begin{frame}[label={sec:orgeab6a70},plain]{Grammar (3): statements and types}
+\begin{frame}[label={sec:org310ecb8},plain]{Grammar (3): statements and types}
 
 %~/cor/teaching/compila/src/doc/languagespec/
 \lstinputlisting[basicstyle=\scriptsize,firstline=41]{../../doc/languagespec/grammar.txt}
@@ -135,10 +152,10 @@ tools)
 
 
 
-\section{Tools}
-\label{sec:org97d45b5}
+\subsection{Tools}
+\label{sec:org8f4f4ea}
 
-\begin{frame}[label={sec:org6194536},fragile]{Tools: JFlex}
+\begin{frame}[label={sec:org0e661a7},fragile]{Tools: JFlex}
  \begin{itemize}
 \item scanner generator (or lexer generator) tool
 
@@ -160,13 +177,13 @@ tools)
 \end{frame}
 
 
-\begin{frame}[label={sec:orga9353f7}]{Sample lex code}
+\begin{frame}[label={sec:orga8ba78b}]{Sample lex code}
 \includegraphics[width=\textwidth]{figures/snaps/lexcode}
 \end{frame}
 
 
 
-\begin{frame}[label={sec:org30b01f4},fragile]{CUP: Construction of useful parsers (for Java)}
+\begin{frame}[label={sec:orgcf092e0},fragile]{CUP: Construction of useful parsers (for Java)}
  \begin{itemize}
 \item a tool to easily (ymmv) generate \emph{parsers}
 
@@ -186,19 +203,21 @@ var_decl ::= VAR ID:name COLON type:vtype
 \end{block}
 
 
+\begin{block}{Rest}
 \begin{itemize}
 \item \alert{output}: parser program (in Java)
 \end{itemize}
+\end{block}
 \end{frame}
 
 
-\begin{frame}[label={sec:org16adfb7}]{Sample CUP code}
+\begin{frame}[label={sec:org40ef0a7}]{Sample CUP code}
 \includegraphics[width=\textwidth]{figures/snaps/cupcode}
 \end{frame}
 
 
 
-\begin{frame}[label={sec:orgf6344f2},fragile]{Build tool: ant}
+\begin{frame}[label={sec:org867891d},fragile]{Build tool: ant}
 
  \begin{center}
  \includegraphics[width=0.2\textwidth]{figures/snaps/antlogo}
@@ -220,13 +239,15 @@ var_decl ::= VAR ID:name COLON type:vtype
 \end{itemize}
 \end{block}
 
+\begin{block}{Rest}
 \begin{itemize}
 \item supplied configuration should take care of calling \texttt{jflex}, \texttt{cup}, and
 \texttt{javadoc} for you
 \end{itemize}
+\end{block}
 \end{frame}
 
-\begin{frame}[label={sec:org50f8b26}]{AST data structure}
+\begin{frame}[label={sec:org80adcdb}]{AST data structure}
 
 \begin{center}
  \includegraphics[width=0.8\textwidth]{figures/snaps/astclasses}
@@ -236,7 +257,7 @@ var_decl ::= VAR ID:name COLON type:vtype
 
 
 
-\begin{frame}[label={sec:orgcaa5b5d},fragile]{Overview over the directory + first steps}
+\begin{frame}[label={sec:orgee6e378},fragile]{Overview over the directory + first steps}
  \begin{itemize}
 \item see the Readme at/from the \texttt{github.uio.no}
 \end{itemize}
@@ -247,22 +268,23 @@ var_decl ::= VAR ID:name COLON type:vtype
 
 
 
-\begin{frame}[label={sec:org6cdd84b}]{Building: putting it together}
+\begin{frame}[label={sec:org0197927}]{Building: putting it together}
 
 \begin{center}
  \includegraphics[width=0.8\textwidth]{figures/snaps/buildprocess}
 \end{center}
 \end{frame}
 
-\section{Official}
-\label{sec:orga9c4cbd}
+\subsection{Official}
+\label{sec:org20a01d5}
 
-\begin{frame}[label={sec:org24b8f5d},fragile]{Deadline}
+\begin{frame}[label={sec:org921298e},fragile]{Deadline}
  \begin{alertblock}{Deadline}
 \alert{Friday 15. 03. 2019, 23:59}
 \end{alertblock}
 
 
+\begin{block}{Rest}
 \begin{itemize}
 \item don't miss the deadline
 \item for extensions, administration needs to agree (\texttt{studadm}), contact them
@@ -273,10 +295,11 @@ if sick etc
 \item contact early when problems arise
 \end{itemize}
 \end{itemize}
+\end{block}
 \end{frame}
 
 
-\begin{frame}[label={sec:org18d92e4},fragile]{Deliverables}
+\begin{frame}[label={sec:org65164d7},fragile]{Deliverables}
  \begin{itemize}
 \item see also the ``handout''
 \end{itemize}
@@ -305,7 +328,7 @@ precendence left AND;
 \end{frame}
 
 
-\begin{frame}[label={sec:org85dca3c}]{Deliverables}
+\begin{frame}[label={sec:org52a4e40}]{Deliverables}
 \begin{block}{Deliverables (2)}
 \begin{itemize}
 \item report (with name(s) and UiO user name(s)
@@ -315,10 +338,12 @@ precendence left AND;
 \end{itemize}
 \end{block}
 
+\begin{block}{Rest}
 \begin{itemize}
 \item the code must \emph{build} (with ant) and run
 \item test it on the  UiO RHEL (linux) platform
 \end{itemize}
+\end{block}
 
 \begin{block}{Ask}
 If problems, \alert{ask in time}  (\alert{NOT} Friday at the deadline)
@@ -327,7 +352,7 @@ If problems, \alert{ask in time}  (\alert{NOT} Friday at the deadline)
 
 
 
-\begin{frame}[label={sec:org49aa26e},fragile]{Hand-in procedure}
+\begin{frame}[label={sec:org73477b6},fragile]{Hand-in procedure}
  \begin{itemize}
 \item this year we try \emph{git}
 
@@ -349,4 +374,286 @@ If problems, \alert{ask in time}  (\alert{NOT} Friday at the deadline)
 \item see also the handout
 \end{itemize}
 \end{frame}
+
+
+
+
+
+\section{Oblig2}
+\label{sec:org795fc05}
+
+
+\begin{frame}[label={sec:orge5611c3},fragile]{Goal}
+ \begin{enumerate}
+\item \alert{semantic  analysis}, as far as 
+\begin{itemize}
+\item \alert{typing} is concerned (``static semantics'')
+\item other coditions (no duplicate declaration etc)
+\end{itemize}
+
+\item \alert{code generation} for \texttt{compila19} (ish) programs
+\end{enumerate}
+\end{frame}
+
+
+
+
+
+
+\begin{frame}[label={sec:org4a2e64a}]{Last time (O1)}
+\begin{block}{Syntactic analysis}
+\begin{itemize}
+\item lexer (scanner)
+\item parser
+\item abstract syntax tree
+\end{itemize}
+\end{block}
+
+
+
+\alert{this time}: continue with you previous deliv (and repos)
+\end{frame}
+
+
+
+\begin{frame}[label={sec:org998a7d0}]{Learning outcome}
+\begin{itemize}
+\item understand type checking, implementing a simmple variant
+\end{itemize}
+
+
+\begin{itemize}
+\item undertand (simple form of) bytecode and how to generate it from ``source
+code'' (as AST)
+
+\item extend an existing compiler code base with new functionality
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}[label={sec:org1a51c98}]{Semantic analysis \& type checking}
+\begin{itemize}
+\item parser / context-free  grammars 
+\begin{itemize}
+\item not powerfull enough
+\item cannot check all (static) properties of a language spec
+\end{itemize}
+
+\item => extend the front-end by a type checker
+
+\begin{itemize}
+\item use the AST classes of last time
+\item add type checking code
+\item allowed to make \alert{changes} or adaptations if advantagous.
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[label={sec:org3810fb8}]{Another glance at compila19}
+\includegraphics[width=\textwidth]{figures/snaps/compilaexample-checking}
+
+
+NB: 2019: structs, not classes 
+\end{frame}
+
+
+\begin{frame}[label={sec:orgcb01965},fragile,plain]{Type checking for conditionals}
+ \begin{itemize}
+\item as ``inspiration'', details may vary
+\end{itemize}
+
+
+\lstset{language=java,label= ,caption= ,captionpos=b,numbers=none}
+\begin{lstlisting}
+  class IfStatement extends Statement {
+  ...
+    public void typeCheck(){
+      String condType = condition.get.Type ();
+      if (condType != "bool") {  
+	 throw new TypeException("condition in an if 
+	   statement must be of type bool")
+      }
+}
+\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}[label={sec:org55554f4},fragile,plain]{Type checking: assignments}
+ \lstset{language=java,label= ,caption= ,captionpos=b,numbers=none}
+\begin{lstlisting}
+class Assignment extends Statement {
+...
+  public void typeCheck() {
+    String varType = var.getType();
+    String expType = exp.getType();
+    if (varType != expType &&
+       !isAssigmentCompatible(varType,expType){
+		 throw new TypeException("Cannot assign " + vartpe + 
+		 " from " + expType);
+  }
+}
+
+\end{lstlisting}
+\end{frame}
+
+
+
+\begin{frame}[label={sec:org5a7eafc},fragile]{Code generation}
+ \begin{itemize}
+\item lecture(s) of code gen start right now (so it might look puzzling, but
+hopefully will become clearer)
+\item byte code API and operations are described in the document ``Interpreter
+and bytecode for INF5110''
+
+\item \alert{Task:} add bytecode generation methods to your AST classes
+for instance
+\end{itemize}
+
+\begin{verbatim}
+Ast.Node.GenerateCode(...)
+\end{verbatim}
+\begin{itemize}
+\item again: if adaptations of the AST are called for or useful, go for it\ldots{}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[label={sec:orgc928d1b},fragile]{Code generation: limitations}
+ \begin{itemize}
+\item interpreter and byte code library somewhat \alert{limited}
+\begin{itemize}
+\item cannot express full compila 19
+\item no block structure
+\item no reference types
+\end{itemize}
+\end{itemize}
+
+
+\begin{itemize}
+\item your delivery should support generating correct bytecode
+for the \texttt{compila} 19 source code file \texttt{runme.cmp}
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}[label={sec:orgb1b6439},fragile,plain]{Code generation: creating a procedure}
+ \lstset{language=java,label= ,caption= ,captionpos=b,numbers=none}
+\begin{lstlisting}
+CodeFile codeFile = new CodeFile();
+// add the procedure by name first
+codeFile.addProcedure("Main")
+// then define it
+CodeProcedure main = new 
+   CodeProcedure("Main", VoidType,TYPE, codeFile);
+main.addInstruction( new RETURN());
+//then update it in the code file
+codeFile.updateProcedure(main);
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[label={sec:org57f870a}]{Code generation: assignment}
+\begin{center}
+ \includegraphics[width=0.76\textwidth]{figures/snaps/codegen-assignment}
+\end{center}
+\end{frame}
+
+
+
+\begin{frame}[label={sec:org717b5bd},fragile]{Testing}
+ \begin{itemize}
+\item bunch of test files, for testing the \emph{type checker}
+\item preferable: make \texttt{ant test} workable
+
+\item test files ending with \texttt{fail} containt a syntactically correct but
+erronous program (erroneous as the type system or generally the semantic
+phase is concerned)
+
+\item => compiler returns error code 2 for semantic failure
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}[label={sec:orgface421}]{Provided source code}
+\url{https://github.uio.no/msteffen/compila}
+
+\includegraphics[width=0.76\textwidth]{figures/snaps/directorystruct}
+\end{frame}
+
+
+
+\begin{frame}[label={sec:orgfb2ccad},fragile]{Provided source code}
+
+ \begin{center}
+ \includegraphics[width=0.75\textwidth]{figures/snaps/directory-src}
+\end{center}
+
+
+
+\begin{itemize}
+\item \texttt{compiler}: updated compiler class
+\item \texttt{test}:   some code for performing tests
+\item \texttt{bytecode}: classes for constructing bytecode
+\item \texttt{runtime}: rte for executing the byte code
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}[label={sec:org6bba1ee},fragile]{Deadline}
+ \begin{alertblock}{Deadline}
+12th May  2019
+\end{alertblock}
+
+
+
+Note: end of semester, and I need to report the ones passing the oblig some
+time before the exam.
+
+
+\begin{block}{delivs}
+\begin{itemize}
+\item working type checker
+\item code generator (test with \texttt{runme.cmp})
+\item report (including your name(s) etc.
+
+\begin{itemize}
+\item discussion of your solution, choices you made, assumptions you rely on
+
+\item printout of a test run (can be also checked in into the repos, but it n
+needs to be mentioned where it is)
+\item printout of the bytecode from \texttt{runme.cmp} (with a target like \texttt{ant
+    list-runme})
+
+\item solution must ``build'' and be ``testable'' (typically via \texttt{ant})
+\end{itemize}
+\end{itemize}
+\end{block}
+\end{frame}
+
+
+
+\subsection{References}
+\label{sec:orgda6971a}
+
+\begin{frame}[allowframebreaks]
+  \frametitle{References}
+  {\tiny
+    \bibliographystyle{apalike}
+%    \bibliography{extracted,local} 
+    \bibliography{string,semantics,etc,mobile,crossref}  %general PMA
+  }
+\end{frame}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 
 \end{document}

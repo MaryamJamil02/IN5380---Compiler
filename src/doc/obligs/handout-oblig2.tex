@@ -8,7 +8,8 @@
 
 \handouttitle{Oblig 2}
 \handoutnumber{2}
-\issuedate{18.\ 04.\ 2018}
+%\issuedate{18.\ 04.\ 2018}
+\issuedate{10.\ 04.\ 2019}
 \topic{Oblig 2}
 
 
@@ -89,12 +90,12 @@ The goal of the task is to collect more practical experience implementing a
 compiler, in particular, a taste of phases after parsing. It's only a
 taste, as we don't have the time to get a full-scale compiler on its
 feet. The language we are compiling is (as before) described in the
-\emph{compila18 language specification.} This time, also the later sections
+\emph{compila19 language specification.} This time, also the later sections
 about type checking etc, what were irrelevant for oblig 1, specify the
 scope of the task as far as the language features are concerned.
 
 
-As in oblig 1, it's necessariy that a solution is equipped
+As in oblig 1, it's \emph{necessary} that a solution is equipped
 
 \begin{quote}
   with ``automatic test-cases''
@@ -127,7 +128,7 @@ executable on the RHEL linux pool at the university.\footnote{That should
 
 
 The tools are basically the same as for the previous oblig, and typically
-you will continue anyway with the previous set-up..
+you will continue anyway with the previous set-up.
 
 
 
@@ -139,7 +140,7 @@ you will continue anyway with the previous set-up..
 The overal task is to 
 
 \begin{quote}
-  implement a parser for the \textsl{Compila 18} language.
+  implement a compiler for the \textsl{Compila 19} language.
 \end{quote}
 The language specification is given in a separate document. Oblig 1 is
 concerned with checking \emph{syntactic correctness}, which means, not all
@@ -183,7 +184,7 @@ output. The two files are called
 
 Note: the two files are meant as inspiration. Each year the syntax of
 \textsl{compila} slightly changes (wrt. keywords, associativity etc). So it
-might not 100\% in accordance with the 2018 version.
+might not 100\% in accordance with the 2019 version.
 
 It's allowed (but not necessary) to print it in other forms than prefix
 form. But the output must indicate the AST in readable form (``readable''
@@ -238,7 +239,7 @@ AST, plain \emph{checking} is sufficient.
 As mentioned, \textsl{JFLex} is the tool of choice for lexical analysis. It
 delivers a token to the parser via the method \texttt{next\_token()}.  
 
-As far the the ``theoretical'' task concerning \textsl{compila 18} is
+As far the the ``theoretical'' task concerning \textsl{compila 19} is
 concerned, the lexer is responsible for ignoring comment, white-space etc,
 find keywords and the like. 
 

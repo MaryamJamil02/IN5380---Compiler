@@ -444,7 +444,7 @@ If problems, *ask in time*  (*NOT* Friday at the deadline)
 
 
 
-* Oblig2                                                            :ARCHIVE:
+* Oblig2
 
 
 *** Goal                                                            :B_frame:
@@ -722,7 +722,7 @@ codeFile.updateProcedure(main);
      :BEAMER_env: alertblock
      :END:
 
-      11th May  20XX
+      12th May  2019
 
 
 
