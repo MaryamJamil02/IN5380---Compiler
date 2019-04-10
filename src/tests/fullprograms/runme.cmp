@@ -29,6 +29,7 @@ begin
   
   proc printCmplx( pr : Complex ) 
   begin
+  in
       printstr("Real ");
       printfloat((pr).Real);
       printline("");
@@ -64,6 +65,7 @@ begin
   proc printStr(str : string) 
   begin
   /*    str := "Navn " + str; */
+  in
         printstr(str)
   end;
   

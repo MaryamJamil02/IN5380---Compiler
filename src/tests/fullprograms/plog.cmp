@@ -30,8 +30,9 @@ begin
       od
   end;
   
-  proc Main() 
+  proc main() 
   begin
+      in
       skriv_plog()
   end
 end

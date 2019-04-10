@@ -20,8 +20,9 @@ begin
       fi;
       return res
   end;
-  proc Main()
-  begin
+  proc main()
+  begin 
+  in
       printint(gcd(6, 19));
       printline("");
       printint(gcd(6, 9));

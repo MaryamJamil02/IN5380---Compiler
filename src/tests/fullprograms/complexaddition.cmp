@@ -43,6 +43,7 @@ begin
   begin
      proc Square (val : float) : float 
      begin
+        in
         return val ^ 2.0
      end;
      var num : float
