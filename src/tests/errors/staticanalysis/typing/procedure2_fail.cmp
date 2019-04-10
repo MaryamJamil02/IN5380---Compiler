@@ -3,11 +3,13 @@ begin
 
 	proc Proc() : string 
 	begin
+           in
 	   return  42  /* error, Proc declared as returning string */
 	end;
 
 	proc main()
 	begin
-	   Proc();
+	   in
+	   Proc()
 	end
 end

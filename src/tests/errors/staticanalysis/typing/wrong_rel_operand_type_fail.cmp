@@ -9,7 +9,7 @@ begin
         var b2 : bool
      in
         s := "bad operand";
-        b := 5 = b2;
-    end;
+        b := 5 = b2
+    end
 
 end
