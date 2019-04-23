@@ -486,7 +486,7 @@ If problems, *ask in time*  (*NOT* Friday at the deadline)
      :END:
 
 
-*this time*: continue with you previous deliv (and repos)
+*this time*: continue with your previous deliv. (and repos)
 
 
 
@@ -496,10 +496,10 @@ If problems, *ask in time*  (*NOT* Friday at the deadline)
     :END:
 
 
-- understand type checking, implementing a simmple variant
+- understand type checking, implementing a simple variant
 
 
-- undertand (simple form of) bytecode and how to generate it from ``source
+- understand (simple form of) bytecode and how to generate it from ``source
   code'' (as AST)
 
 - extend an existing compiler code base with new functionality 
@@ -512,7 +512,7 @@ If problems, *ask in time*  (*NOT* Friday at the deadline)
     :END:
 
 - parser / context-free  grammars 
-    - not powerfull enough 
+    - not powerful enough 
     - cannot check all (static) properties of a language spec
 
 - => extend the front-end by a type checker
@@ -590,8 +590,8 @@ class Assignment extends Statement {
     :BEAMER_env: frame
     :END:
 
-- lecture(s) of code gen start right now (so it might look puzzling, but
-  hopefully will become clearer)
+# - lecture(s) of code gen start have startight now (so it might look puzzling, but
+#   hopefully will become clearer)
 - byte code API and operations are described in the document ``Interpreter
   and bytecode for INF5110''
 
@@ -692,7 +692,6 @@ codeFile.updateProcedure(main);
     :END:
 
 
-
 #+begin_export latex 
 
 \begin{center}
@@ -701,12 +700,16 @@ codeFile.updateProcedure(main);
 #+end_export
 
 
+- Java
 
-- ~compiler~: updated compiler class
-- ~test~:   some code for performing tests
-- ~bytecode~: classes for constructing bytecode
-- ~runtime~: rte for executing the byte code
+  - ~compiler~: updated compiler class
+  - ~test~:   some code for performing tests
+  - ~bytecode~: classes for constructing bytecode
+  - ~runtime~: rte for executing the byte code
 
+- Compila
+  - ~tests~: some test files (including ~runme.cmp~)
+ 
 
 
 *** Deadline                                                        :B_frame:
@@ -747,7 +750,7 @@ time before the exam.
 
   - discussion of your solution, choices you made, assumptions you rely on
 
-  - printout of a test run (can be also checked in into the repos, but it n
+  - printout of a test run (can be also checked in into the repos, but it 
      needs to be mentioned where it is)
   - printout of the bytecode from ~runme.cmp~ (with a target like ~ant
     list-runme~)
