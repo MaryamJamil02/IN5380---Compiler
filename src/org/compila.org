@@ -34,7 +34,12 @@
     - State "DONE"       from "TODO"       [2019-02-12 Tue 07:30]
     :END:
 
-*** TODO remove dir.desc <2019-02-11 Mon 15:12>
+*** CANCELLED remove dir.desc <2019-02-11 Mon 15:12>
+    CLOSED: [2019-11-26 Tue 10:49]
+    :LOGBOOK:
+    - CLOSING NOTE [2019-11-26 Tue 10:49] \\
+      I don't know what that was
+    :END:
 * What to do better next year
 
 
