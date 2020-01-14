@@ -19,16 +19,20 @@
 The repository host material for the /Compila 20/ compiler, which is the
 content of oblig 1 and 2 for the course ``compiler construction''
 ([[http://www.uio.no/studier/emner/matnat/ifi/INF5110/][INF5110]]/INF9110). The material focuses on the code and the description and
-documentation of the compiler. /Not/ contained here is the compiler /course/
-itself (the slides, the exercises etc).  Those are kept in the respository
-of the course itself, and the generated slides are kept in the Vortex
-system on the course's web-page.
+documentation of the compiler. /Not/ contained here is the compiler
+/lecture/ (the slides, the exercises, organizational material, etc.).
+Those are kept in the respository of the course itself, and the generated
+slides are kept in the Vortex system on the course's web-page.
 
 
 * Overview over the directory's structure
 
-- [[./src]]: sources (of all kinds, including documentation).
-- [[./doc]]: generated documentation 
+- [[./doc]]: generated documentation
+    - language specification
+    - info about the bytecode interpreter
+    - oblig-specific information 
+
+- [[./src]]: sources (including sources of the documentation).
   - language specification
   - byte code interpreter
   - instructions about the obligs
