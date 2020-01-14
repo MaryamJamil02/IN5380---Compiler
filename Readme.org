@@ -114,11 +114,17 @@ ignore that.
 ** Make it availabe via git
 
 Typically that means: create yourself a repos at ~github.uio.no~ called
-~compila<xxx>~. If the project is non-public, add me (~msteffen~) as
-collaborator. /Inform me via email about the url of the repos./ It's a good
-idea /not/ to wait for that until the deadline for the oblig, but at that
-time I need access to your project. Make sure that the project is usable
-``out-of-the-box'', like: if a third person (like me) does the following steps:
+~compila<xxx>~.  Please: call it not something else, not ~Compila<xxx>~,
+not ~COMPILA<xxx>~, not ~compila-<xxx>~. It makes uniform treatment of all
+groups and automatic checks (perhaps via scripts) a tiny bit more easy.
+
+
+
+If the project is non-public, add me (~msteffen~) as collaborator. /Inform
+me via email about the url of the repos./ It's a good idea /not/ to wait
+for that until the deadline for the oblig, but at that time I need access
+to your project. Make sure that the project is usable ``out-of-the-box'',
+like: if a third person (like me) does the following steps:
 
 #+begin_src 
   git clone <url to your project>
