@@ -47,6 +47,7 @@
 
 
 - maybe better structure of the starting point
+
 - make the handout for the oblig contain all the stuff
    which is also on the slides
 - check the examples better.
@@ -118,6 +119,8 @@ begin and end has been switched out by brackets.
 
 
 ** This to do (compila)
+
+
 
 *** CANCELLED Repair the thing from the test file (by group06)
     CLOSED: [2020-01-14 Tue 10:18]
