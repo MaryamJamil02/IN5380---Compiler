@@ -8,7 +8,8 @@
 
 \handouttitle{Oblig 1}
 \handoutnumber{1}
-\issuedate{12.\ 02.\ 2019}
+%\issuedate{12.\ 02.\ 2019}
+\issuedate{01.\ 02.\ 2020}
 \topic{About the lecture}
 
 
@@ -60,18 +61,24 @@ Requirements:
 
 
 
-This year, we try whether handing it in via 
+As the previous two times, we use
 \begin{quote}
-  \textsl{git}   
+  \textbf{git}   
 \end{quote}
-is a good way. In previous years it was mostly via email, 2017 via devilry,
-but since it's about a a piece of software, this year we use git (as 2018).
+to hand in the obligs. 
+
+In ealier years it was mostly via email, 2017 via devilry, but since it's
+about a a piece of software, something like git is more
+appropriate. Likewise: oblig 2 will extend your oblig 1, so the code will
+evolved. Finally, we strongly encourage working in groups, so git allows to
+share things.
+
 I assume that most are in principle familiar with \texttt{git}, if not, ask
 me (or bring yourself up to speed otherwise).  I suggest, that we use the
 uio-internal git server\footnote{Actually, it's the UiO enterprise github
   server. Github is just one particular ``web-interface'' on top of git and
-  there are also alternatives on the market, but for uniformity, let's just
-  stick to the UiO github server.}
+  there are also alternatives on the market, but for uniformity, you may as
+  stick to the UiO git / github server.}
 
 \begin{quote}
   \url{github.uio.no}
@@ -82,7 +89,7 @@ In order to hand-in via git, each group has to do the following steps.
 
 \begin{enumerate}
 \item everyone: if not already: create yourself a account at
-  \url{github.uio.no}. You UiO login allows you to do that. 
+  \url{github.uio.no}. Your UiO login allows you to do that.
 \item per group: \emph{create} a new \emph{project}.  If your are in group
   number $n$,\footnote{The project names need to be different so that, for
     correction, one can distinguish them by their ``name'' (not that all
@@ -92,15 +99,15 @@ In order to hand-in via git, each group has to do the following steps.
   \end{quote}
   The ``parentheses'' \texttt{<} and \texttt{>} are \emph{not} part of the
   name! If the group contains more than one person, the creator has to add
-  the partner as \emph{collaborator} 
-\item Assuming that the project is ``private'': add me as collaborator
-  (login \texttt{msteffen}). I don't need to contibute as collaborator, but
-  I need access.
+  the partner as \emph{collaborator.} 
+\item If your project is ``private'': add me as collaborator (login
+  \texttt{msteffen}). I don't need to contibute as collaborator, but I need
+  access.
 \item Send me an \emph{email} with the link, mentioning the names (and
   login) of the members of the group as confirmation. That needs to be done
-  at latest \emph{before the deadline}.The names of the member of the group should als
-  feature \emph{prominently} on the top-level of the repository, as in the
-  top-level \texttt{Readme}.
+  \emph{before the deadline}.The names of the member of the group should
+  alsp feature \emph{prominently} on the top-level of the repository, as in
+  the top-level \texttt{Readme}.
 \end{enumerate}
 
 \subsection{What to include into a solution}
@@ -110,11 +117,33 @@ In order to hand-in via git, each group has to do the following steps.
 \begin{itemize}
 \item A top-level \emph{Readme-file} containing
   \begin{itemize}
-  \item  containing names and emails of the authors
+  \item containing names and emails of the authors
   \item instructions how to build the compiler and how to run it.
+  \end{itemize}
+  The top-level Readme should describe in a consise manner instructions for
+  building, installation, running, and testing your compiler in a manner
+  useful for an interested \emph{user}. The target audience is a
+  master-level computer science student or someone how is not afraid to
+  git-clone a repository (or download a jar-file or similar) and following
+  a few clearly installation steps. The user is not expected to figure out
+  himself or herself how to install, run, and test it. The user is also
+  /not/ expected to be a student of this compiler course and familiar with
+  the specification of the compila-language and the oblig-documentation.
+
+  It might be nice to use some \emph{markdown} format (like a
+  \texttt{Readme.md}. It's some form of poor-man's markup like HTML, and is
+  typically rendered nicely by browsers. The current top-level
+  Compila-Readme is not in the \texttt{md} format, but \texttt{Readme.org}
+  (which is a similar format and also rendered nicely by github).
+  
+\item Additional information should be provided, which is not relevant for
+  that mentioned ``interested user'', but that's insider information
+  relevant for the oblig and the technical realization. This it's better
+  not in the top level readme but at a different place or file. 
+  \begin{itemize}
   \item test-output for running the compiler on \texttt{compila.cmp} as
     input
-  \item of course, all code needed to run your package. That includes
+  \item of course, the /code/ needed to run your package. That includes
     \begin{itemize}
     \item \textsl{JFlex}-code for the scanner
     \item \textsl{CUP}-cpde for the 2 variants of the syntax
@@ -124,8 +153,6 @@ In order to hand-in via git, each group has to do the following steps.
         \texttt{build.xml}-file.}
     \end{itemize}
   \end{itemize}
-
-
 \end{itemize}
 
 
@@ -200,7 +227,7 @@ If, for some reason, you plan to deviate from the suggested tools, you
 The overal task is to 
 
 \begin{quote}
-  implement a parser for the \textsl{Compila 19} language.
+  implement a parser for the \textsl{Compila 20} language.
 \end{quote}
 The language specification is given in a separate document. Oblig 1 is
 concerned with checking \emph{syntactic correctness}, which means, not all
@@ -246,7 +273,7 @@ possible output. The two files are called
 
 Note: the two files are meant as \emph{inspiration.} Each year the syntax
 of \textsl{compila} slightly changes (wrt. keywords, associativity etc). So
-the syntax is 100\% in accordance with the 2019 version (but pretty
+the syntax is 100\% in accordance with the 2020 version (but pretty
 comparable).
 
 The one that should be used for this task (AST-printing) is the following
@@ -312,9 +339,9 @@ AST, plain \emph{checking} is sufficient.
 As mentioned, \textsl{JFLex} is the tool of choice for lexical analysis. It
 delivers a token to the parser via the method \texttt{next\_token()}.  
 
-As far the the ``theoretical'' task concerning \textsl{compila 19} is
+As far the the ``theoretical'' task concerning \textsl{compila 20} is
 concerned, the lexer is responsible for ignoring comment, white-space etc,
-find keywords and the like. 
+find keywords and the like.
 
 Besides that, one has to make the parser and the lexer ``work together''
 hand in hand. Information about that can be found in the corresponding
@@ -331,7 +358,7 @@ or other objects from the lexer to the parser.
 
 Error handling can be done simple: When hitting an error, parsing should
 stop (as opposed to try to continue and give back an avalanche of
-subsequent errors). Some meaningfull error message (at least wrt. which
+subsequent errors). Some meaningful error message (at least wrt. which
 syntactic class caused the error) would be welcome, as opposed to a plain
 ``sorry, bad program''. It's not required to give back line numbers
 referrring to the original source code or positions in the original
