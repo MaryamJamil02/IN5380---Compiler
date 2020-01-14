@@ -63,7 +63,9 @@
   - I don't like the call-statements: it's unclear
     how to give back return values
 
+
 * Things to repair
+
 
 ** DONE integrate to org <2019-02-07 Thu 09:31>
    CLOSED: [2019-02-07 Thu 09:40]
@@ -117,7 +119,12 @@ begin and end has been switched out by brackets.
 
 ** This to do (compila)
 
-*** TODO Repair the thing from the test file (by group06)
+*** CANCELLED Repair the thing from the test file (by group06)
+    CLOSED: [2020-01-14 Tue 10:18]
+    :LOGBOOK:
+    - CLOSING NOTE [2020-01-14 Tue 10:18] \\
+      Outdated
+    :END:
 
     #+begin_example
     
