@@ -29,15 +29,14 @@ slides are kept in the Vortex system on the course's web-page.
 
 - [[./doc]]: generated documentation
     - language specification
-    - info about the bytecode interpreter
-    - oblig-specific information 
+    - byte code interpreter
+    - instructions about the obligs
 
 - [[./src]]: sources (including sources of the documentation).
-  - language specification
-  - byte code interpreter
-  - instructions about the obligs
+
 - [[./material]]: extra material, for example a test expression evaluator and parser
       (a simple working example of making use of lex and yacc)
+
 - [[./lib]]: lexer and yaccer tools (jlex + cup), as jar files
 
 - [[./build.xml]]: simple /ant/ build file. Type ~ant~ in a command shell to see current
@@ -46,7 +45,7 @@ slides are kept in the Vortex system on the course's web-page.
 	      to do, like type checking etc.) Alternative ``build'' methods are allowed as well
 	      if preferred (make, maven) as long as they are commonly available.
 
--  [[./previoussemesters]]: not relevant, for ``historical'' purposes only
+-  [[./previoussemesters]]: for ``historical'' purposes only
       
 
 - ([[./build]]): generated (if one uses the .build.xml)
