@@ -1,4 +1,4 @@
 program main 
 begin
-    var x : int  /*  /* no nesting of comments */  */
+    var x : int  (*  (* no nesting of comments *)  *)
 end 

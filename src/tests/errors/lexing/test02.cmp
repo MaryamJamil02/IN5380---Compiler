@@ -1,4 +1,4 @@
 program main 
 begin
-    var x : int_  /* wrong id */
+    var x : int_  /* wrong identifier */
 end 

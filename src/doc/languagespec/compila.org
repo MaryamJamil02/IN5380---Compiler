@@ -8,7 +8,7 @@
 #+TEXINFO_DIR_CATEGORY:
 #+TEXINFO_DIR_TITLE:
 #+TEXINFO_DIR_DESC:
-#+TEXINFO_PRINTED_TITLE: Compila 20
+#+TEXINFO_PRINTED_TITLE: Compila 20 (version for Oblig1)
 #+DESCRIPTION: Compila 20 language specification
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="compilastyle.css" />
 #+HTML_HEAD_EXTRA: <h1> Compila 20 language specification</h1>
@@ -200,20 +200,20 @@ passing.
 The precedence of the following constructs is ordered as follows (from
 lowest precedence to the highest):
 
-1. ~||~
-2. ~&&~
+1. ~\/~
+2. ~/\~
 3. ~not~
 4. All relational symbols
 5. ~+~ and ~-~
 6. ~*~ and ~/~
 7. ~^~ (exponentiation)
-8. ~.~ (``dot'', to access fields of a record (``object''))
+8. ~.~ (``dot'', to access fields of a record)
 
 #+INDEX: precedence
 
 ** Associativity 
 
-- The binary operations ~||~, ~&&~, ~+~, ~-~, ~*~, and ~.~ are
+- The binary operations ~/\~, ~/\~, ~+~, ~-~, ~*~, and ~.~ are
   /left-associative/, but exponentiation ~^~ is right-associative.
 
 - Relation symbols are non-associative. That means that for instance ~a < b + c < d~ is illegal.

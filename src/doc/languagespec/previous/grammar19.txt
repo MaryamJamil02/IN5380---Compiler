@@ -2,7 +2,7 @@ PROGRAM            -> "program" NAME "begin" [ DECL {";" DECL}]  "end"
 
 DECL               -> VAR_DECL | PROC_DECL | REC_DECL
 
-VAR_DECL           -> "var" NAME ":" TYPE { := EXP } |  "var" NAME " := EXP 
+VAR_DECL           -> "var" NAME ":" TYPE
 
 PROC_DECL          -> "proc" NAME 
                       "(" [ PARAMFIELD_DECL { "," PARAMFIELD_DECL } ] ")"
@@ -35,15 +35,14 @@ DEREF_VAR          -> "deref" "(" VAR ")" | "deref" "(" DEREF_VAR ")"
 
 VAR                -> NAME | EXP "." NAME
 
-LOG_OP             -> "/\" | "\/"
+LOG_OP             -> "&&" | "||"
 
 REL_OP             -> "<" | "<=" | ">" | ">=" | "=" | "<>"
 
 ARIT_OP            -> "+" | "-" | "*" | "/" | "^"
 
-LITERAL            -> FLOAT_LITERAL | INT_LITERAL | STRING_LITERAL | BOOL_LITERAL | "null"
-
-BOOL_LITERAL       ->  "true" | "false" 
+LITERAL            -> FLOAT_LITERAL | INT_LITERAL | STRING_LITERAL
+                    | "true" | "false" | "null"
 
 STMT               -> ASSIGN_STMT
                     | IF_STMT
