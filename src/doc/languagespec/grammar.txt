@@ -20,7 +20,7 @@ PARAMFIELD_DECL     -> NAME ":" TYPE
 EXP                -> EXP LOG_OP EXP
                     | "not" EXP
                     | EXP REL_OP EXP
-                    | EXP ARIT_OP EXP
+                    | EXP ARITH_OP EXP
                     | LITERAL
                     | CALL_STMT
                     | "new" NAME
@@ -39,7 +39,7 @@ LOG_OP             -> "/\" | "\/"
 
 REL_OP             -> "<" | "<=" | ">" | ">=" | "=" | "<>"
 
-ARIT_OP            -> "+" | "-" | "*" | "/" | "^"
+ARITH_OP           -> "+" | "-" | "*" | "/" | "^"
 
 LITERAL            -> FLOAT_LITERAL | INT_LITERAL 
                     | STRING_LITERAL | BOOL_LITERAL | "null"

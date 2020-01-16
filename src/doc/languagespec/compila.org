@@ -99,10 +99,10 @@ Compila supports /single line/ and /multi-line/ comments.
 1. Single-line comments start with ~//~ and the comment extends until the
    end of that line (as in, for instance, Java, C++, and most modern
    C-dialects).
-2. Multi-line comments start with ~/*~ and end with ~*/~.
+2. Multi-line comments start with ~(*~ and end with ~*)~.
 
-The latter form cannot be nested. The first one is allowed to be ``nested'' (in
-the sense that a commented out line can contain another ~//~ or one of the
+The latter form cannot be nested. The first one is allowed to be ``nested''
+(in the sense that a commented out line can contain another ~//~ or the
 multi-line comment delimiters, which are then ignored).
 
 * Data types
@@ -213,7 +213,7 @@ lowest precedence to the highest):
 
 ** Associativity 
 
-- The binary operations ~/\~, ~/\~, ~+~, ~-~, ~*~, and ~.~ are
+- The binary operations ~\/~, ~/\~, ~+~, ~-~, ~*~, and ~.~ are
   /left-associative/, but exponentiation ~^~ is right-associative.
 
 - Relation symbols are non-associative. That means that for instance ~a < b + c < d~ is illegal.
