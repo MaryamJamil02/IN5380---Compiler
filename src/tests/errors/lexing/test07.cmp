@@ -2,6 +2,6 @@ program main
 begin
     procedure x() 
     begin 
-       procedure := 1  (* keyword != identifier *)
+       beginx := 1  (* keyword != identifier *)
     end 
 end 

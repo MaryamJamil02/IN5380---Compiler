@@ -1,7 +1,6 @@
 * Changes from 2019 -> 2020
 
   - multi-line comments ~(*~ and ~*)~ now.
-  - and and or written differently
   - introduce "BOOL_LITERALS" in the grammar (no real change)
   - variable declarations more complex: 
         - with initialization 
