@@ -7,6 +7,9 @@
         - with initialization 
         - without type (may make type checking more complex)
 
+  - in process declaration: don't make "in" mandatory
+  - proc -> procedure
+
 * Changes from 2018 -> 2019 
 
 
