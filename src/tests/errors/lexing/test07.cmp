@@ -1,7 +1,4 @@
 program main 
 begin
-    procedure x() 
-    begin 
-       beginx := 1  (* keyword != identifier *)
-    end 
+       var begin := 1  (* keyword != identifier *)
 end 
