@@ -9,8 +9,6 @@ PROC_DECL          -> "procedure" NAME
                       [ ":" TYPE ]
                       "begin" [[DECL{";" DECL}] "in"] STMT_LIST "end"
 
-
-
 STMT_LIST          -> [STMT {";" STMT}]
 REC_DECL           -> "struct" NAME "{" [ PARAMFIELD_DECL 
                                           {";" PARAMFIELD_DECL }]  "}"
@@ -28,7 +26,6 @@ EXP                -> EXP LOG_OP EXP
                     | REF_VAR
                     | DEREF_VAR
                     | "(" EXP ")"
-
 
 REF_VAR            -> "ref" "(" VAR ")"
 DEREF_VAR          -> "deref" "(" VAR ")" | "deref" "(" DEREF_VAR ")"

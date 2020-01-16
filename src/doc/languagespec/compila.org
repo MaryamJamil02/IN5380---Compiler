@@ -8,7 +8,7 @@
 #+TEXINFO_DIR_CATEGORY:
 #+TEXINFO_DIR_TITLE:
 #+TEXINFO_DIR_DESC:
-#+TEXINFO_PRINTED_TITLE: Compila 20 (version for Oblig1)
+#+TEXINFO_PRINTED_TITLE: Compila 20 (version for Oblig 1, not yet activated)
 #+DESCRIPTION: Compila 20 language specification
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="compilastyle.css" />
 #+HTML_HEAD_EXTRA: <h1> Compila 20 language specification</h1>
@@ -24,15 +24,10 @@
 This document specifies and describes the syntax and the static semantics
 of the language /Compila 20/.  The dynamic semantics, i.e., the description
 of the language's behavior when being executed, should be fairly clear even
-without explicit formal specification.
+without explicit formal specification. 
 
 
 
-# ################ text from the first oblig 
-# t least clear enough for the first oblig which concerns itself with the
-# front-end of the compiler, in particular, the syntactic aspects of the
-# language, i.e., the lexer and the parser. Further details concerning the
-# dynamic semantics might follow in connection with the second oblig.
 
 
 **  Notational conventions and syntax of this document
@@ -50,7 +45,7 @@ enumeration of the meta-symbols.
 
 
 
-When writing down the grammar in some variant of EBNF,, ~{...}~ represents
+When writing down the grammar in some variant of EBNF, ~{...}~ represents
 iteration of zero or more times, ~[...]~ represents /optional/
 clauses. Everything else, written as contiguous sequences, are /terminal
 symbols/. Those with only /small/ letters are reserved /keywords/ of the
