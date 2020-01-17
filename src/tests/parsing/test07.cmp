@@ -1,5 +1,5 @@
-program p_p begin   /* Testing expressions */
-  proc a ()
+program p_p begin   (* Testing a couple of expressions *)
+  procedure a ()
   begin 
   in
     x := 5;
