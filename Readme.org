@@ -108,7 +108,7 @@ for the real compiler. Again, inside the compila directory do
 #+begin_src 
  ant   
  ant build
- and run
+ ant run
 #+end_src
 
 
