@@ -1,6 +1,7 @@
 program p begin    
-  proc a (x:int)
+  procedure a (x:int)
   begin 
-   f(4,4,4,5,)    /* should fail. */
+  in
+   f(1,2,3,4,)    (* should fail. *)
   end
 end  
