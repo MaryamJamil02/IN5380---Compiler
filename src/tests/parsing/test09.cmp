@@ -1,0 +1,11 @@
+
+program A_A2 begin  (*  *)
+  procedure a () 
+  begin
+  var x : x := 4;   (* def + decl *)
+  var x : x;        (* decl       *)
+  var x := 4+4      (* def. without decl *)
+  in
+      x := x+1      (* assignment *)
+  end
+end  

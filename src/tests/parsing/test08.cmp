@@ -1,5 +1,5 @@
-program p begin   /* testing expressions */
-  proc a ()
+program p begin   (* testing expressions *)
+  procedure a ()
   begin
   in
     deref(x)        := 01.0;
