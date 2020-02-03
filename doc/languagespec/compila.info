@@ -53,6 +53,7 @@ Static semantics / typing / evaluation.
 * Binding of names::
 * Typing of compound constructs::
 * Types and implicit type conversion::
+* Type inference::
 * Short-circuit evaluation::
 
 
@@ -63,7 +64,7 @@ File: compila.info,  Node: Introduction,  Next: Lexical aspects,  Prev: Top,  Up
 **************
 
 This document specifies and describes the syntax and the static
-semantics of the language _Compila 19_.  The dynamic semantics, i.e.,
+semantics of the language _Compila 20_.  The dynamic semantics, i.e.,
 the description of the language’s behavior when being executed, should
 be fairly clear even without explicit formal specification.
 
@@ -85,7 +86,7 @@ non-terminals.  As _meta-symbols_ for the grammar, we use the following:
    Commas in the previous line are used as “meta-meta symbols” in the
 enumeration of the meta-symbols.
 
-   When writing down the grammar in some variant of EBNF,, ‘{...}’
+   When writing down the grammar in some variant of EBNF, ‘{...}’
 represents iteration of zero or more times, ‘[...]’ represents
 _optional_ clauses.  Everything else, written as contiguous sequences,
 are _terminal symbols_.  Those with only _small_ letters are reserved
@@ -152,12 +153,11 @@ Compila supports _single line_ and _multi-line_ comments.
   1. Single-line comments start with ‘//’ and the comment extends until
      the end of that line (as in, for instance, Java, C++, and most
      modern C-dialects).
-  2. Multi-line comments start with ‘/*’ and end with ‘*/’.
+  2. Multi-line comments start with ‘(*’ and end with ‘*)’.
 
    The latter form cannot be nested.  The first one is allowed to be
 “nested” (in the sense that a commented out line can contain another
-‘//’ or one of the multi-line comment delimiters, which are then
-ignored).
+‘//’ or the multi-line comment delimiters, which are then ignored).
 
 
 File: compila.info,  Node: Data types,  Next: Syntax,  Prev: Lexical aspects,  Up: Top
@@ -268,25 +268,24 @@ For precedences and associativity of various constructs, see later.
 
      DECL               -> VAR_DECL | PROC_DECL | REC_DECL
 
-     VAR_DECL           -> "var" NAME ":" TYPE
+     VAR_DECL           -> "var" NAME ":" TYPE [ ":=" EXP ] |  "var" NAME ":="  EXP
 
-     PROC_DECL          -> "proc" NAME
+     PROC_DECL          -> "procedure" NAME
                            "(" [ PARAMFIELD_DECL { "," PARAMFIELD_DECL } ] ")"
                            [ ":" TYPE ]
-                           "begin" [DECL{";" DECL}] "in" STMT_LIST "end"
-
+                           "begin" [[DECL{";" DECL}] "in"] STMT_LIST "end"
+     REC_DECL           -> "struct" NAME "{" [ PARAMFIELD_DECL
+                                               {";" PARAMFIELD_DECL }]  "}"
+     PARAMFIELD_DECL     -> NAME ":" TYPE
 
 
      STMT_LIST          -> [STMT {";" STMT}]
-     REC_DECL           -> "struct" NAME "{" [ PARAMFIELD_DECL
-                                               {";" PARAMFIELD_DECL }]  "}"
 
-     PARAMFIELD_DECL     -> NAME ":" TYPE
 
      EXP                -> EXP LOG_OP EXP
                          | "not" EXP
                          | EXP REL_OP EXP
-                         | EXP ARIT_OP EXP
+                         | EXP ARITH_OP EXP
                          | LITERAL
                          | CALL_STMT
                          | "new" NAME
@@ -294,7 +293,6 @@ For precedences and associativity of various constructs, see later.
                          | REF_VAR
                          | DEREF_VAR
                          | "(" EXP ")"
-
 
      REF_VAR            -> "ref" "(" VAR ")"
      DEREF_VAR          -> "deref" "(" VAR ")" | "deref" "(" DEREF_VAR ")"
@@ -305,10 +303,12 @@ For precedences and associativity of various constructs, see later.
 
      REL_OP             -> "<" | "<=" | ">" | ">=" | "=" | "<>"
 
-     ARIT_OP            -> "+" | "-" | "*" | "/" | "^"
+     ARITH_OP           -> "+" | "-" | "*" | "/" | "^"
 
-     LITERAL            -> FLOAT_LITERAL | INT_LITERAL | STRING_LITERAL
-                         | "true" | "false" | "null"
+     LITERAL            -> FLOAT_LITERAL | INT_LITERAL
+                         | STRING_LITERAL | BOOL_LITERAL | "null"
+
+     BOOL_LITERAL       ->  "true" | "false"
 
      STMT               -> ASSIGN_STMT
                          | IF_STMT
@@ -345,7 +345,7 @@ lowest precedence to the highest):
   5. ‘+’ and ‘-’
   6. ‘*’ and ‘/’
   7. ‘^’ (exponentiation)
-  8. ‘.’ (“dot”, to access fields of a record (“object”))
+  8. ‘.’ (“dot”, to access fields of a record)
 
 
 File: compila.info,  Node: Associativity,  Prev: Precedence,  Up: Syntax
@@ -411,7 +411,7 @@ File: compila.info,  Node: Small example for call-by-reference,  Prev: Call-by-v
 
      program swapexample
        begin
-         proc swap (a :  ref(int), b : ref(int))
+         procedure swap (a :  ref(int), b : ref(int))
          begin
            var tmp : int
          in
@@ -419,7 +419,7 @@ File: compila.info,  Node: Small example for call-by-reference,  Prev: Call-by-v
            deref(a) := deref(b);
            deref(b) := tmp
          end;
-         proc main ( )
+         procedure main ( )
            begin
              var x : int;
              var y : int;
@@ -461,13 +461,12 @@ File: compila.info,  Node: Static semantics / typing / evaluation,  Next: Proced
 7 Static semantics / typing / evaluation.
 *****************************************
 
-This part is not needed for Oblig 1.
-
 * Menu:
 
 * Binding of names::
 * Typing of compound constructs::
 * Types and implicit type conversion::
+* Type inference::
 * Short-circuit evaluation::
 
 
@@ -520,7 +519,7 @@ File: compila.info,  Node: Typing of compound constructs,  Next: Types and impli
           record.
 
 
-File: compila.info,  Node: Types and implicit type conversion,  Next: Short-circuit evaluation,  Prev: Typing of compound constructs,  Up: Static semantics / typing / evaluation
+File: compila.info,  Node: Types and implicit type conversion,  Next: Type inference,  Prev: Typing of compound constructs,  Up: Static semantics / typing / evaluation
 
 7.3 Types and implicit type conversion
 ======================================
@@ -534,9 +533,24 @@ _always_ considered done with floating point arithmetic and the result
 is of type ‘float’.
 
 
-File: compila.info,  Node: Short-circuit evaluation,  Prev: Types and implicit type conversion,  Up: Static semantics / typing / evaluation
+File: compila.info,  Node: Type inference,  Next: Short-circuit evaluation,  Prev: Types and implicit type conversion,  Up: Static semantics / typing / evaluation
 
-7.4 Short-circuit evaluation
+7.4 Type inference
+==================
+
+The language requires a tiny bit of type inference (so small that one
+might not even call type inference).  _Variables_ need to be declared,
+using the keyword ‘var’.  In particular, variables must have a type at
+the point when they are declared.  The declaration can be combined with
+a definition of an initial value of introduced variable (using the
+syntax like ‘var x : int := 42’).  When provided with an initial
+expression, the type can be omitted (using a syntax like ‘var x := 42’),
+in which case an appropriate type needs to be inferred.
+
+
+File: compila.info,  Node: Short-circuit evaluation,  Prev: Type inference,  Up: Static semantics / typing / evaluation
+
+7.5 Short-circuit evaluation
 ============================
 
 The logical operators ‘&&’ and ‘||’ use so-called _short-circuit
@@ -597,32 +611,33 @@ File: compila.info,  Node: Further conditions,  Prev: Procedures,  Up: Top
 
 Tag Table:
 Node: Top142
-Node: Introduction974
-Node: Notational conventions and syntax of this document1427
-Node: Lexical aspects2734
-Node: Identifiers and literals2919
-Node: Comments4054
-Node: Data types4694
-Node: Built in data types4872
-Node: Records5487
-Ref: Records-Footnote-16295
-Node: References6352
-Node: Syntax7183
-Node: Grammar7349
-Node: Precedence9761
-Node: Associativity10213
-Node: Parameter passing10706
-Node: Call-by-value11389
-Ref: Call-by-value-Footnote-111777
-Node: Small example for call-by-reference12091
-Node: Standard library12828
-Node: Static semantics / typing / evaluation13941
-Node: Binding of names14320
-Node: Typing of compound constructs15527
-Node: Types and implicit type conversion16845
-Node: Short-circuit evaluation17558
-Node: Procedures18018
-Node: Further conditions19801
+Node: Introduction993
+Node: Notational conventions and syntax of this document1446
+Node: Lexical aspects2752
+Node: Identifiers and literals2937
+Node: Comments4072
+Node: Data types4705
+Node: Built in data types4883
+Node: Records5498
+Ref: Records-Footnote-16306
+Node: References6363
+Node: Syntax7194
+Node: Grammar7360
+Node: Precedence9857
+Node: Associativity10294
+Node: Parameter passing10787
+Node: Call-by-value11470
+Ref: Call-by-value-Footnote-111858
+Node: Small example for call-by-reference12172
+Node: Standard library12919
+Node: Static semantics / typing / evaluation14032
+Node: Binding of names14392
+Node: Typing of compound constructs15599
+Node: Types and implicit type conversion16917
+Node: Type inference17620
+Node: Short-circuit evaluation18383
+Node: Procedures18823
+Node: Further conditions20606
 
 End Tag Table
 
