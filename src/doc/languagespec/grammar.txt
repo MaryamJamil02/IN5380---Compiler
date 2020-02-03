@@ -2,7 +2,7 @@ PROGRAM            -> "program" NAME "begin" [ DECL {";" DECL}]  "end"
 
 DECL               -> VAR_DECL | PROC_DECL | REC_DECL
 
-VAR_DECL           -> "var" NAME ":" TYPE [ := EXP ] |  "var" NAME " := EXP 
+VAR_DECL           -> "var" NAME ":" TYPE [ ":=" EXP ] |  "var" NAME ":="  EXP 
 
 PROC_DECL          -> "procedure" NAME 
                       "(" [ PARAMFIELD_DECL { "," PARAMFIELD_DECL } ] ")"

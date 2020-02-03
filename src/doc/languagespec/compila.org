@@ -8,7 +8,7 @@
 #+TEXINFO_DIR_CATEGORY:
 #+TEXINFO_DIR_TITLE:
 #+TEXINFO_DIR_DESC:
-#+TEXINFO_PRINTED_TITLE: Compila 20 (version for Oblig 1, not yet activated)
+#+TEXINFO_PRINTED_TITLE: Compila 20 
 #+DESCRIPTION: Compila 20 language specification
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="compilastyle.css" />
 #+HTML_HEAD_EXTRA: <h1> Compila 20 language specification</h1>
@@ -195,8 +195,8 @@ passing.
 The precedence of the following constructs is ordered as follows (from
 lowest precedence to the highest):
 
-1. ~\/~
-2. ~/\~
+1. ~||~
+2. ~&&~
 3. ~not~
 4. All relational symbols
 5. ~+~ and ~-~
@@ -208,7 +208,7 @@ lowest precedence to the highest):
 
 ** Associativity 
 
-- The binary operations ~\/~, ~/\~, ~+~, ~-~, ~*~, and ~.~ are
+- The binary operations ~||~, ~&&~, ~+~, ~-~, ~*~, and ~.~ are
   /left-associative/, but exponentiation ~^~ is right-associative.
 
 - Relation symbols are non-associative. That means that for instance ~a < b + c < d~ is illegal.
@@ -293,10 +293,6 @@ input (``stdin''). All writing, i.e., output, is to standard output
 
 * Static semantics / typing / evaluation.
 
-#+BEGIN_CENTER
-This part is not needed for Oblig 1.
-#+END_CENTER
-
 ** Binding of names
 The using occurence of an identifier (without a preceding dot) is bound in
 the common way to a /declaration/. This association of the use of an
@@ -338,7 +334,7 @@ that record,
     selection expression (if it type checks) is the type as declared for
     the field of the record.
 
-
+    
 ** Types and implicit type conversion
 
 It is allowed to assign an expression of type ~int~ to a variable of type
@@ -347,6 +343,18 @@ operator. If an /arithmetic/ expression has at least one operand of type
 ~float~, the operation is evaluated using floating point arithmetic and the
 result is of type ~float~. Exponentiation is /always/ considered done with
 floating point arithmetic and the result is of type ~float~.
+
+
+** Type inference
+
+The language requires a tiny bit of type inference (so small that one might
+not even call type inference).  /Variables/ need to be declared, using the
+keyword ~var~. In particular, variables must have a type at the point when
+they are declared. The declaration can be combined with a definition of an
+initial value of introduced variable (using the syntax like ~var x : int :=
+42~). When provided with an initial expression, the type can be omitted
+(using a syntax like ~var x := 42~), in which case an appropriate type
+needs to be inferred.
 
 ** Short-circuit evaluation 
 
