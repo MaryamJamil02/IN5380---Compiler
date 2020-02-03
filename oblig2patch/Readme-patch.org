@@ -1,4 +1,14 @@
 
+
+* 2020
+
+
+I don't make much of a patch yet. I made the subdirectories visible
+immediate. 
+
+* 2019
+
+
 This is information about the ``patch'' for the oblig 2.
 
 
