@@ -1,8 +1,8 @@
-* Oblig 1 
+* Oblig 1  (Oblig 2 later)
 
 
 
-** Compila 20
+** Compila 20 
 
 *** Oblig 1                                                         :B_frame:
     :PROPERTIES:
@@ -295,7 +295,7 @@ grammar in BNF with *action* code
 
 
 #+begin_export latex 
- \includegraphics[width=0.66\textwidth]{figures/snaps/directorystruct}
+ \includegraphics[width=0.66\textwidth]{figures/snaps/directorystruct-o1}
 #+end_export
 
 
@@ -347,7 +347,7 @@ grammar in BNF with *action* code
 
  
 
- *Friday 15. 03. 2019, 23:59*
+ *Friday 06. 03. 2019, 23:59*
 
 
 **** Rest                                                            :ignore:
@@ -447,7 +447,7 @@ If problems, *ask in time*  (*NOT* Friday at the deadline)
 
 
 
-* Oblig2
+* Oblig2                                                            :ARCHIVE:
 
 
 *** Goal                                                            :B_frame:
