@@ -2,7 +2,7 @@
 
 
 
-** Compila 19
+** Compila 20
 
 *** Oblig 1                                                         :B_frame:
     :PROPERTIES:
@@ -29,18 +29,21 @@
      :END:
 
 
-Determine if programs written in /Compila 19/ are syntactically correct: 
+Determine if programs written in /Compila 20/ are syntactically correct: 
 
 - scanner
 - parser
 
 
-**** Rest                                                            :ignore:
+**** Rest                                            :B_ignoreheading:ignore:
+     :PROPERTIES:
+     :BEAMER_env: ignoreheading
+     :END:
 
 
 
 - first part of a compiler, oblig 2 will add to it
-- language spec provided separatly 
+- language spec provided separately 
 
 
 *** Learning outcomes                                               :B_frame:
@@ -74,7 +77,7 @@ Determine if programs written in /Compila 19/ are syntactically correct:
 
 #+begin_export latex 
 
-\lstinputlisting[basicstyle=\scriptsize,emph={begin,end,in, proc,program,var,return,struct}]{code/myprogram.cmp}
+\lstinputlisting[basicstyle=\scriptsize,emph={begin,end,in, procedur,program,var,return,struct}]{code/myprogram.cmp}
 
 #+end_export
 
@@ -115,7 +118,7 @@ Determine if programs written in /Compila 19/ are syntactically correct:
 
 
 
-*** Grammar (2): declarations                                       :B_frame:
+*** Grammar (2): expressions, statements, etc.                      :B_frame:
     :PROPERTIES:
     :BEAMER_env: frame
     :BEAMER_opt: plain
@@ -456,7 +459,7 @@ If problems, *ask in time*  (*NOT* Friday at the deadline)
     - *typing* is concerned (``static semantics'')
     - other coditions (no duplicate declaration etc)
 
-2. *code generation* for ~compila19~ (ish) programs
+2. *code generation* for ~compila20~ (ish) programs
 
 
 
@@ -522,7 +525,7 @@ If problems, *ask in time*  (*NOT* Friday at the deadline)
     - allowed to make *changes* or adaptations if advantagous.
 
 
-*** Another glance at compila19                                     :B_frame:
+*** Another glance at compila20                                     :B_frame:
     :PROPERTIES:
     :BEAMER_env: frame
     :END:
@@ -533,7 +536,7 @@ If problems, *ask in time*  (*NOT* Friday at the deadline)
 #+end_export
 
 
-NB: 2019: structs, not classes 
+NB: 2020: structs, not classes 
 
 
 *** Type checking for conditionals                                  :B_frame:
@@ -611,13 +614,13 @@ class Assignment extends Statement {
 
 
 - interpreter and byte code library somewhat *limited*
-   - cannot express full compila 19
+   - cannot express full compila 20
    - no block structure
    - no reference types
 
 
 - your delivery should support generating correct bytecode
-  for the ~compila~ 19 source code file ~runme.cmp~
+  for the ~compila~ 20 source code file ~runme.cmp~
 
 
 
@@ -725,7 +728,7 @@ codeFile.updateProcedure(main);
      :BEAMER_env: alertblock
      :END:
 
-      12th May  2019
+      12th May  20[19
 
 
 

@@ -1,4 +1,4 @@
-program MyProgram
+program MyProgram  // 
 begin
    struct complex {    // record data type, but
      re: float;        // no subtyping, polymorphism...
@@ -6,7 +6,7 @@ begin
    }
 end;
 
-proc add (a: complex, b: complex) : complex
+procedure add (a: complex, b: complex) : complex
 begin
    var retval : complex;
 in
@@ -15,7 +15,7 @@ in
    retval.im := a.im + b.im;
    return retval
 end;
-proc main()            // execution start here
+procedure main()            // execution start here
 begin
   var c1: complex;
   var c2: complex:
