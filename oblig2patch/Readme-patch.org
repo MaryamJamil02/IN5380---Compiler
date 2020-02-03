@@ -1,14 +1,15 @@
+
 This is information about the ``patch'' for the oblig 2.
 
 
 Note: as I don't know to which extent the original structure has been
-changed in a given group, this material is NOT intended to work
+changed in a given group, this material is *NOT* intended to work
 ``out-of-the-box'' for everyone (or even the majority).
 
 
-Again, it's meant has (helpful) guidelines of what to to.
+It's meant as /guidelines/ of what to to.
 
-The oblig is specified as the second part of the Compila19 document (type
+The oblig is specified as the second part of the Compila20 document (type
 checking and code generation). Therefore, also the documentation how do
 make use of the given library needs to be consulted. The documentation is
 (in your original project) under ~/doc/:
@@ -52,10 +53,10 @@ in this patch:
 
 
 
-   - ~./build.xml~ : analogous remarks also here. you will perhaps have worked with
-                     ant (as suggested) and may have taken the previous
-                  ~build.xml~ as start point (but perhaps adapted things).  Again: this
-                  one is a suggestion on how to extend your build-file to support the new
+   - ~./build.xml~ : analogous remarks also here. You will perhaps have worked with
+                   ~ant~ (as suggested) and may have taken the previous
+                  ~build.xml~ as starting point (and probably adapted things here and there). 
+                  Again: this one is a suggestion on how to extend your build-file to support the new
                   needs and target. 
 
 		    In particular, code generation and the tests etc. MUST
@@ -66,7 +67,7 @@ in this patch:
     - test files: For the test-compila-files: I include them here in the
       patch, there are files for testing the 
 
-           1) type checker and the static       analysis phase
+           1) type checker and the static analysis phase
 	   2) code generator
 
       For the first ones: they are separated into those which should work
