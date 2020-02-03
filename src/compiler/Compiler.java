@@ -1,3 +1,5 @@
+// Inspiration for oblig1, for oblig2 there will be an update
+
 package compiler;
 
 import java.io.*;
