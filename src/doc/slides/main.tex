@@ -1,4 +1,4 @@
-% Created 2020-02-03 Mon 11:39
+% Created 2020-02-03 Mon 11:56
 % Intended LaTeX compiler: pdflatex
 \documentclass{beamer}
  		 
@@ -32,14 +32,14 @@
 
 \maketitle
 \chapter{Oblig 1  (Oblig 2 later)}
-\label{sec:orgce20fee}
+\label{sec:org0db5621}
 
 
 
 \section{Compila 20}
-\label{sec:org2692080}
+\label{sec:orgfd0c09e}
 
-\begin{frame}[label={sec:orgcf1c707}]{Oblig 1}
+\begin{frame}[label={sec:org5a6b23e}]{Oblig 1}
 \begin{itemize}
 \item material (also for oblig 2) based on previous years, including contributions from Eyvind
 W. Axelsen, Henning Berg, Fredrik Sørensen, and others
@@ -52,7 +52,7 @@ W. Axelsen, Henning Berg, Fredrik Sørensen, and others
 \end{frame}
 
 
-\begin{frame}[label={sec:orga5edd38}]{Goal (of oblig 1)}
+\begin{frame}[label={sec:org2f7b649}]{Goal (of oblig 1)}
 \begin{block}{Parsing}
 Determine if programs written in \emph{Compila 20} are syntactically correct: 
 
@@ -70,7 +70,7 @@ Determine if programs written in \emph{Compila 20} are syntactically correct:
 \end{frame}
 
 
-\begin{frame}[label={sec:org3439ff2}]{Learning outcomes}
+\begin{frame}[label={sec:org88c19bc}]{Learning outcomes}
 \begin{itemize}
 \item using \alert{tools} for parser/scanner generation
 \begin{itemize}
@@ -97,20 +97,20 @@ tools)
 \end{frame}
 
 
-\begin{frame}[label={sec:org45db4f1}]{Compila language at a glance}
+\begin{frame}[label={sec:orgc5002bc}]{Compila language at a glance}
 
 \lstinputlisting[basicstyle=\scriptsize,emph={begin,end,in, procedur,program,var,return,struct}]{code/myprogram.cmp}
 \end{frame}
 
 
 
-\begin{frame}[label={sec:orgcff6f83},plain]{Another glance}
+\begin{frame}[label={sec:orgb09a669},plain]{Another glance}
 
 \lstinputlisting[basicstyle=\scriptsize,emph={begin,end,in, proc,program,var,return,struct}]{code/swap.cmp}
 \end{frame}
 
 
-\begin{frame}[label={sec:org5c1d649},plain]{Grammar (1): declarations}
+\begin{frame}[label={sec:orgfb4a117},plain]{Grammar (1): declarations}
 
 %~/cor/teaching/compila/src/doc/languagespec/
 \lstinputlisting[basicstyle=\scriptsize,lastline=14]{../../doc/languagespec/grammar.txt}
@@ -121,7 +121,7 @@ tools)
 
 
 
-\begin{frame}[label={sec:org55d7885},plain]{Grammar (2): expressions, statements, etc.}
+\begin{frame}[label={sec:org70a529a},plain]{Grammar (2): expressions, statements, etc.}
 
 %~/cor/teaching/compila/src/doc/languagespec/
 \lstinputlisting[basicstyle=\scriptsize,firstline=15,lastline=40]{../../doc/languagespec/grammar.txt}
@@ -130,7 +130,7 @@ tools)
 
 
 
-\begin{frame}[label={sec:orgc028f9f},plain]{Grammar (3): statements and types}
+\begin{frame}[label={sec:orgadb748c},plain]{Grammar (3): statements and types}
 
 %~/cor/teaching/compila/src/doc/languagespec/
 \lstinputlisting[basicstyle=\scriptsize,firstline=41]{../../doc/languagespec/grammar.txt}
@@ -140,9 +140,9 @@ tools)
 
 
 \section{Tools}
-\label{sec:org350f67e}
+\label{sec:orgc43a21d}
 
-\begin{frame}[label={sec:org278bdb1},fragile]{Tools: JFlex}
+\begin{frame}[label={sec:org73f278f},fragile]{Tools: JFlex}
  \begin{itemize}
 \item scanner generator (or lexer generator) tool
 
@@ -164,13 +164,13 @@ tools)
 \end{frame}
 
 
-\begin{frame}[label={sec:org8b552ea}]{Sample lex code}
+\begin{frame}[label={sec:orgb933224}]{Sample lex code}
 \includegraphics[width=\textwidth]{figures/snaps/lexcode}
 \end{frame}
 
 
 
-\begin{frame}[label={sec:org42c8079},fragile]{CUP: Construction of useful parsers (for Java)}
+\begin{frame}[label={sec:org37c4953},fragile]{CUP: Construction of useful parsers (for Java)}
  \begin{itemize}
 \item a tool to easily (ymmv) generate \emph{parsers}
 
@@ -196,13 +196,13 @@ var_decl ::= VAR ID:name COLON type:vtype
 \end{frame}
 
 
-\begin{frame}[label={sec:org9edaf5f}]{Sample CUP code}
+\begin{frame}[label={sec:org1a30507}]{Sample CUP code}
 \includegraphics[width=\textwidth]{figures/snaps/cupcode}
 \end{frame}
 
 
 
-\begin{frame}[label={sec:org1b895eb},fragile]{Build tool: ant}
+\begin{frame}[label={sec:orgb4716a3},fragile]{Build tool: ant}
 
  \begin{center}
  \includegraphics[width=0.2\textwidth]{figures/snaps/antlogo}
@@ -230,7 +230,7 @@ var_decl ::= VAR ID:name COLON type:vtype
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org55153a5}]{AST data structure}
+\begin{frame}[label={sec:org669ad4d}]{AST data structure}
 
 \begin{center}
  \includegraphics[width=0.8\textwidth]{figures/snaps/astclasses}
@@ -240,7 +240,7 @@ var_decl ::= VAR ID:name COLON type:vtype
 
 
 
-\begin{frame}[label={sec:org97fa0cf},fragile]{Overview over the directory + first steps}
+\begin{frame}[label={sec:org492d559},fragile]{Overview over the directory + first steps}
  \begin{itemize}
 \item see the Readme at/from the \texttt{github.uio.no}
 \end{itemize}
@@ -251,7 +251,7 @@ var_decl ::= VAR ID:name COLON type:vtype
 
 
 
-\begin{frame}[label={sec:org2ccbe75}]{Building: putting it together}
+\begin{frame}[label={sec:org2dc45b2}]{Building: putting it together}
 
 \begin{center}
  \includegraphics[width=0.8\textwidth]{figures/snaps/buildprocess}
@@ -259,11 +259,11 @@ var_decl ::= VAR ID:name COLON type:vtype
 \end{frame}
 
 \section{Official}
-\label{sec:org825f952}
+\label{sec:org3a059bf}
 
-\begin{frame}[label={sec:orgab10eed},fragile]{Deadline}
+\begin{frame}[label={sec:org7717194},fragile]{Deadline}
  \begin{alertblock}{Deadline}
-\alert{Friday 15. 03. 2019, 23:59}
+\alert{Friday 06. 03. 2020, 23:59}
 \end{alertblock}
 
 
@@ -280,7 +280,7 @@ if sick etc
 \end{frame}
 
 
-\begin{frame}[label={sec:orgf08d61e},fragile]{Deliverables}
+\begin{frame}[label={sec:orgb0871a0},fragile]{Deliverables}
  \begin{itemize}
 \item see also the ``handout''
 \end{itemize}
@@ -309,7 +309,7 @@ precendence left AND;
 \end{frame}
 
 
-\begin{frame}[label={sec:org8034909}]{Deliverables}
+\begin{frame}[label={sec:org6c44a60}]{Deliverables}
 \begin{block}{Deliverables (2)}
 \begin{itemize}
 \item report (with name(s) and UiO user name(s)
@@ -331,7 +331,7 @@ If problems, \alert{ask in time}  (\alert{NOT} Friday at the deadline)
 
 
 
-\begin{frame}[label={sec:orgbf36586},fragile]{Hand-in procedure}
+\begin{frame}[label={sec:org4df6cfc},fragile]{Hand-in procedure}
  \begin{itemize}
 \item this year we try \emph{git}
 
