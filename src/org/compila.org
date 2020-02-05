@@ -22,8 +22,41 @@
     - State "DONE"       from "TODO"       [2020-02-05 Wed 09:38] \\
       ok, worked
     :END:
-*** BUG make it buildable again <2020-02-05 Wed 08:45>
-**** TODO check last year, perhaps there was a zip <2020-02-05 Wed 08:45>
+*** BUG make it buildable again <2020-02-05 Wed 08:45>   
+
+  - [X]  clean
+  - [ ]  build: fails 
+  - [ ]  run
+
+
+**** BUG <2020-02-05 Wed 09:57>
+
+     #+begin_example
+    [javac] /uio/kant/ifi-ansatt-u00/msteffen/cor/teaching/compila/src/test/Tester.java:24: error: constructor Compiler in class Compiler cannot be applied to given types;
+    [javac] 				Compiler compiler = new Compiler(this.path + File.separator + filename,
+    [javac] 				                    ^
+    [javac]   required: String,String
+    [javac]   found: String,String,String
+    [javac]   reason: actual and formal argument lists differ in length
+     
+     #+end_example
+
+It seems that the ~Tester~ and the ~Compiler~ don't fit together.  In
+particular, the number of arguments in the cosntructor don't fit.  The most
+plausible culprit is not the compiler, but the tester, the tester uses 3
+arguments, the last one a ~.bin~ file, and that's relevant for Oblig 2.
+
+***** TODO is there a second testerfil
+
+
+
+**** DONE check last year, perhaps there was a zip <2020-02-05 Wed 08:45>
+     CLOSED: [2020-02-05 Wed 09:46]
+     :LOGBOOK:
+     - State "DONE"       from "TODO"       [2020-02-05 Wed 09:46] \\
+       not really
+     :END:
+
 *** DONE test a fresh checkedout simple examples <2019-02-12 Tue 07:31>
     CLOSED: [2019-02-12 Tue 07:45]
     :LOGBOOK:
