@@ -41,19 +41,27 @@ slides are kept in the Vortex system on the course's web-page.
 
        [[./src/tests/fullprograms/complexaddition.cmp]]
 
-  
-       
+  Further tests in there are not explicitly required to be used as part of
+  the deliverable for oblig 1. One can use them, if wished, to check one's
+  parser etc. or one can of course also set-up one's own test suite.
+  Later, for *oblig 2*, more tests will be mandatory resp. relevant (to
+  test the type checking and the code generation).
 
-- [[./material]]: extra material, for example a test expression evaluator and parser
-      (a simple working example of making use of lex and yacc)
 
 - [[./lib]]: lexer and yaccer tools (jlex + cup), as jar files
+
 
 - [[./build.xml]]: simple /ant/ build file. Type ~ant~ in a command shell to see current
               possible targets. One can adapt according to one's needs. Also for oblig2,
 	      one will have to add more ``targets'' (because then there will be more things
 	      to do, like type checking etc.) Alternative ``build'' methods are allowed as well
 	      if preferred (make, maven) as long as they are commonly available.
+       
+
+- [[./material]]: extra material, for example a test expression evaluator and parser
+      (a simple working example of making use of lex and yacc)
+
+
 
 -  [[./previoussemesters]]: for ``historical'' purposes only
       
