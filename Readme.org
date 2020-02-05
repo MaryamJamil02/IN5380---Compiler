@@ -2,7 +2,7 @@
 #+OPTIONS: broken-links:nil c:nil creator:nil d:(not "LOGBOOK") date:t e:t
 #+OPTIONS: email:nil f:t inline:t num:t p:nil pri:nil prop:nil stat:t
 #+OPTIONS: tags:nil tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
-#+TITLE: Compila 20x (Language and compiler skeleton): NOT YET ACTIVATED!!
+#+TITLE: Compila 20 (Language and compiler skeleton + material)
 #+DATE: <2018-02-25 So>
 #+AUTHOR: Martin Steffen
 #+EMAIL: msteffen@ifi.uio.no
@@ -33,6 +33,11 @@ slides are kept in the Vortex system on the course's web-page.
     - instructions about the obligs
 
 - [[./src]]: sources (including sources of the documentation).
+
+
+- [[./src/tests]]: compila 20 programs for testing. Not all are  The directory is  futher subdive
+  
+       
 
 - [[./material]]: extra material, for example a test expression evaluator and parser
       (a simple working example of making use of lex and yacc)
