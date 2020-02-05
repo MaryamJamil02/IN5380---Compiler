@@ -35,7 +35,12 @@ slides are kept in the Vortex system on the course's web-page.
 - [[./src]]: sources (including sources of the documentation).
 
 
-- [[./src/tests]]: compila 20 programs for testing. Not all are  The directory is  futher subdive
+- [[./src/tests]]: compila 20 programs for testing. Not all tests are already
+  relevant for *oblig 1*. The directory contains a number of subdirectories
+  for different purposes. The one required for *oblig 1* is
+
+       [[./src/tests/fullprograms/complexaddition.cmp]]
+
   
        
 
