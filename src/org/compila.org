@@ -7,7 +7,21 @@
 
 
 
-*** TODO test on the laptop <2020-02-05 Wed 08:59>
+*** DONE install javac on the laptop <2020-02-05 Wed 09:01>
+    CLOSED: [2020-02-05 Wed 09:36]
+    :LOGBOOK:
+    - State "DONE"       from "TODO"       [2020-02-05 Wed 09:36] \\
+      dnf java-devel
+    :END:
+
+
+
+*** DONE test the material on the laptop <2020-02-05 Wed 08:59>
+    CLOSED: [2020-02-05 Wed 09:38]
+    :LOGBOOK:
+    - State "DONE"       from "TODO"       [2020-02-05 Wed 09:38] \\
+      ok, worked
+    :END:
 *** BUG make it buildable again <2020-02-05 Wed 08:45>
 **** TODO check last year, perhaps there was a zip <2020-02-05 Wed 08:45>
 *** DONE test a fresh checkedout simple examples <2019-02-12 Tue 07:31>
