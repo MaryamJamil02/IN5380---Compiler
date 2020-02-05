@@ -33,7 +33,7 @@
 *** BUG make it buildable again <2020-02-05 Wed 08:45>   
 
   - [X]  clean
-  - [ ]  build: fails 
+  - [X]  build: now ok
   - [ ]  run
 
 
@@ -72,7 +72,12 @@ In the current repos, there is only one ~Tester.Java~
        not really
      :END:
 
-*** TODO find the first tests. <2020-02-05 Wed 10:31>
+*** DONE find the first tests. <2020-02-05 Wed 10:31>
+    CLOSED: [2020-02-05 Wed 12:05]
+    :LOGBOOK:
+    - State "DONE"       from "TODO"       [2020-02-05 Wed 12:05] \\
+      oblig 1 did not have tests
+    :END:
 
 There is stuff in [[../../previoussemesters/2017-start]] ~inf5110_mandatory1_starting_point.zip~
 
@@ -84,9 +89,15 @@ But there is no tester file.
      - State "DONE"       from "TODO"       [2020-02-05 Wed 11:46] \\
        ok
      :END:
-No, that alone does not do it.
+Renaming does not do it. It must be moved out of the directory.
 
-**** TODO where was the test directory earlier <2020-02-05 Wed 11:40>
+**** DONE where was the test directory earlier <2020-02-05 Wed 11:40>
+     CLOSED: [2020-02-05 Wed 12:05]
+     :LOGBOOK:
+     - State "DONE"       from "TODO"       [2020-02-05 Wed 12:05] \\
+       it was not part of oblig 1
+     :END:
+
 
 **** DONE should there be even a tester file? check the original build <2020-02-05 Wed 10:37>'''
      CLOSED: [2020-02-05 Wed 11:03]
