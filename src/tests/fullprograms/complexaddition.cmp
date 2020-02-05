@@ -1,11 +1,11 @@
-program ComplexAddition
+program ComplexAddition (* AST test for oblig 1 *)
 begin
   struct Complex {
      Real : float;
      Imag : float
   };
 
-  proc Swap(a : ref (int), b : ref(int))
+  procedure Swap(a : ref (int), b : ref(int))
   begin
      var tmp : int
   in
@@ -14,7 +14,7 @@ begin
      b := tmp
   end;
 
-  proc Add (a : Complex, b : Complex) : Complex
+  procedure Add (a : Complex, b : Complex) : Complex
   begin
      var retval : Complex
   in
@@ -24,24 +24,17 @@ begin
      return retval
   end;
 
-  proc Max (a : int, b : int) : int 
+  procedure Max (a : int, b : int) : int 
   begin
-     /* An earlier version of this file had the line following
-        this comment missing, i.e., the ``in'' was not there. 
-	That would contradict the distributed version of the 
-	grammar. A solution what accepts the version without the 
-	``in'' would be acceptable, too, implementing a grammar which
-	requires the ``in'' only for non-empty declarations.    */
-     in 
      if a > b then
         return a
      fi;
      return b
   end;
 
-  proc main()
+  procedure main()
   begin
-     proc Square (val : float) : float 
+     procedure Square (val : float) : float 
      begin
         in
         return val ^ 2.0

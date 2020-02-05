@@ -1,6 +1,6 @@
 program plog
 begin
-  proc symbols(n : int, zz : string) 
+  procedure symbols(n : int, zz : string) 
   begin
       var i : int
       in
@@ -12,7 +12,7 @@ begin
       od
   end;
   
-  proc skriv_plog() 
+  procedure skriv_plog() 
   begin
       var h : int ; 
       var j : int 
@@ -30,7 +30,7 @@ begin
       od
   end;
   
-  proc main() 
+  procedure main() 
   begin
       in
       skriv_plog()

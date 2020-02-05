@@ -1,6 +1,6 @@
 program euclid
 begin
-  proc gcd( a : int , b : int )  : int 
+  procedure gcd( a : int , b : int )  : int 
   begin
       var res : int 
   in 
@@ -20,7 +20,7 @@ begin
       fi;
       return res
   end;
-  proc main()
+  procedure main()
   begin 
   in
       printint(gcd(6, 19));
