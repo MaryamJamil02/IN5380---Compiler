@@ -2,7 +2,7 @@
 #+options: broken-links:nil c:nil creator:nil d:(not "LOGBOOK") date:t e:t
 #+options: email:nil f:t inline:t num:t p:nil pri:nil prop:nil stat:t
 #+options: tags:nil tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
-#+title: Organizational file (internal use)
+#+title: Organizational file (for internal use)
 #+date: <2020-02-05 Wed>
 #+author: Martin Steffen
 #+email: msteffen@ifi.uio.no
@@ -108,50 +108,9 @@ In the current repos, there is only one ~Tester.Java~
     - CLOSING NOTE [2019-11-26 Tue 10:49] \\
       I don't know what that was
     :END:
-* What to do better next year
 
 
-- Grammar: call_stmt -> call_expr
-
-
-- maybe better structure of the starting point
-
-- make the handout for the oblig contain all the stuff
-   which is also on the slides
-- check the examples better.
-- perhaps don't do the stupid ant-stuff (or at least
-   get a better grip on it)
-
-- perhaps don't call it starting-point
-
-
-- I don't like the clause for ~VAR~ (at least the name), it's not a ``variable''
-
-** Grammar
-
-  - I don't like the call-statements: it's unclear
-    how to give back return values
-
-
-* Things to repair
-
-
-** DONE integrate to org <2019-02-07 Thu 09:31>
-   CLOSED: [2019-02-07 Thu 09:40]
-   :LOGBOOK:
-   - State "DONE"       from "TODO"       [2019-02-07 Thu 09:40]
-   :END:
-
-** CANCELLED Typo in the laguage spec
-   CLOSED: [2019-02-07 Thu 09:40]
-   :LOGBOOK:
-   - CLOSING NOTE [2019-02-07 Thu 09:40] \\
-     Can't remember
-   :END:
-<2018-03-27 Tue 15:21>
-
-
-* This to do (compila)
+** Compiler 
 
 *** TODO find complexaddition.ast <2020-02-05 Wed 08:50>
 *** DONE Error in the test files
@@ -216,6 +175,7 @@ functionality of compila 18.
 
 Also from the languange spec:
 
+#+begin_example
 REC_DECL -> "struct" NAME "{" { VAR_DECL ";" } "}"
 
 compila.cmp: 
@@ -226,6 +186,55 @@ var Real : float;
 var Imag : float;
 end;​
 
+#+end_example
+
 begin and end has been switched out by brackets.
 
+
+
+
+*** DONE integrate to org <2019-02-07 Thu 09:31>
+   CLOSED: [2019-02-07 Thu 09:40]
+   :LOGBOOK:
+   - State "DONE"       from "TODO"       [2019-02-07 Thu 09:40]
+   :END:
+
+*** CANCELLED Typo in the laguage spec
+   CLOSED: [2019-02-07 Thu 09:40]
+   :LOGBOOK:
+   - CLOSING NOTE [2019-02-07 Thu 09:40] \\
+     Can't remember
+   :END:
+<2018-03-27 Tue 15:21>
+
+
+
+* What to do better next year
+
+
+- Grammar: call_stmt -> call_expr
+
+
+- maybe better structure of the starting point
+
+- make the handout for the oblig contain all the stuff
+   which is also on the slides
+- check the examples better.
+- perhaps don't do the stupid ant-stuff (or at least
+   get a better grip on it)
+
+- perhaps don't call it starting-point
+
+
+- I don't like the clause for ~VAR~ (at least the name), it's not a ``variable''
+
+** Grammar
+
+  - I don't like the call-statements: it's unclear
+    how to give back return values
+
+
+
+
+* This to do (compila)
 
