@@ -1,3 +1,4 @@
+
 package compiler;
 
 import java.io.*;
@@ -6,6 +7,10 @@ import bytecode.CodeFile;
 
 import syntaxtree.*;
 import oblig1parser.*;
+
+
+// That's the version for Oblig 2, it's extended from the version of oblig
+// 1.
 
 public class Compiler {
     private String inFilename = null;
