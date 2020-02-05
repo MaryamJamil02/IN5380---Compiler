@@ -34,7 +34,7 @@
 
   - [X]  clean
   - [X]  build: now ok
-  - [ ]  run
+  - [X]  run
 
 
 **** BUG <2020-02-05 Wed 09:57>
