@@ -74,6 +74,40 @@ In the current repos, there is only one ~Tester.Java~
 
 *** TODO find the first tests. <2020-02-05 Wed 10:31>
 
+There is stuff in [[../../previoussemesters/2017-start]] ~inf5110_mandatory1_starting_point.zip~
+
+But there is no tester file.
+
+**** DONE does it build without the test directory?  <2020-02-05 Wed 11:40>
+     CLOSED: [2020-02-05 Wed 11:46]
+     :LOGBOOK:
+     - State "DONE"       from "TODO"       [2020-02-05 Wed 11:46] \\
+       ok
+     :END:
+No, that alone does not do it.
+
+**** TODO where was the test directory earlier <2020-02-05 Wed 11:40>
+
+**** DONE should there be even a tester file? check the original build <2020-02-05 Wed 10:37>'''
+     CLOSED: [2020-02-05 Wed 11:03]
+     :LOGBOOK:
+     - State "DONE"       from "TODO"       [2020-02-05 Wed 11:03] \\
+       No, the starting point has no test fil.
+     :END:
+
+**** CANCELLED what's the diff's <2020-02-05 Wed 11:00>
+     CLOSED: [2020-02-05 Wed 11:03]
+     :LOGBOOK:
+     - CLOSING NOTE [2020-02-05 Wed 11:03] \\
+       maybe egal
+     :END:
+
+ Comare the new build.xml the new patch one and the old start on
+
+
+
+
+
 *** DONE check also the other file in the test subdir  <2020-02-05 Wed 10:23>
     CLOSED: [2020-02-05 Wed 10:31]
     :LOGBOOK:
