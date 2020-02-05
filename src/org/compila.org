@@ -76,6 +76,10 @@ In the current repos, there is only one ~Tester.Java~
        not really
      :END:
 
+*** TODO check also the other file in the test subdir  <2020-02-05 Wed 10:23>
+
+The file ~FileEndingFilter.java~
+
 *** DONE test a fresh checkedout simple examples <2019-02-12 Tue 07:31>
     CLOSED: [2019-02-12 Tue 07:45]
     :LOGBOOK:
@@ -208,7 +212,15 @@ begin and end has been switched out by brackets.
 
 
 
-* What to do better next year
+* What to do better next year.
+
+Remarks per semester, especially list of things that I did /not/ like.
+
+
+
+** 2020 
+
+** 2018 (I guess)
 
 
 - Grammar: call_stmt -> call_expr
