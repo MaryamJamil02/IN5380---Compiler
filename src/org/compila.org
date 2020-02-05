@@ -7,7 +7,8 @@
 
 
 
-
+*** BUG make it buildable again <2020-02-05 Wed 08:45>
+**** TODO check last year, perhaps there was a zip <2020-02-05 Wed 08:45>
 *** DONE test a fresh checkedout simple examples <2019-02-12 Tue 07:31>
     CLOSED: [2019-02-12 Tue 07:45]
     :LOGBOOK:

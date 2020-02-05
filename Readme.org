@@ -121,7 +121,7 @@ programs that can be built and run).
 *** Check the dummy code
 
 Do the same for the dummy- and skeleton-classes provided as starting point
-for the real compiler. Again, inside the compila directory do
+for the compila 20 compiler. Inside the top-level compila directory, do
 
 #+begin_src 
  ant   
