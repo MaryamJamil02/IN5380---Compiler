@@ -185,7 +185,6 @@ begin
 var Real : float;
 var Imag : float;
 end;​
-
 #+end_example
 
 begin and end has been switched out by brackets.
