@@ -61,53 +61,58 @@ Requirements:
 
 
 
-As the previous two times, we use
+We use
 \begin{quote}
   \textbf{git}   
 \end{quote}
-to hand in the obligs. 
-
-In earlier years it was mostly via email, 2017 via devilry, but since it's
-about a a piece of software, something like git is more
-appropriate. Likewise: oblig 2 will extend your oblig 1, so the code will
-evolve. Finally, we strongly encourage working in groups, so git allows to
-share things.
+to hand in the obligs and the two deliverables are just two ``milestones''
+in your project. We encourage working in groups, and git allows to share
+things.
 
 I assume that most are in principle familiar with \texttt{git}, if not, ask
 me (or bring yourself up to speed otherwise).  I suggest, that we use the
 uio-internal git server\footnote{Actually, it's the UiO enterprise github
-  server. Github is just one particular ``web-interface'' on top of git and
-  there are also alternatives on the market, but for uniformity, you may as
-  stick to the UiO git / github server.}
+  server. Github is just one particular ``web-interface'' on top of git
+  which does the real work; there are also alternatives to github (and git)
+  but for uniformity, you may as well stick to the UiO github server.}
 
 \begin{quote}
   \url{github.uio.no}
 \end{quote}
 
 
-In order to hand-in via git, each group has to do the following steps.
+In order to hand-in via git, each group has to do the following steps. See
+also the top-level readme at \url{https://github.uio.no/msteffen/compila}
 
 \begin{enumerate}
 \item everyone: if not already: create yourself a account at
   \url{github.uio.no}. Your UiO login allows you to do that.
-\item per group: \emph{create} a new \emph{project}.  If your are in group
-  number $n$,\footnote{The project names need to be different so that, for
-    correction, one can distinguish them by their ``name'' (not that all
-    projects are called ``compila'')}
+\item send me an email with your name (and if have, with the name of your
+  collaborator), so I can assign a group number.
+\item per group: \emph{create} a new \emph{project} at the github repos.
+  If your are in group number $n$,\footnote{The project names need to be
+    different so that, for correction, I can distinguish them by their
+    ``name'' to avoid that all projects are called ``compila''.}
   \begin{quote}
     call your project \texttt{compila<n>}
   \end{quote}
   The ``parentheses'' \texttt{<} and \texttt{>} are \emph{not} part of the
   name! If the group contains more than one person, the creator has to add
-  the partner as \emph{collaborator.} 
+  the partner as \emph{collaborator} to the project.\footnote{It's not that
+    the one creating the project ``owns'' it, the collaborators are
+    \emph{peers} (as in peer-to-peer). As you know, in git, everyone works
+    on a cloned copy of the respository, so at the end of the project,
+    everone can keep the own copy if wanted, not only the one who created
+    it.}
 \item If your project is ``private'': add me as collaborator (login
   \texttt{msteffen}). I don't need to contibute as collaborator, but I need
   access.
 \item Send me an \emph{email} with the link, mentioning the names (and
   login) of the members of the group as confirmation. That needs to be done
-  \emph{before the deadline}.The names of the member of the group should
-  alsp feature \emph{prominently} on the top-level of the repository, as in
-  the top-level \texttt{Readme}.
+  \emph{before the first oblig's deadline}. The names of the member of the
+  group, i.e., the authors of the project, should also feature
+  \emph{prominently} on the top-level of the repository, as in the
+  top-level \texttt{Readme}-file.
 \end{enumerate}
 
 
@@ -118,33 +123,41 @@ In order to hand-in via git, each group has to do the following steps.
 \begin{itemize}
 \item A top-level \emph{Readme-file} containing
   \begin{itemize}
-  \item containing names and emails of the authors
-  \item instructions how to build the compiler and how to run it.
+  \item names and emails of the authors
+  \item easy instructions how to build the compiler and how to run it.
   \end{itemize}
-  The top-level Readme should describe in a consise manner instructions for
+  The top-level Readme should describe in a concise manner instructions for
   building, installation, running, and testing your compiler in a manner
   useful for an interested \emph{user}. The target audience is a
   master-level computer science student or someone how is not afraid to
   git-clone a repository (or download a jar-file or similar) and following
-  a few clearly installation steps. The user is not expected to figure out
+  a few clearly installation steps. It should be doable ``stand-alone'',
+  i.e., without loading some files into Eclipse or similar \emph{developer}
+  tools (developer $\not=$ user). The user is not expected to figure out
   himself or herself how to install, run, and test it. The user is also
-  /not/ expected to be a student of this compiler course and familiar with
-  the specification of the compila-language and the oblig-documentation.
+  \emph{not} expected to be a student of this compiler course and familiar
+  with the specification of the compila-language and the
+  oblig-documentation.
 
   It might be nice to use some \emph{markdown} format (like a
   \texttt{Readme.md}. It's some form of poor-man's markup like HTML, and is
   typically rendered nicely by browsers. The current top-level
-  Compila-Readme is not in the \texttt{md} format, but \texttt{Readme.org}
-  (which is a similar format and also rendered nicely by github).
+  Compila-Readme is not in the \texttt{md}-format, but in
+  \texttt{org}-format (\texttt{Readme.org}) (which is a similar, but more
+  expressive markdown format and also rendered nicely by github).
   
-\item Additional information should be provided, which is not relevant for
-  that mentioned ``interested user'', but that's insider information
-  relevant for the oblig and the technical realization. This it's better
-  not in the top level readme but at a different place or file. 
+\item The information so far is for an ``interested user'' which may be an
+  outsider, maybe like a random surfer on the internet who wants to try it
+  out. Besides that, additional information should be provided, which is
+  not relevant for an outside, but contains insider information relevant
+  for the course's mandatory assignment and the technical realization of
+  the solution. This, the information might better not be kept in the top
+  level readme but at a different, less prominent place or file.
   \begin{itemize}
   \item test-output for running the compiler on \texttt{compila.cmp} as
     input
-  \item of course, the /code/ needed to run your package. That includes
+  \item of course, the \emph{code} needed to run your package. That
+    includes
     \begin{itemize}
     \item \textsl{JFlex}-code for the scanner
     \item \textsl{CUP}-cpde for the 2 variants of the syntax
@@ -158,11 +171,43 @@ In order to hand-in via git, each group has to do the following steps.
 
 
 
+\subsection{Delivery in a nutshell}
+\label{sec:delivery-nutshell}
+
+
+Ideal would be an 
+\begin{center}
+  \textbf{out-of-the-box}
+\end{center}
+behavior. Assuming that the ``outside user'' has the required software in
+place (like \texttt{JDK} and \emph{ant}, or something rather common). Then
+it works out-of-the-box, by following simple steps like for example
+
+
+\begin{verbatim}
+   git clone <repos-url>
+   cd compila<n>
+   ant
+   ant build
+   ant run
+\end{verbatim}
+and those steps should be mentioned clearly in your Readme. The steps
+mentioned here correspond to those suggested when you clone the skeletal
+starting point from \url{github.uio.no:msteffen/compila.git}. Your solution
+may involve different steps (maybe \texttt{ant ast} for producing the
+require AST), and may require adapation of \texttt{build.xml} (if you use
+ant). But you should keep the spirit of ``out-of-the-box'' and ``kiss''
+(keep it simple, stupid.). Remember: the user is always stupid...
+
+
+
+
+
 \section{Purpose and goal}
 \label{sec:x}
 
 The goal of the task is to gather practical experience of the following
-tools and technies.
+tools and techniques.
 \begin{itemize}
 \item use scanner/lexer and parser tools. In this case \texttt{JFLex} and
   \texttt{CUP}.
@@ -274,25 +319,28 @@ possible output. The two files are called
 
 Note: the two files are meant as \emph{inspiration.} Each year the syntax
 of \textsl{compila} slightly changes (wrt. keywords, associativity etc). So
-the syntax is 100\% in accordance with the 2020 version (but pretty
-comparable).
+the syntax is \textbf{not 100\%} in accordance with the 2020 version (but
+pretty comparable).
 
-The one that should be used for this task (AST-printing) is the following
+The one that \textbf{should actually be used} for this task (AST-printing)
+is the following:
 
 \begin{quote}
   \texttt{./src/tests/fullprograms/complexaddition.cmp}  
 \end{quote}
 
-and it should be consistent with this year's gammar (fingers crossed).
+and this one should be consistent with this year's gammar (fingers
+crossed).
 
 
 
 It's allowed (but not necessary) to print it in other forms than prefix
-form. But the output must indicate the AST in readable form (``readable''
-as in human-readble that is \ldots). Note, the task is not that the output
-is a syntactically correct \textsl{compila} program again (that might be a
-formatting tool), we just need a way to look at the syntax tree, which
-comes in handy for debugging,
+form used in the inpiration. But the output must indicate the AST in
+readable form (``readable'' as in human-readble that is \ldots). Note, the
+task is not that the output is a syntactically correct \textsl{compila}
+program again (that might be a so-called formatting tool or a
+pretty-printer), we just need a way to look at the syntax tree, which comes
+in handy for debugging,
 
 
 %\bibliographystyle{apalike}
@@ -375,7 +423,7 @@ not required for the oblig.
 For testing, there is a bunch of files under
 
 \begin{quote}
-  ./src/tests
+  \texttt{./src/tests}
 \end{quote}
 
 They are supposed to contain syntactically correct programs for this year's
@@ -383,17 +431,20 @@ version, with exception of the ones under
 \begin{quote}
   \texttt{./src/tests/errors}
 \end{quote}
+Later for \textbf{oblig 2} there will be more tests, especially for testing
+type checking and code generation. 
 
 
-For oblig one, you are requested to generate the 
+For \textbf{oblig 1}, you are requested to generate an ast for
 \begin{quote}
   \texttt{./src/tests/fullprograms/complexadditions.cmp}  
 \end{quote}
-as part of the oblig as mentioned, but you may of course use the other test
-program to see how robust your implementation is. Especially the
-error-programs later will become relevant for oblig2, when we do type
-checking; there, some syntactically ok programs should be flagged as
-erroneous by the type checker.
+as part of the oblig, as mentioned, but you may of course use the other
+test program as well to see how robust your implementation is. 
+
+% Especially errorneous programs later will become relevant for oblig2,
+% when we do type 5checking; there, some syntactically ok programs should
+% be flagged as erroneous by the type checker.
 
 
 
