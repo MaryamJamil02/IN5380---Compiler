@@ -1,6 +1,5 @@
-program procedure2_fail
+program pxrocedure2_fail
 begin
-
 	procedure Proc() : string 
 	begin
            in
