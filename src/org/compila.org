@@ -191,7 +191,7 @@ begin and end has been switched out by brackets.
 
 
 
-*** Check if we have the oblig2 zip saved for 2019 <2020-04-02 Thu 10:04>
+*** TODO Check if we have the oblig2 zip saved for 2019 <2020-04-02 Thu 10:04>
 *** CANCELLED Repair the thing from the test file (by group06)
     CLOSED: [2020-01-14 Tue 10:18]
     :LOGBOOK:
