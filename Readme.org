@@ -47,6 +47,8 @@ slides are kept in the Vortex system on the course's web-page.
   Later, for *oblig 2*, more tests will be mandatory resp. relevant (to
   test the type checking and the code generation).
 
+- [[./oblig2patch]]: additional information and changes or updates
+     relevant for oblig 2. 
 
 - [[./lib]]: lexer and yaccer tools (jlex + cup), as jar files
 
