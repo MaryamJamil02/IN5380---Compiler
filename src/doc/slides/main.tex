@@ -1,4 +1,4 @@
-% Created 2020-04-02 Thu 12:35
+% Created 2020-04-02 Thu 12:49
 % Intended LaTeX compiler: pdflatex
 \documentclass{beamer}
  		 
@@ -23,7 +23,7 @@
 
 \hypersetup{
  pdfauthor={},
- pdftitle={INF5110 -- Oblig 2)},
+ pdftitle={INF5110 -- Oblig 2},
  pdfkeywords={compiler, compiler construction},
  pdfsubject={compiler construction},
  pdfcreator={Emacs 26.3 (Org mode 9.3)}, 
@@ -32,10 +32,10 @@
 
 \maketitle
 \chapter{Oblig 2}
-\label{sec:orga5000ef}
+\label{sec:orgaef7520}
 
 
-\begin{frame}[label={sec:orgd2df6fc},fragile]{Goal}
+\begin{frame}[label={sec:orgab7f371},fragile]{Goal}
  \begin{enumerate}
 \item \alert{semantic  analysis}, as far as 
 \begin{itemize}
@@ -52,7 +52,7 @@
 
 
 
-\begin{frame}[label={sec:orgea2e3f7}]{Last time (O1)}
+\begin{frame}[label={sec:orgb3cf77b}]{Last time (O1)}
 \begin{block}{Syntactic analysis}
 \begin{itemize}
 \item lexer (scanner)
@@ -68,7 +68,7 @@
 
 
 
-\begin{frame}[label={sec:org9a71368}]{Learning outcome}
+\begin{frame}[label={sec:org6cbc92b}]{Learning outcome}
 \begin{itemize}
 \item understand type checking, implementing a simple variant
 \end{itemize}
@@ -84,7 +84,7 @@ code'' (as AST)
 
 
 
-\begin{frame}[label={sec:org8517dce}]{Semantic analysis \& type checking}
+\begin{frame}[label={sec:org06b23e8}]{Semantic analysis \& type checking}
 \begin{itemize}
 \item parser / context-free  grammars 
 \begin{itemize}
@@ -103,7 +103,7 @@ code'' (as AST)
 \end{frame}
 
 
-\begin{frame}[label={sec:orge262312}]{Another glance at compila20}
+\begin{frame}[label={sec:orgc9f4ca6}]{Another glance at compila20}
 \includegraphics[width=\textwidth]{figures/snaps/compilaexample-checking}
 
 
@@ -111,7 +111,7 @@ NB: 2020: structs, not classes
 \end{frame}
 
 
-\begin{frame}[label={sec:orge3a3f27},fragile,plain]{Type checking for conditionals}
+\begin{frame}[label={sec:org0320eb3},fragile,plain]{Type checking for conditionals}
  \begin{itemize}
 \item as ``inspiration'', details may vary
 \end{itemize}
@@ -132,7 +132,7 @@ NB: 2020: structs, not classes
 \end{frame}
 
 
-\begin{frame}[label={sec:org0a41166},fragile,plain]{Type checking: assignments}
+\begin{frame}[label={sec:orgc375544},fragile,plain]{Type checking: assignments}
  \lstset{language=java,label= ,caption= ,captionpos=b,numbers=none}
 \begin{lstlisting}
 class Assignment extends Statement {
@@ -152,7 +152,7 @@ class Assignment extends Statement {
 
 
 
-\begin{frame}[label={sec:orgfa34d4b},fragile]{Code generation}
+\begin{frame}[label={sec:org26ca86f},fragile]{Code generation}
  \begin{itemize}
 \item byte code API and operations are described in the document ``Interpreter
 and bytecode for INF5110''
@@ -171,7 +171,7 @@ Ast.Node.GenerateCode(...)
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org2f658fd},fragile]{Code generation: limitations}
+\begin{frame}[label={sec:org662b3ba},fragile]{Code generation: limitations}
  \begin{itemize}
 \item interpreter and byte code library somewhat \alert{limited}
 \begin{itemize}
@@ -190,7 +190,7 @@ for the \texttt{compila} 20 source code file \texttt{runme.cmp}
 
 
 
-\begin{frame}[label={sec:org12e83c3},fragile,plain]{Code generation: creating a procedure}
+\begin{frame}[label={sec:orgbd7520f},fragile,plain]{Code generation: creating a procedure}
  \lstset{language=java,label= ,caption= ,captionpos=b,numbers=none}
 \begin{lstlisting}
 CodeFile codeFile = new CodeFile();
@@ -205,7 +205,7 @@ codeFile.updateProcedure(main);
 \end{lstlisting}
 \end{frame}
 
-\begin{frame}[label={sec:orgca892eb}]{Code generation: assignment}
+\begin{frame}[label={sec:orgc0348a2}]{Code generation: assignment}
 \begin{center}
  \includegraphics[width=0.76\textwidth]{figures/snaps/codegen-assignment}
 \end{center}
@@ -213,7 +213,7 @@ codeFile.updateProcedure(main);
 
 
 
-\begin{frame}[label={sec:orgdc617e8},fragile]{Testing}
+\begin{frame}[label={sec:org5d3fc70},fragile]{Testing}
  \begin{itemize}
 \item bunch of test files, for testing the \emph{type checker}
 \item preferable: make \texttt{ant test} workable
@@ -229,32 +229,36 @@ concerned)
 
 
 
-\begin{frame}[label={sec:org7650f80}]{Provided source code (patch)}
+\begin{frame}[label={sec:orgf04b676}]{Provided source code (patch)}
 \url{https://github.uio.no/msteffen/compila}
 
-\includegraphics[width=0.76\textwidth]{figures/snaps/directorystructure-src}
+\includegraphics[width=0.96\textwidth]{figures/snaps/directorystructure-src}
 \end{frame}
 
 
 
-\begin{frame}[label={sec:org8dd2f43},fragile]{Provided documentation (patch)}
+\begin{frame}[label={sec:org72d0078}]{Provided documentation (patch)}
 
- \begin{center}
+\begin{center}
  \includegraphics[width=0.75\textwidth]{figures/snaps/directorystructure-doc}
 \end{center}
+\end{frame}
 
 
-\begin{itemize}
+
+\begin{frame}[label={sec:orgb706e2a},fragile]{Relevant directories}
+ \begin{itemize}
 \item Java
 
 \begin{itemize}
-\item \texttt{compiler}: updated compiler class
-\item \texttt{test}:   some code for performing tests
-\item \texttt{bytecode}: classes for constructing bytecode
-\item \texttt{runtime}: rte for executing the byte code
+\item \texttt{compiler}: updated compiler class (patch)
+\item \texttt{test}:   some code for performing tests (patch)
+\item \texttt{bytecode}: classes for constructing bytecode (already there)
+\item \texttt{runtime}: rte for executing the byte code (already there)
 \end{itemize}
 
 \item Compila
+
 \begin{itemize}
 \item \texttt{tests}: some test files (including \texttt{runme.cmp})
 \end{itemize}
@@ -263,7 +267,7 @@ concerned)
 
 
 
-\begin{frame}[label={sec:org982da1c},fragile]{Deadline}
+\begin{frame}[label={sec:org4811e13},fragile]{Deadline}
  \begin{alertblock}{Deadline}
 12th May 2020
 \end{alertblock}
@@ -293,6 +297,9 @@ needs to be mentioned where it is)
 \end{itemize}
 \end{block}
 \end{frame}
+
+
+
 
 
 
