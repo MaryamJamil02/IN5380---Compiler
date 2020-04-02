@@ -145,7 +145,14 @@ The file ~FileEndingFilter.java~. Yes, that also for the patch  for o2
 
 ** Compiler 
 
-*** TODO find complexaddition.ast <2020-02-05 Wed 08:50>
+
+*** DONE find complexaddition.ast <2020-02-05 Wed 08:50>
+    CLOSED: [2020-04-02 Thu 07:04]
+    :LOGBOOK:
+    - State "DONE"       from "TODO"       [2020-04-02 Thu 07:04]
+    :END:
+
+it's in material/sample-compila-ast
 *** DONE Error in the test files
     CLOSED: [2018-03-19 Mon 07:54]
     :LOGBOOK:
@@ -241,6 +248,12 @@ begin and end has been switched out by brackets.
 
 
 
+
+* Tests
+
+*** TODO  port the oblig2 tests (noerrors) <2020-04-02 Thu 07:04>
+
+
 * What to do better next year.
 
 Remarks per semester, especially list of things that I did /not/ like (but
@@ -277,5 +290,4 @@ perhaps also positive things).
 
 
 
-* This to do (compila)
 
