@@ -10,7 +10,8 @@ import oblig1parser.*;
 
 
 // That's the version for Oblig 2, it's extended from the version of oblig
-// 1.
+// 1.  it's again mainly for INSPIRATION. It's not meant to use this
+// file unchanged. 
 
 public class Compiler {
     private String inFilename = null;
