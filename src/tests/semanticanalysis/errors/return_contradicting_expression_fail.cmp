@@ -1,8 +1,8 @@
 program return_contradicting_expression_fail
 begin
 
-    /* Error: Type of return stmt. differs from declared type. */
-    proc main()
+    (* error: Type of return stmt. differs from declared type. *)
+    procedure main()
     begin
         in
         return 1234
