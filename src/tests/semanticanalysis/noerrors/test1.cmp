@@ -1,7 +1,6 @@
 program test1
 begin
-
-	proc Main()
+	procedure main()  (* main not capital this year *)
 	begin
 	    var flag : bool;
 	    var val : int ;
