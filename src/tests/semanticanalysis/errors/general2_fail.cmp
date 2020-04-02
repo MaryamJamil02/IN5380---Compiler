@@ -2,7 +2,7 @@ program general2_fail
 begin
   procedure Proc( a : int )
   begin
-    var a : int  (* error: param already named a. actually that should be ok. *)
+    var a : int  (* error: param already named a. *)
     in
     printint( a )
   end;
