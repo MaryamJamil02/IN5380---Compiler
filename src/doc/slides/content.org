@@ -669,7 +669,7 @@ codeFile.updateProcedure(main);
 - bunch of test files, for testing the /type checker/
 - preferable: make ~ant test~ workable 
 
-- test files inside ~./test/semanticanalysis/errors/~ (and with ~fail~ in
+- test files inside ~./tests/semanticanalysis/errors/~ (and with ~fail~ in
   the filename) contain a syntactically correct but erronous program
   (erroneous as the type system or generally the semantic phase is
   concerned)
