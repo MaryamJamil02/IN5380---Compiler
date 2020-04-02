@@ -1,4 +1,4 @@
-program pxrocedure2_fail
+program procedure2_fail
 begin
 	procedure Proc() : string 
 	begin

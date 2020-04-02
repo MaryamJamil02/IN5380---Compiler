@@ -1,12 +1,12 @@
 program procedure3_fail
 begin
 
-	proc Add( val1 : int , val2 : int ) : int
+	procedure Add( val1 : int , val2 : int ) : int
 	begin 
             in
-	    return /* error, no return value */
+	    return (* error, no return value *)
 	end;
-	proc main()
+	procedure main()
 	begin 
             in
 	    printint( Add( 40, 2 ) )
