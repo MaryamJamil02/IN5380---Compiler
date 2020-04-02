@@ -1,9 +1,9 @@
 program type4_fail
 begin
-    proc main()
+    procedure main()
     begin
     in
-        while 42.0 do /* error, expression not bool */
+        while 42.0 do (* error, expression not bool *)
         
             printstr( "Should not be here" )
         od
