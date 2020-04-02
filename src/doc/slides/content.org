@@ -1,4 +1,7 @@
-* Oblig 1  
+* Oblig 1                                           :B_ignoreheading:ARCHIVE:
+  :PROPERTIES:
+  :BEAMER_env: ignoreheading
+  :END:
 
 
 
@@ -678,7 +681,7 @@ codeFile.updateProcedure(main);
 
 
 
-*** Provided source code                                            :B_frame:
+*** Provided source code (patch)                                    :B_frame:
     :PROPERTIES:
     :BEAMER_env: frame
     :END:
@@ -686,12 +689,12 @@ codeFile.updateProcedure(main);
   [[https://github.uio.no/msteffen/compila]]
 
 #+begin_export latex 
- \includegraphics[width=0.76\textwidth]{figures/snaps/directorystruct}
+ \includegraphics[width=0.96\textwidth]{figures/snaps/directorystructure-src}
 #+end_export
 
 
 
-*** Provided source code                                            :B_frame:
+*** Provided documentation (patch)                                  :B_frame:
     :PROPERTIES:
     :BEAMER_env: frame
     :END:
@@ -700,19 +703,27 @@ codeFile.updateProcedure(main);
 #+begin_export latex 
 
 \begin{center}
- \includegraphics[width=0.75\textwidth]{figures/snaps/directory-src}
+ \includegraphics[width=0.75\textwidth]{figures/snaps/directorystructure-doc}
 \end{center}
 #+end_export
 
 
+
+*** Relevant directories                                            :B_frame:
+    :PROPERTIES:
+    :BEAMER_env: frame
+    :END:
+
+
 - Java
 
-  - ~compiler~: updated compiler class
-  - ~test~:   some code for performing tests
-  - ~bytecode~: classes for constructing bytecode
-  - ~runtime~: rte for executing the byte code
+  - ~compiler~: updated compiler class (patch)
+  - ~test~:   some code for performing tests (patch)
+  - ~bytecode~: classes for constructing bytecode (already there)
+  - ~runtime~: rte for executing the byte code (already there)
 
 - Compila
+
   - ~tests~: some test files (including ~runme.cmp~)
  
 
