@@ -1,4 +1,4 @@
-* Oblig 1  (Oblig 2 later)
+* Oblig 1  
 
 
 
@@ -447,7 +447,7 @@ If problems, *ask in time*  (*NOT* Friday at the deadline)
 
 
 
-* Oblig2                                                            :ARCHIVE:
+* Oblig2
 
 
 *** Goal                                                            :B_frame:
