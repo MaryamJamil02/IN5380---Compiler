@@ -5,7 +5,7 @@ begin
 	    Attr : int
 	};
 
-	proc Main()
+	procedure main()
 	begin
 	    var f : Foo
         in 
