@@ -12,6 +12,41 @@
 #+CREATOR: Emacs 25.3.1 (Org mode 9.1.6)
 
 
+* Intro
+
+The repos for oblig 1 has been ``copied'' as a starting point for the
+groups. It contained already at that time /more/ than was needed for
+oblig 1.
+
+However, some things that was provided at that point needs replacement. For
+instance, the ~build.xml~ file provided at that time was tailored to oblig
+1, not for oblig 1, to avoid confusion (even though it was mean primarily
+as inspriration). Now, it needs to be extended and for that a new version
+of a ~build.xml~ provided.
+
+Other material was (at that time) not yet ready. That refers to the test
+files needed for oblig 2. This time, there are /more/ official, mandatory
+test files. For oblig 1, it was basically only the ~complexaddition.cmp~
+file that one had to use, the other testfile were there and could be used,
+for smaller tests and debugging.
+
+
+Anyway, this newer and updated information is called *patch* here. Since
+the groups' reposes are no longer coupled to the course's repos
+[[https:github.uio.no:msteffen/compila]], one cannot (easily) distribute the
+new information in that everyone updates the local clone and merge the
+information. Of course one can update the course repos, getting the new
+information, but afterwards one has to copy it over to the groups own
+decoupled repos and check it in there. 
+
+
+
+
+
+
+
+
+
 * 2020
 
 
