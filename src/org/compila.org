@@ -251,6 +251,10 @@ begin and end has been switched out by brackets.
 
 * Tests
 
+*** TODO [/] port the oblig2 tests (errors) <2020-04-02 Thu 07:17>
+
+
+
 *** DONE [4/4] port the oblig2 tests (noerrors) <2020-04-02 Thu 07:04>
     CLOSED: [2020-04-02 Thu 07:16]
     :LOGBOOK:
