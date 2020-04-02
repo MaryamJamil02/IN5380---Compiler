@@ -606,6 +606,7 @@ class Assignment extends Statement {
 #+end_example
 - again: if adaptations of the AST are called for or useful, go for it...
 
+- some people did visitors for ast-printing, one can also (re-)use the visitor pattern
 
 *** Code generation: limitations                                    :B_frame:
     :PROPERTIES:
@@ -668,9 +669,10 @@ codeFile.updateProcedure(main);
 - bunch of test files, for testing the /type checker/
 - preferable: make ~ant test~ workable 
 
-- test files ending with ~fail~ containt a syntactically correct but
-  erronous program (erroneous as the type system or generally the semantic
-  phase is concerned)  
+- test files inside ~./test/semanticanalysis/errors/~ (and with ~fail~ in
+  the filename) contain a syntactically correct but erronous program
+  (erroneous as the type system or generally the semantic phase is
+  concerned)
 
 - => compiler returns error code 2 for semantic failure
 
@@ -728,7 +730,7 @@ codeFile.updateProcedure(main);
      :BEAMER_env: alertblock
      :END:
 
-      12th May  20[19
+      12th May 2020
 
 
 
