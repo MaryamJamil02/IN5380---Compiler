@@ -199,7 +199,20 @@ begin and end has been switched out by brackets.
 
 
 
-*** TODO port the info <2021-02-09 Tue 14:07>
+*** TODO how what the org-publish thing going? <2021-02-09 Tue 14:07>
+
+It's done not in the same file as the Jekyll-stuff, but it's here:
+[[file:~/gnu/emacs/25/my-unchanged/emacs-orgload][file:~/gnu/emacs/25/my-unchanged/emacs-orgload]]
+
+*** TODO port the slides <2021-02-09 Tue 14:07>
+
+*** DONE where is the info in the web 2020?<2021-02-09 Tue 14:13>
+    CLOSED: [2021-02-09 Tue 14:15]
+    :LOGBOOK:
+    - State "DONE"       from "TODO"       [2021-02-09 Tue 14:15]
+    :END:
+
+https://www.uio.no/studier/emner/matnat/ifi/INF5110/v20/obligs/languagespec/    
 
 *** CANCELLED Check if we have the oblig2 zip saved for 2019 <2020-04-02 Thu 10:04>
     CLOSED: [2021-02-09 Tue 14:07]
