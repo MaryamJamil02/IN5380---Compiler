@@ -15,9 +15,17 @@
 
 ** Build file
 
-*** TODO go through the handout again <2020-02-05 Wed 12:08>
+*** CANCELLED go through the handout again <2020-02-05 Wed 12:08>
+    CLOSED: [2021-02-09 Tue 14:03]
+    :LOGBOOK:
+    - CLOSING NOTE [2021-02-09 Tue 14:03]
+    :END:
 
-*** TODO go through the Readme again <2020-02-05 Wed 12:08>
+*** CANCELLED go through the Readme again <2020-02-05 Wed 12:08>
+    CLOSED: [2021-02-09 Tue 14:06]
+    :LOGBOOK:
+    - CLOSING NOTE [2021-02-09 Tue 14:06]
+    :END:
 
 *** DONE install javac on the laptop <2020-02-05 Wed 09:01>
     CLOSED: [2020-02-05 Wed 09:36]
@@ -191,7 +199,13 @@ begin and end has been switched out by brackets.
 
 
 
-*** TODO Check if we have the oblig2 zip saved for 2019 <2020-04-02 Thu 10:04>
+*** TODO port the info <2021-02-09 Tue 14:07>
+
+*** CANCELLED Check if we have the oblig2 zip saved for 2019 <2020-04-02 Thu 10:04>
+    CLOSED: [2021-02-09 Tue 14:07]
+    :LOGBOOK:
+    - CLOSING NOTE [2021-02-09 Tue 14:07]
+    :END:
 *** CANCELLED Repair the thing from the test file (by group06)
     CLOSED: [2020-01-14 Tue 10:18]
     :LOGBOOK:
