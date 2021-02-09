@@ -1,4 +1,4 @@
-#+AUTHOR: INF5110, spring 2020
+#+AUTHOR: INF5110, spring 2021
 #+TEXINFO_FILENAME: compila.info
 #+TEXINFO_CLASS: info
 #+TEXINFO_HEADER: 
@@ -8,10 +8,10 @@
 #+TEXINFO_DIR_CATEGORY:
 #+TEXINFO_DIR_TITLE:
 #+TEXINFO_DIR_DESC:
-#+TEXINFO_PRINTED_TITLE: Compila 20 
-#+DESCRIPTION: Compila 20 language specification
+#+TEXINFO_PRINTED_TITLE: Compila 21
+#+DESCRIPTION: Compila 21 language specification
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="compilastyle.css" />
-#+HTML_HEAD_EXTRA: <h1> Compila 20 language specification</h1>
+#+HTML_HEAD_EXTRA: <h1> Compila 21 language specification</h1>
 
 
 
@@ -22,7 +22,7 @@
 * Introduction
 
 This document specifies and describes the syntax and the static semantics
-of the language /Compila 20/.  The dynamic semantics, i.e., the description
+of the language /Compila 21/.  The dynamic semantics, i.e., the description
 of the language's behavior when being executed, should be fairly clear even
 without explicit formal specification. 
 
