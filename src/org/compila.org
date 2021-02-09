@@ -210,7 +210,20 @@ It's done not in the same file as the Jekyll-stuff, but it's here:
 
 Maybe not.    
 
-*** TODO do the latex first <2021-02-09 Tue 14:19>
+
+*** TODO port the first oblig handout <2021-02-09 Tue 15:07>
+
+*** DONE port the language spec <2021-02-09 Tue 15:07>
+    CLOSED: [2021-02-09 Tue 15:07]
+    :LOGBOOK:
+    - State "DONE"       from "TODO"       [2021-02-09 Tue 15:07]
+    :END:
+
+*** DONE do the latex first <2021-02-09 Tue 14:19>
+    CLOSED: [2021-02-09 Tue 15:07]
+    :LOGBOOK:
+    - State "DONE"       from "TODO"       [2021-02-09 Tue 15:07]
+    :END:
 
 *** DONE where is the file <2021-02-09 Tue 14:22>
     CLOSED: [2021-02-09 Tue 14:38]
