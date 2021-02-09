@@ -1,5 +1,7 @@
 
 
+
+
 all:
 	pdftex compila.texi
 clean:
