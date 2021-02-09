@@ -83,7 +83,7 @@ begin
       printline("")
   end;
   
-  procedure Main() 
+  procedure main() 
   begin
       var num : float ;
       var num2 : int ;
