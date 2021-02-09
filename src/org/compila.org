@@ -204,7 +204,11 @@ begin and end has been switched out by brackets.
 It's done not in the same file as the Jekyll-stuff, but it's here:
 [[file:~/gnu/emacs/25/my-unchanged/emacs-orgload][file:~/gnu/emacs/25/my-unchanged/emacs-orgload]]
 
+*** TODO integrate it to the org-publish set-up <2021-02-09 Tue 14:33>
+
 *** TODO did I even use org-publish? <2021-02-09 Tue 14:19>
+
+Maybe not.    
 
 *** TODO do the latex first <2021-02-09 Tue 14:19>
 
