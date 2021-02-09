@@ -15,6 +15,8 @@
 
 
 
+# h2, rootheader
+
 # (setq org-export-exclude-tags '("private" "noexport" "B_note"  "todo" "handout" "ARCHIVE"))
 # (setq org-export-select-tags  '("export"  "slides"  "B_frame" "B_againframe"))
 
