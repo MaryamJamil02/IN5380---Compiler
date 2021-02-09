@@ -33,10 +33,10 @@
 
 #   \setbeameroption{show notes}
 
-#+TITLE:     INF5110 -- Oblig 2
+#+TITLE:     INF5110 -- Oblig 1
 #+AUTHOR:    
 #+EMAIL:     msteffen@ifi.uio.no
-#+DATE:      Spring 2020
+#+DATE:      Spring 2021
 #+LINK: gohome https://golang.org/
 #+LINK: tigersrc      /home/msteffen/PMA/trunk/teaching/ocaml/compiler/tiger/src/%s
 #+LINK: tigerlibsrc  /home/msteffen/Collectionofreposes/GITUIO/staticanalysis-admin/dfa/src/ocaml/lib/%s
@@ -47,7 +47,7 @@
 
 #+latex_header: \def\mytitle{Compiler Construction}    %% what for
 #+LaTeX_header: \def\myauthor{Martin Steffen}   %% what for
-#+LaTeX_header: \def\mydate{Spring 2020}        %% what for
+#+LaTeX_header: \def\mydate{Spring 2021}        %% what for
 
 
 #+include: "./content.org"  
@@ -57,17 +57,6 @@
 
 # ##### ##### ##### ##### ##### ##### ##### ##### ######### ####
 #                                                    #
-#  +include: "./intro.org" 
-# +include: "./scanning.org"  
-# +latex: \setcounter{chapter}{2}
-# +include: "./grammars.org"
-# +latex: \setcounter{part}{3}  %% that's how it works, not chapter 
-# +include: "./semanticanalysis.org"
-# +include: "./symboltable.org"
-# +include: "./typechecking.org"
-# +include: "./runtimeenvs.org"
-# +include: "./ircodegen.org"
-# +include: "./codegen.org"
 
 
 
@@ -87,7 +76,7 @@
 
 
  
-*** 						     :B_ignoreheading:export:
+* XXX 						     :B_ignoreheading:export:
     :PROPERTIES:
     :BEAMER_env: ignoreheading
     :END:

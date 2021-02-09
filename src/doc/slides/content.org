@@ -1,7 +1,4 @@
-* Oblig 1                                           :B_ignoreheading:ARCHIVE:
-  :PROPERTIES:
-  :BEAMER_env: ignoreheading
-  :END:
+* Oblig 1                                           
 
 
 
@@ -298,7 +295,7 @@ grammar in BNF with *action* code
 
 
 #+begin_export latex 
- \includegraphics[width=0.66\textwidth]{figures/snaps/directorystruct-o1}
+ \includegraphics[width=0.66\textwidth]{figures/snaps/old/directorystruct-o1}
 #+end_export
 
 
@@ -430,7 +427,7 @@ If problems, *ask in time*  (*NOT* Friday at the deadline)
     :END:
 
 
-- this year we try /git/
+- as the previous 2 or 3 years, we use  /git/
 
 - [[https://github.uio.no]] resp. [[https://github.uio.no/msteffen/compila]]
 
@@ -450,7 +447,10 @@ If problems, *ask in time*  (*NOT* Friday at the deadline)
 
 
 
-* Oblig2
+* Oblig2                                            :B_ignoreheading:ARCHIVE:
+  :PROPERTIES:
+  :BEAMER_env: ignoreheading
+  :END:
 
 
 *** Goal                                                            :B_frame:
