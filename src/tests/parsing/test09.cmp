@@ -1,5 +1,4 @@
-
-program A_A2 begin  (*  *)
+program A_A2 begin  (* some comment *)
   procedure a () 
   begin
   var x : x := 4;   (* def + decl *)
