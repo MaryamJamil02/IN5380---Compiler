@@ -2,7 +2,7 @@
 #+OPTIONS: broken-links:nil c:nil creator:nil d:(not "LOGBOOK") date:t e:t
 #+OPTIONS: email:nil f:t inline:t num:t p:nil pri:nil prop:nil stat:t
 #+OPTIONS: tags:nil tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
-#+TITLE: Compila 20 (Language and compiler skeleton + material)
+#+TITLE: Compila 21 (Language and compiler skeleton + material)
 #+DATE: <2018-02-25 So>
 #+AUTHOR: Martin Steffen
 #+EMAIL: msteffen@ifi.uio.no
@@ -16,7 +16,7 @@
 
 * Intro
 
-The repository host material for the /Compila 20/ compiler, which is the
+The repository host material for the /Compila 21/ compiler, which is the
 content of oblig 1 and 2 for the course ``compiler construction''
 ([[http://www.uio.no/studier/emner/matnat/ifi/INF5110/][INF5110]]/INF9110). The material focuses on the code and the description and
 documentation of the compiler. /Not/ contained here is the compiler
@@ -35,7 +35,7 @@ slides are kept in the Vortex system on the course's web-page.
 - [[./src]]: sources (including sources of the documentation).
 
 
-- [[./src/tests]]: compila 20 programs for testing. Not all tests are already
+- [[./src/tests]]: compila 21 programs for testing. Not all tests are already
   relevant for *oblig 1*. The directory contains a number of subdirectories
   for different purposes. The one required for *oblig 1* is
 
@@ -123,7 +123,7 @@ programs that can be built and run).
 *** Check the dummy code
 
 Do the same for the dummy- and skeleton-classes provided as starting point
-for the compila 20 compiler. Inside the top-level compila directory, do
+for the compila 21 compiler. Inside the top-level compila directory, do
 
 #+begin_src 
  ant   
