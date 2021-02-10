@@ -166,7 +166,18 @@ clean up the ~Readme.org~ file here to fit the needs of your project, or
 replace it but another Readme file (but no need to have 2 readme-files
 around).
 
+* Communication & discussion forums
 
+Especially in virus times, electronic communication is important. If
+encountering troubles or puzzling, email is an option. Besides that, the
+university has set up some discussion platforms per course that they think
+is useful.
+
+  - [[https://mattermost.uio.no/ifi-undervisning/channels/inf5110][mattermost]] and
+  - [[https://uio.padlet.org/MartinSteffen/5agsnjd06mtn1g3a][padlet]]
+
+Make use of them, for instance by posting questions concerning the oblig
+(or the lecture).
 
 * Some relevant external links 
 
