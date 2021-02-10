@@ -88,25 +88,26 @@ corresponding green button of the github web-page)
 
 ** Rename it to fit to your  own project:
 
-After getting a copy after unzipping, the directory will be called
-~compila-master~. Rename the directory to fit with your group number, so if
-your group is ~01~, your (resp. your groups) directory is called
-~compila01~.  Please: call it not something else, neither ~compila1~, nor
-~Compila01~ not ~compila-01~ etc. It makes uniform treatment of all groups
-and automatic checks (perhaps via scripts) a tiny bit more easy.
+When getting a copy after unzipping, the directory will be called
+~compila-master~ (if you clone it, the name is ~compila~). Rename the
+directory to fit with your group number, so if your group is ~01~, your
+(resp. your groups) directory is called ~compila01~.  Please: don't call it 
+something else, neither ~compila1~, nor ~Compila01~ not ~compila-01~
+etc. It makes uniform treatment of all groups and automatic checks (perhaps
+via scripts) a tiny bit more easy.
 
 
-If you instead of downloading the zip, get yourself a clone:
-Make sure that the original repos [[https://github.uio.no/msteffen/compila]] is
-no longer connected to your clone, as you should just use it as a starting
-point for your project, and not to work in the common code base.
+If you instead of downloading the zip, get yourself a clone: Make /sure/
+that the original repos [[https://github.uio.no/msteffen/compila]] is no longer
+connected to your clone, as you should just use it as a starting point for
+/your/ project, and not to work in the common code base.
 
   
 
 ** Some check to see if everything on your system is in place
 
 You should make sure that java runs (and the classpath is not messed up
-somehow etc).  Perhaps check if ~ant~ is running. 
+somehow etc).  Perhaps check if ~ant~ is running.
 
 *** Check the simple evaluator
 
@@ -117,13 +118,15 @@ Inside the compila-directory, do
    cd material/simpleexpression
    ant 
 #+end_src
-watch the output, and try out the shown target (1 clean, 2 different
-programs that can be built and run).
+watch the output, and try out the shown targets. There is 1 target for
+cleaning up, 2 different programs that can be built and run, so altogether
+5 targets you can test.
 
 *** Check the dummy code
 
 Do the same for the dummy- and skeleton-classes provided as starting point
-for the compila 21 compiler. Inside the top-level compila directory, do
+for the compila 21 compiler. Inside the top-level compila directory, which
+contains a [[./build.xml]]-file, do
 
 #+begin_src 
  ant   
