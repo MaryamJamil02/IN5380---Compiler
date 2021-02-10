@@ -1,4 +1,4 @@
-% Created 2021-02-09 Tue 15:25
+% Created 2021-02-10 Wed 12:24
 % Intended LaTeX compiler: pdflatex
 \documentclass{beamer}
  		 
@@ -32,14 +32,14 @@
 
 \maketitle
 \chapter{Oblig 1}
-\label{sec:org8c56b80}
+\label{sec:org7ddd2b8}
 
 
 
 \section{Compila 20}
-\label{sec:orga700e8f}
+\label{sec:orgd24b319}
 
-\begin{frame}[label={sec:org238d6fc}]{Oblig 1}
+\begin{frame}[label={sec:orgc365a10}]{Oblig 1}
 \begin{itemize}
 \item material (also for oblig 2) based on previous years, including contributions from Eyvind
 W. Axelsen, Henning Berg, Fredrik Sørensen, and others
@@ -52,7 +52,7 @@ W. Axelsen, Henning Berg, Fredrik Sørensen, and others
 \end{frame}
 
 
-\begin{frame}[label={sec:orgac2c765}]{Goal (of oblig 1)}
+\begin{frame}[label={sec:org855a29a}]{Goal (of oblig 1)}
 \begin{block}{Parsing}
 Determine if programs written in \emph{Compila 20} are syntactically correct: 
 
@@ -70,7 +70,7 @@ Determine if programs written in \emph{Compila 20} are syntactically correct:
 \end{frame}
 
 
-\begin{frame}[label={sec:org9dba48c}]{Learning outcomes}
+\begin{frame}[label={sec:org1df2ca0}]{Learning outcomes}
 \begin{itemize}
 \item using \alert{tools} for parser/scanner generation
 \begin{itemize}
@@ -97,20 +97,20 @@ tools)
 \end{frame}
 
 
-\begin{frame}[label={sec:orgafaa4cd}]{Compila language at a glance}
+\begin{frame}[label={sec:org910e8fa}]{Compila language at a glance}
 
 \lstinputlisting[basicstyle=\scriptsize,emph={begin,end,in, procedur,program,var,return,struct}]{code/myprogram.cmp}
 \end{frame}
 
 
 
-\begin{frame}[label={sec:org37f2a8f},plain]{Another glance}
+\begin{frame}[label={sec:orgc886aed},plain]{Another glance}
 
 \lstinputlisting[basicstyle=\scriptsize,emph={begin,end,in, proc,program,var,return,struct}]{code/swap.cmp}
 \end{frame}
 
 
-\begin{frame}[label={sec:org3a6a6a8},plain]{Grammar (1): declarations}
+\begin{frame}[label={sec:org9524e82},plain]{Grammar (1): declarations}
 
 %~/cor/teaching/compila/src/doc/languagespec/
 \lstinputlisting[basicstyle=\scriptsize,lastline=14]{../../doc/languagespec/grammar.txt}
@@ -121,7 +121,7 @@ tools)
 
 
 
-\begin{frame}[label={sec:org67fa0a3},plain]{Grammar (2): expressions, statements, etc.}
+\begin{frame}[label={sec:org369e747},plain]{Grammar (2): expressions, statements, etc.}
 
 %~/cor/teaching/compila/src/doc/languagespec/
 \lstinputlisting[basicstyle=\scriptsize,firstline=15,lastline=40]{../../doc/languagespec/grammar.txt}
@@ -130,7 +130,7 @@ tools)
 
 
 
-\begin{frame}[label={sec:org055bfdb},plain]{Grammar (3): statements and types}
+\begin{frame}[label={sec:orgfabb4ae},plain]{Grammar (3): statements and types}
 
 %~/cor/teaching/compila/src/doc/languagespec/
 \lstinputlisting[basicstyle=\scriptsize,firstline=41]{../../doc/languagespec/grammar.txt}
@@ -140,9 +140,9 @@ tools)
 
 
 \section{Tools}
-\label{sec:org58da95e}
+\label{sec:org4e083e8}
 
-\begin{frame}[label={sec:orgd4fcde4},fragile]{Tools: JFlex}
+\begin{frame}[label={sec:org3a79230},fragile]{Tools: JFlex}
  \begin{itemize}
 \item scanner generator (or lexer generator) tool
 
@@ -164,13 +164,13 @@ tools)
 \end{frame}
 
 
-\begin{frame}[label={sec:org35236e0}]{Sample lex code}
+\begin{frame}[label={sec:orgf988377}]{Sample lex code}
 \includegraphics[width=\textwidth]{figures/snaps/lexcode}
 \end{frame}
 
 
 
-\begin{frame}[label={sec:orga0f06a3},fragile]{CUP: Construction of useful parsers (for Java)}
+\begin{frame}[label={sec:org73d1fc4},fragile]{CUP: Construction of useful parsers (for Java)}
  \begin{itemize}
 \item a tool to easily (ymmv) generate \emph{parsers}
 
@@ -196,13 +196,13 @@ grammar in BNF with \alert{action} code
 \end{frame}
 
 
-\begin{frame}[label={sec:orga9c6437}]{Sample CUP code}
+\begin{frame}[label={sec:org17b96cd}]{Sample CUP code}
 \includegraphics[width=\textwidth]{figures/snaps/cupcode}
 \end{frame}
 
 
 
-\begin{frame}[label={sec:org0150001},fragile]{Build tool: ant}
+\begin{frame}[label={sec:orgac9836b},fragile]{Build tool: ant}
 
  \begin{center}
  \includegraphics[width=0.2\textwidth]{figures/snaps/antlogo}
@@ -230,7 +230,7 @@ grammar in BNF with \alert{action} code
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org486db43}]{AST data structure}
+\begin{frame}[label={sec:org5f18fba}]{AST data structure}
 
 \begin{center}
  \includegraphics[width=0.8\textwidth]{figures/snaps/astclasses}
@@ -240,7 +240,7 @@ grammar in BNF with \alert{action} code
 
 
 
-\begin{frame}[label={sec:org41a36ba},fragile]{Overview over the directory + first steps}
+\begin{frame}[label={sec:org52d7c77},fragile]{Overview over the directory + first steps}
  \begin{itemize}
 \item see the Readme at/from the \texttt{github.uio.no}
 \end{itemize}
@@ -251,7 +251,7 @@ grammar in BNF with \alert{action} code
 
 
 
-\begin{frame}[label={sec:orgcac782c}]{Building: putting it together}
+\begin{frame}[label={sec:org6b87748}]{Building: putting it together}
 
 \begin{center}
  \includegraphics[width=0.8\textwidth]{figures/snaps/buildprocess}
@@ -259,11 +259,11 @@ grammar in BNF with \alert{action} code
 \end{frame}
 
 \section{Official}
-\label{sec:orgf38b842}
+\label{sec:org6ae5553}
 
-\begin{frame}[label={sec:org17fd4a4},fragile]{Deadline}
+\begin{frame}[label={sec:orgd7cb7f7},fragile]{Deadline}
  \begin{alertblock}{Deadline}
-\alert{Friday 06. 03. 2020, 23:59}
+\alert{Friday 12. 03. 2021, 23:59}
 \end{alertblock}
 
 
@@ -280,7 +280,7 @@ if sick etc
 \end{frame}
 
 
-\begin{frame}[label={sec:orgd9b8343},fragile]{Deliverables}
+\begin{frame}[label={sec:org9f76786},fragile]{Deliverables}
  \begin{itemize}
 \item see also the ``handout''
 \end{itemize}
@@ -309,7 +309,7 @@ declations in \emph{CUP}, e.g.
 \end{frame}
 
 
-\begin{frame}[label={sec:org660faa8}]{Deliverables}
+\begin{frame}[label={sec:org5578508}]{Deliverables}
 \begin{block}{Deliverables (2)}
 \begin{itemize}
 \item report (with name(s) and UiO user name(s)
@@ -331,9 +331,9 @@ If problems, \alert{ask in time}  (\alert{NOT} Friday at the deadline)
 
 
 
-\begin{frame}[label={sec:org1bcdc7c},fragile]{Hand-in procedure}
+\begin{frame}[label={sec:org6c97c8f},fragile]{Hand-in procedure}
  \begin{itemize}
-\item this year we try \emph{git}
+\item as the previous 2 or 3 years, we use  \emph{git}
 
 \item \url{https://github.uio.no} resp. \url{https://github.uio.no/msteffen/compila}
 
