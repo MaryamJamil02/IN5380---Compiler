@@ -46,8 +46,8 @@
 
 
 #+latex_header: \def\mytitle{Compiler Construction}    %% what for
-#+LaTeX_header: \def\myauthor{Martin Steffen}   %% what for
-#+LaTeX_header: \def\mydate{Spring 2021}        %% what for
+#+LaTeX_header: \def\myauthor{Martin Steffen}          %% what for
+#+LaTeX_header: \def\mydate{Spring 2021}               %% what for
 
 
 #+include: "./content.org"  
