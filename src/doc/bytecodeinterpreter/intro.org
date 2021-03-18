@@ -98,10 +98,10 @@ replaced by $s_1 - s_0$.
 
 ** The library
 
-The library has a class [[srcbytecode:CodeFile.java][CodeFile]] that is the
-base class for creating a program with ``runnable'' sequences of
-instructions, i.e. a (binary or ~.bin~) file, executable by the virtual
-machine or more specifically by the virtual machine interpreter.
+The library has a class [[srcbytecode:CodeFile.java][~CodeFile~]] that is the base class for creating a
+program with ``runnable'' sequences of instructions, i.e. a (binary or
+~.bin~) file, executable by the virtual machine or more specifically by the
+virtual machine interpreter.
 
 
 To create such a bytecode file, one must create an object of the class
@@ -117,10 +117,10 @@ can then be read by the virtual machine and run by its interpreter.
 
 
 
-A typical use of the ~Codefile~ class will be something like this:
+A typical use of an instance of ~CodeFile~ will be something like this:
 
 
-
+#+CAPTION: Typical use of the ~Codefile~ class
 #+include: "codesnippets/useofcodefile.javaoid" src java
 
 In that example, first an object of the class ~CodeFile~ is created. Then,
