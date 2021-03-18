@@ -7,6 +7,12 @@ import java.util.Map;
 
 import bytecode.type.CodeType;
 
+/**
+ * An instance of this class is to contain a representation of the code of
+ * a complete program. Typically, per compilation, there is only one
+ * instance of that class, i.e., the typical usage is that of a singleton
+ * class. 
+*/
 public class CodeFile {
 	private int main=-1;
 	private List<String> variableNames = new ArrayList<String>();
@@ -19,7 +25,8 @@ public class CodeFile {
 	private Map<Integer, CodeStruct> structs = new HashMap<Integer, CodeStruct>();
 
 	private List<String> stringConstants = new ArrayList<String>();
-	
+
+    
 	public void addVariable(String name) {
 		this.variableNames.add(name);
 	}
