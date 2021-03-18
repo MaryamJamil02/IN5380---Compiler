@@ -6,6 +6,7 @@ import java.util.List;
 
 import bytecode.type.CodeType;
 
+/** Test  */
 public class CodeStruct {
 	private String name;
 	private List<String> names = new ArrayList<String>();

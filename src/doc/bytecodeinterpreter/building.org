@@ -174,9 +174,9 @@ instruction.
 The /index/ of a variable or a parameter can be found by using ~int
 variableNumber(String name)~. Note that local variables mus have unique
 names in any block, and that includes the parameters. The parameters are
-given the first indices from left to right, starting from ~0~. Then the
-variables are given the subsequent indices in the order of their
-declaration.
+given the first indices from left to right, starting from ~0~. The
+(remaining) local variables are given the subsequent indices in the order
+of their declaration.
 
 A ~CodeProcedure~ object can find the indices of elements using its
 ~CodeFile~ object, so it also has the procedures ~globalVariableNumber~,
