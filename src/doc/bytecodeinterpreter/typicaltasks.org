@@ -16,3 +16,8 @@ be $1$ to $5$ bytes long.
 ** Calling a procedure
 
 The constructor of the ~CALL~ class has an integer parameter ~funcNum~
+
+
+
+** Library procedures
+<<sec:bci.tasks.libraryprocs>>

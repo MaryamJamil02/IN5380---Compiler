@@ -1,11 +1,12 @@
-#+LINK: srcbytecode ../../../material/oblig2-patch/src/bytecode/%s
-#+LINK: srcruntime ../../../material/oblig2-patch/src/runtime/%s
+#+LINK: srcbytecode ../../bytecode/%s
+#+LINK: srcruntime ../../runtime/%s
+
 
 * Building a complete program
 
-We have shown the basics of how a bytecode program (binary file) is built
+We have shown the basics of how to build a bytecode program (binary file)
 using the bytecode library. In this section we will show some of the
-details by covering each of the classes in the library. Details about all
+details by covering each of the classes of the library. Details about all
 the instructions will come in Section [[sec:rememberthis]].
 
 The main parts for creating a new program are: create an object of the
@@ -13,41 +14,51 @@ class ~CodeFile~. Afterwards add the procedures, i.e., objects of class
 ~CodeProcedure~, structs, i.e., objects of class ~CodeStruct~, and so
 on. Finally, when calling the ~getBytecode()~ procedure, the bytecode
 library will generae the actual bytes from the object hat have been created
-and from the ``properties'' given to those objects.
+and from the ``properties'' given to those objects. Note that there a
+/four/ steps to create a procedure (or a struct, or global variable).
 
-Note that there a /four/ steps to create a procedure (or a struct, or
-global variable).
+|    |                                                       |                      |
+|----+-------------------------------------------------------+----------------------|
+| 1. | /add/ the definition to the ~CodeFile~ object         | ~addProcedure~.      |
+| 2. | /create/ the ~CodeProcedure~ object (say ~p~)         | ~new CodeProcedure~. |
+| 3. | /add/ ``properties'', such as  instructions, to ~p~   |                      |
+| 4. | /update/ the ~CodeProcedure~ object in the ~CodeFile~ | ~updateProcedure~    |
 
-1. /add/ the definition to the ~CodeFile~ object via ~addProcedure~.
-2. /create/ the ~CodeProcedure~ object via ~new CodeProcedure~.
-3. /add/ ``properties'', such as the instructions, to the ~CodeProcedure~
-   object.
-4. /update/ the ~CodeProcedure~ object in the ~CodeFile~ via
-   ~updateProcedure~
 
 
 These four standard steps are illustrated in slightly more detail in the
-following example.k
+following example.
 
-** A small example
+** Creating code for a procedure: A small example.
 
-The example code creates a program and first adds the name of a library
-procedure to be used.  It then adds a procedure ~Main~, a global variable
-~myGlobalVar~, a procedure ~test~ and a struct ~Complex~ (I). The main
-procedure has the void return type, no parameters, no local variables and
-the body consists of a single instruction, namely ~return~ (II). The global
-variable is typed with the struct type ~Complex~ (III). The procedure
-~test~ has 2 parameters (of type float and a reference type to
-~Complex~). The procedure loads the first parameter onto the stack and then
-calls the (library) procedure ~print_float~ to print its value (IV). The
-struct ~Complex~ is created and the two fields, both of floating point
-type, are added to it (V). The procedure ~print_float~ used in the program
-is a library procedure. Nonetheless, it needs to be added, but without
-instructions (VI). See Section [[sec:typicaltasks]] Finally, the mandatory main
-method is set, before the bytecode can be extracted to a file (VII),
+The example code creates a "code file" and first adds the name of a
+/library/ procedure to be used.  It then adds 4 items, in preparation for
+the follow-up steps, which add the code for those items. Added is procedure
+~Main~, a global variable ~myGlobalVar~, a procedure ~test~ and a struct
+~Complex~ (I).
 
 
+In the next steps, the procedure ~Main~ is properly defined and the
+information is added. The main procedure has the void return type, no
+parameters, no local variables and the body consists of a single
+instruction, namely ~return~. The code of part (II) corresponds to the
+steps 2.-4. for the 4 steps mentioned above, the first step for the
+procedure has been done in "section" (I).
 
+The global variable is typed with the struct type ~Complex~ (III).
+
+The procedure ~test~ has 2 parameters (of type float and a reference type
+to ~Complex~). The procedure loads the first parameter onto the stack and
+then calls the (library) procedure ~print_float~ to print its value
+(IV). The struct ~Complex~ is created and the two fields, both of floating
+point type, are added to it (V). The procedure ~print_float~ used in the
+program is a library procedure. Nonetheless, it needs to be added, but
+without instructions (VI). See also Section
+[[sec:bci.tasks.libraryprocs]]. Finally, the mandatory main method is set,
+before the bytecode can be extracted to a file (VII),
+
+
+#+CAPTION: 4 steps to generate code for a procedure 
 #+include: "codesnippets/simpleexample.javaoid" src java
 
 
@@ -55,17 +66,17 @@ method is set, before the bytecode can be extracted to a file (VII),
 
 
 #+index: error: classes are not created
-This is the class type cbyecode is created from and all elements must be
-added to the corresponding object. It also proveds the servive of returning
-indices to the given elements, as we will see later. Those indices are
-needed when instruction classes are created. They reference the elements
-within the program. Adding something to a ~CodeFile~ object is done in
-/two/ stages; first, the element is added using something like the
-~addProcedure~ procedure, supplying only the name. Then later, the
-~updateProcedure~ must be called with a reference to the actual procedure
-object. After a procedure has been added (but before it has been updated)
-its index can be found and used, for example to crete a call to it, as we
-will see.
+
+This is the class byecode is created from and all elements must be added to
+the corresponding object. It also provides the service of returning indices
+to the given elements, as we will see later. Those indices are needed when
+instruction classes are created. They reference the elements within the
+program. Adding something to a ~CodeFile~ object is done in /two/ stages;
+first, the element is added using something like the ~addProcedure~
+procedure, supplying only the name. Then later, the ~updateProcedure~ must
+be called with a reference to the actual procedure object. After a
+procedure has been added (but before it has been updated) its index can be
+found and used, for example to create a call to it, as we will see.
 
 
 An object of the ~CodeFile~ class is typically seen by all the nodes in the
@@ -74,22 +85,27 @@ element in the syntax tree is typically responsible for adding itself to
 the compiled result by using the procedures of the ~CodeFile~ or
 ~CodeProcedure~ classes.
 
+#+index: index
+
+#+index: global variable
 A /global variable/ is added by using the procedure ~void
 addVariable(String name)~. After a global variable has been added, its
 index (~id~) in the program may be found using its name, calling the
 procedure ~int globalVariableNumber(String name)~ The type of the variable
-/must/ be supplied before the bytecode is generated. It is done by calling
-~void uodateVariable(String name, CodeType type)~. All global variables
-must have unique names.
+/must/ be supplied /before/ the bytecode is generated. The generation is
+done by calling the method ~void uodateVariable(String name, CodeType
+type)~. All global variables must have unique names.
 
+#+index: procedure
 
 A /procedure/ is added by using the procedure ~void addProcedure(String
 name)~ After a procedure has been added, its index (~id~) in the program
 may be found using its name, calling the procedure ~int
 procedureNumber(String name)~. The details of the procedure must be
-supplied before the bytecode is generated. It is done by ~public void
-updateProcedure(CodeProcedure codeProcedure)~. 
+supplied before the bytecode is generated. It is done by invoking the
+method ~public void updateProcedure(CodeProcedure codeProcedure)~.
 
+#+index: struct
 
 For a struct, there as similar procedures ~public void ~addStruct(String
 name)~, ~int structNumber(String name)~, and ~void updateStruct (CodeStruct

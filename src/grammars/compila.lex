@@ -24,8 +24,8 @@ WhiteSpace = {LineTerminator} | [ \t\f]
 Identifier = [:jletter:] [:jletterdigit:]*
 %%
 <YYINITIAL>{
-        {WhiteSpace}                    { System.out.println("WS"); }
-        "program"                       { System.out.println("prog");  }
+  {WhiteSpace}                          {  }
+        "program"                       { return symbol(sym.PROGRAM); }
         "class"                         { return symbol(sym.CLASS); }
         "begin"                         { return symbol(sym.BEGIN); }
         "end"                           { return symbol(sym.END); }
