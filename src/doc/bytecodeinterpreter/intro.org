@@ -134,28 +134,27 @@ editor for binary files like the Eclipse Hex Editor Plugin ([[http://ehep.source
 
 ** Using the virtual machine
 
-There are two ways to run program from a bytecode file. Both are provided
-by the class [[srcruntime:VirtualMachine.java][VirtualMachine]].
-
-
-One is to use the /command line/, writing
+A bytecode file can be used in two ways, file, both offered by the class
+[[srcruntime:VirtualMachine.java][~VirtualMachine~]] of the [[srcruntime:][~runtime~]] package. Either the execution is
+triggered /externally/, from the command line. Or internally from within a
+Java program. For the exernal use, the command line commands are
 
 
 #+begin_example
   java runtime.VirtualMachine <FILENAME>
 #+end_example
 
-The other is, inside a progra, to instantiate the class ~VirtualMachine~
-and call its ~run~ method.
+Using the interpreter from inside a program, one needs to instantiate the
+class [[srcruntime:VirtualMachine.java][~VirtualMachine~]] and call its ~run~ method.
 
-#+begin_example
+#+begin_src java
   VirtualMachine vm = new VirtualMachine("<FILENAME>");
   vm.run();
-#+end_example
+#+end_src
 
-This class ~VirtualMachine~ can also list the content of the bytecode fule
-in textual form. Also this can be done in two ways: via the command option
-~-l~ or, from inside a program, using the ~list~ method:
+The class ~VirtualMachine~ can also list the content of the bytecode file
+in textual form. Eexternally with the command line option ~-l~ or, from
+inside a program, using the ~list~ method:
 
 #+begin_example
   java runtime.VirtualMachine -l <FILENAME>
@@ -163,10 +162,10 @@ in textual form. Also this can be done in two ways: via the command option
 
 resp.
 
-#+begin_example
+#+begin_src java
   VirtualMachine vm = new VirtualMachine("<FILENAME>");
-  vm.run();
-#+end_example
+  vm.list();
+#+end_src
 
 As an example, assume a program like this
 
@@ -194,47 +193,62 @@ STARTWITH: Main
 
 ** Source code overview 
 
-The [[srcbytecode:][bytecode library]] contains classes and sub-packages. The most important
-classes are the follwoing
+The [[srcbytecode:][bytecode library]] is a package contain a few classes and besides that
+sub-packages with their own classes. The most important classes at the
+top-level the library are the following
 
-- [[srcbytecode:CodeFile.java][~CodeFile~]],
-- [[srcbytecode:CodeProcedure.java][~CodeProcedure~]], and
-- [[srcbytecode:CodeStruct.java][~CodeStruct~]].
+| class           |  purpose                       |
+|-----------------+--------------------------------|
+| [[srcbytecode:CodeFile.java][~CodeFile~]]      | main class to create byte code |
+| [[srcbytecode:CodeProcedure.java][~CodeProcedure~]] | create code for procedures     |
+| [[srcbytecode:CodeStruct.java][~CodeStruct~]]    | create code for structs        |
 
-The first one is the the main class for creating byte code the other two
-for creating a procedure resp. a struct in the byte code. As for the
-sub-packages (i.e., subdirectories), there are 2
+The first one is the the main class for creating byte code, mentioned
+earlier, the other two for creating a procedure resp. a struct in the byte
+code.
 
-- [[srcbytecode:./instructions/][~instructions~]] and
-- [[srcbytecode:type/][~type~]]
 
-corresponding to the packages ~bytecode.instructions.*~ and
+There are two sub-packages, contained in corresponding sub-directories
+
+
+| sub-package    | purpose                               |
+|----------------+---------------------------------------|
+| [[srcbytecode:./instructions/][~instructions~]] | byte code instruction set             |
+| [[srcbytecode:type/][~type~]]         | byte code representation of the types |
+|----------------+---------------------------------------|
+
+
+The packages are referred to accordingly ~bytecode.instructions.*~ and
 ~bytecode.type.*~.  The instructions in the first package are represented
 as concrete subclasses of the abstract [[srcbytecode:./instructions/Instruction.java][~Instruction~]] class.  Similarly for
 the types (as subclasses of the abstract [[srcbytecode:./type/CodeType.java][~CodeType~]] class. That package
 contains all the types used in the byte code.
 
-Although usually not used by a programmer, it might be nice to know the
-main classes of the virtual machine resp. the run-time system, as well. See
-the package resp. directory [[srcruntime:][~runtime~]] The main classes are the following
+Although usually not directly used by a programmer, it might be instructive
+to know the main classes of the virtual machine resp. the run-time system,
+as well. See the package resp. directory [[srcruntime:][~runtime~]] The main classes are the
+following:
 
-- [[srcruntime:VirtualMachine.java][~VirtualMachine~]]
-- [[srcruntime:Loader.java][~Loader~]]
-- [[srcruntime:Interpreter.java][~Interpreter~]]
-- [[srcruntime:Stack.java][~Stack~]]
-- [[srcruntime:Heap.java][~Heap~]]
-- [[srcruntime:ActivationBlock.java][~ActivationBlock~]]
+| class (in ~runtime~) |
+|----------------------|
+| [[srcruntime:VirtualMachine.java][~VirtualMachine~]]     |
+| [[srcruntime:Interpreter.java][~Interpreter~]]        |
+| [[srcruntime:Stack.java][~Stack~]]              |
+| [[srcruntime:Heap.java][~Heap~]]               |
+| [[srcruntime:ActivationBlock.java][~ActivationBlock~]]    |
+| [[srcruntime:Loader.java][~Loader~]]             |
+|                      |
 
-The virtual machine class is the starting point for running a program, the
-loader class loads a a program from a file. The actual interpretation of
-the byte code is provided by the interpreter class. The classes ~Heap~ and
-~Stack~ are responsible for management of the corresponding memory. Note
-that there is a single stack for each program (as the programs are
-single-threaded). The heap contains structs, and they allocation and access
-is maintained by the mentioned class. The class for activation blocks
-handles and stores the program counter, local variables etc. and also
-handles the call and return of a procedure in conjuction with the
-interpreter.
+The virtual machine class is the starting point for running a program, as
+mentioned earlier.  The loader class loads a a program from a file. The
+actual interpretation of the byte code is provided by the interpreter
+class. The classes ~Heap~ and ~Stack~ are responsible for management of the
+corresponding memory. Note that there is a single stack for each program
+(as the programs are single-threaded). The heap contains structs, and their
+allocation and access is maintained by the mentioned class. The class for
+activation blocks handles and stores the program counter, local variables
+etc. and also handles the call and return of a procedure in conjuction with
+the interpreter.
 
 
 
