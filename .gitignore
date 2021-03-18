@@ -2,6 +2,7 @@
 *.vrb
 *.nav
 *.toc
+*.class
 *.log
 *.dvi
 *.aux
