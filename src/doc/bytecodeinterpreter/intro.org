@@ -124,8 +124,8 @@ A typical use of an instance of ~CodeFile~ will be something like this:
 #+include: "codesnippets/useofcodefile.javaoid" src java
 
 In that example, first an object of the class ~CodeFile~ is created. Then,
-the procedure ~"main"~ is added to it. More procedures, structs, global
-variables, and constants by be added to it. Then one can get the bytecode,
+the procedure ~"main"~ is added. More procedures, structs, global
+variables, and constants may be added to it. Then one can get the bytecode,
 which is an array of bytes, and write it to a file, as shown in the code
 snippet.
 
@@ -134,7 +134,7 @@ editor for binary files like the Eclipse Hex Editor Plugin ([[http://ehep.source
 
 ** Using the virtual machine
 
-There are two ways to runa program from a bytecode file. Both are provided
+There are two ways to run program from a bytecode file. Both are provided
 by the class [[srcruntime:VirtualMachine.java][VirtualMachine]].
 
 
