@@ -1,5 +1,5 @@
-#+LINK: srcbytecode ../../../material/oblig2-patch/src/bytecode/%s
-#+LINK: srcruntime ../../../material/oblig2-patch/src/runtime/%s
+#+LINK: srcbytecode ../../bytecode/%s
+#+LINK: srcruntime ../../runtime/%s
 
 * Introduction
 
@@ -98,7 +98,7 @@ replaced by $s_1 - s_0$.
 
 ** The library
 
-The library has a class [[srcbytecode:CodeFile.java][CodeFile] that is the
+The library has a class [[srcbytecode:CodeFile.java][CodeFile]] that is the
 base class for creating a program with ``runnable'' sequences of
 instructions, i.e. a (binary or ~.bin~) file, executable by the virtual
 machine or more specifically by the virtual machine interpreter.
