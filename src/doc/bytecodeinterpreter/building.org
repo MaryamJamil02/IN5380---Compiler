@@ -100,14 +100,14 @@ type)~. All global variables must have unique names.
 
 A /procedure/ is added by using the procedure ~void addProcedure(String
 name)~ After a procedure has been added, its index (~id~) in the program
-may be found using its name, calling the procedure ~int
-procedureNumber(String name)~. The details of the procedure must be
-supplied before the bytecode is generated. It is done by invoking the
-method ~public void updateProcedure(CodeProcedure codeProcedure)~.
+can be found using its name, calling the method ~int procedureNumber(String
+name)~. The details of the procedure must be supplied before the bytecode
+is generated. That  is done by invoking the method ~public void
+updateProcedure(CodeProcedure codeProcedure)~.
 
 #+index: struct
 
-For a struct, there as similar procedures ~public void ~addStruct(String
+For a struct, there as analogous procedures ~public void ~addStruct(String
 name)~, ~int structNumber(String name)~, and ~void updateStruct (CodeStruct
 codeStruct)~.  In addition, getting the index of a field in a struct is
 done by calling ~int fieldNumber(String structName, String varName)~ using
@@ -116,14 +116,16 @@ the name of the struct and the name of the field.
 A ~string constant~ is added by using the procedure ~int
 addStringConstant(String value)~. Note that this procdure returns the index
 (~id~) of the constant /directly/ and there is no prcedire to fetch the
-index of a constant later.  The index is used fro string literals by the
+index of a constant later.  The index is used for string literals by the
 compiler.
+
 #+index: string literal
 
 After all the elements are added, it is important to let the interpreter
 know which procedure to start with. This is done by using the the name of
 the procedure (typically ~"main"~) and calling ~void SetMain(String name)~.
 
+#+index: main procedure
 
 *** Class ~CodeProcedure~
 
