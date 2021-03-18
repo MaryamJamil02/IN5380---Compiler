@@ -1,0 +1,9 @@
+* Instructions
+
+
+Below is the table with all instructions supported by the virtual machine
+and that can be found int the bytecode library. We use $s_0$ for the top of
+the stac, $s_i$ for the next element, and so on. When the symbol
+$\moredetails$ (dagger) is found after the tanme of the instruction, we
+mean that are are more details on the types of what is on the stack at the
+end of this section (look up the instruction there).

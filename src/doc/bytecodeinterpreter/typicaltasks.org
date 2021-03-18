@@ -1,0 +1,18 @@
+* Some typical tasks
+<<sec:typicaltasks>>
+
+
+In this section we show how some of the usual tasks are solved. As already
+been show, some of the instruction classes are created by supplyijng one or
+two interger values, which are the ids of procedures, structs, variables or
+something that is to be used when the intruction is interpreted. For
+instance, the ~JMP~ instruction is created with an integer parameter which
+is the index of the instruction to be jumped to.  When an instruction is
+added to the stream of bytes, it is followed by these indices coded into
+$0$ to $4$ bytes, depending on the size needed. In this way a ``byte'' can
+be $1$ to $5$ bytes long.
+
+
+** Calling a procedure
+
+The constructor of the ~CALL~ class has an integer parameter ~funcNum~
