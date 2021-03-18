@@ -3,31 +3,30 @@
 
 * Introduction
 
-This report presents the local variant of /bytecode/, /bytecode
-interpreter/, and /bytecode construction library/ written for the compiler
-construction course INF5110 and the University of Oslo. The bytpecode
-library and intepreter were developed to be used in the /code generation/
-and /runtime/ part of the obligatory exercises in the course. The objective
-of this exercise is to write a compiler for a simple example language.
+This report presents the local variant of a library for /bytecode
+construction and interpretation/ written for the compiler construction
+course INF5110 at the University of Oslo.  The objective of this exercise
+is to write a compiler for a simple example language. The bytecode library
+and intepreter were developed to be used in the /code generation/ and
+/runtime/ part of the obligatory exercises in the course.
 
 
-Bytecodes in general similar to machine code, but instead of being run
-directly on a machine, they are usually interpreted by a bytecode
-interpreter. They may also be translated into machine code before being
-run. A bytpecode instruction library is a library to simplify the task of
-generating bytecode for a bytecode interpreter. Bytecode is name exactly
-that because each instruction is the size of a byte.
+Bytecode instructions are in general similar to instructions in machine
+code, but instead of being run directly on a machine, they are usually
+interpreted by a bytecode interpreter. Alternatively, they may also be
+translated into machine code before being run. A bytpecode instruction
+library is a library to simplify the task of generating bytecode for a
+bytecode interpreter. The terminology "bytecode" comes from the fact that
+the size of each instruction one single byte.
 
 Our bytecode is quite similar to Java bytecode and our bytecode library is
 based on the [[http://commons.apache.org/proper/commons-bcel/][Byte Code Engineering Library]].[fn:bcel] We choose to write a
 simpler, stripped-down version that, for instance, does not support
-classes, virtual procedures, and all the other things that Java's bytecode
-has. We did that so that it would be simpler to work with, and there would
-be less code. For instance, one does not need to create classes like, since
-our language does not have them, just for ``some reasons
-unexplained''. Still, we encorange students to look at BCEL, as it's a nice
-tool and very well designed.
-
+classes, virtual procedures, and many other features supported by Java's
+bytecode.  This way, it's simpler to work with and there would be less
+code. For instance, one does not need to create classes like, since our
+language does not have them, just for ``some reasons unexplained''. Still,
+we encourage students to look at BCEL, it's a nice and well designed tool
 
 
 
@@ -35,18 +34,24 @@ The bytecode library and the interpreter are, not surprisingly, written in
 Java. All the code is written in source form and consists of the following
 packages.
 
-- ~bytecode.*~:    classes to create bytecode
-- ~bytecode.instructions.*~  instruction classes, supporting the above
-- ~bytecode.type.*~  type classes, supporting the above
-- ~runtime.*~ : classes of the runtime system
+
+|---------------------------+-------------------------------------------|
+| package                   | purpose                                   |
+|---------------------------+-------------------------------------------|
+| ~bytecode.*~              | classes to create bytecode                |
+| ~bytecode.instructions.*~ | instruction classes, supporting the above |
+| ~bytecode.type.*~         | classes for types, supporting the above   |
+| ~runtime.*~               | classes for the runtime system            |
+|---------------------------+-------------------------------------------|
+
 
 ** The interpreter
 
 The interpreter is /stack based/ and it interprets about 40 different
 instructions of our bytecode.  The interpreter ``automatically'' handles
 allocation of struct types, method calls and access of variables in a
-struct when instructed to, by the bytecode instructions. In the first
-version it does /not/ have a garbage collector and allocates memory
+struct when instructed to by the bytecode instructions. In the first
+version, there is /no garbage collector/ and it just allocates memory
 sequentially as long as there is memory left.
 
 #+index: instruction
@@ -64,32 +69,39 @@ what kind of operation to perform based on the types as well as the current
 instruction. For example, an ~ADD~ instruction, representing addition, will
 be performed differently if there are two integers on the stack, two
 floats, or one of each. That's different from Java bytecode, which has an
-~ADDINT~ and an ~ADDFLOAT~ instruction and wher type casting has to be done
-explicitly in the bytecode (for example with the ~i2f~ instruction, which
-does the corresponding conversion).
+~ADDINT~ and an ~ADDFLOAT~ instruction and where type casting has to be
+done explicitly in the bytecode (for example with the ~i2f~ instruction,
+which does the corresponding conversion).
 
 ** Interpreting bytecode
 
 
-As mentioned, the interpreter is stack based. The parameters from right to
-left in an operation (including user defined functions) must be placed on
-the stack with the leftmost on the bottom and the rightmost on the top of
-the stack before the instruction itself is interpreted. For example, the
-~SUB~ (subtraction) instruction requires that the two operands the ~SUB~
-instruction will be applied to are on the stack and in the right order
-beforehand. The number to subtract must be on the top and the number to
-subtract from below it. We may denote the elements on the stack before an
-instruction is interpreted with $s_n$, where $n$ is the index from the top,
-with the top as $n = 0$. Then, the result of the ~SUB~ instruction is that
-the two values on the top of the stack is removed and replaced by $s_1 -
-s_0$.
+As said, the interpreter is stack-based. We are not talking here about the
+run-time stack of the run-time environment, but the P-code like treatment
+of instruction. Of course, the interpreter must realize also some stack
+organizing calls and returns, scoping, and parameter passing.
+
+
+The parameters of an an operation (including user defined functions) are to
+be treated from left to right in that they must be placed on the stack with
+the leftmost at the bottom and the rightmost on the top of the stack before
+the instruction itself is interpreted.
+
+For example, the ~SUB~ instruction (for subtraction) requires that the two
+operands of the ~SUB~ instruction are on the stack in the correct order
+beforehand. The number to subtract must be on the top of the stack and the
+number to subtract from deeper in the stack. We may denote the elements on
+the stack before an instruction is interpreted with $s_n$, where $n$ is the
+index from the top, with the top as $n = 0$. Then, the result of the ~SUB~
+instruction is that the two values on the top of the stack is removed and
+replaced by $s_1 - s_0$.
 
 ** The library
 
-The library has a class [[srcbytecode:CodeFile.java][CodeFile] that is the base class for creating a
-program with ``runnable'' sequences of instructions, i.e. a (binary or
-~.bin~) file, executable by the virtual machine or more specifically by the
-virtual machine interpreter.
+The library has a class [[srcbytecode:CodeFile.java][CodeFile] that is the
+base class for creating a program with ``runnable'' sequences of
+instructions, i.e. a (binary or ~.bin~) file, executable by the virtual
+machine or more specifically by the virtual machine interpreter.
 
 
 To create such a bytecode file, one must create an object of the class
