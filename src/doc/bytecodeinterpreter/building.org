@@ -129,47 +129,54 @@ the procedure (typically ~"main"~) and calling ~void SetMain(String name)~.
 
 *** Class ~CodeProcedure~
 
-A procedure in the program is made by first adding its name tothe
+A procedure in the program is made by first adding its name to the
 ~CodeFile~ object, then creating an object of this class, then adding the
 parameters, local variables, and instructions to the object, and finally by
 updating the ~CodeFile~ object with the ~CodeProcedure~ object.
 
 #+index: procedure object
-A /procedure object/ is creatd by using the cosntructor
-~CodeProcedure(String name, CodeType returnType, CodeFile codeFile)~. This
-takes the unique name of the procedure, the return type (see ~CodeType~
-below) and the code file that it will be added to. The reason that the code
-file is included is that it is needed by the procedure object to provide
-some of the code file services through delegation.
+A /procedure object/ is creatd by the constructor ~CodeProcedure(String
+name, CodeType returnType, CodeFile codeFile)~. This takes the unique name
+of the procedure, the return type (see ~CodeType~ below) and the code file
+that it will be added to. The reason why the code file is included is that
+it is needed by the procedure object to provide some of the code file
+services (relying on a delegation pattern mechanism).
+
+#+index: delegation
 
 #+index: parameter
 #+index: local variable
 
-A /parameter/ or /local variable/ is added by using the procedures ~void
-addParameter(String name, CodeType type)~ or ~void addLocalVariable(String
+/Parameters/ and /local variables/ are added by the procedures ~void
+addParameter(String name, CodeType type)~ and  ~void addLocalVariable(String
 name, CodeType type)~.
 
 #+index: instruction
 
-An /instruction/ is added to the procedure object by using ~int
-addInstruction(Instruction instruction)~. The return value of this is the
-index of the instruction in the procedure's list of instructions. Sometimes
-one wants to /replace/ and earlier instruction. This is done by using ~void
-replaceInstruction(int place, Instruction instruction). For instance, one
-may insert temporarily a ~NOP~ instruction to be replaced later by a
-~MP~. Read more in Section XXX on jumps. A procedure must have at least one
-instruction and also, that instruction has to be a final ~RETURN~
+#+index: replace an instruction
+#+index: instruction!replacement
+An /instruction/ is added to the procedure object with ~int
+addInstruction(Instruction instruction)~. The return value of this method
+is the /index/ of the instruction in the procedure's list of
+instructions. Sometimes one wants to /replace/ and earlier
+instruction. This is done by using ~void replaceInstruction(int place,
+Instruction instruction)~. For instance, one may insert temporarily a ~NOP~
+instruction to be replaced later by a jump instruction ~JMP~. Read more in
+Section [[sec:bci.tasks.jumping]] on jumps. A procedure body cannot be
+completely empty, it must at least contain one final ~RETURN~
 instruction.
+#+index: return
+
+#+index: jump
 
 #+index: index
-The /index/ of a variable or parameter can be found by using ~int
+
+The /index/ of a variable or a parameter can be found by using ~int
 variableNumber(String name)~. Note that local variables mus have unique
-names in any block, and that the parameters are included in this. Tje
-parameters are given the first indices (~id~s) from left to right, starting
-from ~0~. Then the variables are given the subsequent indices in the order
-of declarations.
-
-
+names in any block, and that includes the parameters. The parameters are
+given the first indices from left to right, starting from ~0~. Then the
+variables are given the subsequent indices in the order of their
+declaration.
 
 A ~CodeProcedure~ object can find the indices of elements using its
 ~CodeFile~ object, so it also has the procedures ~globalVariableNumber~,
