@@ -48,19 +48,25 @@ public class CodeProcedure {
 		return this.codeFile.addStringConstant(value);
 	}
 
-	public int variableNumber(String name) {
-		for (int i=0; i<parameterNames.size(); i++){
-			if(name.equals(parameterNames.get(i))){
-				return i;
-			}
-		}
-		for (int i=0; i<this.variableNames.size(); i++){
-			if(name.equals(this.variableNames.get(i))){
-				return this.parameterNames.size() + i;
-			}
-		}
-		return -1;
+    /**
+     * Determine the index (an integer) of a local variable or procedure
+     * paraneter declared earlier
+     * @return the so-called index of a variable (incl. formal parameter).
+     * @param name of the variable (incl. formal parameter)
+     */        
+    public int variableNumber(String name) {
+	for (int i=0; i<parameterNames.size(); i++){
+	    if(name.equals(parameterNames.get(i))){
+		return i;
+	    }
 	}
+	for (int i=0; i<this.variableNames.size(); i++){
+	    if(name.equals(this.variableNames.get(i))){
+		return this.parameterNames.size() + i;
+	    }
+	}
+	return -1;
+    }
 
 	public int globalVariableNumber(String name) {
 		return this.codeFile.globalVariableNumber(name);

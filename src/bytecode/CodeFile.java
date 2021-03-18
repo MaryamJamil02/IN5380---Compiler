@@ -14,24 +14,37 @@ import bytecode.type.CodeType;
  * class. 
 */
 public class CodeFile {
-	private int main=-1;
-	private List<String> variableNames = new ArrayList<String>();
-	private Map<Integer, CodeType> variableTypes = new HashMap<Integer, CodeType>();
-
-	private List<String> procedureNames = new ArrayList<String>();
-	private Map<Integer, CodeProcedure> procedures = new HashMap<Integer, CodeProcedure>();
-	
-	private List<String> structNames = new ArrayList<String>();
-	private Map<Integer, CodeStruct> structs = new HashMap<Integer, CodeStruct>();
-
-	private List<String> stringConstants = new ArrayList<String>();
-
+    private int main=-1;
+    private List<String> variableNames = new ArrayList<String>();
+    private Map<Integer, CodeType> variableTypes = new HashMap<Integer, CodeType>();
     
-	public void addVariable(String name) {
-		this.variableNames.add(name);
-	}
+    private List<String> procedureNames = new ArrayList<String>();
+    private Map<Integer, CodeProcedure> procedures = new HashMap<Integer, CodeProcedure>();
+    
+    private List<String> structNames = new ArrayList<String>();
+    private Map<Integer, CodeStruct> structs = new HashMap<Integer, CodeStruct>();
+    
+    private List<String> stringConstants = new ArrayList<String>();
 
-	public void updateVariable(String name, CodeType type) {
+    /**
+     * Prepare a global variable "declaration", i.e. initialize it in
+     * adding the name of the variable. Internally, the variable is known
+     * via its index, which is not returned by the method.
+     * @param name of the variable. The variable name must be unique. 
+     */    
+    public void addVariable(String name) {
+	this.variableNames.add(name);
+    }
+
+    /**
+     * Declare the type for a global variable (which must have been added
+     * before), Add a global variable "declaration".  Internally, the
+     * variable is managed via its index, which is not returned by the
+     * method.
+     * @param name of the variable. 
+     * @param type of the variable. 
+     */        
+    public void updateVariable(String name, CodeType type) {
 		for(int i=0;i<this.variableNames.size();i++){
 			if(name.equals(this.variableNames.get(i))){
 				this.variableTypes.put(new Integer(i), type);
@@ -39,113 +52,169 @@ public class CodeFile {
 		}
 	}
 
-	public void addProcedure(String name) {
-		this.procedureNames.add(name);
-	}
+    /**
+     * Prepare for a procedure declaration and definition. Internally, the
+     * procedure is is managed via its index, which, however, is not
+     * returned by the method.
+     * @param name of the variable. 
+     */        
+    public void addProcedure(String name) {
+	this.procedureNames.add(name);
+    }
 
-	public void updateProcedure(CodeProcedure codeProcedure) {
-		for(int i=0;i<this.procedureNames.size();i++){
-			if(codeProcedure.getName().equals(this.procedureNames.get(i))){
-				this.procedures.put(new Integer(i), codeProcedure);
-				
-			}
-		}
-	}
-
-	public void addStruct(String name) {
-		this.structNames.add(name);
-	}
-
-	public void updateStruct(CodeStruct codeStruct) {
-		for(int i=0;i<this.structNames.size();i++){
-			if(codeStruct.getName().equals(this.structNames.get(i))){
-				this.structs.put(new Integer(i), codeStruct);
-				
-			}
-		}
-	}
-
-	public int addStringConstant(String value) {
-		this.stringConstants.add(value);
-		return this.stringConstants.size()-1;
-	}
-
-	public int globalVariableNumber(String name) {
-		for(int i=0; i<this.variableNames.size(); i++){
-			if(name.equals(this.variableNames.get(i))){
-				return i;
-			}
-		}
-		return -1;
-	}
-
-	public int procedureNumber(String name) {
-		for(int i=0; i<this.procedureNames.size();i++){
-			if(this.procedureNames.get(i).equals(name)){
-				return i;
-			}
-		}
-		return -1;
-	}
-	
-	public int structNumber(String name) {
-		for(int i=0; i<this.structNames.size();i++){
-			if(name.equals(this.structNames.get(i))){
-				return i;
-			}
-		}
-		return -1;
-	}
-	
-	public int fieldNumber(String structName, String varName) {
-		for(int i=0; i<this.structs.size();i++){
-			CodeStruct codeStruct = this.structs.get(i);
-			if(structName.equals(codeStruct.getName())){
-				return codeStruct.fieldNumber(varName);
-			}
-		}
-		return -1;
-	}
-
-	public void setMain(String name) {
-		for(int i=0; i<this.procedures.size();i++){
-			if(this.procedures.get(i).getName().equals(name)){
-				this.main = i;
-			}
-		}
-	}
-	
-	public byte[] getBytecode() {
-		int totalSize = 0;
-		byte[][] variableNamesBytes = new byte[this.variableNames.size()][];
-		for(int i=0; i<this.variableNames.size(); i++){
-			variableNamesBytes[i] = this.variableNames.get(i).getBytes();
-			totalSize += variableNamesBytes[i].length + 2;
-		}
-		byte[][] variableTypesBytes = new byte[this.variableTypes.size()][];
-		for(int i=0; i<this.variableTypes.size(); i++){
-			variableTypesBytes[i] = this.variableTypes.get(new Integer(i)).getBytecode();
-			totalSize += variableTypesBytes[i].length;
-		}
-		byte[][] proceduresBytes = new byte[this.procedures.size()][];
-		for(int i=0;i<this.procedures.size();i++){
-			proceduresBytes[i] = this.procedures.get(new Integer(i)).getBytecode();
-			totalSize += proceduresBytes[i].length + 2;
-		}
-		byte[][] structsBytes = new byte[this.structs.size()][];
-		for(int i=0;i<this.structs.size();i++){
-			structsBytes[i] = this.structs.get(new Integer(i)).getBytecode();
-			totalSize += structsBytes[i].length + 2;
-		}
-		byte[][] stringConstantsBytes = new byte[this.stringConstants.size()][];
-		for(int i=0; i<this.stringConstants.size(); i++){
-			stringConstantsBytes[i] = this.stringConstants.get(i).getBytes();
-			totalSize += stringConstantsBytes[i].length + 2;
-		}
+    /**
+     * Finalize the definition of a procedure (whose name has to be added before.
+     * @param codeProcedure: the "code" of the procedure, which includes
+     * parameters and their types.
+     */            
+    
+    public void updateProcedure(CodeProcedure codeProcedure) {
+	for(int i=0;i<this.procedureNames.size();i++){
+	    if(codeProcedure.getName().equals(this.procedureNames.get(i))){
+		this.procedures.put(new Integer(i), codeProcedure);
 		
-		// Add main (4), counters (4*2) => 12
-		totalSize += 12;
+	    }
+	}
+    }
 
+
+    /**
+     * Prepare the definition of a named record type (struct type).
+     * Internally, the (name of) the record type is is managed via its
+     * index, which, however, is not returned by the method.
+     * @param name of the record type
+     */                
+    
+    public void addStruct(String name) {
+	this.structNames.add(name);
+    }
+    
+    /**
+     * Finalize the definition of a named record type (struct type), by
+     * providing the "code" object for the record type.
+     * @param codeStruct of the record type
+     */                
+
+    public void updateStruct(CodeStruct codeStruct) {
+	for(int i=0;i<this.structNames.size();i++){
+	    if(codeStruct.getName().equals(this.structNames.get(i))){
+		this.structs.put(new Integer(i), codeStruct);
+		
+	    }
+	}
+    }
+
+    
+    /**
+     * Add a string constant. Unlike some other add-methods, the index of
+     * the added string constant is returned to the caller.
+     * @param value is the string constant 
+     * @return the index under which the the constant is stored
+     */                
+    
+    public int addStringConstant(String value) {
+	this.stringConstants.add(value);
+	return this.stringConstants.size()-1;
+    }
+
+    /**
+     * Determine the index (an integer) of a global variable declared earlier
+     * @return the so-called index of a global variable.
+     * @param name of the variable
+     */    
+    public int globalVariableNumber(String name) {
+	for(int i=0; i<this.variableNames.size(); i++){
+	    if(name.equals(this.variableNames.get(i))){
+		return i;
+	    }
+	}
+	return -1;
+    }
+
+    /** 
+     * Look up the index of a procedure.
+     * @param name of the procedure
+     * @return the index of the procedure.
+     */
+    public int procedureNumber(String name) {
+	for(int i=0; i<this.procedureNames.size();i++){
+	    if(this.procedureNames.get(i).equals(name)){
+		return i;
+	    }
+	}
+	return -1;
+    }
+
+    /** 
+     * Look up the index of a record type.
+     * @param name of the record type
+     * @return the index of the record type.
+     */    
+
+    public int structNumber(String name) {
+	for(int i=0; i<this.structNames.size();i++){
+	    if(name.equals(this.structNames.get(i))){
+		return i;
+	    }
+	}
+	return -1;
+    }
+    
+    /** 
+     * Look up the index of a record type.
+     * @param name of the record type
+     * @return the index of the record type.
+     */    
+
+    public int fieldNumber(String structName, String varName) {
+	for(int i=0; i<this.structs.size();i++){
+	    CodeStruct codeStruct = this.structs.get(i);
+	    if(structName.equals(codeStruct.getName())){
+		return codeStruct.fieldNumber(varName);
+	    }
+	}
+	return -1;
+    }
+    
+    public void setMain(String name) {
+	for(int i=0; i<this.procedures.size();i++){
+	    if(this.procedures.get(i).getName().equals(name)){
+		this.main = i;
+	    }
+	}
+    }
+    
+    public byte[] getBytecode() {
+	int totalSize = 0;
+	byte[][] variableNamesBytes = new byte[this.variableNames.size()][];
+	for(int i=0; i<this.variableNames.size(); i++){
+	    variableNamesBytes[i] = this.variableNames.get(i).getBytes();
+	    totalSize += variableNamesBytes[i].length + 2;
+	}
+	byte[][] variableTypesBytes = new byte[this.variableTypes.size()][];
+	for(int i=0; i<this.variableTypes.size(); i++){
+	    variableTypesBytes[i] = this.variableTypes.get(new Integer(i)).getBytecode();
+	    totalSize += variableTypesBytes[i].length;
+	}
+	byte[][] proceduresBytes = new byte[this.procedures.size()][];
+	for(int i=0;i<this.procedures.size();i++){
+	    proceduresBytes[i] = this.procedures.get(new Integer(i)).getBytecode();
+	    totalSize += proceduresBytes[i].length + 2;
+	}
+	byte[][] structsBytes = new byte[this.structs.size()][];
+	for(int i=0;i<this.structs.size();i++){
+	    structsBytes[i] = this.structs.get(new Integer(i)).getBytecode();
+	    totalSize += structsBytes[i].length + 2;
+	}
+	byte[][] stringConstantsBytes = new byte[this.stringConstants.size()][];
+	for(int i=0; i<this.stringConstants.size(); i++){
+	    stringConstantsBytes[i] = this.stringConstants.get(i).getBytes();
+	    totalSize += stringConstantsBytes[i].length + 2;
+	}
+	
+	// Add main (4), counters (4*2) => 12
+	totalSize += 12;
+	
         byte[] bytes = new byte[totalSize];
 //        NumberConversion.shortToByteArray(bytes, 0, (short) 0xCABE);
         NumberConversion.shortToByteArray(bytes,  0, (short) this.main);
