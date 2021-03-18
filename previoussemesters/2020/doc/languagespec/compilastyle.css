@@ -35,7 +35,7 @@ body {
 }
 a,
 .exampleHeading .text {
-	color: #222222;
+	color: #375EAB;
 	text-decoration: none;
 }
 a:hover,
@@ -68,7 +68,7 @@ h4,
 .rootHeading {
 	margin: 20px 0 20px;
 	padding: 0;
-	color: #0e6655;
+	color: #375EAB;
 	font-weight: bold;
 }
 h1 {
@@ -77,7 +77,7 @@ h1 {
 }
 h2 {
 	font-size: 20px;
-	background:   #d1f2eb;
+	background: #E0EBF5;
 	padding: 8px;
 	line-height: 1.25;
 	font-weight: normal;

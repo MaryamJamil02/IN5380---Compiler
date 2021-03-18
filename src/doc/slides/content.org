@@ -1,11 +1,8 @@
-* Oblig 1                                           :B_ignoreheading:ARCHIVE:
-  :PROPERTIES:
-  :BEAMER_env: ignoreheading
-  :END:
+* Oblig 1                                           
 
 
 
-** Compila 20 
+** Compila 21 
 
 *** Oblig 1                                                         :B_frame:
     :PROPERTIES:
@@ -32,7 +29,7 @@
      :END:
 
 
-Determine if programs written in /Compila 20/ are syntactically correct: 
+Determine if programs written in /Compila 21/ are syntactically correct: 
 
 - scanner
 - parser
@@ -298,7 +295,7 @@ grammar in BNF with *action* code
 
 
 #+begin_export latex 
- \includegraphics[width=0.66\textwidth]{figures/snaps/directorystruct-o1}
+ \includegraphics[width=0.66\textwidth]{figures/snaps/old/directorystruct-o1}
 #+end_export
 
 
@@ -350,7 +347,7 @@ grammar in BNF with *action* code
 
  
 
- *Friday 06. 03. 2020, 23:59*
+ *Friday 12. 03. 2021, 23:59*
 
 
 **** Rest                                                            :ignore:
@@ -430,7 +427,7 @@ If problems, *ask in time*  (*NOT* Friday at the deadline)
     :END:
 
 
-- this year we try /git/
+- as the previous 2 or 3 years, we use  /git/
 
 - [[https://github.uio.no]] resp. [[https://github.uio.no/msteffen/compila]]
 
@@ -450,7 +447,10 @@ If problems, *ask in time*  (*NOT* Friday at the deadline)
 
 
 
-* Oblig2
+* Oblig2                                            :B_ignoreheading:ARCHIVE:
+  :PROPERTIES:
+  :BEAMER_env: ignoreheading
+  :END:
 
 
 *** Goal                                                            :B_frame:
@@ -462,7 +462,7 @@ If problems, *ask in time*  (*NOT* Friday at the deadline)
     - *typing* is concerned (``static semantics'')
     - other coditions (no duplicate declaration etc)
 
-2. *code generation* for ~compila20~ (ish) programs
+2. *code generation* for ~compila21~ (ish) programs
 
 
 
@@ -528,7 +528,7 @@ If problems, *ask in time*  (*NOT* Friday at the deadline)
     - allowed to make *changes* or adaptations if advantagous.
 
 
-*** Another glance at compila20                                     :B_frame:
+*** Another glance at compila21                                     :B_frame:
     :PROPERTIES:
     :BEAMER_env: frame
     :END:
@@ -539,7 +539,7 @@ If problems, *ask in time*  (*NOT* Friday at the deadline)
 #+end_export
 
 
-NB: 2020: structs, not classes 
+NB: 2021: structs, not classes 
 
 
 *** Type checking for conditionals                                  :B_frame:
@@ -618,13 +618,13 @@ class Assignment extends Statement {
 
 
 - interpreter and byte code library somewhat *limited*
-   - cannot express full compila 20
+   - cannot express full compila 21
    - no block structure
    - no reference types
 
 
 - your delivery should support generating correct bytecode
-  for the ~compila~ 20 source code file ~runme.cmp~
+  for the ~compila~ 21 source code file ~runme.cmp~
 
 
 
@@ -741,7 +741,7 @@ codeFile.updateProcedure(main);
      :BEAMER_env: alertblock
      :END:
 
-      12th May 2020
+      ---- May 202XXXXXX
 
 
 

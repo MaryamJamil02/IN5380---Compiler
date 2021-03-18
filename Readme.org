@@ -2,7 +2,7 @@
 #+OPTIONS: broken-links:nil c:nil creator:nil d:(not "LOGBOOK") date:t e:t
 #+OPTIONS: email:nil f:t inline:t num:t p:nil pri:nil prop:nil stat:t
 #+OPTIONS: tags:nil tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
-#+TITLE: Compila 20 (Language and compiler skeleton + material)
+#+TITLE: Compila 21 (Language and compiler skeleton + material)
 #+DATE: <2018-02-25 So>
 #+AUTHOR: Martin Steffen
 #+EMAIL: msteffen@ifi.uio.no
@@ -16,7 +16,7 @@
 
 * Intro
 
-The repository host material for the /Compila 20/ compiler, which is the
+The repository host material for the /Compila 21/ compiler, which is the
 content of oblig 1 and 2 for the course ``compiler construction''
 ([[http://www.uio.no/studier/emner/matnat/ifi/INF5110/][INF5110]]/INF9110). The material focuses on the code and the description and
 documentation of the compiler. /Not/ contained here is the compiler
@@ -35,7 +35,7 @@ slides are kept in the Vortex system on the course's web-page.
 - [[./src]]: sources (including sources of the documentation).
 
 
-- [[./src/tests]]: compila 20 programs for testing. Not all tests are already
+- [[./src/tests]]: compila 21 programs for testing. Not all tests are already
   relevant for *oblig 1*. The directory contains a number of subdirectories
   for different purposes. The one required for *oblig 1* is
 
@@ -88,25 +88,26 @@ corresponding green button of the github web-page)
 
 ** Rename it to fit to your  own project:
 
-After getting a copy after unzipping, the directory will be called
-~compila-master~. Rename the directory to fit with your group number, so if
-your group is ~01~, your (resp. your groups) directory is called
-~compila01~.  Please: call it not something else, neither ~compila1~, nor
-~Compila01~ not ~compila-01~ etc. It makes uniform treatment of all groups
-and automatic checks (perhaps via scripts) a tiny bit more easy.
+When getting a copy after unzipping, the directory will be called
+~compila-master~ (if you clone it, the name is ~compila~). Rename the
+directory to fit with your group number, so if your group is ~01~, your
+(resp. your groups) directory is called ~compila01~.  Please: don't call it 
+something else, neither ~compila1~, nor ~Compila01~ not ~compila-01~
+etc. It makes uniform treatment of all groups and automatic checks (perhaps
+via scripts) a tiny bit more easy.
 
 
-If you instead of downloading the zip, get yourself a clone:
-Make sure that the original repos [[https://github.uio.no/msteffen/compila]] is
-no longer connected to your clone, as you should just use it as a starting
-point for your project, and not to work in the common code base.
+If you instead of downloading the zip, get yourself a clone: Make /sure/
+that the original repos [[https://github.uio.no/msteffen/compila]] is no longer
+connected to your clone, as you should just use it as a starting point for
+/your/ project, and not to work in the common code base.
 
   
 
 ** Some check to see if everything on your system is in place
 
 You should make sure that java runs (and the classpath is not messed up
-somehow etc).  Perhaps check if ~ant~ is running. 
+somehow etc).  Perhaps check if ~ant~ is running.
 
 *** Check the simple evaluator
 
@@ -117,13 +118,15 @@ Inside the compila-directory, do
    cd material/simpleexpression
    ant 
 #+end_src
-watch the output, and try out the shown target (1 clean, 2 different
-programs that can be built and run).
+watch the output, and try out the shown targets. There is 1 target for
+cleaning up, 2 different programs that can be built and run, so altogether
+5 targets you can test.
 
 *** Check the dummy code
 
 Do the same for the dummy- and skeleton-classes provided as starting point
-for the compila 20 compiler. Inside the top-level compila directory, do
+for the compila 21 compiler. Inside the top-level compila directory, which
+contains a [[./build.xml]]-file, do
 
 #+begin_src 
  ant   
@@ -163,7 +166,18 @@ clean up the ~Readme.org~ file here to fit the needs of your project, or
 replace it but another Readme file (but no need to have 2 readme-files
 around).
 
+* Communication & discussion forums
 
+Especially in virus times, electronic communication is important. If
+encountering troubles or puzzling, email is an option. Besides that, the
+university has set up some discussion platforms per course that they think
+is useful.
+
+  - [[https://mattermost.uio.no/ifi-undervisning/channels/inf5110][mattermost]] and
+  - [[https://uio.padlet.org/MartinSteffen/5agsnjd06mtn1g3a][padlet]]
+
+Make use of them, for instance by posting questions concerning the oblig
+(or the lecture).
 
 * Some relevant external links 
 

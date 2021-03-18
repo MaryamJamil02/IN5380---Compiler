@@ -1,7 +1,6 @@
-This is compila.info, produced by makeinfo version 6.7 from
+This is compila.info, produced by makeinfo version 5.1 from
 compila.texi.
 
-INFO-DIR-SECTION 
 START-INFO-DIR-ENTRY
 * .                     .
 END-INFO-DIR-ENTRY
@@ -17,7 +16,7 @@ File: compila.info,  Node: Top,  Next: Introduction,  Up: (dir)
 * Syntax::
 * Parameter passing::
 * Standard library::
-* Static semantics / typing / evaluation.: Static semantics / typing / evaluation.
+* Static semantics / typing / evaluation.: Static semantics / typing / evaluation. 
 * Procedures::
 * Further conditions::
 
@@ -65,7 +64,7 @@ File: compila.info,  Node: Introduction,  Next: Lexical aspects,  Prev: Top,  Up
 **************
 
 This document specifies and describes the syntax and the static
-semantics of the language _Compila 21_.  The dynamic semantics, i.e.,
+semantics of the language _Compila 20_.  The dynamic semantics, i.e.,
 the description of the language’s behavior when being executed, should
 be fairly clear even without explicit formal specification.
 
@@ -82,7 +81,7 @@ File: compila.info,  Node: Notational conventions and syntax of this document,  
 In the description of the grammar later, we use capital letters for
 non-terminals.  As _meta-symbols_ for the grammar, we use the following:
 
-        ->,  |,  (,  ), {,  },  [,  ], "
+     ->,  |,  (,  ), {,  },  [,  ], "
 
    Commas in the previous line are used as “meta-meta symbols” in the
 enumeration of the meta-symbols.
@@ -221,7 +220,7 @@ File: compila.info,  Node: References,  Prev: Records,  Up: Data types
 The language allows that variables can be declared to be of reference
 type ("pointers", if you will) by writing, e.g.,
 
-      var x: ref(int);
+     var x: ref(int);
 
    Variables, like ‘x’, can be assigned values that are references, so,
 e.g., the following is allowed:
@@ -611,34 +610,34 @@ File: compila.info,  Node: Further conditions,  Prev: Procedures,  Up: Top
 
 
 Tag Table:
-Node: Top160
-Node: Introduction1010
-Node: Notational conventions and syntax of this document1463
-Node: Lexical aspects2772
-Node: Identifiers and literals2957
-Node: Comments4092
-Node: Data types4725
-Node: Built in data types4903
-Node: Records5518
-Ref: Records-Footnote-16326
-Node: References6383
-Node: Syntax7215
-Node: Grammar7381
-Node: Precedence9878
-Node: Associativity10315
-Node: Parameter passing10808
-Node: Call-by-value11491
-Ref: Call-by-value-Footnote-111879
-Node: Small example for call-by-reference12193
-Node: Standard library12940
-Node: Static semantics / typing / evaluation14053
-Node: Binding of names14413
-Node: Typing of compound constructs15620
-Node: Types and implicit type conversion16938
-Node: Type inference17641
-Node: Short-circuit evaluation18404
-Node: Procedures18844
-Node: Further conditions20627
+Node: Top142
+Node: Introduction993
+Node: Notational conventions and syntax of this document1446
+Node: Lexical aspects2752
+Node: Identifiers and literals2937
+Node: Comments4072
+Node: Data types4705
+Node: Built in data types4883
+Node: Records5498
+Ref: Records-Footnote-16306
+Node: References6363
+Node: Syntax7194
+Node: Grammar7360
+Node: Precedence9857
+Node: Associativity10294
+Node: Parameter passing10787
+Node: Call-by-value11470
+Ref: Call-by-value-Footnote-111858
+Node: Small example for call-by-reference12172
+Node: Standard library12919
+Node: Static semantics / typing / evaluation14032
+Node: Binding of names14392
+Node: Typing of compound constructs15599
+Node: Types and implicit type conversion16917
+Node: Type inference17620
+Node: Short-circuit evaluation18383
+Node: Procedures18823
+Node: Further conditions20606
 
 End Tag Table
 
