@@ -162,8 +162,9 @@ public class CodeFile {
     
     /** 
      * Look up the index of a record type.
-     * @param name of the record type
-     * @return the index of the record type.
+     * @param structName name of the record type
+     * @param varName name of the field
+     * @return the index of a field inside a record type.
      */    
 
     public int fieldNumber(String structName, String varName) {
@@ -175,6 +176,11 @@ public class CodeFile {
 	}
 	return -1;
     }
+
+    /** 
+     * Determine the "main" procedure 
+     * @param name of the main procedure
+     */    
     
     public void setMain(String name) {
 	for(int i=0; i<this.procedures.size();i++){
@@ -183,6 +189,12 @@ public class CodeFile {
 	    }
 	}
     }
+
+
+    /** 
+     * Determine the "main" procedure 
+     * @return the byte code as array of bytes.
+     */    
     
     public byte[] getBytecode() {
 	int totalSize = 0;

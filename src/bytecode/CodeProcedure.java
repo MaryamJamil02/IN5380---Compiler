@@ -67,118 +67,118 @@ public class CodeProcedure {
 	}
 	return -1;
     }
-
-	public int globalVariableNumber(String name) {
-		return this.codeFile.globalVariableNumber(name);
+    
+    public int globalVariableNumber(String name) {
+	return this.codeFile.globalVariableNumber(name);
+    }
+    
+    public int procedureNumber(String name) {
+	return this.codeFile.procedureNumber(name);
+    }
+    
+    public int structNumber(String name) {
+	return this.codeFile.structNumber(name);
+    }
+    
+    public int fieldNumber(String structName, String varName) {
+	return this.codeFile.fieldNumber(structName, varName);
+    }
+    
+    public String getName() {
+	return name;
+    }
+    
+    private void moveJmps() {
+	List<Instruction> newInstructions = new ArrayList<Instruction>();
+	for(int i=0; i<this.instructions.size(); i++){
+	    Instruction instruction = this.instructions.get(i);
+	    if(instruction instanceof JMP){
+		newInstructions.add(i, new JMP(findSize(((JMP)instruction).getJumpTo())));
+	    } else if(instruction instanceof JMPFALSE){
+		newInstructions.add(i, new JMPFALSE(findSize(((JMPFALSE)instruction).getJumpTo())));
+	    } else if(instruction instanceof JMPTRUE){
+		newInstructions.add(i, new JMPTRUE(findSize(((JMPTRUE)instruction).getJumpTo())));
+	    } else {
+		newInstructions.add(instruction);
+	    }
 	}
-
-	public int procedureNumber(String name) {
-		return this.codeFile.procedureNumber(name);
+	this.instructions = newInstructions;
+    }
+    
+    private int findSize(int num) {
+	int pos = 0;
+	for(int i=0; i<num; i++){
+	    pos += this.instructions.get(i).size();
 	}
-
-	public int structNumber(String name) {
-		return this.codeFile.structNumber(name);
+	return pos;
+    }
+    
+    public byte[] getBytecode() {
+	
+	moveJmps();
+	
+	int totalSize = 0;
+	byte[][] parameterTypesBytes = new byte[this.parameterTypes.size()][];
+	for(int i=0; i<this.parameterTypes.size(); i++){
+	    parameterTypesBytes[i] = this.parameterTypes.get(i).getBytecode();
+	    totalSize += parameterTypesBytes[i].length;
 	}
-
-	public int fieldNumber(String structName, String varName) {
-		return this.codeFile.fieldNumber(structName, varName);
+	byte[][] variableTypesBytes = new byte[this.variableTypes.size()][];
+	for(int i=0; i<this.variableTypes.size(); i++){
+	    variableTypesBytes[i] = this.variableTypes.get(i).getBytecode();
+	    totalSize += variableTypesBytes[i].length;
 	}
-
-	public String getName() {
-		return name;
+	byte[][] instructionsBytes = new byte[this.instructions.size()][];
+	for(int i=0; i<this.instructions.size(); i++){
+	    instructionsBytes[i] = this.instructions.get(i).getBytecode();
+	    totalSize += instructionsBytes[i].length;
 	}
-
-	private void moveJmps() {
-		List<Instruction> newInstructions = new ArrayList<Instruction>();
-		for(int i=0; i<this.instructions.size(); i++){
-			Instruction instruction = this.instructions.get(i);
-			if(instruction instanceof JMP){
-				newInstructions.add(i, new JMP(findSize(((JMP)instruction).getJumpTo())));
-			} else if(instruction instanceof JMPFALSE){
-				newInstructions.add(i, new JMPFALSE(findSize(((JMPFALSE)instruction).getJumpTo())));
-			} else if(instruction instanceof JMPTRUE){
-				newInstructions.add(i, new JMPTRUE(findSize(((JMPTRUE)instruction).getJumpTo())));
-			} else {
-				newInstructions.add(instruction);
-			}
-		}
-		this.instructions = newInstructions;
-	}
-
-	private int findSize(int num) {
-		int pos = 0;
-		for(int i=0; i<num; i++){
-			pos += this.instructions.get(i).size();
-		}
-		return pos;
-	}
-
-	public byte[] getBytecode() {
-		
-		moveJmps();
-		
-		int totalSize = 0;
-		byte[][] parameterTypesBytes = new byte[this.parameterTypes.size()][];
-		for(int i=0; i<this.parameterTypes.size(); i++){
-			parameterTypesBytes[i] = this.parameterTypes.get(i).getBytecode();
-			totalSize += parameterTypesBytes[i].length;
-		}
-		byte[][] variableTypesBytes = new byte[this.variableTypes.size()][];
-		for(int i=0; i<this.variableTypes.size(); i++){
-			variableTypesBytes[i] = this.variableTypes.get(i).getBytecode();
-			totalSize += variableTypesBytes[i].length;
-		}
-		byte[][] instructionsBytes = new byte[this.instructions.size()][];
-		for(int i=0; i<this.instructions.size(); i++){
-			instructionsBytes[i] = this.instructions.get(i).getBytecode();
-			totalSize += instructionsBytes[i].length;
-		}
-
-		// Add size of name (2) counters (3*2) => 8
-		totalSize += 8;
-		byte[] nameBytes = this.name.getBytes();
-		totalSize+=nameBytes.length;
-		byte[] typeBytes = this.returnType.getBytecode();
-		totalSize+=typeBytes.length;
-
+	
+	// Add size of name (2) counters (3*2) => 8
+	totalSize += 8;
+	byte[] nameBytes = this.name.getBytes();
+	totalSize+=nameBytes.length;
+	byte[] typeBytes = this.returnType.getBytecode();
+	totalSize+=typeBytes.length;
+	
         byte[] bytes = new byte[totalSize];
         NumberConversion.shortToByteArray(bytes,  0, (short) nameBytes.length);
         NumberConversion.shortToByteArray(bytes,  2, (short) this.parameterTypes.size());
-		NumberConversion.shortToByteArray(bytes,  4, (short) this.variableTypes.size());
-		NumberConversion.shortToByteArray(bytes,  6, (short) this.instructions.size());
-
+	NumberConversion.shortToByteArray(bytes,  4, (short) this.variableTypes.size());
+	NumberConversion.shortToByteArray(bytes,  6, (short) this.instructions.size());
+	
         int index = 8;
         insert(bytes, nameBytes, index);
-		index+=nameBytes.length;
-		insert(bytes, typeBytes, index);
-		index+=typeBytes.length;
-
+	index+=nameBytes.length;
+	insert(bytes, typeBytes, index);
+	index+=typeBytes.length;
+	
 		
         // Parameters
         // Only the values
         for(int i=0;i<parameterTypesBytes.length;i++){
-        	insert(bytes, parameterTypesBytes[i], index);
-        	index+=parameterTypesBytes[i].length;
+	    insert(bytes, parameterTypesBytes[i], index);
+	    index+=parameterTypesBytes[i].length;
         }
         // Variables
         // Only the values
         for(int i=0;i<variableTypesBytes.length;i++){
-        	insert(bytes, variableTypesBytes[i], index);
-        	index+=variableTypesBytes[i].length;
+	    insert(bytes, variableTypesBytes[i], index);
+	    index+=variableTypesBytes[i].length;
         }
         // Instructions
         // Only the values
         for(int i=0;i<instructionsBytes.length;i++){
-        	insert(bytes, instructionsBytes[i], index);
-        	index+=instructionsBytes[i].length;
+	    insert(bytes, instructionsBytes[i], index);
+	    index+=instructionsBytes[i].length;
         }
-
-		return bytes;
+	
+	return bytes;
+    }
+    
+    private void insert(byte[] bytes, byte[] insert, int index) {
+	for(int i=0;i<insert.length;i++){
+	    bytes[index + i] = insert[i];
 	}
-
-	private void insert(byte[] bytes, byte[] insert, int index) {
-		for(int i=0;i<insert.length;i++){
-			bytes[index + i] = insert[i];
-		}
-	}
+    }
 }
