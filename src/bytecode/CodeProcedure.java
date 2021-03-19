@@ -76,14 +76,25 @@ public class CodeProcedure {
 
     /** 
 	Adding a instruction. The classes representing the instructions are
-	provided by the subpackage bytecode/instructions*.
+	provided by the subpackage bytecode/instructions*. The procedure
+	returns the index of the instruction. That can be used, for
+	instance, to replace the instruction. 
 	@param instruction being added
+	@return index of the instruction
      */    
+
     
     public int addInstruction(Instruction instruction) {
 	this.instructions.add(instruction);
 	return this.instructions.size()-1;
     }
+
+    /** 
+	Replacing an instruction at some place specified by its index.
+	@param place i.e., index of the instruction to be replaced
+	@param instruction that replaces the old one
+     */    
+    
     public void replaceInstruction(int place, Instruction instruction) {
 	this.instructions.remove(place);
 	this.instructions.add(place, instruction);
