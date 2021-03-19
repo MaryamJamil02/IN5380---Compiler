@@ -73,6 +73,12 @@ public class CodeProcedure {
 	this.variableNames.add(name);
 	this.variableTypes.add(type);
     }
+
+    /** 
+	Adding a instruction. The classes representing the instructions are
+	provided by the subpackage bytecode/instructions*.
+	@param instruction being added
+     */    
     
     public int addInstruction(Instruction instruction) {
 	this.instructions.add(instruction);
