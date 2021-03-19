@@ -92,7 +92,10 @@ public class CodeProcedure {
     /** 
 	Replacing an instruction at some place specified by its index.
 	@param place i.e., index of the instruction to be replaced
-	@param instruction that replaces the old one
+	@param instruction that replaces the old one. An situation where a
+	replacement could come in handy are jumps.  First, one adds a no-op
+	(NOP) instruction as a placeholder, which is later replaced by the
+	correct instruction, a jump.
      */    
     
     public void replaceInstruction(int place, Instruction instruction) {
