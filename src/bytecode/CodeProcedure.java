@@ -102,7 +102,13 @@ public class CodeProcedure {
 	this.instructions.remove(place);
 	this.instructions.add(place, instruction);
     }
-    
+    /**
+     * The method corresponds to the corresponding method in the code file,
+     * and indeed an invocation simply delegates the task to the method of
+     * the code file.
+     * @param value representing the string constant
+     * @return the index of the constant.
+     */
     public int addStringConstant(String value) {
 	return this.codeFile.addStringConstant(value);
     }
@@ -126,26 +132,66 @@ public class CodeProcedure {
 	}
 	return -1;
     }
-    
+
+    /**
+     * The method corresponds to the corresponding method in the code file,
+     * and indeed an invocation simply delegates the task to the method of
+     * the code file.
+     * @param name of the global variable
+     * @return index of the global variable
+     */    
     public int globalVariableNumber(String name) {
 	return this.codeFile.globalVariableNumber(name);
     }
+    /**
+     * The method corresponds to the corresponding method in the code file,
+     * and indeed an invocation simply delegates the task to the method of
+     * the code file.
+     * @param name of the procedure.
+     * @return index of the procedure.
+     */    
     
     public int procedureNumber(String name) {
 	return this.codeFile.procedureNumber(name);
     }
+    /**
+     * The method corresponds to the corresponding method in the code file,
+     * and indeed an invocation simply delegates the task to the method of
+     * the code file.
+     * @param name of the struct.
+     * @return index of the struct.
+     */    
     
     public int structNumber(String name) {
 	return this.codeFile.structNumber(name);
     }
+
+    /**
+     * The method corresponds to the corresponding method in the code file,
+     * and indeed an invocation simply delegates the task to the method of
+     * the code file.
+     * @param structName name of the struct.
+     * @param varName name of the field
+     * @return index of the field.
+     */    
     
     public int fieldNumber(String structName, String varName) {
 	return this.codeFile.fieldNumber(structName, varName);
     }
-    
+
+
+    /**
+     * A simple get-ter method for the name of the procedure.
+     * @return name of the procedure
+     */
     public String getName() {
 	return name;
     }
+
+
+    /**
+     * Auxiliary method used by getBytecode.
+     */
     
     private void moveJmps() {
 	List<Instruction> newInstructions = new ArrayList<Instruction>();
@@ -171,7 +217,10 @@ public class CodeProcedure {
 	}
 	return pos;
     }
-    
+    /**
+     * Extract the actual bytecode as a arrage of bytes.
+     * @return the byte code of the procedure.
+     */
     public byte[] getBytecode() {
 	
 	moveJmps();
