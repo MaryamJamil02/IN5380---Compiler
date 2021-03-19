@@ -9,45 +9,75 @@ import bytecode.instructions.JMPFALSE;
 import bytecode.instructions.JMPTRUE;
 import bytecode.type.CodeType;
 
+
+/**
+ * This class is conceptually analogous to the class CodeFile for the whole
+ * program (and to CodeStruct, responsible for records. An instance of this
+ * class is to contain a representation of the code of a procedure.
+ * Compared to CodeFile, the class CodeProcedure is more complex. A
+ * procedure can contain more kinds of code pieces. In particular, all
+ * instructions are contained inside procedure.
+*/
+
+
 public class CodeProcedure {
-	private String name;
-	private CodeType returnType;
-	private CodeFile codeFile;
-	private List<String> parameterNames = new ArrayList<String>();
-	private List<CodeType> parameterTypes = new ArrayList<CodeType>();
-	private List<String> variableNames = new ArrayList<String>();
-	private List<CodeType> variableTypes = new ArrayList<CodeType>();
-	private List<Instruction> instructions = new ArrayList<Instruction>();
+    private String name;
+    private CodeType returnType;
+    private CodeFile codeFile;
+    private List<String> parameterNames = new ArrayList<String>();
+    private List<CodeType> parameterTypes = new ArrayList<CodeType>();
+    private List<String> variableNames = new ArrayList<String>();
+    private List<CodeType> variableTypes = new ArrayList<CodeType>();
+    private List<Instruction> instructions = new ArrayList<Instruction>();
 
-	public CodeProcedure(String name, CodeType returnType, CodeFile codeFile) {
-		this.name = name;
-		this.returnType = returnType;
-		this.codeFile = codeFile;
-	}
+    /**
+     * The constructor gives back the initially (mostly) empty data
+     * structure to store the definition of a procedure. Provided initially
+     * as part of the constructure are the name of the procedure (which
+     * must be unique) and the return type. Note that the types of the
+     * parameters are not initially given, they have to be added later one
+     * one after the other, when adding the parameters together with their
+     * types. The last parameter is the refence to the "code file",
+     * representing the main program. The object requires access to that
+     * for some of its tasks (in some call-back-like pattern).
+     * @param name of the procedure
+     * @param returnType specifies the return type of the procedure
+     * @param codeFile reference to the representation of the main program
+     */
+    
+    public CodeProcedure(String name, CodeType returnType, CodeFile codeFile) {
+	this.name = name;
+	this.returnType = returnType;
+	this.codeFile = codeFile;
+    }
 
-	public void addParameter(String name, CodeType type) {
-		this.parameterNames.add(name);
-		this.parameterTypes.add(type);
-	}
-
-	public void addLocalVariable(String name, CodeType type) {
-		this.variableNames.add(name);
-		this.variableTypes.add(type);
-	}
-
-	public int addInstruction(Instruction instruction) {
-		this.instructions.add(instruction);
-		return this.instructions.size()-1;
-	}
-	public void replaceInstruction(int place, Instruction instruction) {
-		this.instructions.remove(place);
-		this.instructions.add(place, instruction);
-	}
-
-	public int addStringConstant(String value) {
-		return this.codeFile.addStringConstant(value);
-	}
-
+    /** 
+	@param name of the parameter of the procedure
+	@param type of the parameter
+     */
+    public void addParameter(String name, CodeType type) {
+	this.parameterNames.add(name);
+	this.parameterTypes.add(type);
+    }
+    
+    public void addLocalVariable(String name, CodeType type) {
+	this.variableNames.add(name);
+	this.variableTypes.add(type);
+    }
+    
+    public int addInstruction(Instruction instruction) {
+	this.instructions.add(instruction);
+	return this.instructions.size()-1;
+    }
+    public void replaceInstruction(int place, Instruction instruction) {
+	this.instructions.remove(place);
+	this.instructions.add(place, instruction);
+    }
+    
+    public int addStringConstant(String value) {
+	return this.codeFile.addStringConstant(value);
+    }
+    
     /**
      * Determine the index (an integer) of a local variable or procedure
      * paraneter declared earlier
