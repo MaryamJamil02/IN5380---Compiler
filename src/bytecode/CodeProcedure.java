@@ -59,7 +59,16 @@ public class CodeProcedure {
 	this.parameterNames.add(name);
 	this.parameterTypes.add(type);
     }
-    
+    /** 
+	Adding a local variable (declaration) to the procedure. The names
+	of local variables have to be unique per procedure, and that
+	includes the parameters as well; in that respect parameters count
+	among the local variables. Internally, local variables are referred
+	to by an index. That's analogous to the treatment of global
+	variables in a  CodeFile object.
+	@param name of the local variable 
+	@param type of the local variable 
+     */    
     public void addLocalVariable(String name, CodeType type) {
 	this.variableNames.add(name);
 	this.variableTypes.add(type);
