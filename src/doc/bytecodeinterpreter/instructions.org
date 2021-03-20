@@ -1,5 +1,5 @@
 * Instructions
-
+<<sec:bci.instructions>>
 
 Below is the table with all instructions supported by the virtual machine
 and that can be found int the bytecode library. We use $s_0$ for the top of

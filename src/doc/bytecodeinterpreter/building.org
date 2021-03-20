@@ -3,6 +3,7 @@
 
 
 * Building a complete program
+<<sec:bci.building>>     
 
 We have shown the basics of how to build a bytecode program (binary file)
 using the bytecode library. In this section we will show some of the
@@ -55,10 +56,8 @@ point type, are added to it (V). The procedure ~print_float~ used in the
 program is a library procedure. Nonetheless, it needs to be added, but
 without instructions (VI). See also Section
 [[sec:bci.tasks.libraryprocs]]. Finally, the mandatory main method is set,
-before the bytecode can be extracted to a file (VII),
-
-
-Section [[sec:bci.building.generatedcode]] shows the generated machine code for
+before the bytecode can be extracted to a file (VII). Section
+[[sec:bci.building.generatedcode]] later shows the generated machine code for
 this example.
 
 #+CAPTION: 4 steps to generate code for a procedure 
@@ -236,7 +235,7 @@ RefType rt =  new RefType(cf.structNumber("Complex");
 
 
 
-*** Virtual machine listing
+** Virtual machine listing
 <<sec:bci.building.generatedcode>>   
 
 
