@@ -44,9 +44,18 @@ public class CodeStruct {
 	}
 	return -1;
     }
+    /**
+     * A simple get-ter method for the name of the struct.
+     * @return name of the struct.
+     */    
     public String getName() {
 	return name;
     }
+    /** 
+     * Returning the resulting bytecode as the overall result of the byte code generation.
+     * @return the byte code as array of bytes.
+     */    
+    
     public byte[] getBytecode() {
 	int totalSize = 0;
 	byte[][] typesBytes = new byte[this.types.size()][];

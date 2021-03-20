@@ -192,7 +192,7 @@ public class CodeFile {
 
 
     /** 
-     * Determine the "main" procedure 
+     * Returning the resulting bytecode as the overall result of the byte code generation.
      * @return the byte code as array of bytes.
      */    
     
