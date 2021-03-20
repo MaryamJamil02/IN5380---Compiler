@@ -38,6 +38,12 @@ public class CodeStruct {
 	this.names.add(name);
 	this.types.add(type);
     } 
+
+    /**
+     * Determine the index (an integer) of a field of a struct.
+     * @return the so-called index of a variable (incl. formal parameter).
+     * @param name of the variable (incl. formal parameter)
+     */            
     public int fieldNumber(String name) {
 	for(int i=0;i<this.names.size();i++){
 	    if(name.equals(this.names.get(i))) return i;
@@ -52,7 +58,7 @@ public class CodeStruct {
 	return name;
     }
     /** 
-     * Returning the resulting bytecode as the overall result of the byte code generation.
+     * Returning the resulting bytecode of the struct.
      * @return the byte code as array of bytes.
      */    
     

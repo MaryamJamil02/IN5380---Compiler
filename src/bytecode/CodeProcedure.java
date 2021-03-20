@@ -115,7 +115,7 @@ public class CodeProcedure {
     
     /**
      * Determine the index (an integer) of a local variable or procedure
-     * paraneter declared earlier
+     * parameter declared earlier.
      * @return the so-called index of a variable (incl. formal parameter).
      * @param name of the variable (incl. formal parameter)
      */        
