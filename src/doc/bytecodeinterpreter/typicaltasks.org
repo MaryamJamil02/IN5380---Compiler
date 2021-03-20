@@ -3,8 +3,8 @@
 
 
 In this section we show how some of the usual tasks are solved. As already
-been show, some of the instruction classes are created by supplyijng one or
-two interger values, which are the ids of procedures, structs, variables or
+shown, some of the instruction classes are created by supplying one or two
+integer values, which are the ids of procedures, structs, variables or
 something that is to be used when the intruction is interpreted. For
 instance, the ~JMP~ instruction is created with an integer parameter which
 is the index of the instruction to be jumped to.  When an instruction is
