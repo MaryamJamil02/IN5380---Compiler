@@ -60,7 +60,8 @@ before the bytecode can be extracted to a file (VII). Section
 [[sec:bci.building.generatedcode]] later shows the generated machine code for
 this example.
 
-#+CAPTION: 4 steps to generate code for a procedure 
+#+CAPTION: 4 steps to generate code for a procedure
+#+LABEL: fig:bci.buildingexample
 #+include: "codesnippets/simpleexample.javaoid" src java
 
 

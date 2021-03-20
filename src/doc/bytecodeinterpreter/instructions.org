@@ -7,3 +7,10 @@ the stac, $s_i$ for the next element, and so on. When the symbol
 $\moredetails$ (dagger) is found after the tanme of the instruction, we
 mean that are are more details on the types of what is on the stack at the
 end of this section (look up the instruction there).
+
+
+
+
+** Private                                                          :private:
+
+[[file:~/cor/teaching/compila-fun/src/compiler/bytecode.ml::``Codetype'' *]]
