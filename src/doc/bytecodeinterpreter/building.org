@@ -58,6 +58,9 @@ without instructions (VI). See also Section
 before the bytecode can be extracted to a file (VII),
 
 
+Section [[sec:bci.building.generatedcode]] shows the generated machine code for
+this example.
+
 #+CAPTION: 4 steps to generate code for a procedure 
 #+include: "codesnippets/simpleexample.javaoid" src java
 
@@ -233,14 +236,19 @@ RefType rt =  new RefType(cf.structNumber("Complex");
 
 
 
-*** Virtual machine listing of the example from earlier in this section
+*** Virtual machine listing
+<<sec:bci.building.generatedcode>>   
 
 
+The following shows the code corresponding to the example from earlier in
+the section.
 
 #+include: "example.bin" src 
     
+**** Private                                                        :private:
 
 
+The bin files are binary, I need a dis-assembler, perhaps.
 
 
 
