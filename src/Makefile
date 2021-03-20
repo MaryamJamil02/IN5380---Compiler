@@ -1,7 +1,7 @@
 ## The make file is for internal use. It is used to generate javadoc
 ## webpages, to document the library.
 
-HTMLDESTDIR=../javadoc
+HTMLDESTDIR=../doc/javadoc/
 
 
 jdocbytecode:
