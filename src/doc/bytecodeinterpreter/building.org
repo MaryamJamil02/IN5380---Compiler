@@ -187,13 +187,16 @@ delegates the ~addStringConstant~ procedure.
 *** Class ~CodeStruct~
 
 #+index: struct
+
 A /struct/ is created with the constructor ~CodeStruct(String name)~
 providing the name of the struct. A field is added to the struct by using
-~void addVaraible(String name, CodeType type)~. To retrieve the index of a
+~void addVariable(String name, CodeType type)~. To retrieve the index of a
 field added to the struct, one may use ~int fieldNumber(String name)~. See
 also the ~fieldNumber~ procedure of ~CodeFile~.
 
-*** Class ~CodeType~
+
+*** Subpackage for types
+**** Class ~CodeType~
 #+index: type
 
 This is an abstract class and it has as concrete subclasses the different
@@ -205,15 +208,18 @@ records).
 
 #+index: basic type
 #+index: type!basic
-The basic typs have a /singleton/ object (for instance ~StringType.TYPE~),
-which is used as actual parameter whenever that is needed, for examp,e to
-define the return type of a procedure or the type of a field in a
-struct. The is no singleton and its constructor has an integer parameter
-which is the index of the struct for which this type is a reference. The
-~RefType~ is use by creating an object with the index (~id~) for the struct
-as the single parameter. One may make many such objects for the same type
-(the same index) if that is more conventient, or just reuse the same object
-for the type. An object of the reference type to the struct ~"Complex"~ can
+The basic types have a /singleton/ object (for instance ~StringType.TYPE~),
+which is used as actual parameter whenever needed, for example to define
+the return type of a procedure or the type of a field in a struct.
+
+
+The ~RefType~ class is a little different. There is no singleton and its
+constructor has an integer parameter which is the /index/ of the struct for
+which this type is a reference. The ~RefType~ is use by creating an object
+with the index (~id~) for the struct as the single parameter. One may make
+many such objects for the same type (the same index) if that is more
+convenient, or just reuse the same object for the type. An object of the
+reference type to the struct ~"Complex"~ mentioned before, for example, can
 be created like this.
 
 
@@ -227,27 +233,12 @@ RefType rt =  new RefType(cf.structNumber("Complex");
 
 
 
-*** Virtual machone listing of the example from earlier in this section
+*** Virtual machine listing of the example from earlier in this section
 
-#+begin_example
-Loading from file: ./example.bin
-Variables:
-0: var Complex myGlobalVar
-Procedures:
-0: func void print_float()
-1: func void Main()
-   0: return
-2: func void test(float 0, Complex 1, float 2)
-   0: loadlocal 0
-   3: call printfloat {0}
-   6: return
-Structs:
-0: Complex
-   0: float
-   1: float
-Constants:
-STARTWITH: Main
-#+end_example
+
+
+#+include: "example.bin" src 
+    
 
 
 
