@@ -48,7 +48,7 @@ creates the code for an infinite loop.
 
 
 # #+ATTR_LATEX: :options firstline=15, lastline=16 that does not work anyway
-#+LABEL: fig:bci.buildingexample
+#+LABEL: fig:bci.infiniteloop
 #+CAPTION: Infinite loop
 #+include: "codesnippets/infiniteloop.java" src java
 
@@ -76,7 +76,32 @@ The constructor [[file:~/cor/teaching/compila-fun/src/compiler/bytecode.ml::| Jm
 The work simular to unconditional jumps, but there has to be a boolean
 value on the stack, when executed.  Whether or not the jump is executed
 depends on the value of that boolean. For instance, the following creates
-the code for a do-while loop.
+the code for a do-while loop. More concretely for a loop of the form in
+some pseudo-code:.
+
+#+begin_src 
+do {
+// loop body
+} while (i<2);
+#+end_src
+
+
+
+
+# #+ATTR_LATEX: :options firstline=15, lastline=16 that does not work anyway
+#+LABEL: fig:bci.dowhileloop
+#+CAPTION: do-while loop
+#+include: "codesnippets/dowhileloop.java" src java
+
 
 ** Library procedures
 <<sec:bci.tasks.libraryprocs>>
+
+
+#+index: library procedure
+
+When library procedures are needed, they may be added to the ~CodeFile~
+(and updated, the name alone is not enough), but no instruction should be
+added, The interpreted recognizes the use of a library procedure by the
+fact that it has no instruction in the binary file (~CodeFile~).
+
