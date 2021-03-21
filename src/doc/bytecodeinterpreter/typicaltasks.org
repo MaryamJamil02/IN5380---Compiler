@@ -102,6 +102,8 @@ do {
 
 When library procedures are needed, they may be added to the ~CodeFile~
 (and updated, the name alone is not enough), but no instruction should be
-added, The interpreted recognizes the use of a library procedure by the
-fact that it has no instruction in the binary file (~CodeFile~).
+added, The interpreter recognizes the use of a library procedure by the
+fact that it contains no instruction in the binary file (~CodeFile~).
+
+
 

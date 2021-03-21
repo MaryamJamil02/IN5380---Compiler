@@ -9,8 +9,21 @@ mean that are are more details on the types of what is on the stack at the
 end of this section (look up the instruction there).
 
 
-** Summary of the instructions
+** Summary of the instructions 
 
+
+
+*** Binary operators
+
+
+They require two values on the stack and leave one there. They have /no/
+extra value. There are the following 14 binary operators: ~ADD~, ~AND~,
+~DIV~, ~EQ~, ~EXP~, ~GT~, ~GTEQ~, ~LT~ ~LTEQ~, ~MUL~, ~NEG~, ~NOR~, ~OR~,
+~SUB~.
+
+*** Unary operator
+    
+   
 
 ** Private                                                          :private:
 
