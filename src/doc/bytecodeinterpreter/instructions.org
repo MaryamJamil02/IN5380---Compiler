@@ -22,9 +22,22 @@ extra value. There are the following 14 binary operators: ~ADD~, ~AND~,
 ~SUB~.
 
 *** Unary operator
+
+
     
    
-
+ #+ATTR_LATEX: :environment longtable :align |l|c|p{3cm}|p{3cm}|p{3cm}|
+| <6>                  |     | <10>                                                                                 | <10>                                                                   |                                                          |
+| operator             | nr. | extra bytes                                                                          | before                                                                 | after                                                    |
+|----------------------+-----+--------------------------------------------------------------------------------------+------------------------------------------------------------------------+----------------------------------------------------------|
+| ~ADD~ $\moredetails$ |  01 | none                                                                                 | first operand $s_1$, second operand $s_0$, both: int, float, or string | $s_1+s_0$                                                |
+| ~AND~                |  02 | none                                                                                 | first operand $s_1$, second operand $s_0$, both: bool                  | $s_1\land s_2$                                           |
+| ~CALL~               |  03 | 2 (short)                                                                            | the parameters from the left $s_n$ to the right $s_0$                  | value returned, if any                                   |
+| ~DIV~                |  35 | none                                                                                 | the dividend $s_1$ and the divisor $s_0$, both int or float            | $s_1/s_0$                                                |
+| ~EQ~ $\moredetails$  |  04 | none                                                                                 | first operand $s_1$, second operand $s_0$, both: int, float, or bool   | a boolean                                                |
+| ~EXP~ $\moredetails$ |  05 | none                                                                                 | first operand $s_1$, second operand $s_0$, both: int or float          | a float, result of $s_1^s_0$                             |
+| ~GETFIELD~           |  06 | 4 bytes (2 shorts), index of the field within the struct and the index of the struct | reference to the struct before ~s_0~                                   | the value of the field, if $s_0$ is not a null reference |
+|                      |     |                                                                                      |                                                                        |                                                          |
 ** Private                                                          :private:
 
 [[file:~/cor/teaching/compila-fun/src/compiler/bytecode.ml::``Codetype'' *]]
