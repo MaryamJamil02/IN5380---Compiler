@@ -37,6 +37,7 @@ extra value. There are the following 14 binary operators: ~ADD~, ~AND~,
 | ~EQ~ $\moredetails$  |  04 | none                                                                                 | first operand $s_1$, second operand $s_0$, both: int, float, or bool   | a boolean                                                |
 | ~EXP~ $\moredetails$ |  05 | none                                                                                 | first operand $s_1$, second operand $s_0$, both: int or float          | a float, result of $s_1^s_0$                             |
 | ~GETFIELD~           |  06 | 4 bytes (2 shorts), index of the field within the struct and the index of the struct | reference to the struct before ~s_0~                                   | the value of the field, if $s_0$ is not a null reference |
+| ~GT~                 |  07 | none                                                                                 | first operand $s_1$, second operand $s_0$, both: int or float          | a boolean, result of $s_1 > s_0$                         |
 |                      |     |                                                                                      |                                                                        |                                                          |
 ** Private                                                          :private:
 
