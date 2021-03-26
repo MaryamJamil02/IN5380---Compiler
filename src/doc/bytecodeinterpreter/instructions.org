@@ -57,6 +57,9 @@ extra value. There are the following 14 binary operators: ~ADD~, ~AND~,
 | ~PUSHBOOL~            |  18 | 1 byte with the constant value 1 (true) or 0 (false)                                      | none                                                                   | the boolean constant from the extra byte                 |
 | ~PUSHFLOAT~           |  19 | 4 bytes with the value of the float constant                                              | none                                                                   | the float constant from the extra bytes                  |
 | ~PUSHINT~             |  20 | 4 byte with the value of the float constant                                               | none                                                                   | the integer constant from the extra bytes                |
+| ~PUSHNULL~            |  21 | none                                                                                      | none                                                                   | a null reference                                         |
+| ~PUSHSTRING~          |  22 | 2 bytes (a short) with the index (id) of the string constant                              | none                                                                   | the string constant                                      |
+| ~PUTFIELD~            |  23 | 4 bytes                                                                                   |                                                                        |                                                          |
 |                       |     |                                                                                           |                                                                        |                                                          |
 
 
