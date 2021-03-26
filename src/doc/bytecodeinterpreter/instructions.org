@@ -45,6 +45,8 @@ extra value. There are the following 14 binary operators: ~ADD~, ~AND~,
 | ~LOADGLOBAL~          |  11 | 2 bytes (a short) with the index (id) of the global variable to load.                     | none                                                                   | the value of the global variable.                        |
 | ~LOADLOCAL~           |  12 | 2 bytes (a short) with the index (id) of the local variable to load.  Remember params!    | none                                                                   | the value of the local variable.                         |
 | ~LOADOUTER~           |  13 | 4 bytes                                                                                   | *Not implemented in this version. No support for block structure!*     |                                                          |
+| ~LT~                  |  29 | none                                                                                      | first operand $s_1$ and second operand $s_0$. Both: int or float       | a boolean: true iff $s_1 < s_0$.                         |
+
 
 ** Private                                                          :private:
 
