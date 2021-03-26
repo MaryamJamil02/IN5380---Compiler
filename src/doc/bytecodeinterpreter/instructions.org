@@ -52,7 +52,7 @@ extra value. There are the following 14 binary operators: ~ADD~, ~AND~,
 | ~NEW~                 |  14 | 2 bytes (a short) with the index (id) of the struct to create an instance of.             | none                                                                   | a reference to the newly created struct.                 |
 | ~NOP~                 |  15 | none                                                                                      | none                                                                   | none, the instruction does nothing                       |
 | ~NOT~                 |  16 | none                                                                                      | a boolean, $s_0$                                                       | a boolean, $\lnot s_0$                                   |
-|                       |     |                                                                                           |                                                                        |                                                          |
+| ~OR~                  |  02 | none                                                                                      | first operand $s_1$, second operand $s_0$, both: bool                  | $s_1\lor s_0$                                            |
 
 
 
