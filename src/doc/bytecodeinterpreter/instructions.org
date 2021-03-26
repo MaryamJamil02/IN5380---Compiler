@@ -53,6 +53,8 @@ extra value. There are the following 14 binary operators: ~ADD~, ~AND~,
 | ~NOP~                 |  15 | none                                                                                      | none                                                                   | none, the instruction does nothing                       |
 | ~NOT~                 |  16 | none                                                                                      | a boolean, $s_0$                                                       | a boolean, $\lnot s_0$                                   |
 | ~OR~                  |  02 | none                                                                                      | first operand $s_1$, second operand $s_0$, both: bool                  | $s_1\lor s_0$                                            |
+| ~POP~                 |  28 | none                                                                                      | some value $s_0$                                                       | none, instruction removes the top                        |
+|                       |     |                                                                                           |                                                                        |                                                          |
 
 
 
