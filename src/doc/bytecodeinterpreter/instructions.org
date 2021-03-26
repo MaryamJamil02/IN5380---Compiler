@@ -40,7 +40,8 @@ extra value. There are the following 14 binary operators: ~ADD~, ~AND~,
 | ~GT~                  |  07 | none                                                                                      | first operand $s_1$, second operand $s_0$. Both: int or float          | a boolean, result iff $s_1 > s_0$                        |
 | ~GTEQ~                |  31 | none                                                                                      | first operand $s_1$, second operand $s_0$. Both: int or float          | a boolean, result iff $s_1 \geq s_0$                     |
 | ~JMP~                 |  08 | 2 bytes (short) with the position in the bytes of the function to jump to                 | none                                                                   | none                                                     |
-| ~JMPFALSE~            |  09 | 2 bytes (short) with the position in the bytes of the function to jump to                 | a boolean $s_0$. Jump only if false                                    | none                                                     |
+| ~JMPFALSE~            |  09 | 2 bytes (short) with the position in the bytes of the function to jump to                 | a boolean $s_0$. Jump only if false.                                   | none                                                     |
+| ~JMPTRUE~             |  10 | 2 bytes (short) with the position in the bytes of the function to jump to                 | a boolean $s_0$. Jump only if true.                                    | none                                                     |
 |                       |     |                                                                                           |                                                                        |                                                          |
 
 ** Private                                                          :private:
