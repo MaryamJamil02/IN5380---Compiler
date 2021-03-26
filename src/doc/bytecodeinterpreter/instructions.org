@@ -60,6 +60,7 @@ extra value. There are the following 14 binary operators: ~ADD~, ~AND~,
 | ~PUSHNULL~            |  21 | none                                                                                                    | none                                                                        | a null reference                                         |
 | ~PUSHSTRING~          |  22 | 2 bytes (a short) with the index (id) of the string constant                                            | none                                                                        | the string constant                                      |
 | ~PUTFIELD~            |  23 | 4 bytes (2 shorts) which are the index of the field within the struct and the index (id) of the struct. | the vaue to assign to the field $s_1$ and the reference to the struct $s_0$ | none                                                     |
+| ~RETURN~              |  24 | none                                                                                                    | a return value $s_0$ if the procedure has one                               | *not applicable*                                         |
 |                       |     |                                                                                                         |                                                                             |                                                          |
 
 
