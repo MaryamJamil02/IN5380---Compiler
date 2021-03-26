@@ -50,6 +50,10 @@ extra value. There are the following 14 binary operators: ~ADD~, ~AND~,
 | ~MUL~ $\moredetails$  |  34 | none                                                                                      | first operand $s_1$, second operand $s_0$, both: int, float            | $s_1*s_0$                                                |
 | ~NEQ~ $\moredetails$  |  32 | none                                                                                      | first operand $s_1$, second operand $s_0$, both: int, float, or bool   | a boolean, result of $s_1\noteq s_0$                     |
 | ~NEW~                 |  14 | 2 bytes (a short) with the index (id) of the struct to create an instance of.             | none                                                                   | a reference to the newly created struct.                 |
+| ~NOP~                 |  15 | none                                                                                      | none                                                                   | none, the instruction does nothing                       |
+|                       |     |                                                                                           |                                                                        |                                                          |
+
+
 
 ** Private                                                          :private:
 
