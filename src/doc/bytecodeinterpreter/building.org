@@ -165,7 +165,7 @@ instructions. Sometimes one wants to /replace/ and earlier
 instruction. This is done by using ~void replaceInstruction(int place,
 Instruction instruction)~. For instance, one may insert temporarily a ~NOP~
 instruction to be replaced later by a jump instruction ~JMP~. Read more in
-Section [[sec:bci.tasks.jumping]] on jumps. A procedure body cannot be
+Section  [[sec:bci.tasks.jumping]] on jumps. A procedure body cannot be
 completely empty, it must at least contain one final ~RETURN~
 instruction.
 #+index: return
