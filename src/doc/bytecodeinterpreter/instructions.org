@@ -48,7 +48,8 @@ extra value. There are the following 14 binary operators: ~ADD~, ~AND~,
 | ~LT~                  |  29 | none                                                                                      | first operand $s_1$ and second operand $s_0$. Both: int or float       | a boolean: true iff $s_1 < s_0$.                         |
 | ~LTEQ~                |  30 | none                                                                                      | first operand $s_1$ and second operand $s_0$. Both: int or float       | a boolean: true iff $s_1 \leq s_0$.                      |
 | ~MUL~ $\moredetails$  |  34 | none                                                                                      | first operand $s_1$, second operand $s_0$, both: int, float            | $s_1*s_0$                                                |
-| ~NEQ~ $\moredetails$  |  04 | none                                                                                      | first operand $s_1$, second operand $s_0$, both: int, float, or bool   | a boolean                                                |
+| ~NEQ~ $\moredetails$  |  32 | none                                                                                      | first operand $s_1$, second operand $s_0$, both: int, float, or bool   | a boolean, result of $s_1\noteq s_0$                     |
+| ~NEW~                 |  14 | 2 bytes (a short) with the index (id) of the struct to create an instance of.             | none                                                                   | a reference to the newly created struct.                 |
 
 ** Private                                                          :private:
 
