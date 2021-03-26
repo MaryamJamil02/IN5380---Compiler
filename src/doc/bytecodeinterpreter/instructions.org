@@ -63,8 +63,8 @@ extra value. There are the following 14 binary operators: ~ADD~, ~AND~,
 | ~RETURN~              |  24 | none                                                                                                    | a return value $s_0$ if the procedure has one                               | *not applicable*                                         |
 | ~STOREGLOBAL~         |  25 | 2 bytes (a short) with the index (id) of the global variable to store to                                | the value $s_0$ to store into the global variable.                          | none                                                     |
 | ~STORELOCAL~          |  26 | 2 bytes (a short) with the index (id) of the local variable to store to. Remember params!               | the value $s_0$ to store into the local variable.                           | none                                                     |
-
-
+| ~STOREOUTER~          |  27 | 4 bytes                                                                                                 | *Not implemented in this version. No support for block structure!*          |                                                          |
+| ~SUB~ $\moredetails$  |  33 | none                                                                                                    | first operand $s_1$, second operand $s_0$, both: int or float               | $s_1-s_0$                                                |
 
 ** Private                                                          :private:
 
