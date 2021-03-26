@@ -66,6 +66,8 @@ extra value. There are the following 14 binary operators: ~ADD~, ~AND~,
 | ~STOREOUTER~          |  27 | 4 bytes                                                                                                 | *Not implemented in this version. No support for block structure!*          |                                                          |
 | ~SUB~ $\moredetails$  |  33 | none                                                                                                    | first operand $s_1$, second operand $s_0$, both: int or float               | $s_1-s_0$                                                |
 
+
+
 ** Private                                                          :private:
 
 [[file:~/cor/teaching/compila-fun/src/compiler/bytecode.ml::``Codetype'' *]]
