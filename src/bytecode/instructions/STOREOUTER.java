@@ -4,7 +4,7 @@ import bytecode.NumberConversion;
 import runtime.Interpreter;
 
 
-// illegal opcode according to the documentation
+// illegal opcode according to the documentation.  
 public class STOREOUTER extends Instruction{
     private int varNum;
     private int levels;
