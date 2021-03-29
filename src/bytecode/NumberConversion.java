@@ -3,7 +3,7 @@ package bytecode;
 
 public class NumberConversion {
     // byte    8  bits      -127 to 127
-	// short   16 bits      -32,768 to 32,767
+    // short   16 bits      -32,768 to 32,767
     // int     32 bits      -2,147,483,648 to 2,147,483,647
     // float   64 bits      s*m*2^e, where s=-1 or 1, 0 <= m <= 224, -149 < e < 104
     public static void shortToByteArray(byte[] array, int index, short value) {
