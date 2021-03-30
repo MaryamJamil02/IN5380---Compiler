@@ -16,8 +16,8 @@ main.addInstruction(new RETURN());
 codeFile.updateProcedure(main);
 
 //--------- (III) -------------
-codeFile.updateVaraiable("myGlobalVar",
-			 new RefType(codeFile.structNumber("Complex")));
+codeFile.updateVariable("myGlobalVar",
+		         new RefType(codeFile.structNumber("Complex")));
 //---------- (IV) -------------
 CodeProcedure test = new CodeProcedure("test",
 				       VoidType.TYPE,

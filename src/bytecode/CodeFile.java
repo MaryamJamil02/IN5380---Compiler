@@ -8,7 +8,7 @@ import java.util.Map;
 import bytecode.type.CodeType;
 
 /**
- * An instance of this class is to contain a representation of the code of
+ * An instance of this class is to contain a representation of the code of 
  * a complete program. Typically, per compilation, there is only one
  * instance of that class, i.e., the typical usage is that of a singleton
  * class. 
