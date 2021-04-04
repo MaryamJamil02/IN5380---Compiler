@@ -8,7 +8,7 @@ import java.util.Map;
 import bytecode.type.CodeType;
 
 /**
- * An instance of this class is to contain a representation of the code of 
+ * An instance of this class is to contain a representation of the code of
  * a complete program. Typically, per compilation, there is only one
  * instance of that class, i.e., the typical usage is that of a singleton
  * class. 
@@ -59,7 +59,7 @@ public class CodeFile {
      * @param name of the variable. 
      */        
     public void addProcedure(String name) {
-	this.procedureNames.add(name);
+	this.procedureNames.add(name);  // append entry.
     }
 
     /**
@@ -137,7 +137,7 @@ public class CodeFile {
      * @return the index of the procedure.
      */
     public int procedureNumber(String name) {
-	for(int i=0; i<this.procedureNames.size();i++){
+	for(int i=0; i<this.procedure[Names.size();i++){
 	    if(this.procedureNames.get(i).equals(name)){
 		return i;
 	    }

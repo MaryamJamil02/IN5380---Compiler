@@ -96,7 +96,7 @@ addVariable(String name)~. After a global variable has been added, its
 index (~id~) in the program may be found using its name, calling the
 procedure ~int globalVariableNumber(String name)~ The type of the variable
 /must/ be supplied /before/ the bytecode is generated. The generation is
-done by calling the method ~void uodateVariable(String name, CodeType
+done by calling the method ~void updateVariable(String name, CodeType
 type)~. All global variables must have unique names.
 
 #+index: procedure
@@ -110,7 +110,7 @@ updateProcedure(CodeProcedure codeProcedure)~.
 
 #+index: struct
 
-For a struct, there as analogous procedures ~public void ~addStruct(String
+For a struct, there are analogous procedures ~public void addStruct(String
 name)~, ~int structNumber(String name)~, and ~void updateStruct (CodeStruct
 codeStruct)~.  In addition, getting the index of a field in a struct is
 done by calling ~int fieldNumber(String structName, String varName)~ using
@@ -118,7 +118,7 @@ the name of the struct and the name of the field.
 
 A ~string constant~ is added by using the procedure ~int
 addStringConstant(String value)~. Note that this procdure returns the index
-(~id~) of the constant /directly/ and there is no prcedire to fetch the
+(~id~) of the constant /directly/ and there is no procedire to fetch the
 index of a constant later.  The index is used for string literals by the
 compiler.
 
