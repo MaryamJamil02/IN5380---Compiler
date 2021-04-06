@@ -231,7 +231,7 @@ public class CodeProcedure {
 	int totalSize = 0;
 	byte[][] parameterTypesBytes = new byte[this.parameterTypes.size()][];
 	for(int i=0; i<this.parameterTypes.size(); i++){
-	    parameterTypesBytes[i] = this.parameterTypes.get(i).getBytecode();
+	    parameterTypesBytes[i] = this.parameterTypes.get(i).getBytecode();  
 	    totalSize += parameterTypesBytes[i].length;
 	}
 	byte[][] variableTypesBytes = new byte[this.variableTypes.size()][];
