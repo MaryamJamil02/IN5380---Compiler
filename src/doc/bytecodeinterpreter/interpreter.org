@@ -1,7 +1,7 @@
 * How the interpeter works
 <<sec:bci.interpreter>>       
 
-#+index: loader
+#+index: loader 
 #+index: virtual machine
 #+index: variable pool
 #+index: procedure pool

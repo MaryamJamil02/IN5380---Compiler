@@ -115,7 +115,10 @@ public class CodeProcedure {
     
     /**
      * Determine the index (an integer) of a local variable or procedure
-     * parameter declared earlier.
+     * parameter declared earlier. Note that local variables and parameters
+     * are stored in separate arrays. That means the official "index" of a
+     * local variable is not identical to the array index in the array for
+     * local variables. For parameters, there is no such mismatch.
      * @return the so-called index of a variable (incl. formal parameter).
      * @param name of the variable (incl. formal parameter)
      */        
