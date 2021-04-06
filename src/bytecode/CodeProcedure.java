@@ -221,7 +221,7 @@ public class CodeProcedure {
 	return pos;
     }
     /**
-     * Extract the actual bytecode as a arrage of bytes.
+     * Extract the actual bytecode as an array of bytes.
      * @return the byte code of the procedure.
      */
     public byte[] getBytecode() {
