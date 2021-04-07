@@ -1,4 +1,7 @@
-* Oblig 1                                           
+* Oblig 1                                           :B_ignoreheading:ARCHIVE:
+  :PROPERTIES:
+  :BEAMER_env: ignoreheading
+  :END:
 
 
 
@@ -447,12 +450,12 @@ If problems, *ask in time*  (*NOT* Friday at the deadline)
 
 
 
-* Oblig2                                            :B_ignoreheading:ARCHIVE:
+* Oblig2                                             
   :PROPERTIES:
   :BEAMER_env: ignoreheading
   :END:
 
-
+** Intro 
 *** Goal                                                            :B_frame:
     :PROPERTIES:
     :BEAMER_env: frame
@@ -511,7 +514,7 @@ If problems, *ask in time*  (*NOT* Friday at the deadline)
 - extend an existing compiler code base with new functionality 
 
 
-
+** Semantic analysis 
 *** Semantic analysis & type checking                               :B_frame:
     :PROPERTIES:
     :BEAMER_env: frame
@@ -591,6 +594,7 @@ class Assignment extends Statement {
 
 
 
+** Code generation
 *** Code generation                                                 :B_frame:
     :PROPERTIES:
     :BEAMER_env: frame
@@ -663,6 +667,7 @@ codeFile.updateProcedure(main);
 *** Code generation: writing to a file
 
 
+** Testing   
 *** Testing                                                         :B_frame:
     :PROPERTIES:
     :BEAMER_env: frame
@@ -681,6 +686,7 @@ codeFile.updateProcedure(main);
 
 
 
+** Starting point and hand in
 *** Provided source code (patch)                                    :B_frame:
     :PROPERTIES:
     :BEAMER_env: frame
@@ -692,7 +698,8 @@ codeFile.updateProcedure(main);
  \includegraphics[width=0.96\textwidth]{figures/snaps/directorystructure-src}
 #+end_export
 
-
+Tests: already included in the oblig1 checkout, so left out in the zip-patch
+this year.
 
 *** Provided documentation (patch)                                  :B_frame:
     :PROPERTIES:
@@ -741,8 +748,7 @@ codeFile.updateProcedure(main);
      :BEAMER_env: alertblock
      :END:
 
-      ---- May 202XXXXXX
-
+      14 May 2021
 
 
 **** Rest                                            :B_ignoreheading:ignore:

@@ -2,7 +2,7 @@
 
 \input{coursedata}
 \input{preamble}
-\pgfdeclareimage[height=2.4cm,interpolate=true]{uio}{uiologo}%% relative
+\pgfdeclareimage[height=2.4cm,interpolate=true]{uio}{logos/uiologo}%% relative
 %\usepackage[german]{babel} 
 %\usepackage{german}
 
@@ -33,7 +33,7 @@
 The \textbf{deadline/frist}  for the second oblig is
 
 \begin{quote}
-  \textbf{\deadlinetwo, 23:59}
+  \textbf{\deadlinetwo}
 \end{quote}
 
 
@@ -47,7 +47,7 @@ The \textbf{deadline/frist}  for the second oblig is
 \subsection{Git}
 \label{sec:git}
 
-You will continue in the group's git-repos you did in the first oblig
+You will continue with your group's git-repos you used in the first oblig
 (unless really convincing reasons speak against it).  Basically, you
 continue with your previous code, add the new functionality, push a
 solution before the deadline, and inform me when it's done so that I can
@@ -71,26 +71,27 @@ See also the \emph{Readme} of the \emph{``patch''} under
 \subsection{What to include into a solution}
 \label{sec:what-include-into}
 
-As before, it should be a appropriately commented repos, solving the tasks
+As before, it should be an appropriately commented repos, solving the tasks
 of oblig 2. In particular needed is (basically as before)
 
 
 \begin{itemize}
-\item A top-level \emph{Readme-file} containing
+\item A top-level \emph{Readme-file}\footnote{Many did a \texttt{Readme.md}
+    which is a good format.} containing
   \begin{itemize}
   \item  containing names and emails of the authors
   \item instructions how to build the compiler and how to run it.
   \item test-output for running the compiler on \texttt{compila.cmp} as
     input
   \item of course, all code needed to run your solution 
-    \item the Java-classes for the syntax-tree
-    \item the build-script \texttt{build.xml}
-    \end{itemize}
+  \item the Java-classes for the syntax-tree
+  \item the build-script \texttt{build.xml} (adapted)
   \end{itemize}
+\end{itemize}
 
 Of course, the old code (for lex and yacc-based parsing) is still
 needed. It's not needed that both versions of the grammar, required for
-oblig 1, are still supported.
+oblig 1, are still supported, one working version is enough.
 
 
 
@@ -106,7 +107,8 @@ about type checking etc, what were irrelevant for oblig 1, specify the
 scope of the task as far as the language features are concerned.
 
 
-As in oblig 1, it's \emph{necessary} that a solution is equipped
+Testing becomes more important than in oblig 1. It's \emph{necessary} that
+a solution is equipped
 
 \begin{quote}
   with ``automatic test-cases''
@@ -115,19 +117,19 @@ That can be done (as before) via ant targets. Those tests have to be
 executable on the RHEL linux pool at the university.\footnote{That should
   actually not be a big restriction, as Java (and the task) is to a big
   extent platform independent (``write once, run everywhere''
-  \ldots). Nonetheless: Based on experience with the first obligs: it's
-  advised to make this ``test'' setup early on (not after the deadline), to
-  design the code \emph{with the goal that it runs also at a different
-    place than one's own platform} and to test that this goal is actually
-  met. The reason for that ``testability'' requirment is that correction
-  will again not be based on reading code from my side, but in first
-  approximation: running the test. In that sense, it's also not of primary
-  importance, whether it's \texttt{ant} or perhaps \emph{make} or some
-  script. Important is, that I can execute it at the RHEL machines by
-  invoking a simple command.  I don't have the time to figure out how one
-  particular solution is configured, started, etc. I don't even want to
-  look around and try whether I find a \texttt{main} method somewhere\ldots
-}
+  \ldots). Nonetheless: Based on experience with the earlier years (this
+  year actually no problems occured): it's advised to make this ``test''
+  setup early on (not after the deadline), to design the code \emph{with
+    the goal that it runs also at a different place than one's own
+    platform} and to test that this goal is actually met. The reason for
+  that ``testability'' requirement is that correction will again not be
+  based on reading much code from my side, but in first approximation:
+  running the test. In that sense, it's also not of primary importance,
+  whether it's \texttt{ant} or perhaps \emph{make} or some
+  script. Important is, that I can execute it by invoking a simple command.
+  I don't have the time to figure out how one particular solution is
+  configured, started, etc. I don't even want to look around and try
+  whether I find a \texttt{main} method somewhere\ldots }
 
 
 \section{Tools}
@@ -200,7 +202,13 @@ Obtain the patch (as zip-archive) under
   \url{https://github.uio.no/msteffen/compila/tree/master/oblig2patch/oblig2patch.zip}
 \end{quote}
 
-(or via an updated clone of the course repos).
+or via an updated clone of the course repos. Read also the ~Readme.org~
+there, there is more info about how to start. Note: when you cloned or
+downloaded the repository in perhaps March, there had been already some
+\emph{oblig2patch} as part of the repos. Also that should be more or less
+usable, it reflects the 2020 version. Not much has changed since then
+(mostly the documentation like this file handout here and the slides, the
+actualy ``content'' is basically the same
 
 
 
