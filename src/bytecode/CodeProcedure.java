@@ -244,14 +244,14 @@ public class CodeProcedure {
 	    instructionsBytes[i] = this.instructions.get(i).getBytecode();
 	    totalSize += instructionsBytes[i].length;
 	}
-	
-	// Add size of name (2) counters (3*2) => 8
+
+	// header information: 4 shorts
+. 	// Add size of name (2) counters (3*2) => 8
 	totalSize += 8;
 	byte[] nameBytes = this.name.getBytes();
 	totalSize+=nameBytes.length;
 	byte[] typeBytes = this.returnType.getBytecode();
 	totalSize+=typeBytes.length;
-	
         byte[] bytes = new byte[totalSize];
         NumberConversion.shortToByteArray(bytes,  0, (short) nameBytes.length);
         NumberConversion.shortToByteArray(bytes,  2, (short) this.parameterTypes.size());
@@ -261,8 +261,8 @@ public class CodeProcedure {
         int index = 8;
         insert(bytes, nameBytes, index);
 	index+=nameBytes.length;
-	insert(bytes, typeBytes, index);
-	index+=typeBytes.length;
+	insert(bytes, typeBytes, index);   // not stored in the header
+	index+=typeBytes.length; 
 	
 		
         // Parameters
