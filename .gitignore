@@ -1,6 +1,6 @@
 *~ 
 *.vrb
-*.nav
+*.nav 
 *.toc
 *.class
 *.log
@@ -11,4 +11,5 @@
 auto
 *.idx
 *.ps
+*.mav
 *.DS_Store
