@@ -201,6 +201,8 @@ begin and end has been switched out by brackets.
 
 
 
+*** TODO is it org-exported? <2022-02-03 Thu 09:50>
+
 *** CANCELLED how what the org-publish thing going? <2021-02-09 Tue 14:07>
     CLOSED: [2021-08-04 Wed 15:52]
     :LOGBOOK:
@@ -362,6 +364,10 @@ begin and end has been switched out by brackets.
 
 Remarks per semester, especially list of things that I did /not/ like (but
 perhaps also positive things).
+
+
+** 2022
+
 
 
 
