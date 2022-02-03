@@ -1,4 +1,4 @@
-program DummyProgram  
+program DummyProgram 
 begin
   class TestClass begin end;
   class TestClass2 begin end;
