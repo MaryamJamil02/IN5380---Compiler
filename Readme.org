@@ -3,7 +3,7 @@
 #+OPTIONS: email:nil f:t inline:t num:t p:nil pri:nil prop:nil stat:t
 #+OPTIONS: tags:nil tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
 #+TITLE: Compila 21 (Language and compiler skeleton + material)
-#+DATE: <2018-02-25 So>
+#+DATE: <2022-02-03 Thu>
 #+AUTHOR: Martin Steffen
 #+EMAIL: msteffen@ifi.uio.no
 #+LANGUAGE: en
@@ -16,16 +16,17 @@
 
 * Intro
 
-The repository host material for the /Compila 21/ compiler, which is the
+The repository host material for the /Compila 22/ compiler, which is the
 content of oblig 1 and 2 for the course ``compiler construction''
 ([[http://www.uio.no/studier/emner/matnat/ifi/INF5110/][INF5110]]/INF9110). The material focuses on the code and the description and
-documentation of the compiler. /Not/ contained here is the compiler
-/lecture/ (the slides, the exercises, organizational material, etc.).
-Those are kept in the respository of the course itself, and the generated
-slides are kept in the Vortex system on the course's web-page.
+documentation of the *compiler*, resp. the starting point for the
+compiler. *Not* contained here is the compiler *lecture* (the slides, the
+exercises, organizational material, etc.).  Those are kept in the
+respository of the course itself, and the generated slides are kept in the
+Vortex system on the course's web-page.
 
 
-* Overview over the directory's structure
+* Overview over the repository's structure
 
 - [[./doc]]: generated documentation
     - language specification
@@ -35,7 +36,7 @@ slides are kept in the Vortex system on the course's web-page.
 - [[./src]]: sources (including sources of the documentation).
 
 
-- [[./src/tests]]: compila 21 programs for testing. Not all tests are already
+- [[./src/tests]]: compila 22 programs for testing. Not all tests are already
   relevant for *oblig 1*. The directory contains a number of subdirectories
   for different purposes. The one required for *oblig 1* is
 
@@ -53,17 +54,16 @@ slides are kept in the Vortex system on the course's web-page.
 - [[./lib]]: lexer and yaccer tools (jlex + cup), as jar files
 
 
-- [[./build.xml]]: simple /ant/ build file. Type ~ant~ in a command shell to see current
-              possible targets. One can adapt according to one's needs. Also for oblig2,
-	      one will have to add more ``targets'' (because then there will be more things
-	      to do, like type checking etc.) Alternative ``build'' methods are allowed as well
-	      if preferred (make, maven) as long as they are commonly available.
+- [[./build.xml]]: simple /ant/ build file. Type ~ant~ in a command shell to
+  see current possible targets. One can adapt according to one's
+  needs. Also for oblig2, one will have to add more ``targets'' (because
+  then there will be more things to do, like type checking etc.)
+  Alternative ``build'' methods are allowed as well if preferred (make,
+  maven) as long as they are commonly available.
        
 
-- [[./material]]: extra material, for example a test expression evaluator and parser
-      (a simple working example of making use of lex and yacc)
-
-
+- [[./material]]: extra material, for example a test expression evaluator and
+  parser (a simple working example of making use of lex and yacc)
 
 -  [[./previoussemesters]]: for ``historical'' purposes only
       
@@ -125,7 +125,7 @@ cleaning up, 2 different programs that can be built and run, so altogether
 *** Check the dummy code
 
 Do the same for the dummy- and skeleton-classes provided as starting point
-for the compila 21 compiler. Inside the top-level compila directory, which
+for the compila 22 compiler. Inside the top-level compila directory, which
 contains a [[./build.xml]]-file, do
 
 #+begin_src 

@@ -15,7 +15,55 @@
 
 ** Github setup
 
-*** PENDING how to use teams? <2022-02-03 Thu 12:44>
+
+*** TODO check the tests, if they still work <2022-02-03 Thu 14:33>
+
+*** DONE how to push the new empty repos'es <2022-02-03 Thu 13:53>
+CLOSED: [2022-02-03 Thu 14:06]
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2022-02-03 Thu 14:06]
+:END:
+
+I did this
+
+#+begin_example
+git remote add origin22-00 git@github.uio.no:compilerconstruction-inf5110/compila22-00.git
+git branch
+gut remote -v
+git push -u origin22-00 master
+#+end_example
+
+#+begin_example
+git remote add origin git@github.uio.no:compilerconstruction-inf5110/compila22-01.git
+git branch -M main
+git push -u origin main
+#+end_example
+
+Maybe we should not push the whole history. But I did it anyway.
+
+
+git remote add my_awesome_new_remote_repo git@git.assembla.com:portfolio/space.space_name.git
+
+
+#Verify new remote
+
+git remote -v
+
+> my_awesome_new_remote_repo  git@git.assembla.com:portfolio/space.space_name.git (fetch)
+> my_awesome_new_remote_repo  git@git.assembla.com:portfolio/space.space_name.git (push)
+
+To push your changes into your remote repo execute the git push <remote> <branch> command:
+
+git push <your_remote_name>
+
+#git push my_awesome_new_remote_repo
+
+
+*** DONE how to use teams? <2022-02-03 Thu 12:44>
+CLOSED: [2022-02-03 Thu 13:52]
+:LOGBOOK:
+- State "DONE"       from "PENDING"    [2022-02-03 Thu 13:52]
+:END:
 ** Build file
 
 *** DONE go through the handout again <2020-02-05 Wed 12:08>
