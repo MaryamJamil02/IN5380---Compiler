@@ -137,7 +137,7 @@ public class CodeFile {
      * @return the index of the procedure.
      */
     public int procedureNumber(String name) {
-	for(int i=0; i<this.procedure[Names.size();i++){
+	for(int i=0; i<this.procedureNames.size();i++){
 	    if(this.procedureNames.get(i).equals(name)){
 		return i;
 	    }

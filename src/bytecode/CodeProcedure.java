@@ -246,7 +246,7 @@ public class CodeProcedure {
 	}
 
 	// header information: 4 shorts
-. 	// Add size of name (2) counters (3*2) => 8
+ 	// Add size of name (2) counters (3*2) => 8
 	totalSize += 8;
 	byte[] nameBytes = this.name.getBytes();
 	totalSize+=nameBytes.length;
