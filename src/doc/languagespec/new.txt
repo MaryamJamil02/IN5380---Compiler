@@ -1,4 +1,3 @@
-
 The new scheme is that variables can be declared to be reference types
 ("pointers", if you will), by writing e.g.
 

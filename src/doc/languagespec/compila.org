@@ -1,4 +1,4 @@
-#+AUTHOR: INF5110, spring 2021
+#+AUTHOR: INF5110, spring 2022
 #+TEXINFO_FILENAME: compila.info
 #+TEXINFO_CLASS: info
 #+TEXINFO_HEADER: 
