@@ -1,3 +1,5 @@
+* Changes from 2021 -> 2022
+  Nothing
 * Changes from 2020 -> 2021
    I don't do anything now
 * Changes from 2019 -> 2020

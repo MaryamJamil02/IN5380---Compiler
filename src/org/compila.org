@@ -201,7 +201,29 @@ begin and end has been switched out by brackets.
 
 
 
-*** TODO is it org-exported? <2022-02-03 Thu 09:50>
+*** TODO change to 2022 <2022-02-03 Thu 10:03>
+
+*** DONE check the org-export <2022-02-03 Thu 09:51>
+CLOSED: [2022-02-03 Thu 10:03]
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2022-02-03 Thu 10:03] \\
+  only the javadoc
+:END:
+
+*** DONE redo the compilarbytecodejavadoc <2022-02-03 Thu 09:52>
+CLOSED: [2022-02-03 Thu 10:03]
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2022-02-03 Thu 10:03]
+:END:
+
+*** DONE is it org-exported? <2022-02-03 Thu 09:50>
+CLOSED: [2022-02-03 Thu 10:03]
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2022-02-03 Thu 10:03] \\
+  only the javadoc
+:END:
+
+There's some [[file:~/gnu/emacs/25/my-unchanged/emacs-orghtml::("org-mmcompilabytecodejavadoc"]]
 
 *** CANCELLED how what the org-publish thing going? <2021-02-09 Tue 14:07>
     CLOSED: [2021-08-04 Wed 15:52]
