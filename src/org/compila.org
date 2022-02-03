@@ -13,6 +13,9 @@
 
 * Misc
 
+** Github setup
+
+*** PENDING how to use teams? <2022-02-03 Thu 12:44>
 ** Build file
 
 *** DONE go through the handout again <2020-02-05 Wed 12:08>
@@ -201,7 +204,11 @@ begin and end has been switched out by brackets.
 
 
 
-*** TODO change to 2022 <2022-02-03 Thu 10:03>
+*** DONE change to 2022 <2022-02-03 Thu 10:03>
+CLOSED: [2022-02-03 Thu 12:44]
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2022-02-03 Thu 12:44]
+:END:
 
 *** DONE check the org-export <2022-02-03 Thu 09:51>
 CLOSED: [2022-02-03 Thu 10:03]
