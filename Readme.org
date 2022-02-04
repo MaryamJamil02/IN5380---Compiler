@@ -130,6 +130,10 @@ contains a [[./build.xml]]-file, do
 #+end_src
 
 
+If successful, that  should generate the file ~simpledummy.ast~ under
+[[file:src/tests/outputs/ast][file:~/cor/teaching/compilerconstruction-inf5110/compila/src/tests/outputs/ast]]
+
+
 There might be warnings about ``non-reproducible builds'', but you can
 ignore that.
 
