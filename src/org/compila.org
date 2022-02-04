@@ -15,10 +15,24 @@
 
 ** Github setup
 
+#+begin_example
+git remote add origin22-00 git@github.uio.no:compilerconstruction-inf5110/compila22-00.git
+git branch
+gut remote -v
+git push -u origin22-00 master
+#+end_example
 
-*** TODO check the tests, if they still work <2022-02-03 Thu 14:33>
 
-*** DONE how to push the new empty repos'es <2022-02-03 Thu 13:53>
+*** Things to do
+**** TODO how to remove the remote <2022-02-04 Fri 09:53>
+
+Or maybe we add them all
+
+
+
+**** TODO check the tests, if they still work <2022-02-03 Thu 14:33>
+
+**** DONE how to push the new empty repos'es <2022-02-03 Thu 13:53>
 CLOSED: [2022-02-03 Thu 14:06]
 :LOGBOOK:
 - State "DONE"       from "TODO"       [2022-02-03 Thu 14:06]
