@@ -22,7 +22,9 @@ gut remote -v
 git push -u origin22-00 master
 #+end_example
 
-
+#+begin_example
+git push origin master
+#+end_example
 *** Things to do
 **** TODO how to remove the remote <2022-02-04 Fri 09:53>
 

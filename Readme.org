@@ -16,12 +16,12 @@
 
 The repository host material for the /Compila 22/ compiler, which is the
 content of oblig 1 and 2 for the course ``compiler construction''
-([[http://www.uio.no/studier/emner/matnat/ifi/INF5110/][INF5110]]/INF9110). The material focuses on the code and the description and
-documentation of the *compiler*, resp. the starting point for the
-compiler. *Not* contained here is the compiler *lecture* (the slides, the
-exercises, organizational material, etc.).  Those are kept in the
-respository of the course itself, and the generated slides are kept in the
-Vortex system on the course's web-page.
+([[http://www.uio.no/studier/emner/matnat/ifi/INF5110/][INF5110]]/INF9110). The material focuses on the code which can be used as
+*starting point* for the *compiler*. It contains also the description and
+documentation of the oblig and the compiler. *Not* contained here is the
+compiler *lecture* (the slides, the exercises, organizational material,
+etc.).  Those are kept in the respository of the course itself, and the
+generated slides are kept in the Vortex system on the course's web-page.
 
 
 * Overview over the repository's structure
@@ -75,37 +75,34 @@ Vortex system on the course's web-page.
                 checked in
 
 
-* First steps  
-* First steps (old)
+* First steps
+
+We assume basic familiarity with git, so how to clone commit, push and
+pull. No more advanced features need to be used.
 
 
+** Getting a working copy of the repository (clone)
 
-Take this directory as ``starting point'', i.e., get yourself a ``copy''
-from this directory, for instance by downloading  the zip-file, using the
-corresponding green button of the github web-page)
+Every group get their own repository, all of them initially identical. The
+first thing to do is to one a working copy of the corresponding
+repos. That's done via ~git clone~.
 
-** Rename it to fit to your  own project:
+For *group 00*, the repos is located at
+[[https://github.uio.no/compilerconstruction-inf5110/compila22-00]], and the
+corresponding clone step would be
 
-When getting a copy after unzipping, the directory will be called
-~compila-master~ (if you clone it, the name is ~compila~). Rename the
-directory to fit with your group number, so if your group is ~01~, your
-(resp. your groups) directory is called ~compila01~.  Please: don't call it 
-something else, neither ~compila1~, nor ~Compila01~ not ~compila-01~
-etc. It makes uniform treatment of all groups and automatic checks (perhaps
-via scripts) a tiny bit more easy.
+#+begin_src 
+ clone git@github.uio.no:compilerconstruction-inf5110/compila22-00.git
+#+end_src
 
+The group numbered *00* is used by the lecturer, so one has to replace *00*
+with one's own group number.
 
-If you instead of downloading the zip, get yourself a clone: Make /sure/
-that the original repos [[https://github.uio.no/msteffen/compila]] is no longer
-connected to your clone, as you should just use it as a starting point for
-/your/ project, and not to work in the common code base.
-
-  
 
 ** Some check to see if everything on your system is in place
 
-You should make sure that java runs (and the classpath is not messed up
-somehow etc).  Perhaps check if ~ant~ is running.
+Make sure that java runs (and the classpath is not messed up somehow etc).
+Check if ~ant~ is running. 
 
 *** Check the simple evaluator
 
@@ -140,40 +137,20 @@ ignore that.
 
 
 
-** Make it availabe via git
 
-Typically that means: create yourself a repos at ~github.uio.no~ called
-~compila<xxx>~. 
-
-
-
-If the project is non-public, add me (~msteffen~) as collaborator. /Inform
-me via email about the url of the repos./ It's a good idea /not/ to wait
-for that until the deadline for the oblig, but at that time I need access
-to your project. Make sure that the project is usable ``out-of-the-box'',
-like: if a third person (like me) does the following steps:
-
-#+begin_src 
-  git clone <url to your project>
-  cd compila<xxx>  
-  ant build        // or whatever
-#+end_src
-it does the intended thing. There must also be a simple top-level
-Readme-file that instruct a user what to do. If wished you can edit and
-clean up the ~Readme.org~ file here to fit the needs of your project, or
-replace it but another Readme file (but no need to have 2 readme-files
-around).
 
 * Communication & discussion forums
 
 Especially in virus times, electronic communication is important. If
 encountering troubles or puzzling, email is an option. Besides that, the
 university has set up some discussion platforms per course that they think
-is useful.
+is useful:
 
-  - [[https://mattermost.uio.no/ifi-undervisning/channels/inf5110][mattermost]] and
-  - [[https://uio.padlet.org/MartinSteffen/5agsnjd06mtn1g3a][padlet]]
+  - [[https://mattermost.uio.no/ifi-undervisning/channels/inf5110][mattermost]]
 
+We can also try git-issues.    
+
+    
 Make use of them, for instance by posting questions concerning the oblig
 (or the lecture).
 
