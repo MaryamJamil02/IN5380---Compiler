@@ -432,18 +432,17 @@ If problems, *ask in time*  (*NOT* Friday at the deadline)
 
 - as the previous 2 or 3 years, we use  /git/
 
-- [[https://github.uio.no]] resp. [[https://github.uio.no/msteffen/compila]]
+- [[https://github.uio.no]] resp. [[https://github.uio.no/compilerconstruction-inf5110/compila][https://github.uio.no/compilerconstruction-inf5110/compila22-<xx>]]
 
 - you need
 
   - a login
   - send me emails that you want to do oblig (+ potential partner)
     $\Rightarrow$ I tell you group number
-  - create a project ~compila<n>~ ($n$ = group number)
-  - add collaborator + (at some point me)
 
 
-- see also the handout
+- see also the *handout* and *Readme*
+
 # - code ready /tomorrow/
 
 
