@@ -87,34 +87,38 @@ In order to hand-in via git, each group has to do the following steps. See
 also the top-level readme at \url{https://github.uio.no/msteffen/compila}
 
 \begin{enumerate}
-\item everyone: if not already: create yourself a account at
+\item everyone: if not already: create yourself an account at
   \url{github.uio.no}. Your UiO login allows you to do that.
 \item send me an email with your name (and if have, with the name of your
   collaborator), so I can assign a group number.
-\item per group: \emph{create} a new \emph{project} at the github repos.
-  If your are in group number $n$,\footnote{The project names need to be
-    different so that, for correction, I can distinguish them by their
-    ``name'' to avoid that all projects are called ``compila''.}
-  \begin{quote}
-    call your project \texttt{compila<n>}
-  \end{quote}
-  The ``parentheses'' \texttt{<} and \texttt{>} are \emph{not} part of the
-  name! If the group contains more than one person, the creator has to add
-  the partner as \emph{collaborator} to the project.\footnote{It's not that
-    the one creating the project ``owns'' it, the collaborators are
-    \emph{peers} (as in peer-to-peer). As you know, in git, everyone works
-    on a cloned copy of the respository, so at the end of the project,
-    everone can keep the own copy if wanted, not only the one who created
-    it.}
-\item If your project is ``private'': add me as collaborator (login
-  \texttt{msteffen}). I don't need to contibute as collaborator, but I need
-  access.
-\item Send me an \emph{email} with the link, mentioning the names (and
-  login) of the members of the group as confirmation. That needs to be done
-  \emph{before the first oblig's deadline}. The names of the member of the
-  group, i.e., the authors of the project, should also feature
-  \emph{prominently} on the top-level of the repository, as in the
-  top-level \texttt{Readme}-file.
+\item each group will get a \emph{repository}. For instance, group
+  \textbf{01} get the repository \textbf{compila22-01} etc.  I will
+  everyone to the corresponding repos as collaborator. Each repos contains
+  the same starting point, of course.
+%\item per group: \emph{create} a new \emph{project} at the github repos.
+%  If your are in group number $n$,\footnote{The project names need to be
+%    different so that, for correction, I can distinguish them by their
+%    ``name'' to avoid that all projects are called ``compila''.}
+%  \begin{quote}
+%    call your project \texttt{compila<n>}
+%  \end{quote}
+%  The ``parentheses'' \texttt{<} and \texttt{>} are \emph{not} part of the
+% name! If the group contains more than one person, the creator has to add
+%  the partner as \emph{collaborator} to the project.\footnote{It's not that
+%    the one creating the project ``owns'' it, the collaborators are
+%    \emph{peers} (as in peer-to-peer). As you know, in git, everyone works
+%    on a cloned copy of the respository, so at the end of the project,
+%    everone can keep the own copy if wanted, not only the one who created
+%    it.}
+%\item If your project is ``private'': add me as collaborator (login
+%  \texttt{msteffen}). I don't need to contibute as collaborator, but I need
+%  access.
+% \item Send me an \emph{email} with the link, mentioning the names (and
+%   login) of the members of the group as confirmation. That needs to be done
+%   \emph{before the first oblig's deadline}. The names of the member of the
+%   group, i.e., the authors of the project, should also feature
+%   \emph{prominently} on the top-level of the repository, as in the
+%   top-level \texttt{Readme}-file.
 \end{enumerate}
 
 
@@ -151,10 +155,11 @@ also the top-level readme at \url{https://github.uio.no/msteffen/compila}
 \item The information so far is for an ``interested user'' which may be an
   outsider, maybe like a random surfer on the internet who wants to try it
   out. Besides that, additional information should be provided, which is
-  not relevant for an outside, but contains insider information relevant
-  for the course's mandatory assignment and the technical realization of
-  the solution. This, the information might better not be kept in the top
-  level readme but at a different, less prominent place or file.
+  not relevant for an outsider, but contains ``insider information''
+  relevant for the course's mandatory assignment and the technical
+  realization of the solution. Thus, that information might perhaps better
+  not be kept in the top level readme but at a different, less prominent
+  place or file.
   \begin{itemize}
   \item test-output for running the compiler on \texttt{compila.cmp} as
     input
@@ -188,18 +193,24 @@ it works out-of-the-box, by following simple steps like for example
 
 \begin{verbatim}
    git clone <repos-url>
-   cd compila<n>
+   cd compila22-<n>
    ant
    ant build
    ant run
 \end{verbatim}
 and those steps should be mentioned clearly in your Readme. The steps
-mentioned here correspond to those suggested when you clone the skeletal
-starting point from \url{github.uio.no:msteffen/compila.git}. Your solution
-may involve different steps (maybe \texttt{ant ast} for producing the
-require AST), and may require adapation of \texttt{build.xml} (if you use
-ant). But you should keep the spirit of ``out-of-the-box'' and ``kiss''
-(keep it simple, stupid.). Remember: the user is always stupid...
+mentioned here correspond to those suggested when using the provided
+starting point (which corresponds to
+\begin{center}
+  \url{https://github.uio.no/compilerconstruction-inf5110/compila}.\footnote{Don't
+    clone this one for doing the oblig, clone the repos corresponding to
+    your group.}
+\end{center}
+Your solution may involve different steps (maybe \texttt{ant ast} for
+producing the require AST), and may require adapation of \texttt{build.xml}
+(if you use ant). But you should \textbf{keep the spirit} of
+``out-of-the-box'' and ``kiss'' (keep it simple, stupid.). Remember: the
+user is always stupid...
 
 
 
@@ -249,7 +260,7 @@ The platform is \emph{Java}, together with the auxiliary tools
 
 The tool ant is available at the RHEL pool at IFI, for other platforms I
 don't know, but it's freely available. \textsl{JFlex} and \textsl{CUP} are
-provided.
+provided as part of the repos.
 
 If, for some reason, you plan to deviate from the suggested tools, you
 \begin{enumerate}
@@ -259,12 +270,55 @@ If, for some reason, you plan to deviate from the suggested tools, you
   tools I don't have easy\footnote{I \emph{mean} easy and in the sense that
     it does not cost money or much time to install the required environment
     or to figure out how it all hangs together. \emph{Not} ``easy'' as in
-    ``it's really not hard after you read some manuals and with the help
-    from the fine folks on stack-exchange'' \ldots} access to cannot be
-  used. If using Java, it must compile and run without support of specific
-  development environments or ``frameworks'' besides the ones mentioned
-  (\textsl{JFlex}, \textsl{CUP}, \textsl{ant}).
+    ``it's really not so hard after you read some manuals and played around
+    with it for a while and with the help from the fine folks on
+    stack-exchange'' \ldots} access to cannot be used. If using Java, it
+  must compile and run without support of specific development environments
+  or ``frameworks'' besides the ones mentioned (\textsl{JFlex},
+  \textsl{CUP}, \textsl{ant}).
 \end{enumerate}
+
+
+\section{First steps (``oblig 0'')}
+\label{sec:first-steps-oblig}
+
+Apart from getting yourself a group number, git access etc. as descibed,
+there are things you really should do afterwards, 
+
+\begin{center}
+  \textbf{Checking that on your platform, all is in place}
+\end{center}
+
+The provided readme describes the easy steps (not repeated here). It's
+about to make shure that your Java set-up works, that ant is running
+etc. If the tests fail, \textbf{contact me} to \textbf{get that out of the
+  way} before the oblig work starts. The starting point provides those
+tests to avoid that later and shorter before the dealine, one figures out
+``something's not working on my machine''. I tested it on the university
+machines, I tested it on my laptop, but I cannot test it on other people's
+machines.  Normally it's not a problem, the stuff is supposed to be
+platform independed, but normally ok means, sometimes not ok, and sometimes
+for weird reasons.
+
+To avoid running into frustrating stupid things later is \textbf{only one
+  purpose} to actually run the provided the tests and make sure all is in
+order. The \textbf{other purpose} is: the tests run a lexer and a parser!
+It's of course not the compila language, that's you task, but it shows in
+two tiny examples, how the tools operate together, and how a lex file looks
+and how a cup-file looks etc.
+
+Talking about how to tackle practical aspects of the oblig(s) and
+organizing the task. You may read the advice I typed up last year about that
+
+\begin{center}
+  \url{https://martinsteffen.github.io/compilerconstruction/howtowriteaparser/}
+\end{center}
+
+Sometimes, groups or individuals work on the conceptual part of the
+compiler (like writing the lex-file or the grammar) which is of course very
+important. But postponing to actually \textbf{check} whether it ``runs'' or
+``fit together'', which may result in hectic before the deadline.
+
 
 
 
@@ -275,7 +329,7 @@ If, for some reason, you plan to deviate from the suggested tools, you
 The overal task is to 
 
 \begin{quote}
-  implement a parser for the \textsl{Compila 20} language.
+  implement a parser for the \textsl{Compila 22} language.
 \end{quote}
 The language specification is given in a separate document. Oblig 1 is
 concerned with checking \emph{syntactic correctness}, which means, not all
