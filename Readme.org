@@ -61,7 +61,8 @@ generated slides are kept in the Vortex system on the course's web-page.
        
 
 - [[./material]]: extra material, for example a test expression evaluator and
-  parser (a simple working example of making use of lex and yacc)
+  parser (a simple working example of making use of lex and yacc). It also
+  contains inspiration how a ast-printout could look like.
 
 -  [[./previoussemesters]]: for ``historical'' purposes only
       
@@ -78,13 +79,14 @@ generated slides are kept in the Vortex system on the course's web-page.
 * First steps
 
 We assume basic familiarity with git, so how to clone commit, push and
-pull. No more advanced features need to be used.
+pull. No more advanced features need to be used. If not familiar with that,
+contact the lecture (early on!) to figure it out.
 
 
 ** Getting a working copy of the repository (clone)
 
 Every group get their own repository, all of them initially identical. The
-first thing to do is to one a working copy of the corresponding
+first thing to do is to get a working copy of the corresponding
 repos. That's done via ~git clone~.
 
 For *group 00*, the repos is located at
@@ -112,7 +114,7 @@ Inside the compila-directory, do
 
 
 #+begin_src 
-   cd material/simpleexpression
+   cd material/first-tests-simpleexpressions
    ant 
 #+end_src
 watch the output, and try out the shown targets. There is 1 target for
@@ -134,12 +136,10 @@ contains a [[./build.xml]]-file, do
 #+end_src
 
 
-If successful, that  should generate the file ~simpledummy.ast~ under
-[[file:src/tests/outputs/ast][file:~/cor/teaching/compilerconstruction-inf5110/compila/src/tests/outputs/ast]]
-
-
-There might be warnings about ``non-reproducible builds'', but you can
-ignore that.
+If successful, that should generate the file ~simpledummy.ast~ under
+[[file:./src/tests/outputs/ast][<compila-root>/src/tests/outputs/ast]]. Since generated, the file currently
+not there. There might be warnings about ``non-reproducible builds'', but
+you can ignore that.
 
 
 
@@ -155,10 +155,6 @@ most beautiful output, it's more an ugly-printer rather than a
 pretty-printer output, but it would do the job. Note also: the output *does
 not 100% adhere to the 2022 syntax*, but corresponds to an earlier
 iteration. But as said, it's for inspiration.
-
-
-
-
 
 
 
