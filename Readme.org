@@ -139,6 +139,25 @@ ignore that.
 
 
 
+The generated ast-printout is very small, because the example grammar and
+program in the starting point is just very small. Besides the ast which is
+generated following the described steps, there is also more ``realistic''
+ast-printout included in the repos in the same directory, so it's not
+generated (or maybe I generated it in an earlier semester). It's called
+[[file:src/tests/outputs/ast/simpledummy-forinspiration.ast][simpledummy-forinspiration.ast]].
+
+It's meant as *inspiration* of how an outpout could look like. It's not the
+most beautiful output, it's more an ugly-printer rather than a
+pretty-printer output, but it would do the job. Note also: the output *does
+not 100% adhere to the 2022 syntax*, but corresponds to an earlier
+iteration. But as said, it's for inspiration.
+
+
+
+
+
+
+
 
 
 
