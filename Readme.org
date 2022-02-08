@@ -99,12 +99,14 @@ The group numbered *00* is used by the lecturer, so one has to replace *00*
 with one's own group number.
 
 
-** Some check to see if everything on your system is in place
+** Check to see if everything on your system is in place!
 
-Make sure that java runs (and the classpath is not messed up somehow etc).
-Check if ~ant~ is running. 
+Do the following checks, to make sure that java runs (and the classpath is
+not messed up somehow etc). and also that ~ant~ is running.
 
-*** Check the simple evaluator
+
+
+*** Check the simple evaluator (under ~./material~)
 
 Inside the compila-directory, do
 
@@ -117,7 +119,9 @@ watch the output, and try out the shown targets. There is 1 target for
 cleaning up, 2 different programs that can be built and run, so altogether
 5 targets you can test.
 
-*** Check the dummy code
+
+*** Check the top-level build-file (under this directory)
+
 
 Do the same for the dummy- and skeleton-classes provided as starting point
 for the compila 22 compiler. Inside the top-level compila directory, which
