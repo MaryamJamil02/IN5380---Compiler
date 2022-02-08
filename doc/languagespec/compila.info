@@ -65,7 +65,7 @@ File: compila.info,  Node: Introduction,  Next: Lexical aspects,  Prev: Top,  Up
 **************
 
 This document specifies and describes the syntax and the static
-semantics of the language _Compila 21_.  The dynamic semantics, i.e.,
+semantics of the language _Compila 22_.  The dynamic semantics, i.e.,
 the description of the language’s behavior when being executed, should
 be fairly clear even without explicit formal specification.
 
