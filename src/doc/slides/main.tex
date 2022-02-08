@@ -1,4 +1,4 @@
-% Created 2022-02-08 Tue 12:29
+% Created 2022-02-08 Tue 12:31
 % Intended LaTeX compiler: pdflatex
 \documentclass{beamer}
  		 
@@ -32,9 +32,9 @@
 
 \maketitle
 \section{Compila 22}
-\label{sec:org748b3e2}
+\label{sec:orge8889e0}
 
-\begin{frame}[label={sec:org4645a18}]{Oblig 1}
+\begin{frame}[label={sec:orgf82e8ef}]{Oblig 1}
 \begin{itemize}
 \item material (also for oblig 2) based on previous years, including contributions from Eyvind
 W. Axelsen, Henning Berg, Fredrik Sørensen, and others
@@ -47,7 +47,7 @@ W. Axelsen, Henning Berg, Fredrik Sørensen, and others
 \end{frame}
 
 
-\begin{frame}[label={sec:orgb2a46e0}]{Goal (of oblig 1)}
+\begin{frame}[label={sec:org927fc9a}]{Goal (of oblig 1)}
 \begin{block}{Parsing}
 Determine if programs written in \emph{Compila 22} are syntactically correct: 
 
@@ -65,7 +65,7 @@ Determine if programs written in \emph{Compila 22} are syntactically correct:
 \end{frame}
 
 
-\begin{frame}[label={sec:orgeee896e}]{Learning outcomes}
+\begin{frame}[label={sec:org7df3714}]{Learning outcomes}
 \begin{itemize}
 \item using \alert{tools} for parser/scanner generation
 \begin{itemize}
@@ -92,20 +92,20 @@ tools)
 \end{frame}
 
 
-\begin{frame}[label={sec:org937cf6a}]{Compila language at a glance}
+\begin{frame}[label={sec:org50ab4eb}]{Compila language at a glance}
 
 \lstinputlisting[basicstyle=\scriptsize,emph={begin,end,in, procedur,program,var,return,struct}]{code/myprogram.cmp}
 \end{frame}
 
 
 
-\begin{frame}[label={sec:org43314e5},plain]{Another glance}
+\begin{frame}[label={sec:org7fa105b},plain]{Another glance}
 
 \lstinputlisting[basicstyle=\scriptsize,emph={begin,end,in, proc,program,var,return,struct}]{code/swap.cmp}
 \end{frame}
 
 
-\begin{frame}[label={sec:orgf9e5ac8},plain]{Grammar (1): declarations}
+\begin{frame}[label={sec:org15f659d},plain]{Grammar (1): declarations}
 
 %~/cor/teaching/compila/src/doc/languagespec/
 \lstinputlisting[basicstyle=\scriptsize,lastline=14]{../../doc/languagespec/grammar.txt}
@@ -116,7 +116,7 @@ tools)
 
 
 
-\begin{frame}[label={sec:org568112e},plain]{Grammar (2): expressions, statements, etc.}
+\begin{frame}[label={sec:orge80f3ec},plain]{Grammar (2): expressions, statements, etc.}
 
 %~/cor/teaching/compila/src/doc/languagespec/
 \lstinputlisting[basicstyle=\scriptsize,firstline=15,lastline=40]{../../doc/languagespec/grammar.txt}
@@ -125,7 +125,7 @@ tools)
 
 
 
-\begin{frame}[label={sec:org3b019f6},plain]{Grammar (3): statements and types}
+\begin{frame}[label={sec:orgda5848b},plain]{Grammar (3): statements and types}
 
 %~/cor/teaching/compila/src/doc/languagespec/
 \lstinputlisting[basicstyle=\scriptsize,firstline=41]{../../doc/languagespec/grammar.txt}
@@ -135,9 +135,9 @@ tools)
 
 
 \section{Tools}
-\label{sec:orgfbf73c3}
+\label{sec:org8c8ee42}
 
-\begin{frame}[label={sec:orgceac3b7},fragile]{Tools: JFlex}
+\begin{frame}[label={sec:org117a1ac},fragile]{Tools: JFlex}
  \begin{itemize}
 \item scanner generator (or lexer generator) tool
 
@@ -159,13 +159,13 @@ tools)
 \end{frame}
 
 
-\begin{frame}[label={sec:orge9d48f5}]{Sample lex code}
+\begin{frame}[label={sec:orgeb829c6}]{Sample lex code}
 \includegraphics[width=\textwidth]{figures/snaps/lexcode}
 \end{frame}
 
 
 
-\begin{frame}[label={sec:orgb1f299b},fragile]{CUP: Construction of useful parsers (for Java)}
+\begin{frame}[label={sec:org2f1a5a6},fragile]{CUP: Construction of useful parsers (for Java)}
  \begin{itemize}
 \item a tool to easily (ymmv) generate \emph{parsers}
 
@@ -191,13 +191,13 @@ grammar in BNF with \alert{action} code
 \end{frame}
 
 
-\begin{frame}[label={sec:org91152c0}]{Sample CUP code}
+\begin{frame}[label={sec:org8b3c051}]{Sample CUP code}
 \includegraphics[width=\textwidth]{figures/snaps/cupcode}
 \end{frame}
 
 
 
-\begin{frame}[label={sec:org5a66a4e},fragile]{Build tool: ant}
+\begin{frame}[label={sec:org20ce58b},fragile]{Build tool: ant}
 
  \begin{center}
  \includegraphics[width=0.2\textwidth]{figures/snaps/antlogo}
@@ -225,7 +225,7 @@ grammar in BNF with \alert{action} code
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org7124c1d}]{AST data structure}
+\begin{frame}[label={sec:org99c436c}]{AST data structure}
 
 \begin{center}
  \includegraphics[width=0.8\textwidth]{figures/snaps/astclasses}
@@ -235,7 +235,7 @@ grammar in BNF with \alert{action} code
 
 
 
-\begin{frame}[label={sec:orgc7925fc},fragile]{Overview over the directory + first steps}
+\begin{frame}[label={sec:org45bbc53},fragile]{Overview over the directory + first steps}
  \begin{itemize}
 \item see the Readme at/from the \texttt{github.uio.no}
 \end{itemize}
@@ -246,7 +246,7 @@ grammar in BNF with \alert{action} code
 
 
 
-\begin{frame}[label={sec:orgfe44dff}]{Building: putting it together}
+\begin{frame}[label={sec:orgbcc4e7b}]{Building: putting it together}
 
 \begin{center}
  \includegraphics[width=0.8\textwidth]{figures/snaps/buildprocess}
@@ -254,9 +254,9 @@ grammar in BNF with \alert{action} code
 \end{frame}
 
 \section{Official}
-\label{sec:orgca01569}
+\label{sec:orgf249e47}
 
-\begin{frame}[label={sec:org1ea5562},fragile]{Deadline}
+\begin{frame}[label={sec:org059d2f5},fragile]{Deadline}
  \begin{alertblock}{Deadline}
 \alert{Friday 11. 03. 2022, 23:59}
 \end{alertblock}
@@ -275,7 +275,7 @@ if sick etc
 \end{frame}
 
 
-\begin{frame}[label={sec:org827fe7c},fragile]{Deliverables}
+\begin{frame}[label={sec:orgcb6785a},fragile]{Deliverables}
  \begin{itemize}
 \item see also the ``handout''
 \end{itemize}
@@ -304,7 +304,7 @@ declations in \emph{CUP}, e.g.
 \end{frame}
 
 
-\begin{frame}[label={sec:org695dac7}]{Deliverables}
+\begin{frame}[label={sec:org8237812}]{Deliverables}
 \begin{block}{Deliverables (2)}
 \begin{itemize}
 \item report (with name(s) and UiO user name(s)
@@ -326,7 +326,7 @@ If problems, \alert{ask in time}  (\alert{NOT} Friday at the deadline)
 
 
 
-\begin{frame}[label={sec:orgb5a653a}]{Hand-in procedure}
+\begin{frame}[label={sec:org361074b}]{Hand-in procedure}
 \begin{itemize}
 \item as the previous 2 or 3 years, we use  \emph{git}
 
@@ -349,17 +349,6 @@ If problems, \alert{ask in time}  (\alert{NOT} Friday at the deadline)
 
 
 
-\section{References}
-\label{sec:org39166e7}
-
-\begin{frame}[allowframebreaks]
-  \frametitle{References}
-  {\tiny
-    \bibliographystyle{apalike}
-%    \bibliography{extracted,local} 
-    \bibliography{string,semantics,etc,mobile,crossref}  %general PMA
-  }
-\end{frame}
 
 
 
