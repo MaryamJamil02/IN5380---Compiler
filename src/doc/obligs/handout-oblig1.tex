@@ -1,4 +1,4 @@
-\documentclass[10pt,freeform]{handout}[2014/08/13]
+s\documentclass[10pt,freeform]{handout}[2014/08/13]
 
 \input{coursedata}
 \input{preamble}
@@ -84,14 +84,16 @@ uio-internal git server\footnote{Actually, it's the UiO enterprise github
 
 
 In order to hand-in via git, each group has to do the following steps. See
-also the top-level readme at \url{https://github.uio.no/msteffen/compila}
+also the top-level readme at
+\url{https://github.uio.no/compilerconstruction-inf5110/compila/} (resp. at
+the corresponding place in your clone).
 
 \begin{enumerate}
 \item everyone: if not already: create yourself an account at
   \url{github.uio.no}. Your UiO login allows you to do that.
-\item send me an email with your name (and if have, with the name of your
-  collaborator), so I can assign a group number.
-\item each group will get a \emph{repository}. For instance, group
+\item send me an email with your name (and if you have, with the name of
+  your collaborator), so I can assign a group number.
+\item each group will get one \emph{repository}. For instance, group
   \textbf{01} get the repository \textbf{compila22-01} etc.  I will
   everyone to the corresponding repos as collaborator. Each repos contains
   the same starting point, of course.
@@ -200,7 +202,7 @@ it works out-of-the-box, by following simple steps like for example
 \end{verbatim}
 and those steps should be mentioned clearly in your Readme. The steps
 mentioned here correspond to those suggested when using the provided
-starting point (which corresponds to
+starting point, which corresponds to
 \begin{center}
   \url{https://github.uio.no/compilerconstruction-inf5110/compila}.\footnote{Don't
     clone this one for doing the oblig, clone the repos corresponding to
@@ -390,7 +392,7 @@ crossed).
 
 
 
-It's allowed (but not necessary) to print it in other forms than prefix
+It's allowed (but not necessary) to print it in other forms than the prefix
 form used in the inpiration. But the output must indicate the AST in
 readable form (``readable'' as in human-readble that is \ldots). Note, the
 task is not that the output is a syntactically correct \textsl{compila}
@@ -413,7 +415,7 @@ As mentioned shortly, the task requires 2 grammars, representing 2 ways
 dealing with precendence and associativity.
 
 \begin{enumerate}
-\item an \emph{unambiguuous} grammar resolving precedence and associativity
+\item an \emph{unambiguous} grammar resolving precedence and associativity
   by ``baking it in'' directly into the grammar. The grammar is in plain
   BNF (in the form required by the tools)
 \item the second grammar is ambiguous and relies on \emph{CUP} to resolve
