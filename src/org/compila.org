@@ -20,7 +20,7 @@
 #+begin_example
 git remote add origin22-00 git@github.uio.no:compilerconstruction-inf5110/compila22-00.git
 git branch
-gut remote -v
+git remote -v
 git push -u origin22-00 master
 #+end_example
 
