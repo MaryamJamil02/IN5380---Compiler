@@ -3,6 +3,7 @@ import java_cup.runtime.*;
 import syntaxtree.*;
 import java.util.*;
 
+
 parser code {:
 
 :};
@@ -21,7 +22,7 @@ terminal                        PROCEDURE;
 terminal String                 ID;
 terminal String                 STRING_LITERAL;
 
-/* Non terminals */
+// Non terminals 
 non terminal Program            program;
 non terminal List<ClassDecl>    decl_list;
 non terminal ClassDecl          class_decl, decl;

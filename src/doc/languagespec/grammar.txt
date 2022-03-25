@@ -13,7 +13,7 @@ REC_DECL           -> "struct" NAME "{" [ PARAMFIELD_DECL
 PARAMFIELD_DECL     -> NAME ":" TYPE
 
 
-STMT_LIST          -> [STMT {";" STMT}]
+STMT_LIST          -> [STMT {";" STMT}]    
 
 
 EXP                -> EXP LOG_OP EXP
@@ -52,9 +52,9 @@ STMT               -> ASSIGN_STMT
 
 ASSIGN_STMT        -> VAR ":=" EXP | DEREF_VAR ":=" EXP
 
-IF_STMT            -> "if" EXP "then" { STMT_LIST } 
-                       [ "else"  { STMT_LIST } ] "fi" 
-WHILE_STMT         -> "while" EXP "do"  { STMT_LIST  } "od"
+IF_STMT            -> "if" EXP "then" { STMT_LIST }         <- NO
+                       [ "else"  { STMT_LIST } ] "fi"       <- NO
+WHILE_STMT         -> "while" EXP "do"  { STMT_LIST  } "od" <- NO
 
 RETURN_STMT        -> "return" [ EXP ]
 

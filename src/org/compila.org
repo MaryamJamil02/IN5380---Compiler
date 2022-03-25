@@ -2,7 +2,7 @@
 #+options: broken-links:nil c:nil creator:nil d:(not "LOGBOOK") date:t e:t
 #+options: email:nil f:t inline:t num:t p:nil pri:nil prop:nil stat:t
 #+options: tags:nil tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
-#+title: Organizational file (for internal use)
+#+title: Organizational file (for internal use) 
 #+date: <2020-02-05 Wed>
 #+author: Martin Steffen
 #+email: msteffen@ifi.uio.no
