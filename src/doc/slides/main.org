@@ -51,6 +51,7 @@
 
 
 #+include: "./content.org"  
+#+include: "./oblig2.org"  
 
 
 

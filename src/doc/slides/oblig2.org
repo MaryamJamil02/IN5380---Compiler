@@ -1,4 +1,4 @@
-* Oblig2                                                     :ARCHIVE:ignore:
+* Oblig2                                                     :ARHIVE:ignore:
   :PROPERTIES:
   :BEAMER_env: ignoreheading
   :END:
