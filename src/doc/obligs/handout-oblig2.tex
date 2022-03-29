@@ -40,6 +40,28 @@ The \textbf{deadline/frist}  for the second oblig is
 
 
 
+In this handout, I refer to information in files and directories. The
+information is contained in the \textbf{git-repository} that you have
+cloned for the first oblig already (though it was not relevant at that
+time).
+
+I refer to your \emph{working directory} here as 
+\begin{quote}
+  \texttt{<COMPILAROOT>}.   
+\end{quote}
+Concretely it will be probably carry the name \texttt{compila00-<xx>},
+unless you have chosen to rename it. In case you have deleted
+``superflous'' stuff from the clone repository, directories that played no
+role for oblig 1, you can browse or re-download the info from the
+repository hosted by github under
+
+\begin{quote}
+  \texttt{https://github.uio.no/compilerconstruction-inf5110/compila}
+\end{quote}
+
+
+
+
 \section{What and how to hand in}
 \label{sec:what-how}
 
@@ -64,7 +86,11 @@ of the deadline it's ``announced'' that there is now a new group \ldots).
 See also the \emph{Readme} of the \emph{``patch''} under
 
 \begin{quote}
-  \url{https://github.uio.no/msteffen/compila/tree/master/oblig2patch}
+  \url{<COMPILAROOT>/bytecodeinterpreter.pdf}
+\end{quote}
+
+\begin{quote}
+  \url{https://github.uio.no/compilerconstruction-inf5110/compila/blob/master/oblig2patch/oblig2patch/Readme.org}
 \end{quote}
 
 
@@ -102,34 +128,38 @@ The goal of the task is to collect more practical experience implementing a
 compiler, in particular, a taste of phases after parsing. It's only a
 taste, as we don't have the time to get a full-scale compiler on its
 feet. The language we are compiling is (as before) described in the
-\emph{compila 20 language specification.} This time, also the later sections
-about type checking etc, what were irrelevant for oblig 1, specify the
-scope of the task as far as the language features are concerned.
+\textbf{compila 22 language specification.} This time, also the later
+sections about type checking etc, that were irrelevant for oblig 1, specify
+the scope of the task as far as the language features are concerned.
 
 
 Testing becomes more important than in oblig 1. It's \emph{necessary} that
 a solution is equipped
 
+
 \begin{quote}
   with ``automatic test-cases''
 \end{quote}
+
 That can be done (as before) via ant targets. Those tests have to be
 executable on the RHEL linux pool at the university.\footnote{That should
   actually not be a big restriction, as Java (and the task) is to a big
   extent platform independent (``write once, run everywhere''
   \ldots). Nonetheless: Based on experience with the earlier years (this
-  year actually no problems occured): it's advised to make this ``test''
-  setup early on (not after the deadline), to design the code \emph{with
-    the goal that it runs also at a different place than one's own
-    platform} and to test that this goal is actually met. The reason for
-  that ``testability'' requirement is that correction will again not be
-  based on reading much code from my side, but in first approximation:
-  running the test. In that sense, it's also not of primary importance,
-  whether it's \texttt{ant} or perhaps \emph{make} or some
-  script. Important is, that I can execute it by invoking a simple command.
-  I don't have the time to figure out how one particular solution is
-  configured, started, etc. I don't even want to look around and try
-  whether I find a \texttt{main} method somewhere\ldots }
+  year actually no real problems occured on my side in oblig 1, though some
+  group reported that internally they had to struggle with compatibility
+  issues of unknown nature): it's advised to make this ``test'' setup early
+  on (not after the deadline), to design the code \emph{with the goal that
+    it runs also at a different place than one's own platform} and to test
+  that this goal is actually met. The reason for that ``testability''
+  requirement is that correction will again not be based on reading much
+  code from my side, but in first approximation: running the test. In that
+  sense, it's also not of primary importance, whether it's \texttt{ant} or
+  perhaps \emph{make} or some script. Important is, that I can execute it
+  by invoking a simple command.  I don't have the time to figure out how
+  one particular solution is configured, started, etc. I don't even want to
+  look around and try whether I find a \texttt{main} method somewhere\ldots
+}
 
 
 \section{Tools}
@@ -159,8 +189,12 @@ already made available as part of the git-repos). It's also browsable under
 
 
 \begin{quote}
-  \url{https://github.uio.no/msteffen/compila/tree/master/doc/bytecodeinterpreter}
+  \url{<COMPILAROOT>/doc/bytecodeinterpreter/bytecodeinterpreter.pdf}
 \end{quote}
+
+%\begin{quote}
+%  \url{https://github.uio.no/compilerconstruction-inf5110/compila/tree/master/doc/bytecodeinterpreter}
+%\end{quote}
 
 
 
