@@ -1,4 +1,4 @@
-]% Created 2022-02-08 Tue 12:31
+% Created 2022-03-29 Tue 11:59
 % Intended LaTeX compiler: pdflatex
 \documentclass{beamer}
  		 
@@ -19,11 +19,11 @@
 \useinnertheme{}
 \useoutertheme{}
 \date{Spring 2022}
-\title{INF5110 -- Oblig  1}
+\title{INF5110 -- Oblig  2}
 
 \hypersetup{
  pdfauthor={},
- pdftitle={INF5110 -- Oblig  1},
+ pdftitle={INF5110 -- Oblig  2},
  pdfkeywords={compiler, compiler construction},
  pdfsubject={compiler construction},
  pdfcreator={Emacs 27.2 (Org mode 9.5.2)}, 
@@ -31,320 +31,275 @@
 \begin{document}
 
 \maketitle
-\section{Compila 22}
-\label{sec:orge8889e0}
-
-\begin{frame}[label={sec:orgf82e8ef}]{Oblig 1}
+\chapter{Intro}
+\label{sec:orgd256aea}
+\begin{frame}[label={sec:orga57bdc3},fragile]{Goal}
+ \begin{enumerate}
+\item \alert{semantic  analysis}, as far as 
 \begin{itemize}
-\item material (also for oblig 2) based on previous years, including contributions from Eyvind
-W. Axelsen, Henning Berg, Fredrik Sørensen, and others
+\item \alert{typing} is concerned (``static semantics'')
+\item other coditions (no duplicate declaration etc)
 \end{itemize}
 
-
-\begin{itemize}
-\item see also the course web-page, containing links to ``resources''
-\end{itemize}
+\item \alert{code generation} for \texttt{compila22} (ish) programs
+\end{enumerate}
 \end{frame}
 
 
-\begin{frame}[label={sec:org927fc9a}]{Goal (of oblig 1)}
-\begin{block}{Parsing}
-Determine if programs written in \emph{Compila 22} are syntactically correct: 
 
+
+
+
+\begin{frame}[label={sec:org3ccd15f}]{Last time (O1)}
+\begin{block}{Syntactic analysis}
 \begin{itemize}
-\item scanner
+\item lexer (scanner)
 \item parser
+\item abstract syntax tree
 \end{itemize}
 \end{block}
 
 
+
+\alert{this time}: continue with your previous deliv. (and repos)
+\end{frame}
+
+
+
+\begin{frame}[label={sec:org8433d86}]{Learning outcome}
 \begin{itemize}
-\item first part of a compiler, oblig 2 will add to it
-\item language spec provided separately
+\item understand type checking, implementing a simple variant
+\end{itemize}
+
+
+\begin{itemize}
+\item understand (simple form of) bytecode and how to generate it from ``source
+code'' (as AST)
+
+\item extend an existing compiler code base with new functionality
 \end{itemize}
 \end{frame}
 
 
-\begin{frame}[label={sec:org7df3714}]{Learning outcomes}
+\chapter{Semantic analysis}
+\label{sec:org593f7b6}
+\begin{frame}[label={sec:org970d752}]{Semantic analysis \& type checking}
 \begin{itemize}
-\item using \alert{tools} for parser/scanner generation
+\item parser / context-free  grammars 
 \begin{itemize}
-\item JFlex
-\item CUP
+\item not powerful enough
+\item cannot check all (static) properties of a language spec
 \end{itemize}
 
-\item variants of a grammar for the same languages
+\item => extend the front-end by a type checker
 
 \begin{itemize}
-\item \alert{transforming} one form (EBNF) to another (compatible with the used
-tools)
-
-\item controlling \alert{precedence} and \alert{associativity}
-\end{itemize}
-
-\item designing and implementing an \alert{AST}  data structure
-
-\begin{itemize}
-\item using the parsing tools to build such trees
-\item pretty-printing such trees
+\item use the AST classes of last time
+\item add type checking code
+\item allowed to make \alert{changes} or adaptations if advantagous.
 \end{itemize}
 \end{itemize}
 \end{frame}
 
 
-\begin{frame}[label={sec:org50ab4eb}]{Compila language at a glance}
+\begin{frame}[label={sec:orgbf50b97}]{Another glance at compila22}
+\includegraphics[width=\textwidth]{figures/snaps/compilaexample-checking}
 
-\lstinputlisting[basicstyle=\scriptsize,emph={begin,end,in, procedur,program,var,return,struct}]{code/myprogram.cmp}
+
+NB: 2022: structs, not classes 
 \end{frame}
 
 
-
-\begin{frame}[label={sec:org7fa105b},plain]{Another glance}
-
-\lstinputlisting[basicstyle=\scriptsize,emph={begin,end,in, proc,program,var,return,struct}]{code/swap.cmp}
-\end{frame}
-
-
-\begin{frame}[label={sec:org15f659d},plain]{Grammar (1): declarations}
-
-%~/cor/teaching/compila/src/doc/languagespec/
-\lstinputlisting[basicstyle=\scriptsize,lastline=14]{../../doc/languagespec/grammar.txt}
-\end{frame}
-
-
-
-
-
-
-\begin{frame}[label={sec:orge80f3ec},plain]{Grammar (2): expressions, statements, etc.}
-
-%~/cor/teaching/compila/src/doc/languagespec/
-\lstinputlisting[basicstyle=\scriptsize,firstline=15,lastline=40]{../../doc/languagespec/grammar.txt}
-\end{frame}
-
-
-
-
-\begin{frame}[label={sec:orgda5848b},plain]{Grammar (3): statements and types}
-
-%~/cor/teaching/compila/src/doc/languagespec/
-\lstinputlisting[basicstyle=\scriptsize,firstline=41]{../../doc/languagespec/grammar.txt}
-\end{frame}
-
-
-
-
-\section{Tools}
-\label{sec:org8c8ee42}
-
-\begin{frame}[label={sec:org117a1ac},fragile]{Tools: JFlex}
+\begin{frame}[label={sec:org815b7c5},fragile,plain]{Type checking for conditionals}
  \begin{itemize}
-\item scanner generator (or lexer generator) tool
-
-\begin{itemize}
-\item \alert{input}: lexical specification
-\item \alert{output}: scanner program in Java
+\item as ``inspiration'', details may vary
 \end{itemize}
 
-\item lexical spec written as \texttt{.lex} file
 
-\item consists of \alert{3 parts}
-
-\begin{itemize}
-\item user code
-\item options and macros
-\item lexical rules
-\end{itemize}
-\end{itemize}
+\lstset{language=java,label= ,caption= ,captionpos=b,numbers=none}
+\begin{lstlisting}
+  class IfStatement extends Statement {
+  ...
+    public void typeCheck(){
+      String condType = condition.get.Type ();
+      if (condType != "bool") {  
+	 throw new TypeException("condition in an if 
+	   statement must be of type bool")
+      }
+}
+\end{lstlisting}
 \end{frame}
 
 
-\begin{frame}[label={sec:orgeb829c6}]{Sample lex code}
-\includegraphics[width=\textwidth]{figures/snaps/lexcode}
+\begin{frame}[label={sec:orgaad8a52},fragile,plain]{Type checking: assignments}
+ \lstset{language=java,label= ,caption= ,captionpos=b,numbers=none}
+\begin{lstlisting}
+class Assignment extends Statement {
+...
+  public void typeCheck() {
+    String varType = var.getType();
+    String expType = exp.getType();
+    if (varType != expType &&
+       !isAssigmentCompatible(varType,expType){
+		 throw new TypeException("Cannot assign " + vartpe + 
+		 " from " + expType);
+  }
+}
+
+\end{lstlisting}
 \end{frame}
 
 
 
-\begin{frame}[label={sec:org2f1a5a6},fragile]{CUP: Construction of useful parsers (for Java)}
+\chapter{Code generation}
+\label{sec:org731c862}
+\begin{frame}[label={sec:orga3bda87},fragile]{Code generation}
  \begin{itemize}
-\item a tool to easily (ymmv) generate \emph{parsers}
+\item byte code API and operations are described in the document ``Interpreter
+and bytecode for INF5110''
 
-\item reads tokes from the scanner using \texttt{next\_token()}
-\item the \texttt{\%cup} option (previous slide) makes that work
+\item \alert{Task:} add bytecode generation methods to your AST classes
+for instance
 \end{itemize}
-
-
-
-\begin{block}{Input}
-grammar in BNF with \alert{action} code
 
 \begin{verbatim}
-  var_decl ::= VAR ID:name COLON type:vtype
-   {: RESULT =  new VarDecl(name, vtype); :};
+Ast.Node.GenerateCode(...)
 \end{verbatim}
-\end{block}
-
-
 \begin{itemize}
-\item \alert{output}: parser program (in Java)
+\item again: if adaptations of the AST are called for or useful, go for it\ldots{}
+
+\item some people did \alert{visitors} for ast-printing, one can also (re-)use the visitor pattern
 \end{itemize}
 \end{frame}
 
-
-\begin{frame}[label={sec:org8b3c051}]{Sample CUP code}
-\includegraphics[width=\textwidth]{figures/snaps/cupcode}
-\end{frame}
-
-
-
-\begin{frame}[label={sec:org20ce58b},fragile]{Build tool: ant}
-
- \begin{center}
- \includegraphics[width=0.2\textwidth]{figures/snaps/antlogo}
-\end{center}
-
-
-\begin{itemize}
-\item Java-based build tool (think ``make'')
-\item config in \texttt{build.xml}
-\item can contain different \alert{targets}
-\end{itemize}
-
-\begin{block}{typical general targets}
-\begin{itemize}
-\item test
-\item clean
-\item build
-\item run
-\end{itemize}
-\end{block}
-
-\begin{itemize}
-\item supplied configuration should take care of calling \texttt{jflex}, \texttt{cup}, and
-\texttt{javadoc} for you
-\end{itemize}
-\end{frame}
-
-\begin{frame}[label={sec:org99c436c}]{AST data structure}
-
-\begin{center}
- \includegraphics[width=0.8\textwidth]{figures/snaps/astclasses}
-\end{center}
-\end{frame}
-
-
-
-
-\begin{frame}[label={sec:org45bbc53},fragile]{Overview over the directory + first steps}
+\begin{frame}[label={sec:orgaee178c},fragile]{Code generation: limitations}
  \begin{itemize}
-\item see the Readme at/from the \texttt{github.uio.no}
+\item interpreter and byte code library somewhat \alert{limited}
+\begin{itemize}
+\item cannot express full compila 22
+\item no block structure
+\item no reference types
+\end{itemize}
 \end{itemize}
 
 
-\includegraphics[width=0.66\textwidth]{figures/snaps/old/directorystruct-o1}
+\begin{itemize}
+\item your delivery should support generating correct bytecode
+for the \texttt{compila} 22 source code file \texttt{runme.cmp}
+\end{itemize}
 \end{frame}
 
 
 
-\begin{frame}[label={sec:orgbcc4e7b}]{Building: putting it together}
+\begin{frame}[label={sec:orgf5c6b4a},fragile,plain]{Code generation: creating a procedure}
+ \lstset{language=java,label= ,caption= ,captionpos=b,numbers=none}
+\begin{lstlisting}
+CodeFile codeFile = new CodeFile();
+// add the procedure by name first
+codeFile.addProcedure("Main")
+// then define it
+CodeProcedure main = new 
+   CodeProcedure("Main", VoidType,TYPE, codeFile);
+main.addInstruction( new RETURN());
+//then update it in the code file
+codeFile.updateProcedure(main);
+\end{lstlisting}
+\end{frame}
 
+\begin{frame}[label={sec:orgf1f098a}]{Code generation: assignment}
 \begin{center}
- \includegraphics[width=0.8\textwidth]{figures/snaps/buildprocess}
+ \includegraphics[width=0.76\textwidth]{figures/snaps/codegen-assignment}
 \end{center}
 \end{frame}
 
-\section{Official}
-\label{sec:orgf249e47}
 
-\begin{frame}[label={sec:org059d2f5},fragile]{Deadline}
+\chapter{Testing}
+\label{sec:org6d4ebda}
+\begin{frame}[label={sec:orgaf052bb},fragile]{Testing}
+ \begin{itemize}
+\item bunch of test files, for testing the \emph{type checker}
+\item preferable: make \texttt{ant test} workable
+
+\item test files inside \texttt{./tests/semanticanalysis/errors/} (and with \texttt{fail} in
+the filename) contain a syntactically correct but erronous program
+(erroneous as the type system or generally the semantic phase is
+concerned)
+
+\item => compiler returns error code 2 for semantic failure
+\end{itemize}
+\end{frame}
+
+
+
+\chapter{Starting point and hand in}
+\label{sec:orgb2ebfa3}
+\begin{frame}[label={sec:org276126b}]{Provided source code (patch)}
+\url{https://github.uio.no/msteffen/compila}
+
+\includegraphics[width=0.96\textwidth]{figures/snaps/directorystructure-src}
+
+Tests: already included in the oblig1 checkout, so left out in the zip-patch
+this year.
+\end{frame}
+
+\begin{frame}[label={sec:org6089fca}]{Provided documentation (patch)}
+
+\begin{center}
+ \includegraphics[width=0.75\textwidth]{figures/snaps/directorystructure-doc}
+\end{center}
+\end{frame}
+
+
+
+\begin{frame}[label={sec:orgf4e28a9},fragile]{Relevant directories}
+ \begin{itemize}
+\item Java
+
+\begin{itemize}
+\item \texttt{compiler}: updated compiler class (patch)
+\item \texttt{test}:   some code for performing tests (patch)
+\item \texttt{bytecode}: classes for constructing bytecode (already there)
+\item \texttt{runtime}: rte for executing the byte code (already there)
+\end{itemize}
+
+\item Compila
+
+\begin{itemize}
+\item \texttt{tests}: some test files (including \texttt{runme.cmp})
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}[label={sec:orgf06b2c1},fragile]{Deadline}
  \begin{alertblock}{Deadline}
-\alert{Friday 11. 03. 2022, 23:59}
+(9 May 2022)
 \end{alertblock}
 
 
-\begin{itemize}
-\item don't miss the deadline
-\item for extensions, administration needs to agree (\texttt{studadm}), contact them
-if sick etc
-\item even if not 100\% finished
-\begin{itemize}
-\item deliver what you have
-\item contact early when problems arise
-\end{itemize}
-\end{itemize}
-\end{frame}
+Note: end of semester, and I need to report the ones passing the oblig some
+time before the exam.
 
 
-\begin{frame}[label={sec:orgcb6785a},fragile]{Deliverables}
- \begin{itemize}
-\item see also the ``handout''
-\end{itemize}
-
-\begin{block}{Deliverables (1)}
+\begin{block}{delivs}
 \begin{itemize}
-\item working \alert{parser}
-\begin{itemize}
-\item parse the supplied sample programs
-\item printout the resulting AST
-\end{itemize}
-
-\item \alert{two} grammars (two \texttt{.cup}-files)
+\item working type checker
+\item code generator (test with \texttt{runme.cmp})
+\item report (including your name(s) etc.
 
 \begin{itemize}
-\item one unambiguious
-\item one ambiguous, where ambibuities resolved through precedence
-declations in \emph{CUP}, e.g.
+\item discussion of your solution, choices you made, assumptions you rely on
+
+\item printout of a test run (can be also checked in into the repos, but it 
+needs to be mentioned where it is)
+\item printout of the bytecode from \texttt{runme.cmp} (with a target like \texttt{ant
+    list-runme})
+
+\item solution must ``build'' and be ``testable'' (typically via \texttt{ant})
 \end{itemize}
-\end{itemize}
-
-\begin{verbatim}
- precendence left AND;
-\end{verbatim}
-\end{block}
-\end{frame}
-
-
-\begin{frame}[label={sec:org8237812}]{Deliverables}
-\begin{block}{Deliverables (2)}
-\begin{itemize}
-\item report (with name(s) and UiO user name(s)
-\item discussion of the solution (see handout for questions)
-\item in particular: comparison of the two grammars
-\item ``Readme''
 \end{itemize}
 \end{block}
-
-\begin{itemize}
-\item the code must \emph{build} (with ant) and run
-\item test it on the  UiO RHEL (linux) platform
-\end{itemize}
-
-\begin{block}{Ask}
-If problems, \alert{ask in time}  (\alert{NOT} Friday at the deadline)
-\end{block}
-\end{frame}
-
-
-
-\begin{frame}[label={sec:org361074b}]{Hand-in procedure}
-\begin{itemize}
-\item as the previous 2 or 3 years, we use  \emph{git}
-
-\item \url{https://github.uio.no} resp. \href{https://github.uio.no/compilerconstruction-inf5110/compila}{https://github.uio.no/compilerconstruction-inf5110/compila22-<xx>}
-
-\item you need
-
-\begin{itemize}
-\item a login
-\item send me emails that you want to do oblig (+ potential partner)
-\(\Rightarrow\) I tell you group number
-\end{itemize}
-\end{itemize}
-
-
-\begin{itemize}
-\item see also the \alert{handout} and \alert{Readme}
-\end{itemize}
 \end{frame}
 
 

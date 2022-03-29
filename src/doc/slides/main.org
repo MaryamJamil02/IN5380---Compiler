@@ -33,7 +33,7 @@
 
 #   \setbeameroption{show notes}
 
-#+TITLE:     INF5110 -- Oblig  1
+#+TITLE:     INF5110 -- Oblig  2
 #+AUTHOR:    
 #+EMAIL:     msteffen@ifi.uio.no
 #+DATE:      Spring 2022
@@ -50,7 +50,6 @@
 #+LaTeX_header: \def\mydate{Spring 2022}               %% what for?
 
 
-#+include: "./content.org"  
 #+include: "./oblig2.org"  
 
 

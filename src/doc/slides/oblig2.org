@@ -13,7 +13,7 @@
     - *typing* is concerned (``static semantics'')
     - other coditions (no duplicate declaration etc)
 
-2. *code generation* for ~compila21~ (ish) programs
+2. *code generation* for ~compila22~ (ish) programs
 
 
 
@@ -79,7 +79,7 @@
     - allowed to make *changes* or adaptations if advantagous.
 
 
-*** Another glance at compila21                                     :B_frame:
+*** Another glance at compila22                                     :B_frame:
     :PROPERTIES:
     :BEAMER_env: frame
     :END:
@@ -90,7 +90,7 @@
 #+end_export
 
 
-NB: 2021: structs, not classes 
+NB: 2022: structs, not classes 
 
 
 *** Type checking for conditionals                                  :B_frame:
@@ -161,7 +161,7 @@ class Assignment extends Statement {
 #+end_example
 - again: if adaptations of the AST are called for or useful, go for it...
 
-- some people did visitors for ast-printing, one can also (re-)use the visitor pattern
+- some people did *visitors* for ast-printing, one can also (re-)use the visitor pattern
 
 *** Code generation: limitations                                    :B_frame:
     :PROPERTIES:
@@ -170,13 +170,13 @@ class Assignment extends Statement {
 
 
 - interpreter and byte code library somewhat *limited*
-   - cannot express full compila 21
+   - cannot express full compila 22
    - no block structure
    - no reference types
 
 
 - your delivery should support generating correct bytecode
-  for the ~compila~ 21 source code file ~runme.cmp~
+  for the ~compila~ 22 source code file ~runme.cmp~
 
 
 
@@ -296,7 +296,7 @@ this year.
      :BEAMER_env: alertblock
      :END:
 
-      [TBA] (14 May 2021)
+      (9 May 2022)
 
 
 **** Rest                                            :B_ignoreheading:ignore:
