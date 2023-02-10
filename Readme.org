@@ -2,8 +2,8 @@
 #+OPTIONS: broken-links:nil c:nil creator:nil d:(not "LOGBOOK") date:t e:t
 #+OPTIONS: email:nil f:t inline:t num:t p:nil pri:nil prop:nil stat:t
 #+OPTIONS: tags:nil tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
-#+TITLE: Compila 22 (Language and compiler skeleton + material)
-#+DATE: <2022-02-03 Thu>
+#+TITLE: Compila 23 (Language and compiler skeleton + material)
+#+DATE: <2023-02-10 Fri>
 #+AUTHOR: Martin Steffen
 #+EMAIL: msteffen@ifi.uio.no
 #+LANGUAGE: en
@@ -14,7 +14,7 @@
 
 * Intro
 
-The repository host material for the /Compila 22/ compiler, which is the
+The repository host material for the /Compila 23/ compiler, which is the
 content of oblig 1 and 2 for the course ``compiler construction''
 ([[http://www.uio.no/studier/emner/matnat/ifi/INF5110/][INF5110]]/INF9110). The material focuses on the code which can be used as
 *starting point* for the *compiler*. It contains also the description and
@@ -34,7 +34,7 @@ generated slides are kept in the Vortex system on the course's web-page.
 - [[./src]]: sources (including sources of the documentation).
 
 
-- [[./src/tests]]: compila 22 programs for testing. Not all tests are already
+- [[./src/tests]]: compila 23 programs for testing. Not all tests are already
   relevant for *oblig 1*. The directory contains a number of subdirectories
   for different purposes. The one required for *oblig 1* is
 
@@ -90,11 +90,11 @@ first thing to do is to get a working copy of the corresponding
 repos. That's done via ~git clone~.
 
 For *group 00*, the repos is located at
-[[https://github.uio.no/compilerconstruction-inf5110/compila22-00]], and the
+[[https://github.uio.no/compilerconstruction-inf5110/compila23-00]], and the
 corresponding clone step would be
 
 #+begin_src 
- clone git@github.uio.no:compilerconstruction-inf5110/compila22-00.git
+ clone git@github.uio.no:compilerconstruction-inf5110/compila23-00.git
 #+end_src
 
 The group numbered *00* is used by the lecturer, so one has to replace *00*
@@ -126,7 +126,7 @@ cleaning up, 2 different programs that can be built and run, so altogether
 
 
 Do the same for the dummy- and skeleton-classes provided as starting point
-for the compila 22 compiler. Inside the top-level compila directory, which
+for the compila 23 compiler. Inside the top-level compila directory, which
 contains a [[./build.xml]]-file, do
 
 #+begin_src 
@@ -153,7 +153,7 @@ generated (or maybe I generated it in an earlier semester). It's called
 It's meant as *inspiration* of how an outpout could look like. It's not the
 most beautiful output, it's more an ugly-printer rather than a
 pretty-printer output, but it would do the job. Note also: the output *does
-not 100% adhere to the 2022 syntax*, but corresponds to an earlier
+not 100% adhere to the 2023 syntax*, but corresponds to an earlier
 iteration. But as said, it's for inspiration.
 
 
@@ -169,7 +169,7 @@ encountering troubles or puzzling, email is an option. Besides that, the
 university has set up some discussion platforms per course that they think
 is useful:
 
-  - [[https://mattermost.uio.no/ifi-undervisning/channels/inf5110][mattermost]]
+  [- [[https://mattermost.uio.no/ifi-undervisning/channels/inf5110][mattermost]] : I think this year this channel was not openend]
 
 We can also try git-issues.    
 
