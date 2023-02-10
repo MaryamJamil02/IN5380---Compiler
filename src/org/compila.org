@@ -349,6 +349,10 @@ CLOSED: [2023-02-10 Fri 10:47]
   yep
 :END:
 
+*** BUG expressions don't work <2023-02-10 Fri 11:13>
+
+*** TODO what's oblig1.lex <2023-02-10 Fri 11:15>
+
 *** TODO make a fresh checkout and test it <2023-02-10 Fri 10:40>
 *** TODO do a compila23-00 <2023-02-10 Fri 10:55>
 
