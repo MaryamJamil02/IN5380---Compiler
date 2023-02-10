@@ -1,4 +1,4 @@
-<!-- Build file (as inspiration) for INF5110/INF9110 Obligatory exercise -->
+<!-- Build file (as inspiration) for INF5110/INF9110 obligatory exercise -->
 <project name="INF5110/INF9110 Obligatory exercise" default="menu" basedir=".">
 	<target name="menu" >
 		<echo>Targets                             </echo>
