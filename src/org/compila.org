@@ -349,9 +349,32 @@ CLOSED: [2023-02-10 Fri 10:47]
   yep
 :END:
 
-*** BUG expressions don't work <2023-02-10 Fri 11:13>
+*** FIXED expressions don't work <2023-02-10 Fri 11:13>
+CLOSED: [2023-02-10 Fri 11:35]
+:LOGBOOK:
+- CLOSING NOTE [2023-02-10 Fri 11:35] \\
+  It was ok
+:END:
 
-*** TODO what's oblig1.lex <2023-02-10 Fri 11:15>
+*** DONE what's oblig1.lex <2023-02-10 Fri 11:15>
+CLOSED: [2023-02-10 Fri 11:35]
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2023-02-10 Fri 11:35]
+:END:
+
+*** DONE what does the handoutn say <2023-02-10 Fri>
+CLOSED: [2023-02-10 Fri 11:37]
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2023-02-10 Fri 11:37] \\
+  I did it
+:END:
+
+*** DONE did I last time set up the reposes themselves? <2023-02-10 Fri 11:35>
+CLOSED: [2023-02-10 Fri 11:37]
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2023-02-10 Fri 11:37] \\
+  Seem like
+:END:
 
 *** TODO make a fresh checkout and test it <2023-02-10 Fri 10:40>
 *** TODO do a compila23-00 <2023-02-10 Fri 10:55>

@@ -140,9 +140,10 @@ contains a [[./build.xml]]-file, do
 
 
 If successful, that should generate the file ~simpledummy.ast~ under
-[[file:./src/tests/outputs/ast][<compila-root>/src/tests/outputs/ast]]. Since generated, the file currently
-not there. There might be warnings about ``non-reproducible builds'', but
-you can ignore that.
+[[file:./src/tests/outputs/ast][<compila-root>/src/tests/outputs/ast]]. Since it will be generated, the file
+is not yet there in the fresh checkout. There might be warnings about
+``non-reproducible builds'', and more, depending on which version of Java
+you use. but you can ignore that.
 
 
 
