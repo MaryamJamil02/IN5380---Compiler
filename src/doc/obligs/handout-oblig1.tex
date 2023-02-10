@@ -11,7 +11,8 @@
 %\issuedate{12.\ 02.\ 2019}
 %\issuedate{03.\ 02.\ 2020}
 %\issuedate{09.\ 02.\ 2021}
-\issuedate{8.\ 2.\ 2022}
+%\issuedate{8.\ 2.\ 2022}
+\issuedate{10.\ 2.\ 2023}
 \topic{---}
 
 
@@ -72,7 +73,7 @@ in your project. We encourage working in groups, and git allows to share
 things.
 
 I assume that most are in principle familiar with \texttt{git}, if not, ask
-me.  We use the uio-internal git server\footnote{Actually, it's the UiO
+me.  We use the UiO-internal git server\footnote{Actually, it's the UiO
   enterprise github server. Github is just one particular ``web-interface''
   on top of git which does the real work; there are also alternatives to
   github (and git) but for uniformity, we stick to the UiO github server.}
@@ -93,7 +94,7 @@ the corresponding place in your clone).
 \item send me an email with your name (and if you have, with the name of
   your collaborator), so I can assign a group number.
 \item each group will get one \emph{repository}. For instance, group
-  \textbf{01} get the repository \textbf{compila22-01} etc.  I will
+  \textbf{01} get the repository \textbf{compila23-01} etc.  I will
   everyone to the corresponding repos as collaborator. Each repos contains
   the same starting point, of course.
 %\item per group: \emph{create} a new \emph{project} at the github repos.
@@ -194,7 +195,7 @@ it works out-of-the-box, by following simple steps like for example
 
 \begin{verbatim}
    git clone <repos-url>
-   cd compila22-<n>
+   cd compila23-<n>
    ant
    ant build
    ant run
@@ -208,7 +209,7 @@ starting point, which corresponds to
     your group.}
 \end{center}
 Your solution may involve different steps (maybe \texttt{ant ast} for
-producing the require AST), and may require adapation of \texttt{build.xml}
+producing the require AST), and may require adaptation of \texttt{build.xml}
 (if you use ant). But you should \textbf{keep the spirit} of
 ``out-of-the-box'' and ``kiss'' (keep it simple, stupid.). Remember: the
 user is always stupid...
@@ -229,11 +230,11 @@ tools and techniques.
   that it's accepted by the tools. In our case, the language is given in
   some EBNF, which has to be adequately rewritten so that it can be fit
   into the lexer and parser tools
-\item handle associativity and precedence of syntactic contructs in two
+\item handle associativity and precedence of syntactic constructs in two
   possible ways
   \begin{itemize}
   \item formulate a (unambiguous) grammar that embodies the correct
-    precendences and associativies
+    precendences and associativities
   \item work with an ambiguous grammar, but instruct the parser tool (like
     CUP) to result in an appropriate parser.
   \end{itemize}
@@ -283,7 +284,7 @@ If, for some reason, you plan to deviate from the suggested tools, you
 \section{First steps (``oblig 0'')}
 \label{sec:first-steps-oblig}
 
-Apart from getting yourself a group number, git access etc. as descibed,
+Apart from getting yourself a group number, git access etc. as described,
 there are things you really should do afterwards, 
 
 \begin{center}
@@ -291,10 +292,10 @@ there are things you really should do afterwards,
 \end{center}
 
 The provided readme describes the easy steps (not repeated here). It's
-about to make shure that your Java set-up works, that ant is running
+about to make sure that your Java set-up works, that ant is running
 etc. If the tests fail, \textbf{contact me} to \textbf{get that out of the
   way} before the oblig work starts. The starting point provides those
-tests to avoid that later and shorter before the dealine, one figures out
+tests to avoid that later and shorter before the deadline, one figures out
 ``something's not working on my machine''. I tested it on the university
 machines, I tested it on my laptop, but I cannot test it on other people's
 machines.  Normally it's not a problem, the stuff is supposed to be
@@ -327,10 +328,10 @@ organizing the task. You may read the advice I typed up last year about that
 \label{sec:task-more-spec}
 
 
-The overal task is to 
+The overall task is to 
 
 \begin{quote}
-  implement a parser for the \textsl{Compila 22} language.
+  implement a parser for the \textsl{Compila 23} language.
 \end{quote}
 The language specification is given in a separate document. Oblig 1 is
 concerned with checking \emph{syntactic correctness}, which means, not all
@@ -363,7 +364,7 @@ nodes and syntactic categories in the syntax tree.
 \label{sec:print-out-ast}
 
 
-The AST should be ``printed''. The easiest and recommeded form of printout
+The AST should be ``printed''. The easiest and recommended form of printout
 is in \emph{prefix form}. Under \texttt{material/sample-compila-ast}, there
 is an example compila input file and a corresponding file containing a
 possible output. The two files are called
@@ -386,14 +387,14 @@ is the following:
   \texttt{./src/tests/fullprograms/complexaddition.cmp}  
 \end{quote}
 
-and this one should be consistent with this year's gammar (fingers
+and this one should be consistent with this year's grammar (fingers
 crossed).
 
 
 
 It's allowed (but not necessary) to print it in other forms than the prefix
-form used in the inpiration. But the output must indicate the AST in
-readable form (``readable'' as in human-readble that is \ldots). Note, the
+form used in the inspiration. But the output must indicate the AST in
+readable form (``readable'' as in human-readable that is \ldots). Note, the
 task is not that the output is a syntactically correct \textsl{compila}
 program again (that might be a so-called formatting tool or a
 pretty-printer), we just need a way to look at the syntax tree, which comes
@@ -426,7 +427,7 @@ dealing with precendence and associativity.
 \subsubsection*{Comparison and discussion}
 \label{sec:comparison}
 
-Investigate and characterise \emph{conflicts} of the \emph{original}
+Investigate and characterize \emph{conflicts} of the \emph{original}
 grammar. How many states do the 2 generated CUP grammars have? That
 requires a look into the CUP-generated code. Discuss also whether the
 choice of the two grammars influences the generation of the AST: is one of
@@ -467,7 +468,7 @@ stop (as opposed to try to continue and give back an avalanche of
 subsequent errors). Some meaningful error message (at least wrt. which
 syntactic class caused the error) would be welcome, as opposed to a plain
 ``sorry, bad program''. It's not required to give back line numbers
-referrring to the original source code or positions in the original
+referring to the original source code or positions in the original
 file. In practice that's definitely useful (and not very hard either), but
 not required for the oblig.
 
@@ -499,8 +500,8 @@ For \textbf{oblig 1}, you are requested to generate an ast for
 as part of the oblig, as mentioned, but you may of course use the other
 test program as well to see how robust your implementation is. 
 
-% Especially errorneous programs later will become relevant for oblig2,
-% when we do type 5checking; there, some syntactically ok programs should
+% Especially erroneous programs later will become relevant for oblig2,
+% when we do type checking; there, some syntactically ok programs should
 % be flagged as erroneous by the type checker.
 
 

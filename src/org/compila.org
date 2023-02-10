@@ -12,7 +12,7 @@
 #+creator: Emacs 24.3.1 (Org mode 9.3.1)
 
 
-
+ 
 
 * Misc
 
@@ -290,12 +290,61 @@ begin and end has been switched out by brackets.
 
 
 
-*** TODO reactivate: export to texi <2023-02-10 Fri 06:29>
+*** DONE reactivate: export to texi <2023-02-10 Fri 06:29>
+CLOSED: [2023-02-10 Fri 06:38]
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2023-02-10 Fri 06:38]
+:END:
 
-*** TODO port the spec to 2023 <2023-02-10 Fri 06:22>
-*** TODO regenerate the oblig-text  <2023-02-10 Fri 06:16>
 
-*** TODO regenerate the webpage <2023-02-10 Fri 06:16>
+*** DONE port the spec to 2023 <2023-02-10 Fri 06:22>
+CLOSED: [2023-02-10 Fri 06:38]
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2023-02-10 Fri 06:38]
+:END:
+*** DONE regenerate the oblig-text  <2023-02-10 Fri 06:16>
+CLOSED: [2023-02-10 Fri 06:38]
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2023-02-10 Fri 06:38]
+:END:
+
+*** DONE When was the old one published/discussed <2023-02-10 Fri 06:53>
+CLOSED: [2023-02-10 Fri 06:56]
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2023-02-10 Fri 06:56]
+:END:
+
+published it was printable 09.02.2022. Indeed, we have to go out with the
+oblig.
+
+*** DONE when is easter <2023-02-10 Fri 06:57>
+CLOSED: [2023-02-10 Fri 10:06]
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2023-02-10 Fri 10:06]
+:END:
+
+09.04.2023
+
+3/7/10 April, No lecture, last is 31.03, first is 14.
+
+*** TODO do the slides for oblig 1 <2023-02-10 Fri 10:27>
+
+*** DONE compare the number of lectures 2022/2023 <2023-02-10 Fri 07:11>
+CLOSED: [2023-02-10 Fri 10:27]
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2023-02-10 Fri 10:27]
+:END:
+*** DONE replace the obligs-text 1 <2023-02-10 Fri 06:42>
+CLOSED: [2023-02-10 Fri 10:16]
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2023-02-10 Fri 10:16]
+:END:
+
+*** DONE regenerate the webpage <2023-02-10 Fri 06:16>
+CLOSED: [2023-02-10 Fri 06:49]
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2023-02-10 Fri 06:49]
+:END:
 
 *** DONE change to 2022 <2022-02-03 Thu 10:03>
 CLOSED: [2022-02-03 Thu 12:44]

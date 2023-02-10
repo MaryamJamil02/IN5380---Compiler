@@ -5,7 +5,7 @@
 
 
 
-** Compila 22 
+** Compila 23
 
 *** Oblig 1                                                         :B_frame:
     :PROPERTIES:
@@ -350,7 +350,7 @@ grammar in BNF with *action* code
 
  
 
- *Friday 11. 03. 2022, 23:59*
+ *Friday 17. 03. 2023, 23:59*
 
 
 **** Rest                                                            :ignore:
@@ -430,9 +430,9 @@ If problems, *ask in time*  (*NOT* Friday at the deadline)
     :END:
 
 
-- as the previous 2 or 3 years, we use  /git/
+- as the previous years since some time, we use  /git/
 
-- [[https://github.uio.no]] resp. [[https://github.uio.no/compilerconstruction-inf5110/compila][https://github.uio.no/compilerconstruction-inf5110/compila22-<xx>]]
+- [[https://github.uio.no]] resp. [[https://github.uio.no/compilerconstruction-inf5110/compila][https://github.uio.no/compilerconstruction-inf5110/compila23-<xx>]]
 
 - you need
 
