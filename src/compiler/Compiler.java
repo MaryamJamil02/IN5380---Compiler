@@ -1,4 +1,4 @@
-// Inspiration for oblig 1, for oblig 2 there will be an update
+// Inspiration for oblig 1, for oblig 2 there will be an update!
 
 package compiler;
 

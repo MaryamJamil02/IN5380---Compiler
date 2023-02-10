@@ -76,11 +76,11 @@ generated slides are kept in the Vortex system on the course's web-page.
                 checked in
 
 
-* First steps
+* First steps 
 
-We assume basic familiarity with git, so how to clone commit, push and
-pull. No more advanced features need to be used. If not familiar with that,
-contact the lecture (early on!) to figure it out.
+We assume basic familiarity with git, basically how to clone commit, push
+and pull. No more advanced features need probably be used. If not familiar
+with the basics, contact the lecturer (early on!) to figure it out.
 
 
 ** Getting a working copy of the repository (clone)
@@ -104,7 +104,7 @@ with one's own group number.
 ** Check to see if everything on your system is in place!
 
 Do the following checks, to make sure that java runs (and the classpath is
-not messed up somehow etc). and also that ~ant~ is running.
+not messed up somehow etc). And also that ~ant~ is running.
 
 
 
@@ -126,7 +126,7 @@ cleaning up, 2 different programs that can be built and run, so altogether
 
 
 Do the same for the dummy- and skeleton-classes provided as starting point
-for the compila 23 compiler. Inside the top-level compila directory, which
+for the compila23 compiler. Inside the top-level compila directory, which
 contains a [[./build.xml]]-file, do
 
 #+begin_src 
@@ -165,17 +165,15 @@ iteration. But as said, it's for inspiration.
 * Communication & discussion forums
 
 Especially in virus times, electronic communication is important. If
-encountering troubles or puzzling, email is an option. Besides that, the
-university has set up some discussion platforms per course that they think
-is useful:
+encountering troubles or puzzling about how to proceed, email is an
+option. Besides that, the university has set up some discussion platforms
+per course that they think is useful:
 
-  [- [[https://mattermost.uio.no/ifi-undervisning/channels/inf5110][mattermost]] : I think this year this channel was not openend]
+  [- [[https://mattermost.uio.no/ifi-undervisning/channels/inf5110][mattermost]] : I think 2023 this channel was not openend]
 
 We can also try git-issues.    
 
     
-Make use of them, for instance by posting questions concerning the oblig
-(or the lecture).
 
 * Some relevant external links 
 

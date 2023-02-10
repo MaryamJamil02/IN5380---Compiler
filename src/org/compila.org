@@ -350,8 +350,7 @@ CLOSED: [2023-02-10 Fri 10:47]
 :END:
 
 *** TODO make a fresh checkout and test it <2023-02-10 Fri 10:40>
-**** TODO do a compila23-00 <2023-02-10 Fri 10:55>
-
+*** TODO do a compila23-00 <2023-02-10 Fri 10:55>
 
 *** DONE do the slides for oblig 1 <2023-02-10 Fri 10:27>
 CLOSED: [2023-02-10 Fri 10:40]
