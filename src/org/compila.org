@@ -13,6 +13,7 @@
 
 
 
+
 * Misc
 
 ** Github setup
@@ -28,13 +29,25 @@ git push -u origin22-00 master
 git push origin master
 #+end_example
 *** Things to do
-**** TODO how to remove the remote <2022-02-04 Fri 09:53>
+
+
+**** DONE how to remove the remote <2022-02-04 Fri 09:53>
+CLOSED: [2022-05-27 Fri 14:13]
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2022-05-27 Fri 14:13] \\
+  egal
+:END:
 
 Or maybe we add them all
 
 
 
-**** TODO check the tests, if they still work <2022-02-03 Thu 14:33>
+**** CANCELLED check the tests, if they still work <2022-02-03 Thu 14:33>
+CLOSED: [2022-05-27 Fri 14:13]
+:LOGBOOK:
+- State "CANCELLED"  from "TODO"       [2022-05-27 Fri 14:13] \\
+  I guess they did. Irrelevant now
+:END:
 
 **** DONE how to push the new empty repos'es <2022-02-03 Thu 13:53>
 CLOSED: [2022-02-03 Thu 14:06]
@@ -76,6 +89,14 @@ git push <your_remote_name>
 
 #git push my_awesome_new_remote_repo
 
+
+
+
+*** DONE Compilatest <2023-02-10 Fri 06:15>
+CLOSED: [2023-02-10 Fri 06:15]
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2023-02-10 Fri 06:15]
+:END:
 
 *** DONE how to use teams? <2022-02-03 Thu 12:44>
 CLOSED: [2022-02-03 Thu 13:52]
@@ -269,6 +290,10 @@ begin and end has been switched out by brackets.
 
 
 
+*** TODO port the spec to 2023 <2023-02-10 Fri 06:22>
+*** TODO regenerate the oblig-text  <2023-02-10 Fri 06:16>
+
+*** TODO regenerate the webpage <2023-02-10 Fri 06:16>
 
 *** DONE change to 2022 <2022-02-03 Thu 10:03>
 CLOSED: [2022-02-03 Thu 12:44]
@@ -308,7 +333,12 @@ There's some [[file:~/gnu/emacs/25/my-unchanged/emacs-orghtml::("org-mmcompilaby
 It's done not in the same file as the Jekyll-stuff, but it's here:
 [[file:~/gnu/emacs/25/my-unchanged/emacs-orgload][file:~/gnu/emacs/25/my-unchanged/emacs-orgload]]
 
-*** TODO integrate it to the org-publish set-up <2021-02-09 Tue 14:33>
+*** DONE integrate it to the org-publish set-up <2021-02-09 Tue 14:33>
+CLOSED: [2022-05-27 Fri 14:13]
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2022-05-27 Fri 14:13] \\
+  egal
+:END:
 
 *** CANCELLED did I even use org-publish? <2021-02-09 Tue 14:19>
     CLOSED: [2021-08-04 Wed 15:52]

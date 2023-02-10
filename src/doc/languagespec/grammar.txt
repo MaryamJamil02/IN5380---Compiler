@@ -28,7 +28,7 @@ EXP                -> EXP LOG_OP EXP
                     | DEREF_VAR
                     | "(" EXP ")"
 
-REF_VAR            -> "ref" "(" VAR ")"
+REF_VAR            -> "ref" "(" VAR ")"   ;; change that, a bit unbalanced
 DEREF_VAR          -> "deref" "(" VAR ")" | "deref" "(" DEREF_VAR ")"
 
 VAR                -> NAME | EXP "." NAME

@@ -1,4 +1,4 @@
-#+AUTHOR: INF5110, spring 2022
+#+AUTHOR: INF5110, spring 2023
 #+TEXINFO_FILENAME: compila.info
 #+TEXINFO_CLASS: info
 #+TEXINFO_HEADER: 
@@ -296,17 +296,17 @@ input (``stdin''). All writing, i.e., output, is to standard output
 * Static semantics / typing / evaluation.
 
 ** Binding of names
-The using occurence of an identifier (without a preceding dot) is bound in
+The using occurrence of an identifier (without a preceding dot) is bound in
 the common way to a /declaration/. This association of the use of an
 identifier to a declaration (``binding'') can be described informally as
-follows: Look through the block or scope which encloses the use-occurence
-of the identifer (where the block refers to the procedure body or
-program). The binding occurrence corresponding to the use occurence is the
-/first/ declaration found in this way.  If no binding occurence is found
+follows: Look through the block or scope which encloses the use-occurrence
+of the identifier (where the block refers to the procedure body or
+program). The binding occurrence corresponding to the use occurrence is the
+/first/ declaration found in this way.  If no binding occurrence is found
 that way, the program is /erroneous/. Formal parameters count as
 declarations local to the procedure body.
 
-Use occurences of a name preceded  by a dot correspond to the clause ~EXP
+Use occurrences of a name preceded  by a dot correspond to the clause ~EXP
 "." NAME~ in the production for the non-terminal ~VAR~ in the grammar.
 Those names are bound by looking at the type of ~EXP~ (which is required to
 be a record-type) and look up the field with name ~NAME~ in that record. It's
@@ -380,7 +380,7 @@ the expression is /not/ evaluated.
   passing mechanism (i.e., whether the variable resp. actual parameter is
   marked as ``by ~ref~''.
 - Return statements:
-   - A ~return~-statment is allowed only in procedure-definitions. Such a
+   - A ~return~-statement is allowed only in procedure-definitions. Such a
      statement marks that the procedure terminates (and returns). In
      addition, the return statement gives an expression for the value to be
      returned to the caller.
