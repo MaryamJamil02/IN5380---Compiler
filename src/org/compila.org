@@ -290,6 +290,8 @@ begin and end has been switched out by brackets.
 
 
 
+*** TODO reactivate: export to texi <2023-02-10 Fri 06:29>
+
 *** TODO port the spec to 2023 <2023-02-10 Fri 06:22>
 *** TODO regenerate the oblig-text  <2023-02-10 Fri 06:16>
 

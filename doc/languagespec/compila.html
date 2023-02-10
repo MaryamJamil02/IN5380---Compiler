@@ -3,12 +3,12 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-02-08 Tue 12:39 -->
+<!-- 2023-02-10 Fri 06:37 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
-<meta name="author" content="INF5110, spring 2022" />
-<meta name="description" content="Compila 22 language specification" />
+<meta name="author" content="INF5110, spring 2023" />
+<meta name="description" content="Compila 23 language specification" />
 <meta name="generator" content="Org Mode" />
 <style>
   #content { max-width: 60em; margin: auto; }
@@ -195,7 +195,7 @@
   .org-svg { width: 90%; }
 </style>
 <link rel="stylesheet" type="text/css" href="compilastyle.css" />
-<h1> Compila 22 language specification</h1>
+<h1> Compila 23 language specification</h1>
 </head>
 <body>
 <div id="content" class="content">
@@ -203,60 +203,60 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org3e253eb">1. Introduction</a>
+<li><a href="#org6435e1b">1. Introduction</a>
 <ul>
-<li><a href="#orgd60607b">1.1. Notational conventions and syntax of this document</a></li>
+<li><a href="#org11974f9">1.1. Notational conventions and syntax of this document</a></li>
 </ul>
 </li>
-<li><a href="#org556028a">2. Lexical aspects</a>
+<li><a href="#orga6c4721">2. Lexical aspects</a>
 <ul>
-<li><a href="#orgd7a3ca0">2.1. Identifiers and literals</a></li>
-<li><a href="#org5829917">2.2. Comments</a></li>
+<li><a href="#org2b0f5ef">2.1. Identifiers and literals</a></li>
+<li><a href="#org9fbbb7d">2.2. Comments</a></li>
 </ul>
 </li>
-<li><a href="#org99eb8e3">3. Data types</a>
+<li><a href="#org304a33b">3. Data types</a>
 <ul>
-<li><a href="#org0a0bcf0">3.1. Built in data types</a></li>
-<li><a href="#orge0b6945">3.2. Records</a></li>
-<li><a href="#org768d37a">3.3. References</a></li>
+<li><a href="#org8e69fe3">3.1. Built in data types</a></li>
+<li><a href="#orga8b4fe1">3.2. Records</a></li>
+<li><a href="#org7a6184c">3.3. References</a></li>
 </ul>
 </li>
-<li><a href="#org710f548">4. Syntax</a>
+<li><a href="#org6425d01">4. Syntax</a>
 <ul>
-<li><a href="#org9abcffb">4.1. Grammar</a></li>
-<li><a href="#org2c5859b">4.2. Precedence</a></li>
-<li><a href="#orga00454a">4.3. Associativity</a></li>
+<li><a href="#org4954296">4.1. Grammar</a></li>
+<li><a href="#org47a06a2">4.2. Precedence</a></li>
+<li><a href="#orgdedb79c">4.3. Associativity</a></li>
 </ul>
 </li>
-<li><a href="#orga235d82">5. Parameter passing</a>
+<li><a href="#org09de885">5. Parameter passing</a>
 <ul>
-<li><a href="#org730ba79">5.1. Call-by-value</a></li>
-<li><a href="#orga76283f">5.2. Small example for call-by-reference</a></li>
+<li><a href="#orgc0e7cb5">5.1. Call-by-value</a></li>
+<li><a href="#org0e32c0d">5.2. Small example for call-by-reference</a></li>
 </ul>
 </li>
-<li><a href="#org9f008a3">6. Standard library</a></li>
-<li><a href="#org6474456">7. Static semantics / typing / evaluation.</a>
+<li><a href="#org98acb49">6. Standard library</a></li>
+<li><a href="#orga03f529">7. Static semantics / typing / evaluation.</a>
 <ul>
-<li><a href="#org77f17ac">7.1. Binding of names</a></li>
-<li><a href="#orgdc8e045">7.2. Typing of compound constructs</a></li>
-<li><a href="#org480599b">7.3. Types and implicit type conversion</a></li>
-<li><a href="#orgbc721b2">7.4. Type inference</a></li>
-<li><a href="#orgeab1fd3">7.5. Short-circuit evaluation</a></li>
+<li><a href="#orga1d1de8">7.1. Binding of names</a></li>
+<li><a href="#org6f7b175">7.2. Typing of compound constructs</a></li>
+<li><a href="#org037f436">7.3. Types and implicit type conversion</a></li>
+<li><a href="#org07fd50e">7.4. Type inference</a></li>
+<li><a href="#org4518cb9">7.5. Short-circuit evaluation</a></li>
 </ul>
 </li>
-<li><a href="#org024f2fb">8. Procedures</a></li>
-<li><a href="#org528bd26">9. Further conditions</a></li>
+<li><a href="#orgb425f00">8. Procedures</a></li>
+<li><a href="#org5103385">9. Further conditions</a></li>
 </ul>
 </div>
 </div>
 
 
-<div id="outline-container-org3e253eb" class="outline-2">
-<h2 id="org3e253eb"><span class="section-number-2">1.</span> Introduction</h2>
+<div id="outline-container-org6435e1b" class="outline-2">
+<h2 id="org6435e1b"><span class="section-number-2">1.</span> Introduction</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 This document specifies and describes the syntax and the static semantics
-of the language <i>Compila 22</i>.  The dynamic semantics, i.e., the description
+of the language <i>Compila 23</i>.  The dynamic semantics, i.e., the description
 of the language's behavior when being executed, should be fairly clear even
 without explicit formal specification. 
 </p>
@@ -266,8 +266,8 @@ without explicit formal specification.
 
 
 
-<div id="outline-container-orgd60607b" class="outline-3">
-<h3 id="orgd60607b"><span class="section-number-3">1.1.</span> Notational conventions and syntax of this document</h3>
+<div id="outline-container-org11974f9" class="outline-3">
+<h3 id="org11974f9"><span class="section-number-3">1.1.</span> Notational conventions and syntax of this document</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 In the description of the grammar later, we use capital letters for
@@ -275,7 +275,7 @@ non-terminals. As <i>meta-symbols</i> for the grammar, we use the following:
 </p>
 
 
-<pre class="example" id="orgec0a01f">
+<pre class="example" id="orgb08bedb">
    -&gt;,  |,  (,  ), {,  },  [,  ], "  
 </pre>
 
@@ -315,12 +315,12 @@ symbols represent.
 </div>
 </div>
 
-<div id="outline-container-org556028a" class="outline-2">
-<h2 id="org556028a"><span class="section-number-2">2.</span> Lexical aspects</h2>
+<div id="outline-container-orga6c4721" class="outline-2">
+<h2 id="orga6c4721"><span class="section-number-2">2.</span> Lexical aspects</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-orgd7a3ca0" class="outline-3">
-<h3 id="orgd7a3ca0"><span class="section-number-3">2.1.</span> Identifiers and literals</h3>
+<div id="outline-container-org2b0f5ef" class="outline-3">
+<h3 id="org2b0f5ef"><span class="section-number-3">2.1.</span> Identifiers and literals</h3>
 <div class="outline-text-3" id="text-2-1">
 <ul class="org-ul">
 <li><code>NAME</code> must start with a letter, followed by a (possibly empty) sequence
@@ -346,8 +346,8 @@ part of the string value itself.</li>
 </div>
 
 
-<div id="outline-container-org5829917" class="outline-3">
-<h3 id="org5829917"><span class="section-number-3">2.2.</span> Comments</h3>
+<div id="outline-container-org9fbbb7d" class="outline-3">
+<h3 id="org9fbbb7d"><span class="section-number-3">2.2.</span> Comments</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 Compila supports <i>single line</i> and <i>multi-line</i> comments.
@@ -370,12 +370,12 @@ multi-line comment delimiters, which are then ignored).
 </div>
 </div>
 
-<div id="outline-container-org99eb8e3" class="outline-2">
-<h2 id="org99eb8e3"><span class="section-number-2">3.</span> Data types</h2>
+<div id="outline-container-org304a33b" class="outline-2">
+<h2 id="org304a33b"><span class="section-number-2">3.</span> Data types</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org0a0bcf0" class="outline-3">
-<h3 id="org0a0bcf0"><span class="section-number-3">3.1.</span> Built in data types</h3>
+<div id="outline-container-org8e69fe3" class="outline-3">
+<h3 id="org8e69fe3"><span class="section-number-3">3.1.</span> Built in data types</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 The language has four built-in types and user-defined types:
@@ -402,8 +402,8 @@ can be nested.</li>
 </div>
 
 
-<div id="outline-container-orge0b6945" class="outline-3">
-<h3 id="orge0b6945"><span class="section-number-3">3.2.</span> Records</h3>
+<div id="outline-container-orga8b4fe1" class="outline-3">
+<h3 id="orga8b4fe1"><span class="section-number-3">3.2.</span> Records</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 The language supports records. For people coming from Java/C++ etc.,
@@ -420,8 +420,8 @@ variables of record type contains either a pointer to an element
 </div>
 </div>
 
-<div id="outline-container-org768d37a" class="outline-3">
-<h3 id="org768d37a"><span class="section-number-3">3.3.</span> References</h3>
+<div id="outline-container-org7a6184c" class="outline-3">
+<h3 id="org7a6184c"><span class="section-number-3">3.3.</span> References</h3>
 <div class="outline-text-3" id="text-3-3">
 <p>
 The language allows that variables can be declared to be of reference type
@@ -481,12 +481,12 @@ passing.
 
 
 
-<div id="outline-container-org710f548" class="outline-2">
-<h2 id="org710f548"><span class="section-number-2">4.</span> Syntax</h2>
+<div id="outline-container-org6425d01" class="outline-2">
+<h2 id="org6425d01"><span class="section-number-2">4.</span> Syntax</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-org9abcffb" class="outline-3">
-<h3 id="org9abcffb"><span class="section-number-3">4.1.</span> Grammar</h3>
+<div id="outline-container-org4954296" class="outline-3">
+<h3 id="org4954296"><span class="section-number-3">4.1.</span> Grammar</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 The following productions in EBNF describe the syntax of the language.  For
@@ -511,7 +511,7 @@ REC_DECL           -&gt; "struct" NAME "{" [ PARAMFIELD_DECL
 PARAMFIELD_DECL     -&gt; NAME ":" TYPE
 
 
-STMT_LIST          -&gt; [STMT {";" STMT}]
+STMT_LIST          -&gt; [STMT {";" STMT}]    
 
 
 EXP                -&gt; EXP LOG_OP EXP
@@ -526,7 +526,7 @@ EXP                -&gt; EXP LOG_OP EXP
                     | DEREF_VAR
                     | "(" EXP ")"
 
-REF_VAR            -&gt; "ref" "(" VAR ")"
+REF_VAR            -&gt; "ref" "(" VAR ")"   ;; change that, a bit unbalanced
 DEREF_VAR          -&gt; "deref" "(" VAR ")" | "deref" "(" DEREF_VAR ")"
 
 VAR                -&gt; NAME | EXP "." NAME
@@ -550,9 +550,9 @@ STMT               -&gt; ASSIGN_STMT
 
 ASSIGN_STMT        -&gt; VAR ":=" EXP | DEREF_VAR ":=" EXP
 
-IF_STMT            -&gt; "if" EXP "then" { STMT_LIST } 
-                       [ "else"  { STMT_LIST } ] "fi" 
-WHILE_STMT         -&gt; "while" EXP "do"  { STMT_LIST  } "od"
+IF_STMT            -&gt; "if" EXP "then" { STMT_LIST }         &lt;- NO
+                       [ "else"  { STMT_LIST } ] "fi"       &lt;- NO
+WHILE_STMT         -&gt; "while" EXP "do"  { STMT_LIST  } "od" &lt;- NO
 
 RETURN_STMT        -&gt; "return" [ EXP ]
 
@@ -566,8 +566,8 @@ TYPE               -&gt; "float" | "int" | "string" | "bool" | NAME
 </div>
 
 
-<div id="outline-container-org2c5859b" class="outline-3">
-<h3 id="org2c5859b"><span class="section-number-3">4.2.</span> Precedence</h3>
+<div id="outline-container-org47a06a2" class="outline-3">
+<h3 id="org47a06a2"><span class="section-number-3">4.2.</span> Precedence</h3>
 <div class="outline-text-3" id="text-4-2">
 <p>
 The precedence of the following constructs is ordered as follows (from
@@ -587,8 +587,8 @@ lowest precedence to the highest):
 </div>
 </div>
 
-<div id="outline-container-orga00454a" class="outline-3">
-<h3 id="orga00454a"><span class="section-number-3">4.3.</span> Associativity</h3>
+<div id="outline-container-orgdedb79c" class="outline-3">
+<h3 id="orgdedb79c"><span class="section-number-3">4.3.</span> Associativity</h3>
 <div class="outline-text-3" id="text-4-3">
 <ul class="org-ul">
 <li>The binary operations <code>||</code>, <code>&amp;&amp;</code>, <code>+</code>, <code>-</code>, <code>*</code>, and <code>.</code> are
@@ -604,8 +604,8 @@ lowest precedence to the highest):
 
 
 
-<div id="outline-container-orga235d82" class="outline-2">
-<h2 id="orga235d82"><span class="section-number-2">5.</span> Parameter passing</h2>
+<div id="outline-container-org09de885" class="outline-2">
+<h2 id="org09de885"><span class="section-number-2">5.</span> Parameter passing</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 When describing the parameter passing mechanisms of the language, this
@@ -626,8 +626,8 @@ supports supports as only parameter passing mechanism call-by-value:
 </p>
 </div>
 
-<div id="outline-container-org730ba79" class="outline-3">
-<h3 id="org730ba79"><span class="section-number-3">5.1.</span> Call-by-value</h3>
+<div id="outline-container-orgc0e7cb5" class="outline-3">
+<h3 id="orgc0e7cb5"><span class="section-number-3">5.1.</span> Call-by-value</h3>
 <div class="outline-text-3" id="text-5-1">
 <p>
 The formal parameters are <i>local</i> variables in the procedure
@@ -638,8 +638,8 @@ parameters are <i>copied</i> into the corresponding formal parameters.<sup><a id
 </div>
 
 
-<div id="outline-container-orga76283f" class="outline-3">
-<h3 id="orga76283f"><span class="section-number-3">5.2.</span> Small example for call-by-reference</h3>
+<div id="outline-container-org0e32c0d" class="outline-3">
+<h3 id="org0e32c0d"><span class="section-number-3">5.2.</span> Small example for call-by-reference</h3>
 <div class="outline-text-3" id="text-5-2">
 <div class="org-src-container">
 <pre class="src src-compila">program swapexample
@@ -671,8 +671,8 @@ parameters are <i>copied</i> into the corresponding formal parameters.<sup><a id
 </div>
 
 
-<div id="outline-container-org9f008a3" class="outline-2">
-<h2 id="org9f008a3"><span class="section-number-2">6.</span> Standard library</h2>
+<div id="outline-container-org98acb49" class="outline-2">
+<h2 id="org98acb49"><span class="section-number-2">6.</span> Standard library</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 The programming language comes with a standard library which offers a
@@ -752,27 +752,27 @@ input (``stdin''). All writing, i.e., output, is to standard output
 </div>
 
 
-<div id="outline-container-org6474456" class="outline-2">
-<h2 id="org6474456"><span class="section-number-2">7.</span> Static semantics / typing / evaluation.</h2>
+<div id="outline-container-orga03f529" class="outline-2">
+<h2 id="orga03f529"><span class="section-number-2">7.</span> Static semantics / typing / evaluation.</h2>
 <div class="outline-text-2" id="text-7">
 </div>
-<div id="outline-container-org77f17ac" class="outline-3">
-<h3 id="org77f17ac"><span class="section-number-3">7.1.</span> Binding of names</h3>
+<div id="outline-container-orga1d1de8" class="outline-3">
+<h3 id="orga1d1de8"><span class="section-number-3">7.1.</span> Binding of names</h3>
 <div class="outline-text-3" id="text-7-1">
 <p>
-The using occurence of an identifier (without a preceding dot) is bound in
+The using occurrence of an identifier (without a preceding dot) is bound in
 the common way to a <i>declaration</i>. This association of the use of an
 identifier to a declaration (``binding'') can be described informally as
-follows: Look through the block or scope which encloses the use-occurence
-of the identifer (where the block refers to the procedure body or
-program). The binding occurrence corresponding to the use occurence is the
-<i>first</i> declaration found in this way.  If no binding occurence is found
+follows: Look through the block or scope which encloses the use-occurrence
+of the identifier (where the block refers to the procedure body or
+program). The binding occurrence corresponding to the use occurrence is the
+<i>first</i> declaration found in this way.  If no binding occurrence is found
 that way, the program is <i>erroneous</i>. Formal parameters count as
 declarations local to the procedure body.
 </p>
 
 <p>
-Use occurences of a name preceded  by a dot correspond to the clause <code>EXP
+Use occurrences of a name preceded  by a dot correspond to the clause <code>EXP
 "." NAME</code> in the production for the non-terminal <code>VAR</code> in the grammar.
 Those names are bound by looking at the type of <code>EXP</code> (which is required to
 be a record-type) and look up the field with name <code>NAME</code> in that record. It's
@@ -783,8 +783,8 @@ that record,
 </div>
 
 
-<div id="outline-container-orgdc8e045" class="outline-3">
-<h3 id="orgdc8e045"><span class="section-number-3">7.2.</span> Typing of compound constructs</h3>
+<div id="outline-container-org6f7b175" class="outline-3">
+<h3 id="org6f7b175"><span class="section-number-3">7.2.</span> Typing of compound constructs</h3>
 <div class="outline-text-3" id="text-7-2">
 <ul class="org-ul">
 <li><b>expressions:</b> expressions need to be checked for type correctness in the
@@ -811,8 +811,8 @@ the field of the record.</li>
 </div>
 
 
-<div id="outline-container-org480599b" class="outline-3">
-<h3 id="org480599b"><span class="section-number-3">7.3.</span> Types and implicit type conversion</h3>
+<div id="outline-container-org037f436" class="outline-3">
+<h3 id="org037f436"><span class="section-number-3">7.3.</span> Types and implicit type conversion</h3>
 <div class="outline-text-3" id="text-7-3">
 <p>
 It is allowed to assign an expression of type <code>int</code> to a variable of type
@@ -826,8 +826,8 @@ floating point arithmetic and the result is of type <code>float</code>.
 </div>
 
 
-<div id="outline-container-orgbc721b2" class="outline-3">
-<h3 id="orgbc721b2"><span class="section-number-3">7.4.</span> Type inference</h3>
+<div id="outline-container-org07fd50e" class="outline-3">
+<h3 id="org07fd50e"><span class="section-number-3">7.4.</span> Type inference</h3>
 <div class="outline-text-3" id="text-7-4">
 <p>
 The language requires a tiny bit of type inference (so small that one might
@@ -842,8 +842,8 @@ needs to be inferred.
 </div>
 </div>
 
-<div id="outline-container-orgeab1fd3" class="outline-3">
-<h3 id="orgeab1fd3"><span class="section-number-3">7.5.</span> Short-circuit evaluation</h3>
+<div id="outline-container-org4518cb9" class="outline-3">
+<h3 id="org4518cb9"><span class="section-number-3">7.5.</span> Short-circuit evaluation</h3>
 <div class="outline-text-3" id="text-7-5">
 <p>
 The logical operators <code>&amp;&amp;</code> and <code>||</code> use so-called <i>short-circuit
@@ -855,8 +855,8 @@ the expression is <i>not</i> evaluated.
 </div>
 </div>
 
-<div id="outline-container-org024f2fb" class="outline-2">
-<h2 id="org024f2fb"><span class="section-number-2">8.</span> Procedures</h2>
+<div id="outline-container-orgb425f00" class="outline-2">
+<h2 id="orgb425f00"><span class="section-number-2">8.</span> Procedures</h2>
 <div class="outline-text-2" id="text-8">
 <ul class="org-ul">
 <li>In a procedure, all declarations are required to occur <i>before</i>
@@ -875,7 +875,7 @@ marked as ``by <code>ref</code>''.</li>
 Return statements:
 </p>
 <ul class="org-ul">
-<li>A <code>return</code>-statment is allowed only in procedure-definitions. Such a
+<li>A <code>return</code>-statement is allowed only in procedure-definitions. Such a
 statement marks that the procedure terminates (and returns). In
 addition, the return statement gives an expression for the value to be
 returned to the caller.</li>
@@ -897,8 +897,8 @@ body.</li>
 
 
 
-<div id="outline-container-org528bd26" class="outline-2">
-<h2 id="org528bd26"><span class="section-number-2">9.</span> Further conditions</h2>
+<div id="outline-container-org5103385" class="outline-2">
+<h2 id="org5103385"><span class="section-number-2">9.</span> Further conditions</h2>
 <div class="outline-text-2" id="text-9">
 <ul class="org-ul">
 <li>Declarations must be <i>unique</i> per block. Two declarations (within one
@@ -933,8 +933,8 @@ call-by-value-reference.
 </div>
 </div></div>
 <div id="postamble" class="status">
-<p class="author">Author: INF5110, spring 2022</p>
-<p class="date">Created: 2022-02-08 Tue 12:39</p>
+<p class="author">Author: INF5110, spring 2023</p>
+<p class="date">Created: 2023-02-10 Fri 06:37</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
