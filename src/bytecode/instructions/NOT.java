@@ -2,6 +2,7 @@ package bytecode.instructions;
 
 import runtime.Interpreter;
 
+
 public class NOT extends Instruction{
 	public byte[] getBytecode() {
 		return new byte[]{16};

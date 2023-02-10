@@ -11,7 +11,7 @@ public class Program {
         this.name = name;
     }
 
-    public String printAst(){
+    public String printAst(){  // "pretty" printing 
         StringBuilder sb = new StringBuilder();
         sb.append("(PROGRAM ");
         sb.append("(NAME ");

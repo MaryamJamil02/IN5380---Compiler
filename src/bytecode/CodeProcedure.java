@@ -2,7 +2,6 @@ package bytecode;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import bytecode.instructions.Instruction;
 import bytecode.instructions.JMP;
 import bytecode.instructions.JMPFALSE;
@@ -12,8 +11,8 @@ import bytecode.type.CodeType;
 
 /**
  * This class is conceptually analogous to the class CodeFile for the whole
- * program (and to CodeStruct, responsible for records. An instance of this
- * class is to contain a representation of the code of a procedure.
+ * program (and to CodeStruct, responsible for records). An instance of
+ * this class is to contain a representation of the code of a procedure.
  * Compared to CodeFile, the class CodeProcedure is more complex. A
  * procedure can contain more kinds of code pieces. In particular, all
  * instructions are contained inside procedure.
