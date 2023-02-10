@@ -335,7 +335,12 @@ CLOSED: [2023-02-10 Fri 10:47]
   yep
 :END:
 
-*** TODO update the readme <2023-02-10 Fri 10:50>
+
+*** DONE update the readme <2023-02-10 Fri 10:50>
+CLOSED: [2023-02-10 Fri 10:55]
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2023-02-10 Fri 10:55]
+:END:
 
 *** DONE not so important: does the functional parse the current syntax and survive the tests? <2023-02-10 Fri 10:42>
 CLOSED: [2023-02-10 Fri 10:47]
@@ -345,6 +350,8 @@ CLOSED: [2023-02-10 Fri 10:47]
 :END:
 
 *** TODO make a fresh checkout and test it <2023-02-10 Fri 10:40>
+**** TODO do a compila23-00 <2023-02-10 Fri 10:55>
+
 
 *** DONE do the slides for oblig 1 <2023-02-10 Fri 10:27>
 CLOSED: [2023-02-10 Fri 10:40]
