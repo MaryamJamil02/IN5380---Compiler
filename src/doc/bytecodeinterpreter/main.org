@@ -22,5 +22,32 @@
 #+include: "building.org" 
 #+include: "interpreter.org" 
 #+include: "typicaltasks.org" 
-#+include: "instructions.org" 
 #+include: "rememberthis.org" 
+#+include: "instructions.org" 
+
+
+* HACK                                                               :ignore:
+#+BEGIN_COMMENT
+%%%%%%%%%%%%%%%%%%%%%% A terrible hack %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Local Variables: 
+%%% mode: org
+%%% End: 
+#+END_COMMENT
+#+BEGIN_EXPORT LATEX
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 
+#+END_EXPORT
+
+
+
+
+
+
+
+
+
+

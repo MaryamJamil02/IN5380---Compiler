@@ -37,7 +37,7 @@ in the example of Listing [[fig:bci.buildingexample]]:
 ** Jumping
 <<sec:bci.tasks.jumping>>
 
-The constructore of the ~JMP~ class has an integer parameter ~jumpTo~. This
+The constructor of the ~JMP~ class has an integer parameter ~jumpTo~. This
 is the index that the instraction has in the list of the instructions of
 this procedure. To way to get the index of an instruction is to save the
 integer returned from the ~addInstruction~ method. A trick fro placing
@@ -94,16 +94,24 @@ do {
 #+include: "codesnippets/dowhileloop.java" src java
 
 
+** Constants
+
+...
+
+** Working with structs
+
+** Parameters and local variables
+
 ** Library procedures
 <<sec:bci.tasks.libraryprocs>>
 
 
 #+index: library procedure
 
-When library procedures are needed, they may be added to the ~CodeFile~
-(and updated, the name alone is not enough), but no instruction should be
-added, The interpreter recognizes the use of a library procedure by the
-fact that it contains no instruction in the binary file (~CodeFile~).
+When library procedures are needed, they may be added to the ~CodeFile~ and
+updated (the name alone is not enough), but no instruction should be added,
+The interpreter recognizes the use of a library procedure by the fact that
+it contains no instruction in the binary file (~CodeFile~).
 
 
 

@@ -44,23 +44,26 @@ packages.
 | ~runtime.*~               | classes for the runtime system            |
 |---------------------------+-------------------------------------------|
 
+The code for the two packages ~bytecode~ and ~runtime~ is found in the
+corresponding two directories under ~./src~
 
 ** The interpreter
 
 The interpreter is /stack based/ and it interprets about 40 different
 instructions of our bytecode.  The interpreter ``automatically'' handles
 allocation of struct types, method calls and access of variables in a
-struct when instructed to by the bytecode instructions. In the first
-version, there is /no garbage collector/ and it just allocates memory
+struct when instructed to by the bytecode instructions. In the current
+version, there is *no garbage collector* and it just allocates memory
 sequentially as long as there is memory left.
 
 #+index: instruction
 #+index: operation
-The operators or instructions are so called /stack operations/. It means that
-whe the intpreter executes an instruction, it pops off a number of operands
-from the stack (0 or more), performs the task specified by the instruction,
-and leaves a number of result values on the stack, typically just one such
-value.
+
+The operators or instructions are so called *stack operations*. It means
+that whe the intpreter executes an instruction, it pops off a number of
+operands from the stack (0 or more), performs the task specified by the
+instruction, and leaves a number of result values on the stack, typically
+just one such value.
 
 The interpreter is not written for efficiency, by rather for readability
 and ease of creating runnable bytecode. For instance, the types are kept on
@@ -82,10 +85,12 @@ of instruction. Of course, the interpreter must realize also some stack
 organizing calls and returns, scoping, and parameter passing.
 
 
-The parameters of an an operation (including user defined functions) are to
-be treated from left to right in that they must be placed on the stack with
-the leftmost at the bottom and the rightmost on the top of the stack before
-the instruction itself is interpreted.
+The parameters of an an operation (including user-defined functions) must
+be placed on the stack with *the leftmost at the bottom and the rightmost
+on the top* of the stack before the instruction itself is interpreted. The
+top of the stack is the place where one pushes into and pops off. In the
+lecture, in the part of the run-time environments, the run-time stack was
+perhaps confusingly /depicted/ with the top the stack at the bottom.
 
 For example, the ~SUB~ instruction (for subtraction) requires that the two
 operands of the ~SUB~ instruction are on the stack in the correct order
@@ -94,20 +99,20 @@ number to subtract from deeper in the stack. We may denote the elements on
 the stack before an instruction is interpreted with $s_n$, where $n$ is the
 index from the top, with the top as $n = 0$. Then, the result of the ~SUB~
 instruction is that the two values on the top of the stack is removed and
-replaced by $s_1 - s_0$.
+replaced by $s_1 - s_0$. 
 
 ** The library
 
-The library has a class [[srcbytecode:CodeFile.java][~CodeFile~]] that is the base class for creating a
+The library has a class  [[srcbytecode:CodeFile.java][~CodeFile~]] that is the base class for creating a
 program with ``runnable'' sequences of instructions, i.e. a (binary or
 ~.bin~) file, executable by the virtual machine or more specifically by the
 virtual machine interpreter.
 
 
-To create such a bytecode file, one must create an object of the class
-~CodeFile~ and add procedures, structs and global variables using the
-procedures of the ~CodeFile~ object. Objects that represent local variables
-and instructions are created using the library and added to the procedure
+To create such a bytecode file, one must instantiate that class ~CodeFile~
+and *add* procedures, structs and global variables using the procedures of
+the ~CodeFile~ object. Objects that represent local variables and
+instructions are created using the library and added to the procedure
 objects, which are of class ~CodeProcedure~. When the program is complete,
 that is, when all the elements of the program has been added to the
 ~CodeFile~ object and its ~CodeProcedure~ objects, the actual bytecode can
@@ -136,8 +141,8 @@ editor for binary files like the Eclipse Hex Editor Plugin ([[http://ehep.source
 
 A bytecode file can be used in two ways, file, both offered by the class
 [[srcruntime:VirtualMachine.java][~VirtualMachine~]] of the [[srcruntime:][~runtime~]] package. Either the execution is
-triggered /externally/, from the command line. Or internally from within a
-Java program. For the exernal use, the command line commands are
+triggered /externally/, from the *command line*. Or internally from within
+a Java program. For the exernal use, the command line commands are
 
 
 #+begin_example
@@ -250,6 +255,8 @@ activation blocks handles and stores the program counter, local variables
 etc. and also handles the call and return of a procedure in conjuction with
 the interpreter.
 
+
+[Add some more from the original]
 
 
 
