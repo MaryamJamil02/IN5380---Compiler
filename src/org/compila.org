@@ -362,6 +362,8 @@ CLOSED: [2023-02-10 Fri 11:35]
 - State "DONE"       from "TODO"       [2023-02-10 Fri 11:35]
 :END:
 
+*** TODO test it on the  University <2023-02-10 Fri 12:41>
+
 *** DONE what does the handoutn say <2023-02-10 Fri>
 CLOSED: [2023-02-10 Fri 11:37]
 :LOGBOOK:
