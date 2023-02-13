@@ -319,9 +319,9 @@ For precedences and associativity of various constructs, see later.
 
      ASSIGN_STMT        -> VAR ":=" EXP | DEREF_VAR ":=" EXP
 
-     IF_STMT            -> "if" EXP "then" { STMT_LIST }         <- NO
-                            [ "else"  { STMT_LIST } ] "fi"       <- NO
-     WHILE_STMT         -> "while" EXP "do"  { STMT_LIST  } "od" <- NO
+     IF_STMT            -> "if" EXP "then"  STMT_LIST
+                            [ "else"   STMT_LIST  ] "fi"
+     WHILE_STMT         -> "while" EXP "do"   STMT_LIST   "od"
 
      RETURN_STMT        -> "return" [ EXP ]
 
@@ -624,21 +624,21 @@ Ref: Records-Footnote-16326
 Node: References6383
 Node: Syntax7215
 Node: Grammar7381
-Node: Precedence9945
-Node: Associativity10382
-Node: Parameter passing10875
-Node: Call-by-value11558
-Ref: Call-by-value-Footnote-111946
-Node: Small example for call-by-reference12260
-Node: Standard library13007
-Node: Static semantics / typing / evaluation14120
-Node: Binding of names14480
-Node: Typing of compound constructs15692
-Node: Types and implicit type conversion17010
-Node: Type inference17713
-Node: Short-circuit evaluation18476
-Node: Procedures18916
-Node: Further conditions20700
+Node: Precedence9906
+Node: Associativity10343
+Node: Parameter passing10836
+Node: Call-by-value11519
+Ref: Call-by-value-Footnote-111907
+Node: Small example for call-by-reference12221
+Node: Standard library12968
+Node: Static semantics / typing / evaluation14081
+Node: Binding of names14441
+Node: Typing of compound constructs15653
+Node: Types and implicit type conversion16971
+Node: Type inference17674
+Node: Short-circuit evaluation18437
+Node: Procedures18877
+Node: Further conditions20661
 
 End Tag Table
 
