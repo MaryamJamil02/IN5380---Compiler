@@ -52,9 +52,9 @@ STMT               -> ASSIGN_STMT
 
 ASSIGN_STMT        -> VAR ":=" EXP | DEREF_VAR ":=" EXP
 
-IF_STMT            -> "if" EXP "then" { STMT_LIST }         <- NO
-                       [ "else"  { STMT_LIST } ] "fi"       <- NO
-WHILE_STMT         -> "while" EXP "do"  { STMT_LIST  } "od" <- NO
+IF_STMT            -> "if" EXP "then"  STMT_LIST          
+                       [ "else"   STMT_LIST  ] "fi"       
+WHILE_STMT         -> "while" EXP "do"   STMT_LIST   "od" 
 
 RETURN_STMT        -> "return" [ EXP ]
 
