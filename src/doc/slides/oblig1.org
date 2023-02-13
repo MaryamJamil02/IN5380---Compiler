@@ -32,7 +32,7 @@
      :END:
 
 
-Determine if programs written in /Compila 22/ are syntactically correct: 
+Determine if programs written in /Compila 23/ are syntactically correct: 
 
 - scanner
 - parser

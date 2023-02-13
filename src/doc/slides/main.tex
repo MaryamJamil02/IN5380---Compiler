@@ -1,4 +1,4 @@
-% Created 2023-02-10 Fri 10:36
+% Created 2023-02-13 Mon 09:08
 % Intended LaTeX compiler: pdflatex
 \documentclass{beamer}
  		 
@@ -32,9 +32,9 @@
 
 \maketitle
 \section{Compila 23}
-\label{sec:orgc25142d}
+\label{sec:org3f952b6}
 
-\begin{frame}[label={sec:org503d865}]{Oblig 1}
+\begin{frame}[label={sec:orgdd11672}]{Oblig 1}
 \begin{itemize}
 \item material (also for oblig 2) based on previous years, including contributions from Eyvind
 W. Axelsen, Henning Berg, Fredrik Sørensen, and others
@@ -47,9 +47,9 @@ W. Axelsen, Henning Berg, Fredrik Sørensen, and others
 \end{frame}
 
 
-\begin{frame}[label={sec:org11348e6}]{Goal (of oblig 1)}
+\begin{frame}[label={sec:orgaee0dd5}]{Goal (of oblig 1)}
 \begin{block}{Parsing}
-Determine if programs written in \emph{Compila 22} are syntactically correct: 
+Determine if programs written in \emph{Compila 23} are syntactically correct: 
 
 \begin{itemize}
 \item scanner
@@ -65,7 +65,7 @@ Determine if programs written in \emph{Compila 22} are syntactically correct:
 \end{frame}
 
 
-\begin{frame}[label={sec:orgf6328f4}]{Learning outcomes}
+\begin{frame}[label={sec:org5005106}]{Learning outcomes}
 \begin{itemize}
 \item using \alert{tools} for parser/scanner generation
 \begin{itemize}
@@ -92,20 +92,20 @@ tools)
 \end{frame}
 
 
-\begin{frame}[label={sec:orgd8a1435}]{Compila language at a glance}
+\begin{frame}[label={sec:orgac75351}]{Compila language at a glance}
 
 \lstinputlisting[basicstyle=\scriptsize,emph={begin,end,in, procedur,program,var,return,struct}]{code/myprogram.cmp}
 \end{frame}
 
 
 
-\begin{frame}[label={sec:org8add5ff},plain]{Another glance}
+\begin{frame}[label={sec:orgf322af5},plain]{Another glance}
 
 \lstinputlisting[basicstyle=\scriptsize,emph={begin,end,in, proc,program,var,return,struct}]{code/swap.cmp}
 \end{frame}
 
 
-\begin{frame}[label={sec:org65a6c09},plain]{Grammar (1): declarations}
+\begin{frame}[label={sec:org7a8f1c5},plain]{Grammar (1): declarations}
 
 %~/cor/teaching/compila/src/doc/languagespec/
 \lstinputlisting[basicstyle=\scriptsize,lastline=14]{../../doc/languagespec/grammar.txt}
@@ -116,7 +116,7 @@ tools)
 
 
 
-\begin{frame}[label={sec:org329bd9f},plain]{Grammar (2): expressions, statements, etc.}
+\begin{frame}[label={sec:org508a187},plain]{Grammar (2): expressions, statements, etc.}
 
 %~/cor/teaching/compila/src/doc/languagespec/
 \lstinputlisting[basicstyle=\scriptsize,firstline=15,lastline=40]{../../doc/languagespec/grammar.txt}
@@ -125,7 +125,7 @@ tools)
 
 
 
-\begin{frame}[label={sec:orga26706a},plain]{Grammar (3): statements and types}
+\begin{frame}[label={sec:org2e1f15d},plain]{Grammar (3): statements and types}
 
 %~/cor/teaching/compila/src/doc/languagespec/
 \lstinputlisting[basicstyle=\scriptsize,firstline=41]{../../doc/languagespec/grammar.txt}
@@ -135,9 +135,9 @@ tools)
 
 
 \section{Tools}
-\label{sec:org8ed7ecf}
+\label{sec:org5822041}
 
-\begin{frame}[label={sec:orge1d3680},fragile]{Tools: JFlex}
+\begin{frame}[label={sec:org1267ae3},fragile]{Tools: JFlex}
  \begin{itemize}
 \item scanner generator (or lexer generator) tool
 
@@ -159,13 +159,13 @@ tools)
 \end{frame}
 
 
-\begin{frame}[label={sec:orgc1385a4}]{Sample lex code}
+\begin{frame}[label={sec:orgdecab76}]{Sample lex code}
 \includegraphics[width=\textwidth]{figures/snaps/lexcode}
 \end{frame}
 
 
 
-\begin{frame}[label={sec:org1b41b3a},fragile]{CUP: Construction of useful parsers (for Java)}
+\begin{frame}[label={sec:orgae5ab74},fragile]{CUP: Construction of useful parsers (for Java)}
  \begin{itemize}
 \item a tool to easily (ymmv) generate \emph{parsers}
 
@@ -191,13 +191,13 @@ grammar in BNF with \alert{action} code
 \end{frame}
 
 
-\begin{frame}[label={sec:org0f7b062}]{Sample CUP code}
+\begin{frame}[label={sec:org0c3b74f}]{Sample CUP code}
 \includegraphics[width=\textwidth]{figures/snaps/cupcode}
 \end{frame}
 
 
 
-\begin{frame}[label={sec:orgf4a789c},fragile]{Build tool: ant}
+\begin{frame}[label={sec:org01c3dbf},fragile]{Build tool: ant}
 
  \begin{center}
  \includegraphics[width=0.2\textwidth]{figures/snaps/antlogo}
@@ -225,7 +225,7 @@ grammar in BNF with \alert{action} code
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org9d0bdb9}]{AST data structure}
+\begin{frame}[label={sec:org1e9cea0}]{AST data structure}
 
 \begin{center}
  \includegraphics[width=0.8\textwidth]{figures/snaps/astclasses}
@@ -235,7 +235,7 @@ grammar in BNF with \alert{action} code
 
 
 
-\begin{frame}[label={sec:org83090a0},fragile]{Overview over the directory + first steps}
+\begin{frame}[label={sec:org8b843a4},fragile]{Overview over the directory + first steps}
  \begin{itemize}
 \item see the Readme at/from the \texttt{github.uio.no}
 \end{itemize}
@@ -246,7 +246,7 @@ grammar in BNF with \alert{action} code
 
 
 
-\begin{frame}[label={sec:orgd32731b}]{Building: putting it together}
+\begin{frame}[label={sec:org645372e}]{Building: putting it together}
 
 \begin{center}
  \includegraphics[width=0.8\textwidth]{figures/snaps/buildprocess}
@@ -254,9 +254,9 @@ grammar in BNF with \alert{action} code
 \end{frame}
 
 \section{Official}
-\label{sec:orgf1a6c15}
+\label{sec:org3ac1fb7}
 
-\begin{frame}[label={sec:org3bd377a},fragile]{Deadline}
+\begin{frame}[label={sec:orgc73f662},fragile]{Deadline}
  \begin{alertblock}{Deadline}
 \alert{Friday 17. 03. 2023, 23:59}
 \end{alertblock}
@@ -275,7 +275,7 @@ if sick etc
 \end{frame}
 
 
-\begin{frame}[label={sec:org7597188},fragile]{Deliverables}
+\begin{frame}[label={sec:org28cc0f2},fragile]{Deliverables}
  \begin{itemize}
 \item see also the ``handout''
 \end{itemize}
@@ -304,7 +304,7 @@ declations in \emph{CUP}, e.g.
 \end{frame}
 
 
-\begin{frame}[label={sec:org3bbd609}]{Deliverables}
+\begin{frame}[label={sec:org879c87a}]{Deliverables}
 \begin{block}{Deliverables (2)}
 \begin{itemize}
 \item report (with name(s) and UiO user name(s)
@@ -326,7 +326,7 @@ If problems, \alert{ask in time}  (\alert{NOT} Friday at the deadline)
 
 
 
-\begin{frame}[label={sec:org011a822}]{Hand-in procedure}
+\begin{frame}[label={sec:orgd92ee56}]{Hand-in procedure}
 \begin{itemize}
 \item as the previous years since some time, we use  \emph{git}
 
@@ -346,7 +346,6 @@ If problems, \alert{ask in time}  (\alert{NOT} Friday at the deadline)
 \item see also the \alert{handout} and \alert{Readme}
 \end{itemize}
 \end{frame}
-
 
 
 
