@@ -53,11 +53,7 @@
 	</target>
         
 
-
-
-
 	<!-- Generate scanner and parser using JFlex and CUP  -->
-	<target name="generate" depends="mkdir">
 		<jflex file="./src/grammars/compila.lex" destdir="src-gen"/>
 		<cup srcfile="./src/grammars/compila.cup" destdir="src-gen" interface="true" />
 	</target>
