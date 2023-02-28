@@ -63,7 +63,7 @@ public class CodeFile {
     }
 
     /**
-     * Finalize the definition of a procedure (whose name has to be added before.
+     * Finalize the definition of a procedure (whose name has to be added before).
      * @param codeProcedure: the "code" of the procedure, which includes
      * parameters and their types.
      */            

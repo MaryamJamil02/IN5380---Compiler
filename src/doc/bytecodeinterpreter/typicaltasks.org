@@ -2,6 +2,7 @@
 <<sec:typicaltasks>>
 
 
+
 This section show some of the usual tasks. As already shown, one can obtain
 instructions by instantiating the corresponding class and supplying one or
 two integer values which are the ids of procedures, structs, variables or

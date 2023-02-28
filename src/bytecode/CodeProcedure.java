@@ -36,7 +36,7 @@ public class CodeProcedure {
      * must be unique) and the return type. Note that the types of the
      * parameters are not initially given, they have to be added later one
      * one after the other, when adding the parameters together with their
-     * types. The last parameter is the refence to the "code file",
+     * types. The last parameter is the reference to the "code file",
      * representing the main program. The object requires access to that
      * for some of its tasks (in some call-back-like pattern).
      * @param name of the procedure

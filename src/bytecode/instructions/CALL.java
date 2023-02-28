@@ -10,7 +10,7 @@ public class CALL extends Instruction{
     }
     public byte[] getBytecode() {
 	byte[] res = new byte[]{3, 0, 0};
-	NumberConversion.shortToByteArray(res, 1, this.funcNum.shortValue());
+	NumberConversion.shortToByteArray(res, 1, this.funcNum.shortValue());  // unclear if big endian or little endian
 	return res;
     }
     public int size() {
