@@ -32,7 +32,7 @@ public class CodeProcedure {
     /**
      * The constructor gives back the initially (mostly) empty data
      * structure to store the definition of a procedure. Provided initially
-     * as part of the constructure are the name of the procedure (which
+     * as part of the constructore are the name of the procedure (which
      * must be unique) and the return type. Note that the types of the
      * parameters are not initially given, they have to be added later one
      * one after the other, when adding the parameters together with their
