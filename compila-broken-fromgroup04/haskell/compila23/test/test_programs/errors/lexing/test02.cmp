@@ -1,4 +1,0 @@
-program main 
-begin
-    var x : int_  (* id cannot end in underscore *)
-end 

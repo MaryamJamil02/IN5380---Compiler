@@ -1,4 +1,0 @@
-program main 
-begin
-   var procedure := 1  (* keyword != identifier *)
-end 

@@ -1,1 +1,0 @@
-typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"bytecode","l":"CodeFile"},{"p":"bytecode","l":"CodeProcedure"},{"p":"bytecode","l":"CodeStruct"},{"p":"bytecode","l":"NumberConversion"}]

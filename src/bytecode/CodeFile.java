@@ -8,10 +8,10 @@ import java.util.Map;
 import bytecode.type.CodeType;
 
 /**
- * An instance of this class is to contain a representation of the code of
- * a complete program. Typically, per compilation, there is only one
- * instance of that class, i.e., the typical usage is that of a singleton
- * class. 
+ * An instance of this class contains a representation of the code of a
+ * complete program (and to generate the corresponding bytes). Typically,
+ * per compilation, there is only one instance of that class, i.e., the
+ * typical usage is that of a singleton class.
 */
 public class CodeFile {
     private int main=-1;
@@ -72,11 +72,9 @@ public class CodeFile {
 	for(int i=0;i<this.procedureNames.size();i++){
 	    if(codeProcedure.getName().equals(this.procedureNames.get(i))){
 		this.procedures.put(new Integer(i), codeProcedure);
-		
 	    }
 	}
     }
-
 
     /**
      * Prepare the definition of a named record type (struct type).
@@ -92,6 +90,7 @@ public class CodeFile {
     /**
      * Finalize the definition of a named record type (struct type), by
      * providing the "code" object for the record type.
+     * The codeStruct object carries its own name 
      * @param codeStruct of the record type
      */                
 
@@ -106,8 +105,8 @@ public class CodeFile {
 
     
     /**
-     * Add a string constant. Unlike some other add-methods, the index of
-     * the added string constant is returned to the caller.
+     * Add a string constant. Unlike other add-methods, the index of the
+     * added string constant is returned to the caller.
      * @param value is the string constant 
      * @return the index under which the the constant is stored
      */                
@@ -178,7 +177,7 @@ public class CodeFile {
     }
 
     /** 
-     * Determine the "main" procedure 
+     * Determine the "main" procedure .
      * @param name of the main procedure
      */    
     
@@ -198,12 +197,12 @@ public class CodeFile {
     
     public byte[] getBytecode() {
 	int totalSize = 0;
-	byte[][] variableNamesBytes = new byte[this.variableNames.size()][];
-	for(int i=0; i<this.variableNames.size(); i++){
-	    variableNamesBytes[i] = this.variableNames.get(i).getBytes();
-	    totalSize += variableNamesBytes[i].length + 2;
+	byte[][] variableNamesBytes = new byte[this.variableNames.size()][];  
+	for(int i=0; i<this.variableNames.size(); i++){                       
+	    variableNamesBytes[i] = this.variableNames.get(i).getBytes();     
+	    totalSize += variableNamesBytes[i].length + 2;  //  extra 2
 	}
-	byte[][] variableTypesBytes = new byte[this.variableTypes.size()][];
+	byte[][] variableTypesBytes = new byte[this.variableTypes.size()][];  
 	for(int i=0; i<this.variableTypes.size(); i++){
 	    variableTypesBytes[i] = this.variableTypes.get(new Integer(i)).getBytecode();
 	    totalSize += variableTypesBytes[i].length;
@@ -224,7 +223,7 @@ public class CodeFile {
 	    totalSize += stringConstantsBytes[i].length + 2;
 	}
 	
-	// Add main (4), counters (4*2) => 12
+	// Add main (4), counters (4*2) => 12  (main = 2? => 10?)
 	totalSize += 12;
 	
         byte[] bytes = new byte[totalSize];
@@ -247,6 +246,7 @@ public class CodeFile {
         	insert(bytes, variableNamesBytes[i], index);
         	index += variableNamesBytes[i].length;
         }
+	// Then the types
         for(int i=0;i<variableTypesBytes.length;i++){
         	insert(bytes, variableTypesBytes[i], index);
         	index += variableTypesBytes[i].length;
@@ -291,10 +291,10 @@ public class CodeFile {
         return bytes;
 	}
 
-	private void insert(byte[] bytes, byte[] insert, int index) {
-		for(int i=0;i<insert.length;i++){
-			bytes[index + i] = insert[i];
-		}
+    private void insert(byte[] bytes, byte[] insert, int index) {
+	for(int i=0;i<insert.length;i++){
+	    bytes[index + i] = insert[i];
 	}
-
+    }
+    
 }

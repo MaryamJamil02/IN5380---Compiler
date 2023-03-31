@@ -94,11 +94,12 @@ public class CodeProcedure {
 	@param instruction that replaces the old one. An situation where a
 	replacement could come in handy are jumps.  First, one adds a no-op
 	(NOP) instruction as a placeholder, which is later replaced by the
-	correct instruction, a jump.
+	correct instruction, a jump. Instead of remove and add,
+	instructions.set should do the same.
      */    
     
     public void replaceInstruction(int place, Instruction instruction) {
-	this.instructions.remove(place);
+	this.instructions.remove(place);  
 	this.instructions.add(place, instruction);
     }
     /**
@@ -119,7 +120,7 @@ public class CodeProcedure {
      * local variable is not identical to the array index in the array for
      * local variables. For parameters, there is no such mismatch.
      * @return the so-called index of a variable (incl. formal parameter).
-     * @param name of the variable (incl. formal parameter)
+     * @param name of the variable (incl. formal parameter).
      */        
     public int variableNumber(String name) {
 	for (int i=0; i<parameterNames.size(); i++){
@@ -192,7 +193,7 @@ public class CodeProcedure {
 
 
     /**
-     * Auxiliary method used by getBytecode.
+     * Auxiliary method used by getBytecode. 
      */
     
     private void moveJmps() {
@@ -260,7 +261,7 @@ public class CodeProcedure {
         int index = 8;
         insert(bytes, nameBytes, index);
 	index+=nameBytes.length;
-	insert(bytes, typeBytes, index);   // not stored in the header
+	insert(bytes, typeBytes, index);   // not referenced in the header (not needed)
 	index+=typeBytes.length; 
 	
 		

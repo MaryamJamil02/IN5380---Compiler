@@ -1,4 +1,0 @@
-program main 
-begin
-   var x := .55   (* illegal float literal *)
-end 

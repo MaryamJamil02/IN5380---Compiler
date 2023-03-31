@@ -1,4 +1,0 @@
-program main 
-begin
-    var x : _int  (* identifier cannot start with underscore. *)
-end 

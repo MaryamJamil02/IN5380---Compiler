@@ -1,4 +1,0 @@
-program main 
-begin
-    var 2x : int  (* wrong identifier *)
-end 

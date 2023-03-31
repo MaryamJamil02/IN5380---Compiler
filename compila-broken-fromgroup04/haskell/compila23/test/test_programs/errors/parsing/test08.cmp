@@ -1,4 +1,0 @@
-
-program xxx   (* (* nesting of comments should lead to an error *) *)
-begin 
-end

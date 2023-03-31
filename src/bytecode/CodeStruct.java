@@ -18,9 +18,10 @@ public class CodeStruct {
 	private List<CodeType> types = new ArrayList<CodeType>();
 
     /**
-     * This class is conceptually analogous to the class CodeFile for the whole
-     * program (and to CodeProcedure, responsible for procedures). An instance
-     * of this class is to contain a representation of the "code" of a struct.
+     * This class is conceptually analogous to the class CodeFile for the
+     * whole program (and to CodeProcedure, responsible for procedures). An
+     * instance of this class is to contain a representation of the "code"
+     * of a struct (resp. can compute it). 
      * @param name of the introduced record type. 
      */
     public CodeStruct(String name) {
@@ -62,12 +63,12 @@ public class CodeStruct {
     
     public byte[] getBytecode() {
 	int totalSize = 0;
-	byte[][] typesBytes = new byte[this.types.size()][];
-	for(int i=0; i<this.types.size(); i++){
-	    typesBytes[i] = this.types.get(i).getBytecode();
-	    totalSize += typesBytes[i].length;
+	byte[][] typesBytes = new byte[this.types.size()][];  // make an empty array of array of indiv. bytes
+	for(int i=0; i<this.types.size(); i++){               // go through all types
+	    typesBytes[i] =  this.types.get(i).getBytecode(); // fill one slot
+	    totalSize     += typesBytes[i].length;            // keep tally 
 	}
-	byte[] nameBytes = this.name.getBytes();
+	byte[] nameBytes = this.name.getBytes();              // method from String class
 	totalSize+=nameBytes.length;
 	
 	// Add size of name (2) and counters (2) => 4
@@ -83,7 +84,7 @@ public class CodeStruct {
 	index += nameBytes.length;
 	
         // Types
-        // Only the values
+        // Only the values.
         for(int i=0;i<typesBytes.length;i++){
 	    insert(bytes, typesBytes[i], index);
 	    index += typesBytes[i].length;

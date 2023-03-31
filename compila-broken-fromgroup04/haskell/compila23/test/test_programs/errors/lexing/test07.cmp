@@ -1,4 +1,0 @@
-program main 
-begin
-       var begin := 1  (* keyword != identifier *)
-end 

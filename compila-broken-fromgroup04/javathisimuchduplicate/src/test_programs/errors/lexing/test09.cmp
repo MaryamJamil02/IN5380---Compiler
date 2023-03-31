@@ -1,5 +1,0 @@
-program main 
-begin
-   var x := "a
-              "  (* newline not allowed *)
-end 
