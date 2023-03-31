@@ -1,0 +1,18 @@
+program test_nested_scopes
+begin
+
+    proc Main()
+    begin
+        var flag : bool;
+    
+        proc change_flag()
+        begin
+             flag := not flag;
+        end;
+        
+        flag := false;    
+    
+        change_flag();
+    end;
+
+end;

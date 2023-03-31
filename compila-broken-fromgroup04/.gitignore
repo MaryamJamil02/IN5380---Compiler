@@ -1,0 +1,17 @@
+*~ 
+*.vrb
+*.nav 
+*.toc
+*.class 
+*.log
+*.dvi
+*.aux
+*.snm
+*.out
+auto
+*.idx
+*.ps
+*.mav
+*.DS_Store
+
+haskell/compila23/.stack-work
