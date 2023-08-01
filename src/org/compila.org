@@ -245,7 +245,28 @@ The file ~FileEndingFilter.java~. Yes, that also for the patch  for o2
 
 ** Compiler 
 
-*** TODO remove the errors ~int~ <2023-08-01 Tue 08:06>
+*** TODO remove the waring for reproducable build <2023-08-01 Tue 08:49>
+
+*** DONE remove the deprecated warnings for  ~new Integer~ <2023-08-01 Tue 08:06>
+CLOSED: [2023-08-01 Tue 08:49]
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2023-08-01 Tue 08:49]
+:END:
+
+#+begin_example
+Integer(int) in Integer has been deprecated and marked for removal
+    [javac] 	return new Integer(0);
+#+end_example
+
+#+begin_example
+Integer​(int value)	
+Deprecated. 
+It is rarely appropriate to use this constructor. The static factory valueOf(int) is generally a better choice, as it is likely to yield significantly better space and time performance.
+#+end_example
+
+There are two instances which I cannot get rid of (in interpreter Java): [[file:~/cor/teaching/compilerconstruction-inf5110/compila/src/runtime/Interpreter.java::private Object exp(Object pop0, Object pop1) {][here]]
+
+    
 *** DONE find complexaddition.ast <2020-02-05 Wed 08:50>
     CLOSED: [2020-04-02 Thu 07:04]
     :LOGBOOK:

@@ -1,6 +1,9 @@
 <!-- Build file (as inspiration) for INF5110/INF9110 obligatory exercise -->
 <project name="INF5110/INF9110 Obligatory exercise" default="menu" basedir=".">
-	<target name="menu" >
+  <presetdef name="javac">
+    <javac includeantruntime="false" />
+  </presetdef>
+  <target name="menu" >
 		<echo>Targets                             </echo>
 		<echo>clean                		- Cleans up the project</echo>
 		<echo>build                		- Build compiler</echo>
@@ -71,8 +74,23 @@
 
 	<!-- Compile Java Files and store in /build/classes directory  -->
 	<target name="compile" depends="generate">
-		<javac srcdir="${dir.src}" destdir="${dir.classes}" debug="true" includes="**/*.java" classpathref="path-cup" sourcepath="${dir.src-gen}"/>
-		<javac srcdir="${dir.src-gen}" destdir="${dir.classes}" debug="true" includes="**/*.java" classpathref="path-cup" sourcepath="${dir.src}" />
+	  <javac  srcdir="${dir.src}"
+		  destdir="${dir.classes}"
+		  debug="true"
+		  includes="**/*.java"
+		  classpathref="path-cup"
+		  sourcepath="${dir.src-gen}">
+	    <compilerarg value="-Xlint:unchecked"/>	    
+	  </javac>	    
+	  <javac srcdir="${dir.src-gen}"
+		 destdir="${dir.classes}"
+		 debug="true"
+		 includes="**/*.java"
+		 classpathref="path-cup"
+		 sourcepath="${dir.src}">
+	    <compilerarg value="-Xlint:unchecked"/>
+	    <compilerarg value="-Xli:unchecked"/>	    
+	  </javac>
 	</target>
 
 	<!-- Main target  -->

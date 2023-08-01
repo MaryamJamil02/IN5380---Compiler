@@ -12,6 +12,7 @@ public class FloatType extends CodeType {
 	return "float";
     }
     public Object initialValue() {
-	return new Float(0);
+	//	return new Float(0);
+	return Float.valueOf(0);
     }
 }

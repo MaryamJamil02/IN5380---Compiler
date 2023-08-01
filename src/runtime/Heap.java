@@ -10,7 +10,7 @@ public class Heap {
 	}
 	public void putfield(short fieldNumber, Struct struct, Reference reference, Object value) {
 		if(struct.types[fieldNumber] instanceof FloatType && value instanceof Integer){
-			value = new Float(((Integer)value).intValue());
+			value = Float.valueOf(((Integer)value).intValue());
 		}
 		this.values[reference.getAddress() + fieldNumber] = value;
 	}

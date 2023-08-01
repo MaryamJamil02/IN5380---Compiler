@@ -165,19 +165,19 @@ public class Interpreter {
 			case 18:
 				// PUSHBOOL
 				boolean boolValue = (current.procedure.bytecode[pc + 1] == 1);
-				stack.push(new Boolean(boolValue));
+				stack.push(Boolean.valueOf(boolValue));
 				pc+=2;
 				break;
 			case 19:
 				// PUSHFLOAT
 				float floatValue = NumberConversion.floatFromByteArray(current.procedure.bytecode, pc + 1);
-				stack.push(new Float(floatValue));
+				stack.push(Float.valueOf(floatValue));
 				pc+=5;
 				break;
 			case 20:
 				// PUSHINT
 				int intValue = NumberConversion.intFromByteArray(current.procedure.bytecode, pc + 1);
-				stack.push(new Integer(intValue));
+				stack.push(Integer.valueOf(intValue));
 				pc+=5;
 				break;
 			case 21:
@@ -208,7 +208,7 @@ public class Interpreter {
 				} else {
 					Object retvalue = stack.pop();
 					if(retvalue instanceof Integer && current.procedure.returnType == FloatType.TYPE){
-						retvalue = new Float(((Integer)retvalue).floatValue());
+						retvalue = Float.valueOf(((Integer)retvalue).floatValue());
 					}
 					current = (ActivationBlock) stack.pop();
 					stack.push(retvalue);
@@ -220,7 +220,7 @@ public class Interpreter {
 				Object globalValue = stack.pop();
 				if(this.variables[NumberConversion.shortFromByteArray(current.procedure.bytecode, pc + 1)].type instanceof FloatType &&
 						globalValue instanceof Integer){
-					globalValue = new Float(((Integer)globalValue).intValue());
+					globalValue = Float.valueOf(((Integer)globalValue).intValue());
 				}
 				globals[NumberConversion.shortFromByteArray(current.procedure.bytecode, pc + 1)] = globalValue;
 				pc+=3;
@@ -230,7 +230,7 @@ public class Interpreter {
 				Object localValue = stack.pop();
 				if(current.variables[NumberConversion.shortFromByteArray(current.procedure.bytecode, pc + 1)] instanceof Float &&
 						localValue instanceof Integer){
-					localValue = new Float(((Integer)localValue).intValue());
+					localValue = Float.valueOf(((Integer)localValue).intValue());
 				}
 				current.variables[NumberConversion.shortFromByteArray(current.procedure.bytecode, pc + 1)] = localValue;
 				pc += 3;
@@ -298,7 +298,7 @@ public class Interpreter {
 		for(int i=parSize-1; i>=0;i--){
 			current.variables[i] = stack.pop();
 			if(current.procedure.parameters[i] instanceof FloatType && current.variables[i] instanceof Integer){
-				current.variables[i] = new Float(((Integer)current.variables[i]).intValue());
+				current.variables[i] = Float.valueOf(((Integer)current.variables[i]).intValue());
 			}
 		}
 	}
@@ -314,18 +314,18 @@ public class Interpreter {
 			if(procedure.name.equals("readint")){
 				BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 				String line = in.readLine();
-				stack.push(new Integer(line));
+				stack.push(Integer.valueOf(line));
 			} else if(procedure.name.equals("readfloat")){
 				BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 				String line = in.readLine();
-				stack.push(new Float(line));
+				stack.push(Float.valueOf(line));
 			} else if(procedure.name.equals("readchar")){
 				BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 				String line = in.readLine();
 				if(line.length()!=1){
 					throw new RuntimeException("readchar can only read line of length 1");
 				}
-				stack.push(new Integer(line.toCharArray()[0]));
+				stack.push(Integer.valueOf(line.toCharArray()[0]));
 			} else if(procedure.name.equals("readstring")){
 				BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 				String line = in.readLine();
@@ -343,7 +343,7 @@ public class Interpreter {
 				if(top instanceof Float){
 					floatValue = (Float) top; 
 				} else {
-					floatValue = new Float(((Integer) top).floatValue());
+					floatValue = Float.valueOf(((Integer) top).floatValue());
 				}
 				System.out.print(floatValue);
 			} else if (procedure.name.equals("printstr")){
@@ -362,13 +362,13 @@ public class Interpreter {
 	}
 	private Object add(Object pop0, Object pop1) {
 		if(pop1 instanceof Integer && pop0 instanceof Integer){
-			return new Integer(((Integer)pop1).intValue() + ((Integer)pop0).intValue()); 
+			return Integer.valueOf(((Integer)pop1).intValue() + ((Integer)pop0).intValue()); 
 		} else if(pop1 instanceof Integer && pop0 instanceof Float){
-			return new Float(((Integer)pop1).floatValue() + ((Float)pop0).floatValue()); 
+			return Float.valueOf(((Integer)pop1).floatValue() + ((Float)pop0).floatValue()); 
 		} else if(pop1 instanceof Float && pop0 instanceof Integer){
-			return new Float(((Float)pop1).floatValue() + ((Integer)pop0).floatValue()); 
+			return Float.valueOf(((Float)pop1).floatValue() + ((Integer)pop0).floatValue()); 
 		} else if(pop1 instanceof Float && pop0 instanceof Float){
-			return new Float(((Float)pop1).floatValue() + ((Float)pop0).floatValue()); 
+			return Float.valueOf(((Float)pop1).floatValue() + ((Float)pop0).floatValue()); 
 		} else if(pop1 instanceof String && pop0 instanceof String){
 			return (String)pop1 + (String)pop0;
 		} else {
@@ -377,39 +377,39 @@ public class Interpreter {
 	}
 	private Object sub(Object pop0, Object pop1) {
 		if(pop1 instanceof Integer && pop0 instanceof Integer){
-			return new Integer(((Integer)pop1).intValue() - ((Integer)pop0).intValue()); 
+			return Integer.valueOf(((Integer)pop1).intValue() - ((Integer)pop0).intValue()); 
 		} else if(pop1 instanceof Integer && pop0 instanceof Float){
-			return new Float(((Integer)pop1).floatValue() - ((Float)pop0).floatValue()); 
+			return Float.valueOf(((Integer)pop1).floatValue() - ((Float)pop0).floatValue()); 
 		} else if(pop1 instanceof Float && pop0 instanceof Integer){
-			return new Float(((Float)pop1).floatValue() - ((Integer)pop0).floatValue()); 
+			return Float.valueOf(((Float)pop1).floatValue() - ((Integer)pop0).floatValue()); 
 		} else if(pop1 instanceof Float && pop0 instanceof Float){
-			return new Float(((Float)pop1).floatValue() - ((Float)pop0).floatValue()); 
+			return Float.valueOf(((Float)pop1).floatValue() - ((Float)pop0).floatValue()); 
 		} else {
 			throw new RuntimeException("SUB not possible for " + pop1 + " and " + pop0);
 		}
 	}
 	private Object mul(Object pop0, Object pop1) {
 		if(pop1 instanceof Integer && pop0 instanceof Integer){
-			return new Integer(((Integer)pop1).intValue() * ((Integer)pop0).intValue()); 
+			return Integer.valueOf(((Integer)pop1).intValue() * ((Integer)pop0).intValue()); 
 		} else if(pop1 instanceof Integer && pop0 instanceof Float){
-			return new Float(((Integer)pop1).floatValue() * ((Float)pop0).floatValue()); 
+			return Float.valueOf(((Integer)pop1).floatValue() * ((Float)pop0).floatValue()); 
 		} else if(pop1 instanceof Float && pop0 instanceof Integer){
-			return new Float(((Float)pop1).floatValue() * ((Integer)pop0).floatValue()); 
+			return Float.valueOf(((Float)pop1).floatValue() * ((Integer)pop0).floatValue()); 
 		} else if(pop1 instanceof Float && pop0 instanceof Float){
-			return new Float(((Float)pop1).floatValue() * ((Float)pop0).floatValue()); 
+			return Float.valueOf(((Float)pop1).floatValue() * ((Float)pop0).floatValue()); 
 		} else {
 			throw new RuntimeException("MUL not possible for " + pop1 + " and " + pop0);
 		}
 	}
 	private Object div(Object pop0, Object pop1) {
 		if(pop1 instanceof Integer && pop0 instanceof Integer){
-			return new Integer(((Integer)pop1).intValue() / ((Integer)pop0).intValue()); 
+			return Integer.valueOf(((Integer)pop1).intValue() / ((Integer)pop0).intValue()); 
 		} else if(pop1 instanceof Integer && pop0 instanceof Float){
-			return new Float(((Integer)pop1).floatValue() / ((Float)pop0).floatValue()); 
+			return Float.valueOf(((Integer)pop1).floatValue() / ((Float)pop0).floatValue()); 
 		} else if(pop1 instanceof Float && pop0 instanceof Integer){
-			return new Float(((Float)pop1).floatValue() / ((Integer)pop0).floatValue()); 
+			return Float.valueOf(((Float)pop1).floatValue() / ((Integer)pop0).floatValue()); 
 		} else if(pop1 instanceof Float && pop0 instanceof Float){
-			return new Float(((Float)pop1).floatValue() / ((Float)pop0).floatValue()); 
+			return Float.valueOf(((Float)pop1).floatValue() / ((Float)pop0).floatValue()); 
 		} else {
 			throw new RuntimeException("MUL not possible for " + pop1 + " and " + pop0);
 		}
@@ -423,24 +423,25 @@ public class Interpreter {
 	}
 	private Object eq(Object pop0, Object pop1) {
 		if(pop1 instanceof Integer && pop0 instanceof Integer){
-			return new Boolean(pop1.equals(pop0));
+			return Boolean.valueOf(pop1.equals(pop0));
 		} else if(pop1 instanceof Integer && pop0 instanceof Float){
-			return new Boolean(pop1.equals(pop0));
+			return Boolean.valueOf(pop1.equals(pop0));
 		} else if(pop1 instanceof Float && pop0 instanceof Integer){
-			return new Boolean(pop1.equals(pop0));
+			return Boolean.valueOf(pop1.equals(pop0));
 		} else if(pop1 instanceof Float && pop0 instanceof Float){
-			return new Boolean(pop1.equals(pop0));
+			return Boolean.valueOf(pop1.equals(pop0));
 		} else if(pop1 instanceof String && pop0 instanceof String){
-			return new Boolean(pop1.equals(pop0));
+			return Boolean.valueOf(pop1.equals(pop0));
 		} else if(pop1 instanceof Boolean && pop0 instanceof Boolean){
-			return new Boolean(pop1.equals(pop0));
+			return Boolean.valueOf(pop1.equals(pop0));
 		} else {
 			throw new RuntimeException("EQ not possible for " + pop1 + " and " + pop0);
 		}
 	}
 	private Object exp(Object pop0, Object pop1) {
 		if(pop1 instanceof Integer && pop0 instanceof Integer){
-			return new Float(Math.pow(((Integer)pop1).doubleValue(), ((Integer)pop0).doubleValue()));
+		    return new Float(Math.pow(((Integer)pop1).doubleValue(), ((Integer)pop0).doubleValue())); // power
+		    // cannot do Float.valueOf, error: possible lossy conversion from double to float
 		} else if(pop1 instanceof Float && pop0 instanceof Integer){
 			return new Float(Math.pow(((Float)pop1).doubleValue(), ((Integer)pop0).doubleValue()));
 		} else {
@@ -449,65 +450,65 @@ public class Interpreter {
 	}
 	private Object gt(Object pop0, Object pop1) {
 		if(pop1 instanceof Integer && pop0 instanceof Integer){
-			return new Boolean(((Integer)pop1).intValue() > ((Integer)pop0).intValue());
+			return Boolean.valueOf(((Integer)pop1).intValue() > ((Integer)pop0).intValue());
 		} else if(pop1 instanceof Integer && pop0 instanceof Float){
-			return new Boolean(((Integer)pop1).floatValue() > ((Float)pop0).floatValue());
+			return Boolean.valueOf(((Integer)pop1).floatValue() > ((Float)pop0).floatValue());
 		} else if(pop1 instanceof Float && pop0 instanceof Integer){
-			return new Boolean(((Float)pop1).floatValue() > ((Integer)pop0).floatValue());
+			return Boolean.valueOf(((Float)pop1).floatValue() > ((Integer)pop0).floatValue());
 		} else if(pop1 instanceof Float && pop0 instanceof Float){
-			return new Boolean(((Float)pop1).floatValue() > ((Float)pop0).floatValue());
+			return Boolean.valueOf(((Float)pop1).floatValue() > ((Float)pop0).floatValue());
 		} else {
 			throw new RuntimeException("GT not possible for " + pop1 + " and " + pop0);
 		}
 	}
 	private Object gteq(Object pop0, Object pop1) {
 		if(pop1 instanceof Integer && pop0 instanceof Integer){
-			return new Boolean(((Integer)pop1).intValue() >= ((Integer)pop0).intValue());
+			return Boolean.valueOf(((Integer)pop1).intValue() >= ((Integer)pop0).intValue());
 		} else if(pop1 instanceof Integer && pop0 instanceof Float){
-			return new Boolean(((Integer)pop1).floatValue() >= ((Float)pop0).floatValue());
+			return Boolean.valueOf(((Integer)pop1).floatValue() >= ((Float)pop0).floatValue());
 		} else if(pop1 instanceof Float && pop0 instanceof Integer){
-			return new Boolean(((Float)pop1).floatValue() >= ((Integer)pop0).floatValue());
+			return Boolean.valueOf(((Float)pop1).floatValue() >= ((Integer)pop0).floatValue());
 		} else if(pop1 instanceof Float && pop0 instanceof Float){
-			return new Boolean(((Float)pop1).floatValue() >= ((Float)pop0).floatValue());
+			return Boolean.valueOf(((Float)pop1).floatValue() >= ((Float)pop0).floatValue());
 		} else {
 			throw new RuntimeException("GTEQ not possible for " + pop1 + " and " + pop0);
 		}
 	}
 	private Object lt(Object pop0, Object pop1) {
 		if(pop1 instanceof Integer && pop0 instanceof Integer){
-			return new Boolean(((Integer)pop1).intValue() < ((Integer)pop0).intValue());
+			return Boolean.valueOf(((Integer)pop1).intValue() < ((Integer)pop0).intValue());
 		} else if(pop1 instanceof Integer && pop0 instanceof Float){
-			return new Boolean(((Integer)pop1).floatValue() < ((Float)pop0).floatValue());
+			return Boolean.valueOf(((Integer)pop1).floatValue() < ((Float)pop0).floatValue());
 		} else if(pop1 instanceof Float && pop0 instanceof Integer){
-			return new Boolean(((Float)pop1).floatValue() < ((Integer)pop0).floatValue());
+			return Boolean.valueOf(((Float)pop1).floatValue() < ((Integer)pop0).floatValue());
 		} else if(pop1 instanceof Float && pop0 instanceof Float){
-			return new Boolean(((Float)pop1).floatValue() < ((Float)pop0).floatValue());
+			return Boolean.valueOf(((Float)pop1).floatValue() < ((Float)pop0).floatValue());
 		} else {
 			throw new RuntimeException("LT not possible for " + pop1 + " and " + pop0);
 		}
 	}
 	private Object lteq(Object pop0, Object pop1) {
 		if(pop1 instanceof Integer && pop0 instanceof Integer){
-			return new Boolean(((Integer)pop1).intValue() <= ((Integer)pop0).intValue());
+			return Boolean.valueOf(((Integer)pop1).intValue() <= ((Integer)pop0).intValue());
 		} else if(pop1 instanceof Integer && pop0 instanceof Float){
-			return new Boolean(((Integer)pop1).floatValue() <= ((Float)pop0).floatValue());
+			return Boolean.valueOf(((Integer)pop1).floatValue() <= ((Float)pop0).floatValue());
 		} else if(pop1 instanceof Float && pop0 instanceof Integer){
-			return new Boolean(((Float)pop1).floatValue() <= ((Integer)pop0).floatValue());
+			return Boolean.valueOf(((Float)pop1).floatValue() <= ((Integer)pop0).floatValue());
 		} else if(pop1 instanceof Float && pop0 instanceof Float){
-			return new Boolean(((Float)pop1).floatValue() <= ((Float)pop0).floatValue());
+			return Boolean.valueOf(((Float)pop1).floatValue() <= ((Float)pop0).floatValue());
 		} else {
 			throw new RuntimeException("LTEQ not possible for " + pop1 + " and " + pop0);
 		}
 	}
 	private Object neq(Object pop0, Object pop1) {
 		if(pop1 instanceof Integer && pop0 instanceof Integer){
-			return new Boolean(((Integer)pop1).intValue() != ((Integer)pop0).intValue());
+			return Boolean.valueOf(((Integer)pop1).intValue() != ((Integer)pop0).intValue());
 		} else if(pop1 instanceof Integer && pop0 instanceof Float){
-			return new Boolean(((Integer)pop1).floatValue() != ((Float)pop0).floatValue());
+			return Boolean.valueOf(((Integer)pop1).floatValue() != ((Float)pop0).floatValue());
 		} else if(pop1 instanceof Float && pop0 instanceof Integer){
-			return new Boolean(((Float)pop1).floatValue() != ((Integer)pop0).floatValue());
+			return Boolean.valueOf(((Float)pop1).floatValue() != ((Integer)pop0).floatValue());
 		} else if(pop1 instanceof Float && pop0 instanceof Float){
-			return new Boolean(((Float)pop1).floatValue() != ((Float)pop0).floatValue());
+			return Boolean.valueOf(((Float)pop1).floatValue() != ((Float)pop0).floatValue());
 		} else {
 			throw new RuntimeException("NEQ not possible for " + pop1 + " and " + pop0);
 		}
@@ -521,7 +522,7 @@ public class Interpreter {
 	}
 	private Object not(Object pop) {
 		if(pop instanceof Boolean){
-			return new Boolean( ! ((Boolean)pop).booleanValue());
+			return Boolean.valueOf( ! ((Boolean)pop).booleanValue());
 		} else {
 			throw new RuntimeException("NOT not possible for " + pop);
 		}

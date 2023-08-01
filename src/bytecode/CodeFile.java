@@ -47,7 +47,8 @@ public class CodeFile {
     public void updateVariable(String name, CodeType type) {
 		for(int i=0;i<this.variableNames.size();i++){
 			if(name.equals(this.variableNames.get(i))){
-				this.variableTypes.put(new Integer(i), type);
+			    //				this.variableTypes.put(new Integer(i), type);
+			    this.variableTypes.put(Integer.valueOf(i), type);
 			}
 		}
 	}
@@ -71,7 +72,8 @@ public class CodeFile {
     public void updateProcedure(CodeProcedure codeProcedure) {
 	for(int i=0;i<this.procedureNames.size();i++){
 	    if(codeProcedure.getName().equals(this.procedureNames.get(i))){
-		this.procedures.put(new Integer(i), codeProcedure);
+		//		this.procedures.put(new Integer(i), codeProcedure);
+		this.procedures.put(Integer.valueOf(i), codeProcedure);
 	    }
 	}
     }
@@ -97,7 +99,8 @@ public class CodeFile {
     public void updateStruct(CodeStruct codeStruct) {
 	for(int i=0;i<this.structNames.size();i++){
 	    if(codeStruct.getName().equals(this.structNames.get(i))){
-		this.structs.put(new Integer(i), codeStruct);
+		// this.structs.put(new Integer(i), codeStruct);
+		this.structs.put(Integer.valueOf(i), codeStruct);
 		
 	    }
 	}
@@ -204,17 +207,18 @@ public class CodeFile {
 	}
 	byte[][] variableTypesBytes = new byte[this.variableTypes.size()][];  
 	for(int i=0; i<this.variableTypes.size(); i++){
-	    variableTypesBytes[i] = this.variableTypes.get(new Integer(i)).getBytecode();
+	    // variableTypesBytes[i] = this.variableTypes.get(new Integer(i)).getBytecode();
+	    variableTypesBytes[i] = this.variableTypes.get(Integer.valueOf(i)).getBytecode();
 	    totalSize += variableTypesBytes[i].length;
 	}
 	byte[][] proceduresBytes = new byte[this.procedures.size()][];
 	for(int i=0;i<this.procedures.size();i++){
-	    proceduresBytes[i] = this.procedures.get(new Integer(i)).getBytecode();
+	    proceduresBytes[i] = this.procedures.get(Integer.valueOf(i)).getBytecode();
 	    totalSize += proceduresBytes[i].length + 2;
 	}
 	byte[][] structsBytes = new byte[this.structs.size()][];
 	for(int i=0;i<this.structs.size();i++){
-	    structsBytes[i] = this.structs.get(new Integer(i)).getBytecode();
+	    structsBytes[i] = this.structs.get(Integer.valueOf(i)).getBytecode();
 	    totalSize += structsBytes[i].length + 2;
 	}
 	byte[][] stringConstantsBytes = new byte[this.stringConstants.size()][];
