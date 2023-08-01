@@ -245,7 +245,11 @@ The file ~FileEndingFilter.java~. Yes, that also for the patch  for o2
 
 ** Compiler 
 
-*** TODO remove the waring for reproducable build <2023-08-01 Tue 08:49>
+*** DONE remove the waring for reproducable build <2023-08-01 Tue 08:49>
+CLOSED: [2023-08-01 Tue 09:27]
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2023-08-01 Tue 09:27]
+:END:
 
 *** DONE remove the deprecated warnings for  ~new Integer~ <2023-08-01 Tue 08:06>
 CLOSED: [2023-08-01 Tue 08:49]
