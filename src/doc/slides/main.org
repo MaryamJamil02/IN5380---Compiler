@@ -51,7 +51,7 @@
 
 
 
-# +include: "./oblig1.org"  
+#+include: "./oblig1.org"  
 #+include: "./oblig2.org"  
 
 

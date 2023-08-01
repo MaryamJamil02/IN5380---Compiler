@@ -245,7 +245,7 @@ The file ~FileEndingFilter.java~. Yes, that also for the patch  for o2
 
 ** Compiler 
 
-
+*** TODO remove the errors ~int~ <2023-08-01 Tue 08:06>
 *** DONE find complexaddition.ast <2020-02-05 Wed 08:50>
     CLOSED: [2020-04-02 Thu 07:04]
     :LOGBOOK:
@@ -362,7 +362,11 @@ CLOSED: [2023-02-10 Fri 11:35]
 - State "DONE"       from "TODO"       [2023-02-10 Fri 11:35]
 :END:
 
-*** TODO test it on the  University <2023-02-10 Fri 12:41>
+*** DONE test it on the  University <2023-02-10 Fri 12:41>
+CLOSED: [2023-08-01 Tue 08:07]
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2023-08-01 Tue 08:07]
+:END:
 
 *** DONE what does the handoutn say <2023-02-10 Fri>
 CLOSED: [2023-02-10 Fri 11:37]
@@ -378,8 +382,16 @@ CLOSED: [2023-02-10 Fri 11:37]
   Seem like
 :END:
 
-*** TODO make a fresh checkout and test it <2023-02-10 Fri 10:40>
-*** TODO do a compila23-00 <2023-02-10 Fri 10:55>
+*** DONE make a fresh checkout and test it <2023-02-10 Fri 10:40>
+CLOSED: [2023-08-01 Tue 08:07]
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2023-08-01 Tue 08:07]
+:END:
+*** DONE do a compila23-00 <2023-02-10 Fri 10:55>
+CLOSED: [2023-08-01 Tue 08:07]
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2023-08-01 Tue 08:07]
+:END:
 
 *** DONE do the slides for oblig 1 <2023-02-10 Fri 10:27>
 CLOSED: [2023-02-10 Fri 10:40]
@@ -636,3 +648,4 @@ perhaps also positive things).
 
 
 
+  
