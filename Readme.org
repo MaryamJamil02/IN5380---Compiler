@@ -2,8 +2,8 @@
 #+OPTIONS: broken-links:nil c:nil creator:nil d:(not "LOGBOOK") date:t e:t
 #+OPTIONS: email:nil f:t inline:t num:t p:nil pri:nil prop:nil stat:t
 #+OPTIONS: tags:nil tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
-#+TITLE: Compila 23 (Language and compiler skeleton + material)
-#+DATE: <2023-02-10 Fri>
+#+TITLE: Compila 24 (Language and compiler skeleton + material)
+#+DATE: <2024-02-12 Mon>
 #+AUTHOR: Martin Steffen
 #+EMAIL: msteffen@ifi.uio.no
 #+LANGUAGE: en
@@ -17,14 +17,15 @@
 
 * Intro
 
-The repository host material for the /Compila 23/ compiler, which is the
-content of oblig 1 and 2 for the course ``compiler construction''
-([[http://www.uio.no/studier/emner/matnat/ifi/INF5110/][INF5110]]/INF9110). The material focuses on the code which can be used as
-*starting point* for the *compiler*. It contains also the description and
-documentation of the oblig and the compiler. *Not* contained here is the
-compiler *lecture* (the slides, the exercises, organizational material,
-etc.).  Those are kept in the respository of the course itself, and the
-generated slides are kept in the Vortex system on the course's web-page.
+The repository host material for the /Compila 24/ compiler, which is the
+content of oblig 1 and 2 for the course "compiler construction"
+([[http://www.uio.no/studier/emner/matnat/ifi/INF5110/][INF5110]]/INF9110). The material in this repository focuses on the code
+which can be used as *starting point* for the *compiler*. It contains also
+the description and *documentation* of the oblig and the compiler. *Not*
+contained here is the compiler *lecture* (the slides, the exercises,
+organizational material, etc.).  Those are kept in the respository of the
+course itself, and the generated slides are kept in the Vortex system on
+the course's web-page.
 
 
 * Overview over the repository's structure
@@ -37,9 +38,10 @@ generated slides are kept in the Vortex system on the course's web-page.
 - [[./src]]: sources (including sources of the documentation).
 
 
-- [[./src/tests]]: compila 23 programs for testing. Not all tests are already
+- [[./src/tests]]: compila 24 programs for testing. Not all tests are already
   relevant for *oblig 1*. The directory contains a number of subdirectories
-  for different purposes. The one required for *oblig 1* is
+  for different purposes and a number of compila program. The one required
+  for *oblig 1* is
 
        [[./src/tests/fullprograms/complexaddition.cmp]]
 
@@ -50,7 +52,7 @@ generated slides are kept in the Vortex system on the course's web-page.
   test the type checking and the code generation).
 
 - [[./oblig2patch]]: additional information and changes or updates
-     relevant for oblig 2. 
+     relevant for *oblig 2*. 
 
 - [[./lib]]: lexer and yaccer tools (jlex + cup), as jar files
 
@@ -67,10 +69,10 @@ generated slides are kept in the Vortex system on the course's web-page.
   parser (a simple working example of making use of lex and yacc). It also
   contains inspiration how a ast-printout could look like.
 
--  [[./previoussemesters]]: for ``historical'' purposes only
+-  [[./previoussemesters]]: for "historical" purposes only
       
 
-- ([[./build]]): generated (if one uses the .build.xml)
+- ([[./build]]): the directory is generated (if one uses the .build.xml)
 
 
   - [[Readme.org]]: this file
@@ -82,7 +84,7 @@ generated slides are kept in the Vortex system on the course's web-page.
 * First steps 
 
 We assume basic familiarity with git, basically how to clone commit, push
-and pull. No more advanced features need probably be used. If not familiar
+and pull. No more advanced features need probably be used. If unfamiliar
 with the basics, contact the lecturer (early on!) to figure it out.
 
 
@@ -93,11 +95,11 @@ first thing to do is to get a working copy of the corresponding
 repos. That's done via ~git clone~.
 
 For *group 00*, the repos is located at
-[[https://github.uio.no/compilerconstruction-inf5110/compila23-00]], and the
+[[https://github.uio.no/compilerconstruction-inf5110/compila24-00]], and the
 corresponding clone step would be
 
 #+begin_src 
- clone git@github.uio.no:compilerconstruction-inf5110/compila23-00.git
+ clone git@github.uio.no:compilerconstruction-inf5110/compila24-00.git
 #+end_src
 
 The group numbered *00* is used by the lecturer, so one has to replace *00*
@@ -106,8 +108,8 @@ with one's own group number.
 
 ** Check to see if everything on your system is in place!
 
-Do the following checks, to make sure that java runs (and the classpath is
-not messed up somehow etc). And also that ~ant~ is running.
+Do the following checks, to make sure that Java runs (and the classpath is
+not messed up somehow etc,). And also that ~ant~ is running (if you use that).
 
 
 
@@ -129,7 +131,7 @@ cleaning up, 2 different programs that can be built and run, so altogether
 
 
 Do the same for the dummy- and skeleton-classes provided as starting point
-for the compila23 compiler. Inside the top-level compila directory, which
+for the compila24 compiler. Inside the top-level compila directory, which
 contains a [[./build.xml]]-file, do
 
 #+begin_src 
@@ -157,25 +159,24 @@ generated (or maybe I generated it in an earlier semester). It's called
 It's meant as *inspiration* of how an outpout could look like. It's not the
 most beautiful output, it's more an ugly-printer rather than a
 pretty-printer output, but it would do the job. Note also: the output *does
-not 100% adhere to the 2023 syntax*, but corresponds to an earlier
+not 100% adhere to the 2024 syntax*, but corresponds to an earlier
 iteration. But as said, it's for inspiration.
-
-
-
-
 
 
 
 * Communication & discussion forums
 
-Especially in virus times, electronic communication is important. If
-encountering troubles or puzzling about how to proceed, email is an
+If encountering troubles or puzzling about how to proceed, *email* is an
 option. Besides that, the university has set up some discussion platforms
 per course that they think is useful:
 
-  [- [[https://mattermost.uio.no/ifi-undervisning/channels/inf5110][mattermost]] : I think 2023 this channel was not openend]
 
-We can also try git-issues.    
+  - [[https://astro-discourse.uio.no][Astro-discourse]] : some discussion forum
+
+Earlier there had been padlet, piazza, mattermost and others, those no
+  longer exist or have not been opened 2024 for this course
+
+# We can also try git-issues.    
 
     
 
@@ -190,5 +191,7 @@ We can also try git-issues.
 In the cases of the tools, especially the input syntax (for the lexer and
 for the parser) are relevant. Probably one learns a lot from examples, that
 are provided with those tools. For ant, use the ~built.xml~ provided /here/
-as starting point, it should give a good start.
+as starting point, it should give a good start. So I would not recommend
+study the manuals deeply, before starting with the obligs. I would rather
+take the running examples, and play with them. (and ask)
 
