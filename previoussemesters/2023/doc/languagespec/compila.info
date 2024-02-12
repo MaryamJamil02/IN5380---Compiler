@@ -1,6 +1,7 @@
-This is compila.info, produced by makeinfo version 7.0.3 from
+This is compila.info, produced by makeinfo version 6.8 from
 compila.texi.
 
+INFO-DIR-SECTION 
 START-INFO-DIR-ENTRY
 * .                     .
 END-INFO-DIR-ENTRY
@@ -46,7 +47,6 @@ Syntax
 Parameter passing
 
 * Call-by-value::
-* Call-by-reference::
 * Small example for call-by-reference::
 
 Static semantics / typing / evaluation.
@@ -65,7 +65,7 @@ File: compila.info,  Node: Introduction,  Next: Lexical aspects,  Prev: Top,  Up
 **************
 
 This document specifies and describes the syntax and the static
-semantics of the language _Compila 24_.  The dynamic semantics, i.e.,
+semantics of the language _Compila 23_.  The dynamic semantics, i.e.,
 the description of the language’s behavior when being executed, should
 be fairly clear even without explicit formal specification.
 
@@ -82,7 +82,7 @@ File: compila.info,  Node: Notational conventions and syntax of this document,  
 In the description of the grammar later, we use capital letters for
 non-terminals.  As _meta-symbols_ for the grammar, we use the following:
 
-     ->,  |,  (,  ), {,  },  [,  ], "
+        ->,  |,  (,  ), {,  },  [,  ], "
 
    Commas in the previous line are used as “meta-meta symbols” in the
 enumeration of the meta-symbols.
@@ -221,7 +221,7 @@ File: compila.info,  Node: References,  Prev: Records,  Up: Data types
 The language allows that variables can be declared to be of reference
 type ("pointers", if you will) by writing, e.g.,
 
-     var x: ref(int);
+      var x: ref(int);
 
    Variables, like ‘x’, can be assigned values that are references, so,
 e.g., the following is allowed:
@@ -384,11 +384,10 @@ call-by-value:
 * Menu:
 
 * Call-by-value::
-* Call-by-reference::
 * Small example for call-by-reference::
 
 
-File: compila.info,  Node: Call-by-value,  Next: Call-by-reference,  Up: Parameter passing
+File: compila.info,  Node: Call-by-value,  Next: Small example for call-by-reference,  Up: Parameter passing
 
 5.1 Call-by-value
 =================
@@ -406,15 +405,9 @@ mechanism proper _is_ call-by-value (of reference data).  One may speak
 of call-by-value-reference.
 
 
-File: compila.info,  Node: Call-by-reference,  Next: Small example for call-by-reference,  Prev: Call-by-value,  Up: Parameter passing
+File: compila.info,  Node: Small example for call-by-reference,  Prev: Call-by-value,  Up: Parameter passing
 
-5.2 Call-by-reference
-=====================
-
-
-File: compila.info,  Node: Small example for call-by-reference,  Prev: Call-by-reference,  Up: Parameter passing
-
-5.3 Small example for call-by-reference
+5.2 Small example for call-by-reference
 =======================================
 
      program swapexample
@@ -618,35 +611,34 @@ File: compila.info,  Node: Further conditions,  Prev: Procedures,  Up: Top
 
 
 Tag Table:
-Node: Top144
-Node: Introduction1016
-Node: Notational conventions and syntax of this document1469
-Node: Lexical aspects2775
-Node: Identifiers and literals2960
-Node: Comments4095
-Node: Data types4728
-Node: Built in data types4906
-Node: Records5521
-Ref: Records-Footnote-16329
-Node: References6386
-Node: Syntax7217
-Node: Grammar7383
-Node: Precedence9908
-Node: Associativity10345
-Node: Parameter passing10838
-Node: Call-by-value11543
-Ref: Call-by-value-Footnote-111913
-Node: Call-by-reference12227
-Node: Small example for call-by-reference12410
-Node: Standard library13161
-Node: Static semantics / typing / evaluation14274
-Node: Binding of names14634
-Node: Typing of compound constructs15846
-Node: Types and implicit type conversion17164
-Node: Type inference17867
-Node: Short-circuit evaluation18630
-Node: Procedures19070
-Node: Further conditions20854
+Node: Top160
+Node: Introduction1010
+Node: Notational conventions and syntax of this document1463
+Node: Lexical aspects2772
+Node: Identifiers and literals2957
+Node: Comments4092
+Node: Data types4725
+Node: Built in data types4903
+Node: Records5518
+Ref: Records-Footnote-16326
+Node: References6383
+Node: Syntax7215
+Node: Grammar7381
+Node: Precedence9906
+Node: Associativity10343
+Node: Parameter passing10836
+Node: Call-by-value11519
+Ref: Call-by-value-Footnote-111907
+Node: Small example for call-by-reference12221
+Node: Standard library12968
+Node: Static semantics / typing / evaluation14081
+Node: Binding of names14441
+Node: Typing of compound constructs15653
+Node: Types and implicit type conversion16971
+Node: Type inference17674
+Node: Short-circuit evaluation18437
+Node: Procedures18877
+Node: Further conditions20661
 
 End Tag Table
 
