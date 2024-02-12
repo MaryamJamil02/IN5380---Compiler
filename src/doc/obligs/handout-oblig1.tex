@@ -12,7 +12,8 @@
 %\issuedate{03.\ 02.\ 2020}
 %\issuedate{09.\ 02.\ 2021}
 %\issuedate{8.\ 2.\ 2022}
-\issuedate{10.\ 2.\ 2023}
+%\issuedate{10.\ 2.\ 2023}
+\issuedate{12.\ 2.\ 2024}
 \topic{---}
 
 
@@ -32,7 +33,7 @@
 The \textbf{deadline/frist}  for the oblig is
 
 \begin{quote}
-  \textbf{\deadlineone, 23:59}
+  \textbf{\deadlineone, 23:59} %% 31 March is Ostern
 \end{quote}
 
 Requirements:
@@ -44,7 +45,7 @@ Requirements:
   the correct associativity and precedence). The exact same formatting as
   in the provided illustration is not required; reasonable deviations are
   fine.
-\item the instructions under ``What and how to  hand-in'' need to be followed
+\item follow the instructions under ``What and how to  hand-in''
 \item the solution needs to compile and run \emph{at the UiO
     pool}.\footnote{Statements like ``but on my laptop it worked, I can show
     you'' don't cut it \ldots.} Test it!
@@ -94,7 +95,7 @@ the corresponding place in your clone).
 \item send me an email with your name (and if you have, with the name of
   your collaborator), so I can assign a group number.
 \item each group will get one \emph{repository}. For instance, group
-  \textbf{01} get the repository \textbf{compila23-01} etc.  I will
+  \textbf{01} get the repository \textbf{compila24-01} etc.  I will
   everyone to the corresponding repos as collaborator. Each repos contains
   the same starting point, of course.
 %\item per group: \emph{create} a new \emph{project} at the github repos.
@@ -148,20 +149,21 @@ the corresponding place in your clone).
   oblig-documentation.
 
   It might be nice to use some \emph{markdown} format (like a
-  \texttt{Readme.md}. It's some form of poor-man's markup like HTML, and is
+  \texttt{Readme.md}). It's some form of poor-man's markup, and is
   typically rendered nicely by browsers. The current top-level
   Compila-Readme is not in the \texttt{md}-format, but in
-  \texttt{org}-format (\texttt{Readme.org}) (which is a similar, but more
-  expressive markdown format and also rendered nicely by github).
+  \texttt{org}-format (\texttt{Readme.org}) (which is a similar, but a more
+  expressive markdown format and also rendered nicely by github, and which
+  personally I prefer for myself).
   
 \item The information so far is for an ``interested user'' which may be an
   outsider, maybe like a random surfer on the internet who wants to try it
-  out. Besides that, additional information should be provided, which is
-  not relevant for an outsider, but contains ``insider information''
-  relevant for the course's mandatory assignment and the technical
-  realization of the solution. Thus, that information might perhaps better
-  not be kept in the top level readme but at a different, less prominent
-  place or file.
+  out. Besides that, \emph{additional} information should be provided,
+  which is not relevant for an outsider, but contains ``insider
+  information'' relevant for the course's mandatory assignment and the
+  technical realization of the solution. Thus, that information might
+  perhaps better not be kept in the top level readme but at a different,
+  less prominent place or file.
   \begin{itemize}
   \item test-output for running the compiler on \texttt{compila.cmp} as
     input
@@ -189,24 +191,26 @@ Ideal would be an
   \textbf{out-of-the-box}
 \end{center}
 behavior. Assuming that the ``outside user'' has the required software in
-place (like \texttt{JDK} and \emph{ant}, or something rather common). Then
-it works out-of-the-box, by following simple steps like for example
+place (like \texttt{JDK} and \emph{ant}, or something rather common, and
+also is familiar with git). Then it works out-of-the-box, by following
+simple steps like for example
 
 
 \begin{verbatim}
    git clone <repos-url>
-   cd compila23-<n>
+   cd compila24-<n>
    ant
    ant build
    ant run
 \end{verbatim}
-and those steps should be mentioned clearly in your Readme. The steps
-mentioned here correspond to those suggested when using the provided
-starting point, which corresponds to
+and those steps (whatever they are) should be mentioned clearly in your
+Readme. The steps mentioned here correspond to those suggested when using
+the provided starting point, which corresponds to
 \begin{center}
   \url{https://github.uio.no/compilerconstruction-inf5110/compila}.\footnote{Don't
     clone this one for doing the oblig, clone the repos corresponding to
-    your group.}
+    your group. If you clone it, it's the same information, but you have no
+    write access to the repos.}
 \end{center}
 Your solution may involve different steps (maybe \texttt{ant ast} for
 producing the require AST), and may require adaptation of \texttt{build.xml}
@@ -285,14 +289,14 @@ If, for some reason, you plan to deviate from the suggested tools, you
 \label{sec:first-steps-oblig}
 
 Apart from getting yourself a group number, git access etc. as described,
-there are things you really should do afterwards, 
+there are things you really should do afterwards:
 
 \begin{center}
   \textbf{Checking that on your platform, all is in place}
 \end{center}
 
 The provided readme describes the easy steps (not repeated here). It's
-about to make sure that your Java set-up works, that ant is running
+about to make sure that your Java set-up works, that ant is running,
 etc. If the tests fail, \textbf{contact me} to \textbf{get that out of the
   way} before the oblig work starts. The starting point provides those
 tests to avoid that later and shorter before the deadline, one figures out
@@ -307,7 +311,13 @@ To avoid running into frustrating stupid things later is \textbf{only one
 \textbf{other purpose} is: the tests run a lexer and a parser!  It's of
 course not the compila language, that's your task, but it shows in two tiny
 examples, how the tools operate together, and how a lex file looks and how
-a cup-file looks etc.
+a cup-file looks etc. And for that:
+
+\begin{center}
+  \textbf{Do that checks immediately} even if you don't plan to start on
+  the content your oblig right away.
+\end{center}
+It's just a test that all is in place.
 
 Talking about how to tackle practical aspects of the oblig(s) and
 organizing the task. You may read the advice I typed up last year about that
@@ -331,7 +341,7 @@ organizing the task. You may read the advice I typed up last year about that
 The overall task is to 
 
 \begin{quote}
-  implement a parser for the \textsl{Compila 23} language.
+  implement a parser for the \textsl{Compila 24} language.
 \end{quote}
 The language specification is given in a separate document. Oblig 1 is
 concerned with checking \emph{syntactic correctness}, which means, not all
@@ -377,7 +387,7 @@ possible output. The two files are called
 
 Note: the two files are meant as \emph{inspiration.} Each year the syntax
 of \textsl{compila} slightly changes (wrt. keywords, associativity etc). So
-the syntax is \textbf{not 100\%} in accordance with the 2020 version (but
+the syntax is \textbf{not 100\%} in accordance with the 2024 version (but
 pretty comparable).
 
 The one that \textbf{should actually be used} for this task (AST-printing)
@@ -446,7 +456,7 @@ AST, plain \emph{checking} is sufficient.
 As mentioned, \textsl{JFLex} is the tool of choice for lexical analysis. It
 delivers a token to the parser via the method \texttt{next\_token()}.  
 
-As far the the ``theoretical'' task concerning \textsl{compila 20} is
+As far the the ``theoretical'' task concerning \textsl{compila 24} is
 concerned, the lexer is responsible for ignoring comment, white-space etc,
 find keywords and the like.
 
