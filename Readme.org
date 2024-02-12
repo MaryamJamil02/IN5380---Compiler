@@ -99,7 +99,7 @@ For *group 00*, the repos is located at
 corresponding clone step would be
 
 #+begin_src 
- clone git@github.uio.no:compilerconstruction-inf5110/compila24-00.git
+git clone git@github.uio.no:compilerconstruction-inf5110/compila24-00.git
 #+end_src
 
 The group numbered *00* is used by the lecturer, so one has to replace *00*
@@ -118,14 +118,27 @@ not messed up somehow etc,). And also that ~ant~ is running (if you use that).
 Inside the compila-directory, do
 
 
-#+begin_src 
+#+begin_example
    cd material/first-tests-simpleexpressions
    ant 
-#+end_src
-watch the output, and try out the shown targets. There is 1 target for
-cleaning up, 2 different programs that can be built and run, so altogether
-5 targets you can test.
+#+end_example
 
+#+end_src
+watch the output, and *try out* the shown targets. There is 1 target for
+cleaning up, 2 different programs that can be built and run, so altogether
+you can try out 5 targets:
+
+#+begin_example
+ ant clean
+ ant compile-example-eval
+ ant run-example-eval
+ ant compile-example-parse
+ ant run-example-parse
+#+end_example
+
+
+Note, "running" can be done successfully only after "compiling". There will
+be some warnings about repeatable-build, one may ignore them.
 
 *** Check the top-level build-file (under this directory)
 
@@ -144,19 +157,19 @@ contains a [[./build.xml]]-file, do
 If successful, that should generate the file ~simpledummy.ast~ under
 [[file:./src/tests/outputs/ast][<compila-root>/src/tests/outputs/ast]]. Since it will be generated, the file
 is not yet there in the fresh checkout. There might be warnings about
-``non-reproducible builds'', and more, depending on which version of Java
-you use. but you can ignore that.
+``non-reproducible builds'', and some more more, depending on which version
+of Java you use. but you can ignore that.
 
 
 
 The generated ast-printout is very small, because the example grammar and
-program in the starting point is just very small. Besides the ast which is
-generated following the described steps, there is also more ``realistic''
-ast-printout included in the repos in the same directory, so it's not
-generated (or maybe I generated it in an earlier semester). It's called
-[[file:src/tests/outputs/ast/simpledummy-forinspiration.ast][simpledummy-forinspiration.ast]].
+program in the starting point is just very small; it's not a
+compila-program. Besides the ast which is generated following the described
+steps, there is also more ``realistic'' ast-printout included in the repos
+in the same directory, so it's not generated (or maybe I generated it in an
+earlier semester). It's called [[file:src/tests/outputs/ast/simpledummy-forinspiration.ast][simpledummy-forinspiration.ast]].
 
-It's meant as *inspiration* of how an outpout could look like. It's not the
+It's meant as *inspiration* of how an output could look like. It's not the
 most beautiful output, it's more an ugly-printer rather than a
 pretty-printer output, but it would do the job. Note also: the output *does
 not 100% adhere to the 2024 syntax*, but corresponds to an earlier
