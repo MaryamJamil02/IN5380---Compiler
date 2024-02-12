@@ -25,9 +25,20 @@ git remote -v
 git push -u origin22-00 master
 #+end_example
 
+~git remote -v~ then shows
+
+#+begin_example
+
+#+end_example
+origin	git@github.uio.no:compilerconstruction-inf5110/compila.git (fetch)
+origin	git@github.uio.no:compilerconstruction-inf5110/compila.git (push)
+origin24-00	git@github.uio.no:compilerconstruction-inf5110/compila24-00.git (fetch)
+origin24-00	git@github.uio.no:compilerconstruction-inf5110/compila24-00.git (push)
 #+begin_example
 git push origin master
 #+end_example
+
+
 *** Things to do
 
 
