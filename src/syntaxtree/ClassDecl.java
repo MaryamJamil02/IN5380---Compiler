@@ -1,5 +1,5 @@
 package syntaxtree;  // This is just an inspirational example, probably 
-                     // there will be no class ceclaration class, as 
+                     // there will be no class declaration class, as 
                      // compila 24 does not support class declarations.
 public class ClassDecl {
 
