@@ -5,7 +5,7 @@
 
 
 
-** Compila 23
+** Compila 24
 
 *** Oblig 1                                                         :B_frame:
     :PROPERTIES:
@@ -32,7 +32,7 @@
      :END:
 
 
-Determine if programs written in /Compila 23/ are syntactically correct: 
+Determine if programs written in /Compila 24/ are syntactically correct: 
 
 - scanner
 - parser
@@ -350,7 +350,7 @@ grammar in BNF with *action* code
 
  
 
- *Friday 17. 03. 2023, 23:59*
+ *Friday 22. 03. 2024, 23:59*
 
 
 **** Rest                                                            :ignore:
@@ -383,8 +383,8 @@ grammar in BNF with *action* code
 
 - *two* grammars (two ~.cup~-files)
 
-   - one unambiguious
-   - one ambiguous, where ambibuities resolved through precedence
+   - one unambiguous
+   - one ambiguous, where ambiguities resolved through precedence
      declations in /CUP/, e.g.
 
 #+begin_example 
@@ -432,7 +432,8 @@ If problems, *ask in time*  (*NOT* Friday at the deadline)
 
 - as the previous years since some time, we use  /git/
 
-- [[https://github.uio.no]] resp. [[https://github.uio.no/compilerconstruction-inf5110/compila][https://github.uio.no/compilerconstruction-inf5110/compila23-<xx>]]
+-  [[https://github.uio.no]] resp.
+   [[https://github.uio.no/compilerconstruction-inf5110/compila][https://github.uio.no/compilerconstruction-inf5110/compila24-xx]]
 
 - you need
 
