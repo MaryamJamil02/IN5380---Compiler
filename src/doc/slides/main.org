@@ -33,10 +33,10 @@
 
 #   \setbeameroption{show notes}
 
-#+TITLE:     INF5110 -- Oblig  1
+#+TITLE:     INF5110 -- Oblig 2
 #+AUTHOR:    
 #+EMAIL:     msteffen@ifi.uio.no
-#+DATE:      Spring 2022
+#+DATE:      Spring 2024
 #+LINK: gohome https://golang.org/
 #+LINK: tigersrc      /home/msteffen/PMA/trunk/teaching/ocaml/compiler/tiger/src/%s
 #+LINK: tigerlibsrc  /home/msteffen/Collectionofreposes/GITUIO/staticanalysis-admin/dfa/src/ocaml/lib/%s
@@ -51,8 +51,8 @@
 
 
 
-#+include: "./oblig1.org"  
-# +include: "./oblig2.org"  
+# +include: "./oblig1.org"  
+#+include: "./oblig2.org"  
 
 
 

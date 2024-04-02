@@ -18,8 +18,8 @@
 \usefonttheme{}
 \useinnertheme{}
 \useoutertheme{}
-\date{Spring 2022}
-\title{INF5110 -- Oblig  1}
+\date{Spring 2024}
+\title{INF5110 -- Oblig  2}
 
 \hypersetup{
  pdfauthor={},
@@ -35,54 +35,50 @@
 \label{sec:org65172c1}
 
 \begin{frame}[label={sec:org99605b6}]{Oblig 1}
-\begin{itemize}
-\item material (also for oblig 2) based on previous years, including contributions from Eyvind
-W. Axelsen, Henning Berg, Fredrik Sørensen, and others
-\end{itemize}
-
-
-\begin{itemize}
-\item see also the course web-page, containing links to ``resources''
-\end{itemize}
+  \begin{itemize}
+  \item material (also for oblig 2) based on previous years, including contributions from Eyvind
+    W. Axelsen, Henning Berg, Fredrik Sørensen, and others
+  \end{itemize}
+  
+  
+  \begin{itemize}
+  \item see also the course web-page, containing links to ``resources''
+  \end{itemize}
 \end{frame}
 \begin{frame}[label={sec:orgb218816}]{Goal (of oblig 1)}
-\begin{block}{Parsing}
-Determine if programs written in \emph{Compila 24} are syntactically correct: 
-
-\begin{itemize}
-\item scanner
-\item parser
-\end{itemize}
-\end{block}
-\begin{itemize}
-\item first part of a compiler, oblig 2 will add to it
-\item language spec provided separately
-\end{itemize}
+  \begin{block}{Parsing}
+    Determine if programs written in \emph{Compila 24} are syntactically correct: 
+    
+    \begin{itemize}
+    \item scanner
+    \item parser
+    \end{itemize}
+  \end{block}
+  \begin{itemize}
+  \item first part of a compiler, oblig 2 will add to it
+  \item language spec provided separately
+  \end{itemize}
 \end{frame}
-\begin{frame}[label={sec:orgc4e9a10}]{Learning outcomes}
-\begin{itemize}
-\item using \alert{tools} for parser/scanner generation
-\begin{itemize}
-\item JFlex
-\item CUP
-\end{itemize}
-
-\item variants of a grammar for the same languages
-
-\begin{itemize}
-\item \alert{transforming} one form (EBNF) to another (compatible with the used
-tools)
-
-\item controlling \alert{precedence} and \alert{associativity}
-\end{itemize}
-
-\item designing and implementing an \alert{AST}  data structure
-
-\begin{itemize}
-\item using the parsing tools to build such trees
-\item pretty-printing such trees
-\end{itemize}
-\end{itemize}
+\begin{frame}{Learning outcomes}
+  \begin{itemize}
+  \item using \alert{tools} for parser/scanner generation
+    \begin{itemize}
+    \item JFlex
+    \item CUP
+    \end{itemize}
+  \item variants of a grammar for the same languages
+    \begin{itemize}
+    \item \alert{transforming} one form (EBNF) to another (compatible with the used
+      tools)
+    \item controlling \alert{precedence} and \alert{associativity}
+    \end{itemize}
+  \item designing and implementing an \alert{AST}  data structure
+    
+    \begin{itemize}
+    \item using the parsing tools to build such trees
+    \item pretty-printing such trees
+    \end{itemize}
+  \end{itemize}
 \end{frame}
 \begin{frame}[label={sec:orgbfa7cd0}]{Compila language at a glance}
 

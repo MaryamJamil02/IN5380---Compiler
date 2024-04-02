@@ -14,12 +14,12 @@
 # sketched format is not meant to represent the required format, but
 # one can use parentheses (and indentation) to make the output
 # readable.  The shown output just shows the nodes corresponding to
-# the tokens (like NAME), without showing values Like in a variable
+# the tokens (like NAME), without showing values. Like in a variable
 # declaration written "var x : int;" in concrete syntax, the above
-# sample output shows NAME and TYPE, but one might be a good idea to
+# sample output shows NAME and TYPE, but it might be a good idea to
 # write (VAR_DECL (NAME("x") TYPE(INT) NULL)) or similar.  The
 # structure should reflect your design of the AST, so PROGRAM (in the
 # illustration) represents neither the string "program" not the token
-# and non-terminal (in the given language specification or your LEX
+# and non-terminal (in the given language secification or your LEX
 # grammar), but a node "Program" in the AST (if your syntax tree has
-# such a node, wich is reasonable to assume).
+# such a node, which is a reasonable assumption).
