@@ -3,7 +3,7 @@
 #+OPTIONS: email:nil f:t inline:t num:t p:nil pri:nil prop:nil stat:t
 #+OPTIONS: tags:nil tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
 #+TITLE: Oblig 2 "patch" 
-#+DATE: <2023-02-03 Thu>
+#+DATE: <2024-04-02 Tue>
 #+AUTHOR: Martin Steffen
 #+EMAIL: msteffen@ifi.uio.no
 #+LANGUAGE: en
@@ -25,17 +25,18 @@ extended and for that a new version of a ~build.xml~ provided. Some groups
 have anyway adapted the ~build.xml~ file (and one group used a ~Makefile~).
 
 *Tests* were already included (but not used in oblig 1 resp. not required
-to be used). For oblig2, they are more official, mandatory test files. For
-oblig 1, it was basically only the ~complexaddition.cmp~ file that one had
-to use, the other test files were there and could be used, for smaller
-tests and debugging.
+to be used). For oblig 2, there are more official, mandatory test
+files. For oblig 1, it was basically only the ~complexaddition.cmp~ file
+that one had to use, the other test files were there and could be used, for
+smaller tests and debugging.
 
 
-Anyway, this newer and updated information is called *patch* here. Since
-the groups' reposes are no longer coupled to the course's repos
-[[https:github.uio.no:msteffen/compila]], I could push it to your repos'es, but
-I am not sure if everything is up-to date and I don't want to create git
-merge conflicts. Therefore, I just point to a zip-file.
+Anyway, this newer and updated information is called *patch* here (it's not
+a patch in a technical sense). Since the groups' reposes are no longer
+coupled to the course's repos [[https:github.uio.no:msteffen/compila]], I could
+push it to your repos'es, but I am not sure if everything is up-to date and
+I don't want to create git merge conflicts. Therefore, I just point to a
+zip-file.
 
 
 * What to do?
