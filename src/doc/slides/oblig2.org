@@ -14,7 +14,7 @@
     - *typing* is concerned (``static semantics'')
     - other coditions (no duplicate declaration etc)
 
-2. *code generation* for ~compila23~ (ish) programs
+2. *code generation* for ~compila24~ (ish) programs
 
 
 
@@ -91,7 +91,7 @@
 #+end_export
 
 
-NB: 2023: structs, not classes 
+NB: 2024: minor different syntax (e.g. structs, not classes)
 
 
 *** Type checking for conditionals                                  :B_frame:
@@ -152,7 +152,7 @@ class Assignment extends Statement {
 # - lecture(s) of code gen start have startight now (so it might look puzzling, but
 #   hopefully will become clearer)
 - byte code API and operations are described in the document ``Interpreter
-  and bytecode for INF5110''
+  and bytecode for INF5110'' (part of the ~compila~ repos under ~doc~)
 
 - *Task:* add bytecode generation methods to your AST classes
   for instance
@@ -162,7 +162,7 @@ class Assignment extends Statement {
 #+end_example
 - again: if adaptations of the AST are called for or useful, go for it...
 
-- some people did *visitors* for ast-printing, one can also (re-)use the visitor pattern
+# - some people did *visitors* for ast-printing, one can also (re-)use the visitor pattern
 
 *** Code generation: limitations                                    :B_frame:
     :PROPERTIES:
@@ -171,13 +171,13 @@ class Assignment extends Statement {
 
 
 - interpreter and byte code library somewhat *limited*
-   - cannot express full compila 23
+   - cannot express full compila 24
    - no block structure
    - no reference types
 
 
 - your delivery should support generating correct bytecode
-  for the ~compila~ 23 source code file ~runme.cmp~
+  for the ~compila~ 24 source code file ~runme.cmp~
 
 
 
@@ -241,7 +241,7 @@ codeFile.updateProcedure(main);
     :BEAMER_env: frame
     :END:
 
-  [[https://github.uio.no/msteffen/compila]]
+  [[https://github.uio.no/compilerconstruction-inf5110/compila]]
 
 #+begin_export latex 
  \includegraphics[width=0.96\textwidth]{figures/snaps/directorystructure-src}

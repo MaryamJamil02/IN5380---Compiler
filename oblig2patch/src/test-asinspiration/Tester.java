@@ -1,6 +1,6 @@
-// That's for oblig 2 only. It does also not work together with
-// compiler.Compiler.java from Oblig 2 it needs the compiler.Compiler
-// version from oblig 2.
+// That's for oblig 2, only. It does also not work together with
+// compiler.Compiler from Oblig 1 it needs the compiler.Compiler version
+// from oblig 2.
 
 package test;
 

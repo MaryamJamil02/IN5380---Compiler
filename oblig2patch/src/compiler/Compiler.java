@@ -9,8 +9,8 @@ import oblig1parser.*;
 
 // That's the version for Oblig 2, it's extended compared to the version of
 // oblig 1.  It's again mainly for INSPIRATION. It probably needs
-// adaptation to the local situation and is not meant to be usable without
-// changes.
+// adaptation to a group's local situation and is not meant to be usable
+// without changes.
 
 public class Compiler {
     private String inFilename = null;
