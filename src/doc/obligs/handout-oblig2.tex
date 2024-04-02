@@ -14,9 +14,8 @@
 \issuedate{7.\ 04.\ 2021}
 \issuedate{29.\ 03.\ 2022}
 \issuedate{31.\ 03.\ 2023}
+\issuedate{2.\ 04.\ 2024}
 \topic{Oblig 2}
-
-
 
 
 \begin{document}
@@ -47,7 +46,7 @@ In this handout, I refer to information in files and directories. Part of
 the information is contained in the \textbf{git-repository} that you have
 cloned for the first oblig already (though it was not relevant at that
 time, and I adapted the documentation like this handout and the slides to
-the 2023 round in the meantime).
+the 2024 round in the meantime).
 
 I refer to the root of the repos as 
 \begin{quote}
@@ -76,16 +75,16 @@ In your own \textbf{working directory,} it will probably carry the name
 You will continue with your group's git-repos you used in the first oblig.
 Basically, you continue with your previous code, add the new functionality,
 push a solution before the deadline, and inform me when it's done so that I
-can update. It's important to tell me, as I don't want to repeatedly update
-in the hope that it's done.
+can pull your solution via git. It's important to tell me, as I don't want
+to repeatedly update in the hope that it's done.
 
 In case your previous code of oblig 1 was not fully functional, you of
 course get first the parser in a workable state.
 
 
 If a change in arrangement is needed (merge of groups, or a split of
-groups), you need to ask for that re-arrangement (not just that on the day
-of the deadline it's ``announced'' that there is now a new group \ldots).
+groups), you need to ask for that re-arrangement (not just announce on the
+day of the deadline that there is now a new group \ldots).
 
 
 
@@ -114,7 +113,7 @@ of oblig 2. In particular needed is (basically as before)
     input
   \item of course, all code needed to run your solution 
   \item the Java-classes for the syntax-tree
-  \item the build-script \texttt{build.xml} (adapted)
+  \item the build-script \texttt{build-oblig2-inspiration.xml} (adapted)
   \end{itemize}
 \end{itemize}
 
@@ -131,7 +130,7 @@ The goal of the task is to collect more practical experience implementing a
 compiler, in particular, a taste of phases after parsing. It's only a
 taste, as we don't have the time to get a full-scale compiler on its
 feet. The language we are compiling is (as before) described in the
-\textbf{compila 23 language specification.} This time, also the later
+\textbf{compila 24 language specification.} This time, also the later
 sections about type checking etc, that were irrelevant for oblig 1, specify
 the scope of the task as far as the language features are concerned.
 
@@ -149,20 +148,19 @@ executable on the RHEL linux pool at the university.\footnote{That should
   actually not be a big restriction, as Java (and the task) is to a big
   extent platform independent (``write once, run everywhere''
   \ldots). Nonetheless: Based on experience with the earlier years (this
-  year actually no real problems occured on my side in oblig 1, though some
-  group reported that internally they had to struggle with compatibility
-  issues of unknown nature): it's advised to make this ``test'' setup early
-  on (not after the deadline), to design the code \emph{with the goal that
-    it runs also at a different place than one's own platform} and to test
-  that this goal is actually met. The reason for that ``testability''
-  requirement is that correction will again not be based on reading much
-  code from my side, but in first approximation: running the test. In that
-  sense, it's also not of primary importance, whether it's \texttt{ant} or
-  perhaps \emph{make} or some script. Important is, that I can execute it
-  by invoking a simple command.  I don't have the time to figure out how
-  one particular solution is configured, started, etc. I don't even want to
-  look around and try whether I find a \texttt{main} method somewhere\ldots
-}
+  year actually no real problems occured on my side in oblig 1, though one
+  group reported that the initial starting point initially did not work at
+  their side): it's advised to make this ``test'' setup early on (not after
+  the deadline), to design the code \emph{with the goal that it runs also
+    at a different place than one's own platform} and to test that this
+  goal is actually met. The reason for that ``testability'' requirement is
+  that correction will again not be based on reading much code from my
+  side, but in first approximation: running the tests. In that sense, it's
+  also not of primary importance, whether it's \texttt{ant} or perhaps
+  \emph{make} or some script. Important is, that I can execute it by
+  invoking a simple command.  I don't have the time to figure out how one
+  particular solution is configured, started, etc. And I don't want to look
+  around and try whether I find a \texttt{main} method somewhere\ldots }
 
 
 \section{Tools}
@@ -243,10 +241,11 @@ or via an \emph{updated} clone of the course repos. Read also the
 ~Readme.org~ there, there is more info about how to start. Note: when you
 cloned or downloaded the repository in perhaps Februrary there had been
 already some \emph{oblig2patch} as part of the repos. Also that should be
-more or less usable, but it reflects the \textbf{2022 version}. Not much
+more or less usable, but it reflects the \textbf{2024 version}. Not much
 has changed since then (mostly the documentation like this \textbf{handout}
 here and the \emph{slides}, the actual ``content'' is basically the same.
 
+\iffalse
 Here is an overview over the structure of the new stuff:
 
 
@@ -264,6 +263,7 @@ Here is an overview over the structure of the new stuff:
   oblig2patch/doc/obligs/slides-oblig2.pdf
   oblig2patch/Readme.org
 \end{verbatim}
+\fi
 
 
 \subsubsection{Why is it called patch?}
@@ -274,7 +274,7 @@ for instance for type checking, some already existing files also need
 adaptation and changes. For oblig 1, I provided for example a file
 \texttt{Compiler.java}, most took it as starting point (but may have
 adapted it as well). Since I have no control what individual groups did
-with that file I cannot hand out a \textbf{actual patch} in the technical
+with that file I cannot hand out an \textbf{actual patch} in the technical
 sense. Instead, I give a \emph{new version} of \texttt{Compiler.java} as
 part of the patch-package, that should be used as \textbf{inpiration} of
 what probably needs to be adapted in your version. The files
@@ -285,6 +285,8 @@ possible that they require adapdation. At least they need to be integrated
 to your implemantation, i.e., moved out from the silly directory
 \emph{oblig2patch} to a better suited place (and integrated into your
 build-set-up).
+
+
 
 
 
