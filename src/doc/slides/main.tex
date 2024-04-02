@@ -1,4 +1,4 @@
-% Created 2024-04-02 Tue 05:44
+% Created 2024-04-02 Tue 06:13
 % Intended LaTeX compiler: pdflatex
 \documentclass{beamer}
  		 
@@ -32,8 +32,8 @@
 
 \maketitle
 \section{Intro}
-\label{sec:org3fe0ff2}
-\begin{frame}[label={sec:orgfae68f3},fragile]{Goal}
+\label{sec:org69ce5b7}
+\begin{frame}[label={sec:org8237cf1},fragile]{Goal}
  \begin{enumerate}
 \item \alert{semantic  analysis}, as far as 
 \begin{itemize}
@@ -41,10 +41,10 @@
 \item other coditions (no duplicate declaration etc)
 \end{itemize}
 
-\item \alert{code generation} for \texttt{compila23} (ish) programs
+\item \alert{code generation} for \texttt{compila24} (ish) programs
 \end{enumerate}
 \end{frame}
-\begin{frame}[label={sec:org919252c}]{Last time (O1)}
+\begin{frame}[label={sec:orgbbb5ed6}]{Last time (O1)}
 \begin{block}{Syntactic analysis}
 \begin{itemize}
 \item lexer (scanner)
@@ -54,7 +54,7 @@
 \end{block}
 \alert{this time}: continue with your previous deliv. (and repos)
 \end{frame}
-\begin{frame}[label={sec:orgaf8deec}]{Learning outcome}
+\begin{frame}[label={sec:org266228b}]{Learning outcome}
 \begin{itemize}
 \item understand type checking, implementing a simple variant
 \end{itemize}
@@ -68,8 +68,8 @@ code'' (as AST)
 \end{itemize}
 \end{frame}
 \section{Semantic analysis}
-\label{sec:orgee9a274}
-\begin{frame}[label={sec:orgea69d43}]{Semantic analysis \& type checking}
+\label{sec:org2497f86}
+\begin{frame}[label={sec:org0464c4f}]{Semantic analysis \& type checking}
 \begin{itemize}
 \item parser / context-free  grammars 
 \begin{itemize}
@@ -86,13 +86,13 @@ code'' (as AST)
 \end{itemize}
 \end{itemize}
 \end{frame}
-\begin{frame}[label={sec:orge8a61cd}]{Another glance at compila23}
+\begin{frame}[label={sec:org6539703}]{Another glance at compila23}
 \includegraphics[width=\textwidth]{figures/snaps/compilaexample-checking}
 
 
-NB: 2023: structs, not classes 
+NB: 2024: minor different syntax (e.g. structs, not classes)
 \end{frame}
-\begin{frame}[label={sec:orgd1ef86f},fragile,plain]{Type checking for conditionals}
+\begin{frame}[label={sec:orge8ae659},fragile,plain]{Type checking for conditionals}
  \begin{itemize}
 \item as ``inspiration'', details may vary
 \end{itemize}
@@ -110,7 +110,7 @@ NB: 2023: structs, not classes
 }
 \end{lstlisting}
 \end{frame}
-\begin{frame}[label={sec:org887af4d},fragile,plain]{Type checking: assignments}
+\begin{frame}[label={sec:orgb723957},fragile,plain]{Type checking: assignments}
  \begin{lstlisting}[language=java,numbers=none]
 class Assignment extends Statement {
 ...
@@ -127,11 +127,11 @@ class Assignment extends Statement {
 \end{lstlisting}
 \end{frame}
 \section{Code generation}
-\label{sec:org9e72424}
-\begin{frame}[label={sec:org3aff0e4},fragile]{Code generation}
+\label{sec:org15a5bd6}
+\begin{frame}[label={sec:org49ea5c0},fragile]{Code generation}
  \begin{itemize}
 \item byte code API and operations are described in the document ``Interpreter
-and bytecode for INF5110''
+and bytecode for INF5110'' (part of the \texttt{compila} repos under \texttt{doc})
 
 \item \alert{Task:} add bytecode generation methods to your AST classes
 for instance
@@ -142,15 +142,13 @@ Ast.Node.GenerateCode(...)
 \end{verbatim}
 \begin{itemize}
 \item again: if adaptations of the AST are called for or useful, go for it\ldots{}
-
-\item some people did \alert{visitors} for ast-printing, one can also (re-)use the visitor pattern
 \end{itemize}
 \end{frame}
-\begin{frame}[label={sec:org15e282d},fragile]{Code generation: limitations}
+\begin{frame}[label={sec:org778d95f},fragile]{Code generation: limitations}
  \begin{itemize}
 \item interpreter and byte code library somewhat \alert{limited}
 \begin{itemize}
-\item cannot express full compila 23
+\item cannot express full compila 24
 \item no block structure
 \item no reference types
 \end{itemize}
@@ -159,10 +157,10 @@ Ast.Node.GenerateCode(...)
 
 \begin{itemize}
 \item your delivery should support generating correct bytecode
-for the \texttt{compila} 23 source code file \texttt{runme.cmp}
+for the \texttt{compila} 24 source code file \texttt{runme.cmp}
 \end{itemize}
 \end{frame}
-\begin{frame}[label={sec:org291e1fd},fragile,plain]{Code generation: creating a procedure}
+\begin{frame}[label={sec:org5174717},fragile,plain]{Code generation: creating a procedure}
  \begin{lstlisting}[language=java,numbers=none]
 CodeFile codeFile = new CodeFile();
 // add the procedure by name first
@@ -175,14 +173,14 @@ main.addInstruction( new RETURN());
 codeFile.updateProcedure(main);
 \end{lstlisting}
 \end{frame}
-\begin{frame}[label={sec:orgadebd05}]{Code generation: assignment}
+\begin{frame}[label={sec:org34edd90}]{Code generation: assignment}
 \begin{center}
  \includegraphics[width=0.76\textwidth]{figures/snaps/codegen-assignment}
 \end{center}
 \end{frame}
 \section{Testing}
-\label{sec:org989d9c6}
-\begin{frame}[label={sec:org9dc995a},fragile]{Testing}
+\label{sec:org8fb8fce}
+\begin{frame}[label={sec:org4bd83c8},fragile]{Testing}
  \begin{itemize}
 \item bunch of test files, for testing the \emph{type checker}
 \item preferable: make \texttt{ant test} workable
@@ -196,22 +194,22 @@ concerned)
 \end{itemize}
 \end{frame}
 \section{Starting point and hand in}
-\label{sec:org6bbe382}
-\begin{frame}[label={sec:org6576fb7}]{Provided source code (patch)}
-\url{https://github.uio.no/msteffen/compila}
+\label{sec:org29de54a}
+\begin{frame}[label={sec:orgedfebaf}]{Provided source code (patch)}
+\url{https://github.uio.no/compilerconstruction-inf5110/compila}
 
 \includegraphics[width=0.96\textwidth]{figures/snaps/directorystructure-src}
 
 Tests: already included in the oblig1 checkout, so left out in the zip-patch
 this year.
 \end{frame}
-\begin{frame}[label={sec:orgf6d1d71}]{Provided documentation (patch)}
+\begin{frame}[label={sec:org79ceddc}]{Provided documentation (patch)}
 
 \begin{center}
  \includegraphics[width=0.75\textwidth]{figures/snaps/directorystructure-doc}
 \end{center}
 \end{frame}
-\begin{frame}[label={sec:org50e256c},fragile]{Relevant directories}
+\begin{frame}[label={sec:org355e2f4},fragile]{Relevant directories}
  \begin{itemize}
 \item Java
 
@@ -229,9 +227,9 @@ this year.
 \end{itemize}
 \end{itemize}
 \end{frame}
-\begin{frame}[label={sec:org2afbbae},fragile]{Deadline}
+\begin{frame}[label={sec:org4e6ce35},fragile]{Deadline}
  \begin{alertblock}{Deadline}
-(Friday, 12.05.2023)
+   (Wednesday, 15. 05. 2024)
 \end{alertblock}
 Note: end of semester, and I need to report the ones passing the oblig some
 time before the exam.
@@ -253,17 +251,6 @@ needs to be mentioned where it is)
 \end{itemize}
 \end{itemize}
 \end{block}
-\end{frame}
-\section{References}
-\label{sec:org8c753ee}
-
-\begin{frame}[allowframebreaks]
-  \frametitle{References}
-  {\tiny
-    \bibliographystyle{apalike}
-%    \bibliography{extracted,local} 
-    \bibliography{string,semantics,etc,mobile,crossref}  %general PMA
-  }
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
