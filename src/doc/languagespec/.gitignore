@@ -1,4 +1,5 @@
 compila.html
+*.aux
 compila.info
 compila.texi
 compila.tex
