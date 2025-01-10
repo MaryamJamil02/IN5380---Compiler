@@ -2,8 +2,8 @@
 #+OPTIONS: broken-links:nil c:nil creator:nil d:(not "LOGBOOK") date:t e:t
 #+OPTIONS: email:nil f:t inline:t num:t p:nil pri:nil prop:nil stat:t
 #+OPTIONS: tags:nil tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
-#+TITLE: Compila 24 (Language and compiler skeleton + material)
-#+DATE: <2024-02-12 Mon>
+#+TITLE: Compila 25 (Language and compiler skeleton + material)
+#+DATE: <2025-01-10 Fri>
 #+AUTHOR: Martin Steffen
 #+EMAIL: msteffen@ifi.uio.no
 #+LANGUAGE: en

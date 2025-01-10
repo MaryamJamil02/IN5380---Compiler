@@ -258,7 +258,11 @@ The file ~FileEndingFilter.java~. Yes, that also for the patch  for o2
 
 ** Compiler 
 
-*** DONE remove the waring for reproducable build <2023-08-01 Tue 08:49>
+*** TODO [#A] REPAIR the grammar <2024-07-15 Mon 08:29>
+
+Kommentare und irgendwas war auch verkehrt 2024 (aber vielleicht repariert?)
+
+*** DONE remove the warning for reproducable build <2023-08-01 Tue 08:49>
 CLOSED: [2023-08-01 Tue 09:27]
 :LOGBOOK:
 - State "DONE"       from "TODO"       [2023-08-01 Tue 09:27]

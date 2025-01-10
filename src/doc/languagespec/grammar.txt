@@ -7,7 +7,7 @@ VAR_DECL           -> "var" NAME ":" TYPE [ ":=" EXP ] |  "var" NAME ":="  EXP
 PROC_DECL          -> "procedure" NAME 
                       "(" [ PARAMFIELD_DECL { "," PARAMFIELD_DECL } ] ")"
                       [ ":" TYPE ]
-                      "begin" [[DECL{";" DECL}] "in"] STMT_LIST "end"
+                      "begin" [DECL{";" DECL} "in"] STMT_LIST "end"  
 REC_DECL           -> "struct" NAME "{" [ PARAMFIELD_DECL 
                                           {";" PARAMFIELD_DECL }]  "}"
 PARAMFIELD_DECL     -> NAME ":" TYPE
