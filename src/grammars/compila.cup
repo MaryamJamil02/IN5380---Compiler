@@ -11,7 +11,7 @@ parser code {:
 /* Terminals */
 /* Note, those might not be the terminals for this semester     */
 /* Not all tokens are covered here, some may not be useful,     */
-/* for instance, this semester we won't have a "class" keyword, */
+/* for instance, we won't have a "class" keyword,               */
 /* but a "struct". Hence a corresponding token should better    */
 /* be called STRUCT or similar, for clarity.                    */
 terminal                        PROGRAM, CLASS;
