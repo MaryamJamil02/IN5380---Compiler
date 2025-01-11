@@ -1,4 +1,4 @@
 program main 
 begin  
-    var x := 4.  (* illegal float literal *)
+    var x := 4.  (* illegal float literal, cannot end with dot *)
 end 

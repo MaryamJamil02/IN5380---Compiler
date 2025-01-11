@@ -1,5 +1,5 @@
 program main 
 begin
    var x := "a
-              "  (* newline not allowed *)
+               "  (* A newline is not allowed *)
 end 

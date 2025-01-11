@@ -1,0 +1,4 @@
+program main 
+begin
+   var x := 20a   (* 20a is neither a literal nor an identifier *)
+end 
