@@ -1,5 +1,5 @@
 program p begin   
-  procedure a (x:int,)   (* comma is a separator, not terminator *)
+  procedure a (x:int,)   (* Comma is a separator, not terminator *)
   begin 
    in
   end

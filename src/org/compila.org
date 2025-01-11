@@ -284,7 +284,36 @@ CLOSED: [2025-01-10 Fri 12:50]
 Seems like the same?
 
 
-*** TODO change to 2025 <2025-01-10 Fri 11:08>
+*** DONE [#A] Double-check the grammar spec <2025-01-11 Sat 09:03>
+CLOSED: [2025-01-11 Sat 09:08]
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2025-01-11 Sat 09:08]
+:END:
+Check if the statement lists or similar are ok in the grammar.
+
+#+begin_example
+[STMT {";" STMT}] 
+#+end_example
+
+The problem is the while etc
+*** DONE [#A] Repair the grammar <2025-01-11 Sat 09:08>
+CLOSED: [2025-01-11 Sat 09:12]
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2025-01-11 Sat 09:12]
+:END:
+Maybe it's ok, but 2021 was wrong: 
+#+begin_example
+while { stmt_list }
+#+end_example
+
+It's two times "iteration" (with { } and stmt_list is a list).
+
+
+*** DONE change to 2025 <2025-01-10 Fri 11:08>
+CLOSED: [2025-01-11 Sat 09:03]
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2025-01-11 Sat 09:03]
+:END:
 
 *** DONE remove the warning for reproducable build <2023-08-01 Tue 08:49>
 CLOSED: [2023-08-01 Tue 09:27]
