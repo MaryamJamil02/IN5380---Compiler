@@ -2,6 +2,8 @@ program p begin
   procedure a (x:int)
   begin 
   in
-   f(1,2,3,4,)    (* should fail. *)
+   f();
+   f(1,2,3,4);     (* That is ok        *)  
+   f(1,2,3,4,)     (* That should fail. *)
   end
 end  
