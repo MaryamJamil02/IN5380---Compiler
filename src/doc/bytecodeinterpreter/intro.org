@@ -3,18 +3,18 @@
 
 * Introduction
 
-This report presents the local variant of a library for /bytecode
-construction and interpretation/ written for the compiler construction
-course INF5110 at the University of Oslo.  The objective of this exercise
-is to write a compiler for a simple example language. The bytecode library
-and intepreter were developed to be used in the /code generation/ and
-/runtime/ part of the obligatory exercises in the course.
+This report presents a local variant of a library for *bytecode
+construction and interpretation* written for the compiler construction
+course IN5380 (formerly INF5110) at the University of Oslo.  The objective
+of this exercise is to write a compiler for a simple example language. The
+bytecode library and intepreter can be be used in the *code generation* and
+*runtime* part of the obligatory exercises in the course.
 
 
 Bytecode instructions are in general similar to instructions in machine
 code, but instead of being run directly on a machine, they are usually
 interpreted by a bytecode interpreter. Alternatively, they may also be
-translated into machine code before being run. A bytpecode instruction
+translated into machine code before being run. A bytecode construction
 library is a library to simplify the task of generating bytecode for a
 bytecode interpreter. The terminology "bytecode" comes from the fact that
 the size of each instruction one single byte.

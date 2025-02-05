@@ -20,10 +20,10 @@
 
 #+include: "intro.org" 
 #+include: "building.org" 
-#+include: "interpreter.org" 
-#+include: "typicaltasks.org" 
-#+include: "rememberthis.org" 
-#+include: "instructions.org" 
+# +include: "interpreter.org" 
+# +include: "typicaltasks.org" 
+# +include: "rememberthis.org" 
+# +include: "instructions.org" 
 
 
 * HACK                                                               :ignore:

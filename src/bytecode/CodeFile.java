@@ -47,7 +47,7 @@ public class CodeFile {
     public void updateVariable(String name, CodeType type) {
 		for(int i=0;i<this.variableNames.size();i++){
 			if(name.equals(this.variableNames.get(i))){
-			    //				this.variableTypes.put(new Integer(i), type);
+			    //	this.variableTypes.put(new Integer(i), type);
 			    this.variableTypes.put(Integer.valueOf(i), type);
 			}
 		}
@@ -257,12 +257,12 @@ public class CodeFile {
         }
 
         // Procedures
-        // First the sizes
+        // First the size
         for(int i=0;i<proceduresBytes.length;i++){
         	NumberConversion.shortToByteArray(bytes, index, (short) proceduresBytes[i].length);
         	index += 2;
         }
-        // Then the values
+        // Then the values.
         for(int i=0;i<proceduresBytes.length;i++){
         	insert(bytes, proceduresBytes[i], index);
         	index+=proceduresBytes[i].length;
