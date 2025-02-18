@@ -30,7 +30,9 @@ master, at least not during the semester. But it's the other way around
 (merging the master to the subbranch). One has to be carefule, it's kind of
 like two separate branches, and the subbranch is not meant to be merged
 
-
+#+begin_example
+git status  
+#+end_example
 
 
 *** Student reposes

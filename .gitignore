@@ -1,5 +1,7 @@
 *~ 
 *.vrb
+*.bbl
+*.ind
 *.nav 
 *.toc
 *.class
