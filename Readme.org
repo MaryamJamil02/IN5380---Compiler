@@ -202,5 +202,5 @@ for the parser) are relevant. Probably one learns a lot from examples, that
 are provided with those tools. For ant, use the ~built.xml~ provided /here/
 as starting point, it should give a good start. So I would not recommend
 study the manuals deeply, before starting with the obligs. I would rather
-take the running examples, and play with them. (and ask)
+take the running examples, and play with them (and ask).
 
