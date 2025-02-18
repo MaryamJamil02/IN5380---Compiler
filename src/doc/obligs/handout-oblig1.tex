@@ -422,21 +422,23 @@ in handy for debugging,
 %% \bibliography{extracted}
 % }
 
-\subsection{Two grammars}
+\subsection{One of two grammars}
 \label{sec:two-grammars}
 
 
-As mentioned shortly, the task requires 2 grammars, representing 2 ways
-dealing with precendence and associativity.
+As mentioned shortly, one can approach some ambiguities in the grammar, the
+ones in connection with precendence and associativity, in one of two ways:
 
 \begin{enumerate}
-\item an \emph{unambiguous} grammar resolving precedence and associativity
-  by ``baking it in'' directly into the grammar. The grammar is in plain
-  BNF (in the form required by the tools)
-\item the second grammar is ambiguous and relies on \emph{CUP} to resolve
-  the associativity and precendence. This second grammar will probably look
-  nicer and will be shorter. It's therefore probably best to take that one
-  as \emph{default} (for instance for oblig 2).
+\item formulating an \emph{unambiguous} grammar resolving precedence and
+  associativity by ``baking it in'' directly into the grammar (``precedence
+  cascade''). The grammar is in plain BNF (in the form required by the
+  tools)
+\item Or one uses an ambiguous grammar and relies on \emph{CUP} to resolve
+  the associativity and precendence.
+  % This second grammar will probably look nicer and will be shorter. It's
+  % therefore probably best to take that one as \emph{default} (for
+  % instance for oblig 2).
 \end{enumerate}
 
 \subsubsection*{Comparison and discussion}
@@ -461,17 +463,17 @@ AST, plain \emph{checking} is sufficient.
 As mentioned, \textsl{JFLex} is the tool of choice for lexical analysis. It
 delivers a token to the parser via the method \texttt{next\_token()}.  
 
-As far the the ``theoretical'' task concerning \textsl{compila 25} is
+As far the the ``conceptual'' task concerning \textsl{compila 25} is
 concerned, the lexer is responsible for ignoring comment, white-space etc,
 find keywords and the like.
 
-Besides that, one has to make the parser and the lexer ``work together''
+Practically, one has to make the parser and the lexer ``work together''
 hand in hand. Information about that can be found in the corresponding
-manual. There should also be examples for inspiration. A crucial ingredient
-is the interface \texttt{java\_cup.runtime.Scanner} which needs to be
-implemented by the actual scanner. The scanner will hand over tokens of the
-type \texttt{Symbol} and one can use \texttt{Symbol.value} to pass ``text''
-or other objects from the lexer to the parser.
+manuals. There should also be examples for inspiration. A crucial
+ingredient is the interface \texttt{java\_cup.runtime.Scanner} which needs
+to be implemented by the actual scanner. The scanner will hand over tokens
+of the type \texttt{Symbol} and one can use \texttt{Symbol.value} to pass
+``text'' or other objects from the lexer to the parser.
 
 
 
@@ -534,11 +536,8 @@ The web-page (the git-one) will contain also links to \textsl{JFlex}
 
 
 
-
-
 \end{document}
 
-Model Checking Cache Coherence Protocols for Distributed File Systems
 
 %%% Local Variables: 
 %%% mode: latex
