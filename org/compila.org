@@ -722,7 +722,11 @@ perhaps also positive things).
 
 *** TODO  fix the date for oblig 1 <2025-02-18 Tue 06:23>
 
-*** TODO is the complexaddition up-to date and a duplicate <2025-02-18 Tue 06:04>
+*** DONE is the complexaddition up-to date and a duplicate <2025-02-18 Tue 06:04>
+CLOSED: [2025-02-18 Tue 06:37]
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2025-02-18 Tue 06:37]
+:END:
 
 *** TODO replace the handouts <2025-02-18 Tue 05:34>
 
@@ -732,7 +736,15 @@ CLOSED: [2025-02-18 Tue 06:23]
 - State "DONE"       from "TODO"       [2025-02-18 Tue 06:23]
 :END:
 
-*** TODO change and check the  [[file:~/cor/teaching/compilerconstruction-inf5110/compila/Readme.org][Readme.org]]. <2025-02-18 Tue 05:26>
+
+*** TODO change the slides for oblig 1 <2025-02-18 Tue 06:39>
+
+*** TODO  Test the [[file:~/cor/teaching/compilerconstruction-inf5110/compila/Readme.org][Readme.org]]. <2025-02-18 Tue>
+*** DONE change and check the  [[file:~/cor/teaching/compilerconstruction-inf5110/compila/Readme.org][Readme.org]]. <2025-02-18 Tue 05:26>
+CLOSED: [2025-02-18 Tue 06:38]
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2025-02-18 Tue 06:38]
+:END:
 
 *** TODO check whether the build-file still works <2025-02-18 Tue 05:27>
 

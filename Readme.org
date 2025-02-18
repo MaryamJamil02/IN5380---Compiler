@@ -183,7 +183,7 @@ per course that they think is useful:
   - [[https://astro-discourse.uio.no][Astro-discourse]] : some discussion forum
 
 Earlier there had been padlet, piazza, mattermost and others, those no
-  longer exist or have not been opened 2025 for this course
+longer exist or have not been opened 2025 for this course
 
 # We can also try git-issues.    
 
