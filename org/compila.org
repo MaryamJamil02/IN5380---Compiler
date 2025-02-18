@@ -18,6 +18,14 @@
 
 ** Github setup
 
+
+*** Make a new branch
+
+2025, I wanted to have a repos a little less cluttered for the
+students. This means in particular without the src of the documentation and
+other stuff unused. 
+
+*** Student reposes
 We first have to set up this repos (as empty) on the server.
 
 #+begin_example
