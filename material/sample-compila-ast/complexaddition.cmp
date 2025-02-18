@@ -1,4 +1,9 @@
-program ComplexAddition
+(* This program is NOT 100% in 2025 syntax. It's just for illustration  *)
+*( of how an AST could look like.                                       *)
+(* There is a version of complexaddition.cmp as part of the tests       *)
+(* which is syntactically correct according to the 2025 grammar.        *)
+
+program ComplexAddition 
 begin
   class Complex {
      Real : float;

@@ -13,7 +13,8 @@
 %\issuedate{09.\ 02.\ 2021}
 %\issuedate{8.\ 2.\ 2022}
 %\issuedate{10.\ 2.\ 2023}
-\issuedate{12.\ 2.\ 2024}
+%\issuedate{12.\ 2.\ 2024}
+\issuedate{18.\ 2.\ 2025}
 \topic{---}
 
 
@@ -36,7 +37,7 @@ The \textbf{deadline/frist}  for the oblig is
   \textbf{\deadlineone, 23:59} %% 31 March is Ostern
 \end{quote}
 
-Requirements:
+\textbf{Requirements:}
 
 
 \begin{itemize}
@@ -47,8 +48,8 @@ Requirements:
   fine.
 \item follow the instructions under ``What and how to  hand-in''
 \item the solution needs to compile and run \emph{at the UiO
-    pool}.\footnote{Statements like ``but on my laptop it worked, I can show
-    you'' don't cut it \ldots.} Test it!
+    pool}.\footnote{Statements like ``but on my laptop it worked, \ldots''
+    don't cut it \ldots.} Test it!
 \end{itemize}
 
 \hrulefill
@@ -70,8 +71,7 @@ We use
   \textbf{git}   
 \end{quote}
 to hand in the obligs and the two deliverables are just two ``milestones''
-in your project. We encourage working in groups, and git allows to share
-things.
+in your project. If you working in a group, git allows to share things.
 
 I assume that most are in principle familiar with \texttt{git}, if not, ask
 me.  We use the UiO-internal git server\footnote{Actually, it's the UiO
@@ -87,15 +87,18 @@ me.  We use the UiO-internal git server\footnote{Actually, it's the UiO
 In order to hand-in via git, each group has to do the following steps. See
 also the top-level readme at
 \url{https://github.uio.no/compilerconstruction-inf5110/compila/} (resp. at
-the corresponding place in your clone).
+the corresponding place in your clone).\footnote{The name of the repository
+  contains \texttt{infs5110}.  That's because the course was numbered 2024
+  and earlier \textit{INF 5110} and the repository has not been renamed to
+  reflect the change.}
 
 \begin{enumerate}
-\item everyone: if not already: create yourself an account at
+\item everyone: if not already: create yourself an \textbf{account} at
   \url{github.uio.no}. Your UiO login allows you to do that.
 \item send me an email with your name (and if you have, with the name of
-  your collaborator), so I can assign a group number.
+  your collaborator), so I can assign a \textbf{group number.}
 \item each group will get one \emph{repository}. For instance, group
-  \textbf{01} get the repository \textbf{compila24-01} etc.  I will
+  \textbf{01} get the repository \textbf{compila25-01} etc.  I will add
   everyone to the corresponding repos as collaborator. Each repos contains
   the same starting point, of course.
 %\item per group: \emph{create} a new \emph{project} at the github repos.
@@ -135,7 +138,7 @@ the corresponding place in your clone).
   \item names and emails of the authors
   \item easy instructions how to build the compiler and how to run it.
   \end{itemize}
-  The top-level Readme should describe in a concise manner instructions for
+  The top-level readme should describe in a concise manner instructions for
   building, installation, running, and testing your compiler in a manner
   useful for an interested \emph{user}. The target audience is a
   master-level computer science student or someone how is not afraid to
@@ -156,10 +159,10 @@ the corresponding place in your clone).
   expressive markdown format and also rendered nicely by github, and which
   personally I prefer for myself).
   
-\item The information so far is for an ``interested user'' which may be an
-  outsider, maybe like a random surfer on the internet who wants to try it
-  out. Besides that, \emph{additional} information should be provided,
-  which is not relevant for an outsider, but contains ``insider
+\item The information discussed so far is for an ``interested user'' which
+  may be an outsider, maybe like a random surfer on the internet who wants
+  to try it out. Besides that, \textbf{additional} information should be
+  provided, which is not relevant for an outsider, but contains ``insider
   information'' relevant for the course's mandatory assignment and the
   technical realization of the solution. Thus, that information might
   perhaps better not be kept in the top level readme but at a different,
@@ -171,7 +174,7 @@ the corresponding place in your clone).
     includes
     \begin{itemize}
     \item \textsl{JFlex}-code for the scanner
-    \item \textsl{CUP}-cpde for the 2 variants of the syntax
+    \item \textsl{CUP}-code for the 2 variants of the syntax
     \item the Java-classes for the syntax-tree
     \item the build-script \texttt{build.xml}\footnote{Alternatively, you
         can use a makefile if you prefer that. In that case, remove the
@@ -193,12 +196,13 @@ Ideal would be an
 behavior. Assuming that the ``outside user'' has the required software in
 place (like \texttt{JDK} and \emph{ant}, or something rather common, and
 also is familiar with git). Then it works out-of-the-box, by following
-simple steps like for example
+simple steps like for example (for the repos \texttt{compila25-<n>} where
+\texttt{n} is the group number):
 
 
 \begin{verbatim}
    git clone <repos-url>
-   cd compila24-<n>
+   cd compila25-<n>
    ant
    ant build
    ant run
@@ -234,8 +238,8 @@ tools and techniques.
   that it's accepted by the tools. In our case, the language is given in
   some EBNF, which has to be adequately rewritten so that it can be fit
   into the lexer and parser tools
-\item handle associativity and precedence of syntactic constructs in two
-  possible ways
+\item handle associativity and precedence of syntactic constructs in
+  \textbf{one} of two possible ways
   \begin{itemize}
   \item formulate a (unambiguous) grammar that embodies the correct
     precendences and associativities
@@ -252,7 +256,7 @@ tools and techniques.
 \end{itemize}
 
 
-\section{Tools}
+\section{Default tools}
 %\label{sec:tools}
 
 The platform is \emph{Java}, together with the auxiliary tools
@@ -264,24 +268,24 @@ The platform is \emph{Java}, together with the auxiliary tools
 \end{itemize}
 
 
-The tool ant is available at the RHEL pool at IFI, for other platforms I
-don't know, but it's freely available. \textsl{JFlex} and \textsl{CUP} are
-provided as part of the repos.
+The tool ant is available at the RHEL pool at IFI. \textsl{JFlex} and
+\textsl{CUP} are provided as part of the repos.
 
+\bigskip 
 If, for some reason, you plan to deviate from the suggested tools, you
 \begin{enumerate}
 \item \textbf{MUST} discuss that first with the lecturer.
 \item it \textbf{must} be a platform which is freely available at the
-  university RHEL pool resp. is platform independent. Proprietary tools or
-  tools I don't have easy\footnote{I \emph{mean} easy and in the sense that
-    it does not cost money or much time to install the required environment
-    or to figure out how it all hangs together. \emph{Not} ``easy'' as in
-    ``it's really not so hard after you read some manuals and played around
-    with it for a while and with the help from the fine folks on
-    stack-exchange'' \ldots} access to cannot be used. If using Java, it
-  must compile and run without support of specific development environments
-  or ``frameworks'' besides the ones mentioned (\textsl{JFlex},
-  \textsl{CUP}, \textsl{ant}).
+  university RHEL pool resp. is platform independent. Proprietary tools,
+  tools for which one has to pay, or tools I don't have easy\footnote{I
+    \emph{mean} easy and in the sense that it does not cost money or much
+    time to install the required environment or to figure out how it all
+    hangs together. \emph{Not} ``easy'' as in ``it's really not so hard
+    after you read some manuals and played around with it for a while and
+    with the help from the fine folks on stack-exchange'' \ldots} access to
+  cannot be used. If using Java, it must compile and run without support of
+  specific development environments or ``frameworks'' besides the ones
+  mentioned (\textsl{JFlex}, \textsl{CUP}, \textsl{ant}).
 \end{enumerate}
 
 
@@ -295,32 +299,33 @@ there are things you really should do afterwards:
   \textbf{Checking that on your platform, all is in place}
 \end{center}
 
-The provided readme describes the easy steps (not repeated here). It's
-about to make sure that your Java set-up works, that ant is running,
-etc. If the tests fail, \textbf{contact me} to \textbf{get that out of the
-  way} before the oblig work starts. The starting point provides those
-tests to avoid that later and shorter before the deadline, one figures out
+The provided readme describes the easy steps (not repeated here). Make sure
+very early on that your set-up works, that ant is running, etc. If the
+tests fail, \textbf{contact me} to \textbf{get that out of the way} before
+the actual oblig work starts. The starting point provides those tests to
+avoid that later and shorter before the deadline, you find out
 ``something's not working on my machine''. I tested it on the university
 machines, I tested it on my laptop, but I cannot test it on other people's
 machines.  Normally it's not a problem, the stuff is supposed to be
 platform independent, but ``normally ok'' means, sometimes, maybe only
-rarely, not ok, and sometimes for weird reasons.
+rarely, it's not ok, and sometimes for weird reasons.
 
 To avoid running into frustrating stupid things later is \textbf{only one
   purpose} to run the provided the tests and make sure all is in order. The
-\textbf{other purpose} is: the tests run a lexer and a parser!  It's of
+\textbf{other purpose} is: the tests run lexers and a parsers!  It's of
 course not the compila language, that's your task, but it shows in two tiny
-examples, how the tools operate together, and how a lex file looks and how
-a cup-file looks etc. And for that:
+examples, how the tools operate together, and how a small lex file looks
+and how a small cup-file looks etc. And for that:
 
 \begin{center}
   \textbf{Do that checks immediately} even if you don't plan to start on
   the content your oblig right away.
 \end{center}
-It's just a test that all is in place.
+It's a check that all is in place.
 
 Talking about how to tackle practical aspects of the oblig(s) and
-organizing the task. You may read the advice I typed up last year about that
+organizing the task. You may read the advice I typed up a couple of years
+ago about that
 
 \begin{center}
   \url{https://martinsteffen.github.io/compilerconstruction/howtowriteaparser/}
@@ -341,7 +346,7 @@ organizing the task. You may read the advice I typed up last year about that
 The overall task is to 
 
 \begin{quote}
-  implement a parser for the \textsl{Compila 24} language.
+  implement a parser for the \textsl{Compila 25} language.
 \end{quote}
 The language specification is given in a separate document. Oblig 1 is
 concerned with checking \emph{syntactic correctness}, which means, not all
@@ -387,7 +392,7 @@ possible output. The two files are called
 
 Note: the two files are meant as \emph{inspiration.} Each year the syntax
 of \textsl{compila} slightly changes (wrt. keywords, associativity etc). So
-the syntax is \textbf{not 100\%} in accordance with the 2024 version (but
+the syntax is \textbf{not 100\%} in accordance with the 2025 version (but
 pretty comparable).
 
 The one that \textbf{should actually be used} for this task (AST-printing)
@@ -456,7 +461,7 @@ AST, plain \emph{checking} is sufficient.
 As mentioned, \textsl{JFLex} is the tool of choice for lexical analysis. It
 delivers a token to the parser via the method \texttt{next\_token()}.  
 
-As far the the ``theoretical'' task concerning \textsl{compila 24} is
+As far the the ``theoretical'' task concerning \textsl{compila 25} is
 concerned, the lexer is responsible for ignoring comment, white-space etc,
 find keywords and the like.
 

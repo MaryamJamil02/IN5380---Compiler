@@ -720,6 +720,12 @@ perhaps also positive things).
 
 * Tests
 
+*** TODO is the complexaddition up-to date and a duplicate <2025-02-18 Tue 06:04>
+
+*** TODO replace the handouts <2025-02-18 Tue 05:34>
+
+*** TODO do the handouts <2025-02-18 Tue 05:34>
+
 *** TODO change and check the  [[file:~/cor/teaching/compilerconstruction-inf5110/compila/Readme.org][Readme.org]]. <2025-02-18 Tue 05:26>
 
 *** TODO check whether the build-file still works <2025-02-18 Tue 05:27>
