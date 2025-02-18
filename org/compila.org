@@ -31,7 +31,15 @@ master, at least not during the semester. But it's the other way around
 like two separate branches, and the subbranch is not meant to be merged
 
 #+begin_example
-git status  
+git status
+git commit -m"--" -a
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+
+
 #+end_example
 
 
