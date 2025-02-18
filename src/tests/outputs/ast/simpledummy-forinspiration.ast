@@ -6,7 +6,6 @@
 
 
 
-
 # This is just for "inspiration". Oblig 1 requires a print-out of the
 # syntax tree. It's not specified how the output should look
 # like. It's not required to be a full ``pretty printer'', just to
