@@ -13,17 +13,15 @@
 
 
 
-
-
 * Intro
 
-The repository host material for the /Compila 25/ compiler, which is the
-content of oblig 1 and 2 for the course "compiler construction"
-([[http://www.uio.no/studier/emner/matnat/ifi/INF5110/][INF5110]]/INF9110). The material in this repository focuses on the code
+The repository host material for the *Compila 2* compiler, which is the
+content of oblig 1 and 2 for the course "compiler construction" [[http://www.uio.no/studier/emner/matnat/ifi/IN5380/][IN5380]]
+(formerly INF5110). The material in this repository focuses on the code
 which can be used as *starting point* for the *compiler*. It contains also
 the description and *documentation* of the oblig and the compiler. *Not*
 contained here is the compiler *lecture* (the slides, the exercises,
-organizational material, etc.).  Those are kept in the respository of the
+organizational material, etc.). Those are kept in the respository of the
 course itself, and the generated slides are kept in the Vortex system on
 the course's web-page.
 
