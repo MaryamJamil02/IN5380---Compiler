@@ -23,7 +23,15 @@
 
 2025, I wanted to have a repos a little less cluttered for the
 students. This means in particular without the src of the documentation and
-other stuff unused. 
+other stuff unused. I deleted it from the ~master~ file but kept it in a
+branch. I will publish the master file (but the master file does not
+contain all). It's a bit unusual as I won't merge the subbranch to the
+master, at least not during the semester. But it's the other way around
+(merging the master to the subbranch). One has to be carefule, it's kind of
+like two separate branches, and the subbranch is not meant to be merged
+
+
+
 
 *** Student reposes
 We first have to set up this repos (as empty) on the server.
