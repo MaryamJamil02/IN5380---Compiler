@@ -720,11 +720,17 @@ perhaps also positive things).
 
 * Tests
 
+*** TODO  fix the date for oblig 1 <2025-02-18 Tue 06:23>
+
 *** TODO is the complexaddition up-to date and a duplicate <2025-02-18 Tue 06:04>
 
 *** TODO replace the handouts <2025-02-18 Tue 05:34>
 
-*** TODO do the handouts <2025-02-18 Tue 05:34>
+*** DONE do the handout 1 <2025-02-18 Tue 05:34>
+CLOSED: [2025-02-18 Tue 06:23]
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2025-02-18 Tue 06:23]
+:END:
 
 *** TODO change and check the  [[file:~/cor/teaching/compilerconstruction-inf5110/compila/Readme.org][Readme.org]]. <2025-02-18 Tue 05:26>
 
