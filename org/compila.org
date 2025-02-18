@@ -76,6 +76,14 @@ git push -u origin25-00 master
 git push -u origin master  
 #+end_example
 
+
+**** Problems: corrupt
+
+2025 I could not do git push -u origin25-00 master, there was some error. I
+cloned the repos new, and it worked. However, I cloned only the main/master
+branch not the branch extra-info. I pushed that one after the fact (from
+the back-up copy of the probably corrupt repos)
+
 *** Things to do
 
 
