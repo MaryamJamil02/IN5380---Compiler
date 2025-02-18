@@ -38,8 +38,16 @@ Your branch is up to date with 'origin/master'.
 
 nothing to commit, working tree clean
 
+git checkout -b extrainfo
+Switched to a new branch 'extrainfo'
 
-
+git status
+On branch extrainfo
+git checkout master
+M	org/compila.org
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+\rm -rg
 #+end_example
 
 
