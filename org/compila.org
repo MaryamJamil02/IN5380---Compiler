@@ -755,6 +755,8 @@ CLOSED: [2025-02-18 Tue 10:01]
 - State "DONE"       from "TODO"       [2025-02-18 Tue 10:01]
 :END:
 
+*** TODO set up compila-00 <2025-02-18 Tue 10:03>
+
 *** TODO Test the [[file:~/cor/teaching/compilerconstruction-inf5110/compila/Readme.org][Readme.org]]. <2025-02-18 Tue>
 *** DONE change and check the  [[file:~/cor/teaching/compilerconstruction-inf5110/compila/Readme.org][Readme.org]]. <2025-02-18 Tue 05:26>
 CLOSED: [2025-02-18 Tue 06:38]
