@@ -2,6 +2,7 @@
 *.vrb
 *.bbl
 *.ind
+*.ilg
 *.nav 
 *.toc
 *.class
