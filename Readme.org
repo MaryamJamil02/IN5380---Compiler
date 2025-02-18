@@ -28,15 +28,16 @@ the course's web-page.
 
 * Overview over the repository's structure
 
-- [[./doc]]: generated documentation
+- [[./doc]]: generated *documentation*
     - language specification
     - byte code interpreter
     - instructions about the obligs
 
-- [[./src]]: sources (including sources of the documentation).
+- [[./src]]: sources (including sources of the documentation, though
+         they are not needed for the oblig)
 
 
-- [[./src/tests]]: compila 25 programs for testing. Not all tests are already
+- [[./src/tests]]: programs for *testing*. Not all tests are already
   relevant for *oblig 1*. The directory contains a number of subdirectories
   for different purposes and a number of compila program. The one required
   for *oblig 1* is
@@ -67,16 +68,13 @@ the course's web-page.
   parser (a simple working example of making use of lex and yacc). It also
   contains inspiration how a ast-printout could look like.
 
--  [[./previoussemesters]]: for "historical" purposes only
-      
 
 - ([[./build]]): the directory is generated (if one uses the .build.xml)
 
+- [[Readme.org]]: this file
 
-  - [[Readme.org]]: this file
-
-  - [[.gitignore]]: git administrative file: things probably not intended to be
-                checked in
+- [[.gitignore]]: git administrative file: things probably not intended to be
+              checked in
 
 
 * First steps 
