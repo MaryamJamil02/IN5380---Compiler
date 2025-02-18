@@ -1,6 +1,6 @@
 * Oblig 1                                                     :ignore:export:
 
-** Compila 24                                                        
+** Compila 25                                                        
 
 *** Oblig 1                                                         :B_frame:
     :PROPERTIES:
@@ -343,9 +343,9 @@ grammar in BNF with *action* code
      :BEAMER_env: alertblock
      :END:
 
- 
 
- *Friday 22. 03. 2024, 23:59*
+#+latex: \deadlineone
+
 
 
 **** Rest                                                            :ignore:

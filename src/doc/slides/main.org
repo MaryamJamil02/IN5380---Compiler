@@ -26,7 +26,8 @@
 
 #+latex_header: \input{style/style-common}
 #+latex_header: \input{style/style-presentation}
-#+latex_header: \input{preamble} 
+#+latex_header: \input{preamble}
+#+latex_header: \input{../obligs/preamble}
 #+latex_header: \input{macros}
 #+LaTeX_header: \input{macros-tmp}        
 #+LaTeX_header: \renewcommand{\maketitle}{}

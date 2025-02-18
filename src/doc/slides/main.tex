@@ -1,4 +1,4 @@
-% Created 2025-02-18 Tue 09:24
+% Created 2025-02-18 Tue 09:43
 % Intended LaTeX compiler: pdflatex
 \documentclass{beamer}
  		 
@@ -6,6 +6,7 @@
 \input{switches}
 \input{style/style-common}
 \input{style/style-presentation}
+\input{../obligs/preamble}
 \input{preamble}
 \input{macros}
 \input{macros-tmp}
@@ -31,10 +32,18 @@
 \begin{document}
 
 \maketitle
-\chapter{Compila 24}
-\label{sec:org72a148c}
 
-\begin{frame}[label={sec:orgac83d96}]{Oblig 1}
+\setcounter{minitocdepth}{1}
+\chapter{Introduction}
+\label{sec:cc.intro}
+
+
+
+
+\section{Compila 25}
+\label{sec:org6733bd1}
+
+\begin{frame}[label={sec:orga194049}]{Oblig 1}
 \begin{itemize}
 \item material (also for oblig 2) based on previous years, including contributions from Eyvind
 W. Axelsen, Henning Berg, Fredrik Sørensen, and others
@@ -45,7 +54,7 @@ W. Axelsen, Henning Berg, Fredrik Sørensen, and others
 \item see also the course web-page, containing links to ``resources''
 \end{itemize}
 \end{frame}
-\begin{frame}[label={sec:org4fe809f}]{Goal (of oblig 1)}
+\begin{frame}[label={sec:org7a24c4b}]{Goal (of oblig 1)}
 \begin{block}{Parsing}
 Determine if programs written in \emph{Compila 25} are syntactically correct: 
 
@@ -59,7 +68,7 @@ Determine if programs written in \emph{Compila 25} are syntactically correct:
 \item language spec provided separately
 \end{itemize}
 \end{frame}
-\begin{frame}[label={sec:org0529d20}]{Learning outcomes}
+\begin{frame}[label={sec:orgfc2f638}]{Learning outcomes}
 \begin{itemize}
 \item using \alert{tools} for parser/scanner generation
 \begin{itemize}
@@ -84,33 +93,33 @@ tools)
 \end{itemize}
 \end{itemize}
 \end{frame}
-\begin{frame}[label={sec:org81946bd}]{Compila language at a glance}
+\begin{frame}[label={sec:org7159320}]{Compila language at a glance}
 
 \lstinputlisting[basicstyle=\scriptsize,emph={begin,end,in, procedur,program,var,return,struct}]{code/myprogram.cmp}
 \end{frame}
-\begin{frame}[label={sec:org86161e7},plain]{Another glance}
+\begin{frame}[label={sec:org935e085},plain]{Another glance}
 
 \lstinputlisting[basicstyle=\scriptsize,emph={begin,end,in, proc,program,var,return,struct}]{code/swap.cmp}
 \end{frame}
-\begin{frame}[label={sec:orgf8bd132},plain]{Grammar (1): declarations}
+\begin{frame}[label={sec:orgbb6b036},plain]{Grammar (1): declarations}
 
 %~/cor/teaching/compila/src/doc/languagespec/
 \lstinputlisting[basicstyle=\scriptsize,lastline=14]{../../doc/languagespec/grammar.txt}
 \end{frame}
-\begin{frame}[label={sec:orgb106567},plain]{Grammar (2): expressions, statements, etc.}
+\begin{frame}[label={sec:org099717f},plain]{Grammar (2): expressions, statements, etc.}
 
 %~/cor/teaching/compila/src/doc/languagespec/
 \lstinputlisting[basicstyle=\scriptsize,firstline=15,lastline=40]{../../doc/languagespec/grammar.txt}
 \end{frame}
-\begin{frame}[label={sec:orgcbf99ed},plain]{Grammar (3): statements and types}
+\begin{frame}[label={sec:org10df0ce},plain]{Grammar (3): statements and types}
 
 %~/cor/teaching/compila/src/doc/languagespec/
 \lstinputlisting[basicstyle=\scriptsize,firstline=41]{../../doc/languagespec/grammar.txt}
 \end{frame}
-\chapter{Tools}
-\label{sec:org67e8aaf}
+\section{Tools}
+\label{sec:org8d7de9e}
 
-\begin{frame}[label={sec:orgbf8ade9},fragile]{Tools: JFlex}
+\begin{frame}[label={sec:orgc3753e0},fragile]{Tools: JFlex}
  \begin{itemize}
 \item scanner generator (or lexer generator) tool
 
@@ -130,10 +139,10 @@ tools)
 \end{itemize}
 \end{itemize}
 \end{frame}
-\begin{frame}[label={sec:orgd7a3899}]{Sample lex code}
+\begin{frame}[label={sec:orgfc2e48c}]{Sample lex code}
 \includegraphics[width=\textwidth]{figures/snaps/lexcode}
 \end{frame}
-\begin{frame}[label={sec:org77512f0},fragile]{CUP: Construction of useful parsers (for Java)}
+\begin{frame}[label={sec:org00348cd},fragile]{CUP: Construction of useful parsers (for Java)}
  \begin{itemize}
 \item a tool to easily (ymmv) generate \emph{parsers}
 
@@ -152,10 +161,10 @@ var_decl ::= VAR ID:name COLON type:vtype
 \item \alert{output}: parser program (in Java)
 \end{itemize}
 \end{frame}
-\begin{frame}[label={sec:orgd1ee272}]{Sample CUP code}
+\begin{frame}[label={sec:org8ff42d5}]{Sample CUP code}
 \includegraphics[width=\textwidth]{figures/snaps/cupcode}
 \end{frame}
-\begin{frame}[label={sec:org99a2992},fragile]{Build tool: ant}
+\begin{frame}[label={sec:org53ae929},fragile]{Build tool: ant}
 
  \begin{center}
  \includegraphics[width=0.2\textwidth]{figures/snaps/antlogo}
@@ -180,13 +189,13 @@ var_decl ::= VAR ID:name COLON type:vtype
 \texttt{javadoc} for you
 \end{itemize}
 \end{frame}
-\begin{frame}[label={sec:orgc99075f}]{AST data structure}
+\begin{frame}[label={sec:org8eba3fb}]{AST data structure}
 
 \begin{center}
  \includegraphics[width=0.8\textwidth]{figures/snaps/astclasses}
 \end{center}
 \end{frame}
-\begin{frame}[label={sec:org786e0b5},fragile]{Overview over the directory + first steps}
+\begin{frame}[label={sec:orgebfc3d2},fragile]{Overview over the directory + first steps}
  \begin{itemize}
 \item see the Readme at/from the \texttt{github.uio.no}
 \end{itemize}
@@ -194,17 +203,19 @@ var_decl ::= VAR ID:name COLON type:vtype
 
 \includegraphics[width=0.66\textwidth]{figures/snaps/old/directorystruct-o1}
 \end{frame}
-\begin{frame}[label={sec:org3a3dda3}]{Building: putting it together}
+\begin{frame}[label={sec:orge77bd09}]{Building: putting it together}
 
 \begin{center}
  \includegraphics[width=0.8\textwidth]{figures/snaps/buildprocess}
 \end{center}
 \end{frame}
-\chapter{Official}
-\label{sec:org853e714}
+\section{Official}
+\label{sec:org68d4a96}
 
-\begin{frame}[label={sec:org1b2050e},fragile]{Deadline}
+\begin{frame}[label={sec:org1022d07},fragile]{Deadline}
  \begin{alertblock}{Deadline}
+\deadlineone
+
 \alert{Friday 22. 03. 2024, 23:59}
 \end{alertblock}
 \begin{itemize}
@@ -218,7 +229,7 @@ if sick etc
 \end{itemize}
 \end{itemize}
 \end{frame}
-\begin{frame}[label={sec:org58a8bcb},fragile]{Deliverables}
+\begin{frame}[label={sec:org55566f6},fragile]{Deliverables}
  \begin{itemize}
 \item see also the ``handout''
 \end{itemize}
@@ -244,10 +255,10 @@ precendence left AND;
 \end{verbatim}
 \end{block}
 \end{frame}
-\begin{frame}[label={sec:org1bdc532}]{Deliverables}
+\begin{frame}[label={sec:org377b679}]{Deliverables}
 \begin{block}{Deliverables (2)}
 \begin{itemize}
-\item report (with name(s) and UiO user name(s)
+\item report (with name(s) and UiO user name(s))
 \item discussion of the solution (see handout for questions)
 \end{itemize}
 
@@ -263,7 +274,7 @@ precendence left AND;
 If problems, \alert{ask in time}  (\alert{NOT} Friday at the deadline)
 \end{block}
 \end{frame}
-\begin{frame}[label={sec:orgd55e6f9}]{Hand-in procedure}
+\begin{frame}[label={sec:org6542c19}]{Hand-in procedure}
 \begin{itemize}
 \item as the previous years since some time, we use  \emph{git}
 
@@ -284,7 +295,17 @@ If problems, \alert{ask in time}  (\alert{NOT} Friday at the deadline)
 \item see also the \alert{handout} and \alert{Readme}
 \end{itemize}
 \end{frame}
+\chapter{References}
+\label{sec:orge1647ef}
 
+\begin{frame}[allowframebreaks]
+  \frametitle{References}
+  {\tiny
+    \bibliographystyle{apalike}
+%    \bibliography{extracted,local} 
+    \bibliography{string,semantics,etc,mobile,crossref}  %general PMA
+  }
+\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Local Variables: 
