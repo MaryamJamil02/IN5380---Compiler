@@ -47,33 +47,34 @@ git checkout master
 M	org/compila.org
 Switched to branch 'master'
 Your branch is up to date with 'origin/master'.
-\rm -rg
+\rm -rf reintegrate
 #+end_example
 
 
-*** Student reposes
+*** Student reposes (2025)
 We first have to set up this repos (as empty) on the server.
 
 #+begin_example
-git remote add origin24-00 git@github.uio.no:compilerconstruction-inf5110/compila24-00.git
-git branch
+git remote add origin25-00 git@github.uio.no:compilerconstruction-inf5110/compila25-00.git
+git branch  // extrainfo
+            // * master 
 git remote -v
-git push -u origin24-00 master
 #+end_example
 
 ~git remote -v~ then shows
 
 #+begin_example
-
-#+end_example
 origin	git@github.uio.no:compilerconstruction-inf5110/compila.git (fetch)
 origin	git@github.uio.no:compilerconstruction-inf5110/compila.git (push)
-origin24-00	git@github.uio.no:compilerconstruction-inf5110/compila24-00.git (fetch)
-origin24-00	git@github.uio.no:compilerconstruction-inf5110/compila24-00.git (push)
-#+begin_example
-git push origin master
+origin25-00	git@github.uio.no:compilerconstruction-inf5110/compila25-00.git (fetch)
+origin25-00	git@github.uio.no:compilerconstruction-inf5110/compila25-00.git (push)
 #+end_example
 
+
+#+begin_example
+git push -u origin25-00 master
+git push -u origin master
+#+end_example
 
 *** Things to do
 
