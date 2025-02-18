@@ -81,7 +81,7 @@ the course's web-page.
 
 We assume basic familiarity with git, basically how to clone commit, push
 and pull. No more advanced features need probably be used. If unfamiliar
-with the basics, contact the lecturer (early on!) to figure it out.
+contact the lecturer (early on!) to figure it out.
 
 
 ** Getting a working copy of the repository (clone)
@@ -91,11 +91,11 @@ first thing to do is to get a working copy of the corresponding
 repos. That's done via ~git clone~.
 
 For *group 00*, the repos is located at
-[[https://github.uio.no/compilerconstruction-inf5110/compila24-00]], and the
+[[https://github.uio.no/compilerconstruction-inf5110/compila25-00]], and the
 corresponding clone step would be
 
 #+begin_src 
-git clone git@github.uio.no:compilerconstruction-inf5110/compila24-00.git
+git clone git@github.uio.no:compilerconstruction-inf5110/compila25-00.git
 #+end_src
 
 The group numbered *00* is used by the lecturer, so one has to replace *00*
