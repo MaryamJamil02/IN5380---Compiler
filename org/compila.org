@@ -73,7 +73,7 @@ origin25-00	git@github.uio.no:compilerconstruction-inf5110/compila25-00.git (pus
 
 #+begin_example
 git push -u origin25-00 master
-git push -u origin master
+git push -u origin master  
 #+end_example
 
 *** Things to do
