@@ -412,7 +412,7 @@ CLOSED: [2023-02-10 Fri 06:56]
 published it was printable 09.02.2022. Indeed, we have to go out with the
 oblig.
 
-*** DONE when is easter <2023-02-10 Fri 06:57>
+*** DONE when is easter? <2023-02-10 Fri 06:57>
 CLOSED: [2023-02-10 Fri 10:06]
 :LOGBOOK:
 - State "DONE"       from "TODO"       [2023-02-10 Fri 10:06]
@@ -736,6 +736,14 @@ CLOSED: [2025-02-18 Tue 06:23]
 - State "DONE"       from "TODO"       [2025-02-18 Tue 06:23]
 :END:
 
+
+*** TODO when is easter <2025-02-18 Tue 09:26>
+
+It's <2025-04-20 Sun>. In the timeplan,
+
+14.04/15.04 are free, and 21. 04 (easter monday) as well
+
+Last lecture is 8.04, first is 22.04. 
 
 *** TODO change the slides for oblig 1 <2025-02-18 Tue 06:39>
 
