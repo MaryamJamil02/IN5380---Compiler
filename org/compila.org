@@ -737,7 +737,11 @@ CLOSED: [2025-02-18 Tue 06:23]
 :END:
 
 
-*** TODO when is easter <2025-02-18 Tue 09:26>
+*** DONE when is easter <2025-02-18 Tue 09:26>
+CLOSED: [2025-02-18 Tue 10:01]
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2025-02-18 Tue 10:01]
+:END:
 
 It's <2025-04-20 Sun>. In the timeplan,
 
@@ -745,9 +749,13 @@ It's <2025-04-20 Sun>. In the timeplan,
 
 Last lecture is 8.04, first is 22.04. 
 
-*** TODO change the slides for oblig 1 <2025-02-18 Tue 06:39>
+*** DONE change the slides for oblig 1 <2025-02-18 Tue 06:39>
+CLOSED: [2025-02-18 Tue 10:01]
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2025-02-18 Tue 10:01]
+:END:
 
-*** TODO  Test the [[file:~/cor/teaching/compilerconstruction-inf5110/compila/Readme.org][Readme.org]]. <2025-02-18 Tue>
+*** TODO Test the [[file:~/cor/teaching/compilerconstruction-inf5110/compila/Readme.org][Readme.org]]. <2025-02-18 Tue>
 *** DONE change and check the  [[file:~/cor/teaching/compilerconstruction-inf5110/compila/Readme.org][Readme.org]]. <2025-02-18 Tue 05:26>
 CLOSED: [2025-02-18 Tue 06:38]
 :LOGBOOK:
