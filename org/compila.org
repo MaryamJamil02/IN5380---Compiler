@@ -82,7 +82,15 @@ git push -u origin master
 2025 I could not do git push -u origin25-00 master, there was some error. I
 cloned the repos new, and it worked. However, I cloned only the main/master
 branch not the branch extra-info. I pushed that one after the fact (from
-the back-up copy of the probably corrupt repos)
+the back-up copy of the probably corrupt repos). Then I did (in the new clone)
+
+#+begin_example
+  604  git fetch origin extrainfo
+  605  git branch
+  611  git checkout extrainfo
+#+end_example
+
+and I had the new stuff.
 
 *** Things to do
 

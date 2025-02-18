@@ -134,7 +134,8 @@ you can try out 5 targets:
 
 
 Note, "running" can be done successfully only after "compiling". There will
-be some warnings about repeatable-build, one may ignore them.
+be some *warnings* about repeatable-build resp. that some Java constructs
+are deprecated, you may ignore them.
 
 *** Check the top-level build-file (under this directory)
 
