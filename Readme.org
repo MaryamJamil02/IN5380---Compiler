@@ -13,9 +13,10 @@
 
 
 
+
 * Intro
 
-The repository host material for the *Compila 2* compiler, which is the
+The repository host material for the *Compila 25* compiler, which is the
 content of oblig 1 and 2 for the course "compiler construction" [[http://www.uio.no/studier/emner/matnat/ifi/IN5380/][IN5380]]
 (formerly INF5110). The material in this repository focuses on the code
 which can be used as *starting point* for the *compiler*. It contains also
