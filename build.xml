@@ -1,5 +1,5 @@
-<!-- Build file (as inspiration) for INF5110/INF9110 obligatory exercise -->
-<project name="INF5110/INF9110 Obligatory exercise" default="menu" basedir=".">
+<!-- Build file (as inspiration) for IN5380 obligatory exercises -->
+<project name="IN5380 Obligatory exercises" default="menu" basedir=".">
   <presetdef name="javac">
     <javac includeantruntime="false" />
   </presetdef>
