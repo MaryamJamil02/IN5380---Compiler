@@ -22,17 +22,31 @@ import java_cup.runtime.*;
 LineTerminator = \r|\n|\r\n
 WhiteSpace = {LineTerminator} | [ \t\f]
 Identifier = [:jletter:] [:jletterdigit:]*
+
 %%
 <YYINITIAL>{
-  {WhiteSpace}                          {  }
+        {WhiteSpace}                    {  }
         "program"                       { return symbol(sym.PROGRAM); }
-        "class"                         { return symbol(sym.CLASS); }
+        "struct"                        { return symbol(sym.STRUCT); }
         "begin"                         { return symbol(sym.BEGIN); }
         "end"                           { return symbol(sym.END); }
         "("                             { return symbol(sym.LPAR); }
         ")"                             { return symbol(sym.RPAR); }
         ";"                             { return symbol(sym.SEMI); }
         {Identifier}                    { return symbol(sym.ID,yytext()); }
+        "var"                           {return symbol(sym.VAR);}
+        "colon"                         {return symbol(sym.COLON);}
+        "float"                         {return symbol(sym.FLOAT);}
+        "int"                           {return symbol(sym.INT);}
+        "string"                        {return symbol(sym.STRING);}
+        "bool"                          {return symbol(sym.BOOL);}
+        "ref"                           {return symbol(sym.REF);}
+        ":="                            {return symbol(sym.ASSIGN);}
+        "in"                            {return symbol(sym.IN);}
+        "{"                             {return symbol(sym.LBRACKET);}
+        "}"                             {return symbol(sym.RBRACKET);}
+        "not"                           {return symbol(sym.NOT);}
+        "new"                           {return symbol(sym.NEW);}
 }
 
 .                           { throw new Error("Illegal character '" + yytext() + "' at line " + yyline + ", column " + yycolumn + "."); }
