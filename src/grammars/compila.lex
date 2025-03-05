@@ -47,6 +47,33 @@ Identifier = [:jletter:] [:jletterdigit:]*
         "}"                             {return symbol(sym.RBRACKET);}
         "not"                           {return symbol(sym.NOT);}
         "new"                           {return symbol(sym.NEW);}
+        "deref"                           {return symbol(sym.DEREF);}
+        "."                           {return symbol(sym.PERIOD);}
+        "&&"                           {return symbol(sym.AND);}
+        "||"                           {return symbol(sym.OR);}
+        "<"                           {return symbol(sym.LESS);}
+        "<="                           {return symbol(sym.LESSEQUAL);}
+        ">"                           {return symbol(sym.GREATER);}
+        ">="                           {return symbol(sym.GREATEREQUAL);}
+        "="                           {return symbol(sym.EQUAL);}
+        "<>"                           {return symbol(sym.ANGLEBRACKETS);}
+        "+"                           {return symbol(sym.PLUS);}
+        "-"                           {return symbol(sym.MINUS);}
+        "*"                           {return symbol(sym.MULTIPLY);}
+        "/"                           {return symbol(sym.SLASH);}
+        "^"                           {return symbol(sym.CARET);}
+        "null"                           {return symbol(sym.NULL);}
+        "true"                           {return symbol(sym.TRUE);}
+        "false"                           {return symbol(sym.FALSE);}
+        "if"                           {return symbol(sym.IF);}
+        "then"                           {return symbol(sym.THEN);}
+        "else"                           {return symbol(sym.ELSE);}
+        "fi"                           {return symbol(sym.FI);}
+        "while"                           {return symbol(sym.WHILE);}
+        "do"                           {return symbol(sym.DO);}
+        "od"                           {return symbol(sym.OD);}
+
+
 }
 
 .                           { throw new Error("Illegal character '" + yytext() + "' at line " + yyline + ", column " + yycolumn + "."); }
