@@ -113,8 +113,10 @@ class_decl      ::= CLASS ID:name BEGIN END
                         {: RESULT = new ClassDecl(name); :}
                   ;
 
-var_decl        ::= VAR ID:name COLON type:t [ASSIGN exp:e]
+var_decl        ::= VAR ID:name COLON type:t ASSIGN exp:e
                         {: RESULT = new VarDecl(name, t, e); :}
+                  | VAR ID:name COLON type:t
+                        {: RESULT = new VarDecl(name, t); :}
                   | VAR ID:name ASSIGN exp:e
                         {: RESULT = new VarDecl(name, e); :}
                   ;
@@ -127,10 +129,24 @@ type            ::= FLOAT   {: RESULT = "float"; :}
                   | REF LPAR type:t RPAR {: RESULT = t; :}
 
 proc_decl       ::= PROCEDURE ID:name 
-                    LPAR [proc_decl_list:pfd] RPAR 
-                    [SEMI type:t] 
-                    BEGIN [decl_list:dl IN] stmt_list:sl END
+                    LPAR proc_decl_list:pfd RPAR 
+                    SEMI type:t
+                    BEGIN decl_list:dl IN stmt_list:sl END
                     {: RESULT = new ProcDecl(name, pfd, t, dl, sl) :};
+                  | PROCEDURE ID:name 
+                    LPAR proc_decl_list:pfd RPAR 
+                    BEGIN stmt_list:sl END
+                    {: RESULT = new ProcDecl(name, pfd, sl) :};
+                  | PROCEDURE ID:name 
+                    LPAR proc_decl_list:pfd RPAR 
+                    BEGIN decl_list:dl IN stmt_list:sl END
+                    {: RESULT = new ProcDecl(name, pfd, dl, sl) :};
+                  | PROCEDURE ID:name 
+                    LPAR proc_decl_list:pfd RPAR 
+                    SEMI type:t
+                    BEGIN stmt_list:sl END
+                    {: RESULT = new ProcDecl(name, pfd, t, dl, sl) :};
+                 
 
 
 proc_decl_list  ::= paramfield_decl:pfd COMMA {: List<ParamfieldDecl> l = new LinkedList<ParamfieldDecl>();
@@ -142,7 +158,8 @@ proc_decl_list  ::= paramfield_decl:pfd COMMA {: List<ParamfieldDecl> l = new Li
 paramfield_decl   ::= ID:name COLON type:t {: RESULT = new ParamfieldDecl(name, t) :};
 
 
-rec_decl          ::= STRUCT ID:name LBRACKET [rec_decl_list:rdl] RBRACKET {: RESULT = new RecDecl(name, rdl); :} 
+rec_decl          ::= STRUCT ID:name LBRACKET rec_decl_list:rdl RBRACKET    {: RESULT = new RecDecl(name, rdl); :} 
+                  | STRUCT ID:name LBRACKET RBRACKET                        {: RESULT = new RecDecl(name); :}
 
 rec_decl_list     ::= paramfield_decl:pfd SEMI {: List<ParamfieldDecl> l = new LinkedList<ParamfieldDecl>();
                                       l.add(pfd);
@@ -150,11 +167,11 @@ rec_decl_list     ::= paramfield_decl:pfd SEMI {: List<ParamfieldDecl> l = new L
                   | rec_decl_list:rdl paramfield_decl:pfd SEMI {: rdl.add(pfd); RESULT = rdl; :};
 
 
-stmt_list         ::= [ stmt:s SEMI {: List<Stmt> l = new LinkedList<Stmt>();
+stmt_list         ::= stmt:s SEMI {: List<Stmt> l = new LinkedList<Stmt>();
                                       l.add(s);
                                       RESULT = l; :}                         
                   | stmt_list:sl stmt:s SEMI {: sl.add(s); RESULT = sl; :};
-                  ]
+                  
 
 exp               ::= exp:e1 log_op:o exp:e2    {: RESULT = new Exp(e1, o, e2); :} 
                   | NOT exp:e                   {: RESULT = new Exp(e); :} 
