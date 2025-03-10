@@ -47,10 +47,10 @@ terminal                        PLUS;
 terminal                        MINUS;
 terminal                        MULTIPLY;
 terminal                        SLASH;
-terminal                        CARET;
+terminal                        EXPONENT
 terminal                        NULL;
-terminal                        TRUE;
-terminal                        FALSE;
+terminal Boolean                TRUE;
+terminal Boolean                FALSE;
 terminal                        IF;
 terminal                        THEN;
 terminal                        ELSE;
@@ -70,7 +70,7 @@ non terminal VarDecl            var_decl;
 non terminal String             type; 
 non terminal ProcDecl           proc_decl;
 non terminal ParamfieldDecl     paramfield_decl;
-non terminal List<Decl>         proc_decl_list;
+non terminal List<ParamFieldDecl> proc_decl_list;
 non terminal RecDecl            rec_decl;
 non terminal List<RecDecl>      rec_decl_list;
 non terminal List<Stmt>         stmt_list;
@@ -89,6 +89,17 @@ non terminal IfStmt             if_stmt
 non terminal WhileStmt          while_stmt
 non terminal ReturnStmt         return_stmt
 non terminal CallStmt           call_stmt
+non terminal List<Exp>          exp_list
+
+precedence left OR
+precedence left AND
+precedence right NOT
+precedence nonassoc LESS, LESSEQUAL, EQUAL, GREATER, GREATEREQUAL
+precedence left PLUS, MINUS
+precedence left MULTIPLY, SLASH
+precedence right EXPONENT
+precedence left PERIOD
+
 
 
 
@@ -109,9 +120,6 @@ decl            ::= VAR_DECL:vd  {: RESULT = new Decl(vd); :}
                   | PROC_DECL:pd {: RESULT = new Decl(pd); :} 
                   | REC_DECL:rd  {: RESULT = new Decl(rd); :};
                                   
-class_decl      ::= CLASS ID:name BEGIN END
-                        {: RESULT = new ClassDecl(name); :}
-                  ;
 
 var_decl        ::= VAR ID:name COLON type:t ASSIGN exp:e
                         {: RESULT = new VarDecl(name, t, e); :}
@@ -129,23 +137,23 @@ type            ::= FLOAT   {: RESULT = "float"; :}
                   | REF LPAR type:t RPAR {: RESULT = t; :}
 
 proc_decl       ::= PROCEDURE ID:name 
-                    LPAR proc_decl_list:pfd RPAR 
+                    LPAR proc_decl_list:pdl RPAR 
                     SEMI type:t
                     BEGIN decl_list:dl IN stmt_list:sl END
-                    {: RESULT = new ProcDecl(name, pfd, t, dl, sl) :};
+                    {: RESULT = new ProcDecl(name, pdl, t, dl, sl) :};
                   | PROCEDURE ID:name 
-                    LPAR proc_decl_list:pfd RPAR 
+                    LPAR proc_decl_list:pdl RPAR 
                     BEGIN stmt_list:sl END
-                    {: RESULT = new ProcDecl(name, pfd, sl) :};
+                    {: RESULT = new ProcDecl(name, pdl, sl) :};
                   | PROCEDURE ID:name 
-                    LPAR proc_decl_list:pfd RPAR 
+                    LPAR proc_decl_list:pdl RPAR 
                     BEGIN decl_list:dl IN stmt_list:sl END
-                    {: RESULT = new ProcDecl(name, pfd, dl, sl) :};
+                    {: RESULT = new ProcDecl(name, pdl, dl, sl) :};
                   | PROCEDURE ID:name 
-                    LPAR proc_decl_list:pfd RPAR 
+                    LPAR proc_decl_list:pdl RPAR 
                     SEMI type:t
                     BEGIN stmt_list:sl END
-                    {: RESULT = new ProcDecl(name, pfd, t, dl, sl) :};
+                    {: RESULT = new ProcDecl(name, pdl, t, sl) :};
                  
 
 
@@ -234,5 +242,12 @@ while_stmt        ::= WHILE exp:e DO stmt_list:sl OD  {: RESULT = new WhileStmt(
 
 return_stmt       ::= RETURN                    {: RESULT = new "return"; :}
                   | RETURN exp:e                {: RESULT = new ReturnStmt(e); :}
+
+call_stmt         ::= ID:name LPAR exp_list:el RPAR   {: RESULT = new CallStmt(name, el); :}
+
+exp_list          ::= exp:e COMMA {: List<Exp> l = new LinkedList<Exp>();
+                                      l.add(s);
+                                      RESULT = l; :}                         
+                  | exp_list:el exp:e COMMA {: el.add(e); RESULT = el; :};
 
 

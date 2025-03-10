@@ -34,44 +34,44 @@ Identifier = [:jletter:] [:jletterdigit:]*
         ")"                             { return symbol(sym.RPAR); }
         ";"                             { return symbol(sym.SEMI); }
         {Identifier}                    { return symbol(sym.ID,yytext()); }
-        "var"                           {return symbol(sym.VAR);}
-        "colon"                         {return symbol(sym.COLON);}
-        "float"                         {return symbol(sym.FLOAT);}
-        "int"                           {return symbol(sym.INT);}
-        "string"                        {return symbol(sym.STRING);}
-        "bool"                          {return symbol(sym.BOOL);}
-        "ref"                           {return symbol(sym.REF);}
-        ":="                            {return symbol(sym.ASSIGN);}
-        "in"                            {return symbol(sym.IN);}
-        "{"                             {return symbol(sym.LBRACKET);}
-        "}"                             {return symbol(sym.RBRACKET);}
-        "not"                           {return symbol(sym.NOT);}
-        "new"                           {return symbol(sym.NEW);}
-        "deref"                           {return symbol(sym.DEREF);}
-        "."                           {return symbol(sym.PERIOD);}
-        "&&"                           {return symbol(sym.AND);}
-        "||"                           {return symbol(sym.OR);}
-        "<"                           {return symbol(sym.LESS);}
-        "<="                           {return symbol(sym.LESSEQUAL);}
-        ">"                           {return symbol(sym.GREATER);}
-        ">="                           {return symbol(sym.GREATEREQUAL);}
-        "="                           {return symbol(sym.EQUAL);}
-        "<>"                           {return symbol(sym.ANGLEBRACKETS);}
-        "+"                           {return symbol(sym.PLUS);}
-        "-"                           {return symbol(sym.MINUS);}
-        "*"                           {return symbol(sym.MULTIPLY);}
-        "/"                           {return symbol(sym.SLASH);}
-        "^"                           {return symbol(sym.CARET);}
-        "null"                           {return symbol(sym.NULL);}
-        "true"                           {return symbol(sym.TRUE);}
-        "false"                           {return symbol(sym.FALSE);}
-        "if"                           {return symbol(sym.IF);}
-        "then"                           {return symbol(sym.THEN);}
-        "else"                           {return symbol(sym.ELSE);}
-        "fi"                           {return symbol(sym.FI);}
-        "while"                           {return symbol(sym.WHILE);}
-        "do"                           {return symbol(sym.DO);}
-        "od"                           {return symbol(sym.OD);}
+        "var"                           { return symbol(sym.VAR);}
+        "colon"                         { return symbol(sym.COLON);}
+        "float"                         { return symbol(sym.FLOAT);}
+        "int"                           { return symbol(sym.INT);}
+        "string"                        { return symbol(sym.STRING);}
+        "bool"                          { return symbol(sym.BOOL);}
+        "ref"                           { return symbol(sym.REF);}
+        ":="                            { return symbol(sym.ASSIGN);}
+        "in"                            { return symbol(sym.IN);}
+        "{"                             { return symbol(sym.LBRACKET);}
+        "}"                             { return symbol(sym.RBRACKET);}
+        "not"                           { return symbol(sym.NOT);}
+        "new"                           { return symbol(sym.NEW);}
+        "deref"                         { return symbol(sym.DEREF);}
+        "."                             { return symbol(sym.PERIOD);}
+        "&&"                            { return symbol(sym.AND);}
+        "||"                            { return symbol(sym.OR);}
+        "<"                             { return symbol(sym.LESS);}
+        "<="                            { return symbol(sym.LESSEQUAL);}
+        ">"                             { return symbol(sym.GREATER);}
+        ">="                            { return symbol(sym.GREATEREQUAL);}
+        "="                             { return symbol(sym.EQUAL);}
+        "<>"                            { return symbol(sym.ANGLEBRACKETS);}
+        "+"                             { return symbol(sym.PLUS);}
+        "-"                             { return symbol(sym.MINUS);}
+        "*"                             { return symbol(sym.MULTIPLY);}
+        "/"                             { return symbol(sym.SLASH);}
+        "^"                             { return symbol(sym.EXPONENT);}
+        "null"                          { return symbol(sym.NULL);}
+        "true"                          { return symbol(sym.TRUE);}
+        "false"                         { return symbol(sym.FALSE);}
+        "if"                            { return symbol(sym.IF);}
+        "then"                          { return symbol(sym.THEN);}
+        "else"                          { return symbol(sym.ELSE);}
+        "fi"                            { return symbol(sym.FI);}
+        "while"                         { return symbol(sym.WHILE);}
+        "do"                            { return symbol(sym.DO);}
+        "od"                            { return symbol(sym.OD);}
 
 
 }
