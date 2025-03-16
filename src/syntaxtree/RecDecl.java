@@ -2,38 +2,33 @@ package syntaxtree;
 
 import java.util.List;
 
-public class RecDecl {
+public class RecDecl extends Decl {
     String name;
-    List<RecDecl> rdl;
+    List<ParamfieldDecl> paramfieldDecls; // Optional
 
-    public RecDecl (String name, List<RecDecl> rdl) {
+    public RecDecl (String name, List<ParamfieldDecl> paramfieldDecls) {
         this.name = name;
-        this.rdl = rdl;
+        this.paramfieldDecls = paramfieldDecls;
     }
 
-    public RecDecl (String name) {
-        this.name = name;
-    }
-
-    
-
+    @Override
     public String printAst() {
+        // (REC_DECL (NAME("x") [List<ParamfieldDecl>]))
         StringBuilder sb = new StringBuilder();
-        sb.append("REC_DECL");
-        sb.append("(NAME (\"" +  name + "\" )");
+        sb.append("(REC_DECL (");
+        sb.append("NAME(\"" +  name + "\") ");
         
-        if (rdl != null){
-            for (RecDecl r : rdl) {
-                sb.append("\t" + r.printAst());
+        if (paramfieldDecls != null){
+            sb.append("\n");
+            for (ParamfieldDecl p : paramfieldDecls) {
+                sb.append("\t" + p.printAst());
                 sb.append("\n");
             }
+        } else {
+            sb.append("NULL");
         }
 
-       else{
-        sb.append("NULL");
-       }
-
-        sb.append(")");
+        sb.append("))");
         return sb.toString();
     }
 }

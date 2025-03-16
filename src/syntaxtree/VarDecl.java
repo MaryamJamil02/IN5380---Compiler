@@ -1,9 +1,9 @@
 package syntaxtree;
 
-public class VarDecl {
+public class VarDecl extends Decl {
     String name;
-    String type;
-    Exp exp;
+    String type; // Optional
+    Exp exp;     // Optional
     
     public VarDecl (String name, String type, Exp exp) {
         this.name = name;
@@ -11,48 +11,26 @@ public class VarDecl {
         this.exp = exp;
     }
 
-    public VarDecl (String name, String type) {
-        this.name = name;
-        this.type = type;
-
-    }
-
-    public VarDecl (String name, Exp exp) {
-        this.name = name;
-        this.exp = exp;
-
-    }
-
-    
-
-    public String printAst() {
+    @Override
+    public String printAst() { 
+        // (VAR_DECL (NAME("x") TYPE(INT) NULL))
         StringBuilder sb = new StringBuilder();
-        sb.append("VAR_DECL ");
-        sb.append("(NAME (" + this.name + ")");
+        sb.append("(VAR_DECL (");
+        sb.append("NAME(\"" + this.name + "\") ");
 
         if (type != null) {
-            sb.append("TYPE (" + this.type + ")");
-        }
-
-        else{
-            sb.append("(NULL)");
+            sb.append("TYPE(" + this.type + ") ");
+        } else {
+            sb.append("NULL ");
         }
 
         if (exp != null) {
             sb.append(exp.printAst());
-        }
-
-        else{
+        } else {
             sb.append("NULL");
         }
 
-        sb.append(")");
-
+        sb.append("))");
         return sb.toString();
-
-
-
-
-
     }
 }

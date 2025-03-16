@@ -3,7 +3,6 @@ import java_cup.runtime.*;
 import syntaxtree.*;
 import java.util.*;
 
-
 parser code {:
 
 :};
@@ -15,81 +14,59 @@ parser code {:
 /* but a "struct". Hence a corresponding token should better    */
 /* be called STRUCT or similar, for clarity.                    */
 terminal                        PROGRAM, STRUCT;
-terminal                        BEGIN, END;
+terminal                        PROCEDURE, BEGIN, IN, END;
 terminal                        LPAR, RPAR;
-terminal                        SEMI, RETURN;
-terminal                        PROCEDURE;
+terminal                        LBRACKET, RBRACKET;
+terminal                        SEMI, COLON, PERIOD, RETURN;
 terminal String                 ID;
 terminal String                 STRING_LITERAL;
-terminal                        VAR;
-terminal                        COLON;
-terminal                        FLOAT;
-terminal                        INT;
-terminal                        STRING;
-terminal                        BOOL;
-terminal                        REF;
-terminal                        ASSIGN;
-terminal                        IN;
-terminal                        LBRACKET, RBRACKET;
+terminal                        VAR, ASSIGN;
+terminal                        FLOAT, INT, STRING, BOOL, REF;
 terminal                        NOT;
 terminal                        NEW;
-terminal                        DEREF:
-terminal                        PERIOD:
-terminal                        AND;
-terminal                        OR;
-terminal                        LESS;
-terminal                        LESSEQUAL;
-terminal                        GREATER;
-terminal                        GREATEREQUAL;
-terminal                        EQUAL;
-terminal                        ANGLEBRACKETS;
-terminal                        PLUS;
-terminal                        MINUS;
-terminal                        MULTIPLY;
-terminal                        SLASH;
-terminal                        EXPONENT
+terminal                        DEREF;
+terminal                        AND, OR;
+terminal                        LESS, LESSEQUAL, GREATER, GREATEREQUAL, EQUAL;
+terminal                        NOTEQUAL;
+terminal                        PLUS, MINUS, MULTIPLY, SLASH, EXPONENT;
 terminal                        NULL;
-terminal Boolean                TRUE;
-terminal Boolean                FALSE;
-terminal                        IF;
-terminal                        THEN;
-terminal                        ELSE;
-terminal                        FI;
-terminal                        WHILE;
-terminal                        DO;
-terminal                        OD;
-
-
+terminal Boolean                TRUE, FALSE;
+terminal                        IF, THEN, ELSE, FI;
+terminal                        WHILE, DO, OD;
 
 
 // Non terminals 
-non terminal Program            program;
-non terminal List<Decl>         decl_list;
-non terminal Decl               decl;
-non terminal VarDecl            var_decl;
-non terminal String             type; 
-non terminal ProcDecl           proc_decl;
-non terminal ParamfieldDecl     paramfield_decl;
-non terminal List<ParamFieldDecl> proc_decl_list;
-non terminal RecDecl            rec_decl;
-non terminal List<RecDecl>      rec_decl_list;
-non terminal List<Stmt>         stmt_list;
-non terminal Exp                exp;
-non terminal RefVar             ref_var;
-non terminal DerefVar           deref_var;
-non terminal Var                var;
-non terminal String             log_op;
-non terminal String             rel_op;
-non terminal String             arith_op;
-non terminal Literal            literal
-non terminal String             bool_literal
-non terminal Stmt               stmt
-non terminal AssignStmt         assign_stmt
-non terminal IfStmt             if_stmt
-non terminal WhileStmt          while_stmt
-non terminal ReturnStmt         return_stmt
-non terminal CallStmt           call_stmt
-non terminal List<Exp>          exp_list
+non terminal Program              program;
+non terminal List<Decl>           decl_list;
+non terminal List<Decl>           optional_decls;
+non terminal Decl                 decl;
+non terminal VarDecl              var_decl;
+non terminal String               type; 
+non terminal String               optional_type;
+non terminal ProcDecl             proc_decl;
+non terminal ParamfieldDecl       paramfield_decl;
+non terminal List<ParamfieldDecl> paramfield_decl_list;
+non terminal List<ParamfieldDecl> optional_paramfields;
+non terminal RecDecl              rec_decl;
+non terminal List<ParamfieldDecl> rec_decl_list;
+non terminal List<Stmt>           stmt_list;
+non terminal Exp                  exp;                   //
+non terminal RefVar               ref_var;
+non terminal DerefVar             deref_var;
+non terminal Var                  var;
+non terminal String               log_op;
+non terminal String               rel_op;
+non terminal String               arith_op;
+non terminal Literal              literal;               //
+non terminal String               bool_literal;
+non terminal Stmt                 stmt;
+non terminal AssignStmt           assign_stmt;
+non terminal IfStmt               if_stmt;
+non terminal WhileStmt            while_stmt;
+non terminal ReturnStmt           return_stmt;
+non terminal CallStmt             call_stmt;
+non terminal List<Exp>            exp_list;
+
 
 precedence left OR
 precedence left AND
@@ -101,153 +78,151 @@ precedence right EXPONENT
 precedence left PERIOD
 
 
-
-
-
-
-
 /* The grammar */
 program         ::= PROGRAM ID:name BEGIN decl_list:dl END
-                        {: RESULT = new Program(name, dl); :} 
-                  ;
+                      {: RESULT = new Program(name, dl); :};
 
-decl_list       ::= decl:d SEMI {: List<Decl> l = new LinkedList<Decl>();
-                                      l.add(d);
-                                      RESULT = l; :} 
-                        |   decl_list:dl decl:d SEMI  {: dl.add(d); RESULT = dl; :};
+decl_list       ::= decl:d SEMI 
+                      {: List<Decl> l = new LinkedList<Decl>();
+                         l.add(d); RESULT = l; :}
+                  | decl_list:dl decl:d SEMI 
+                      {: dl.add(d); RESULT = dl; :};
 
-decl            ::= VAR_DECL:vd  {: RESULT = new Decl(vd); :} 
-                  | PROC_DECL:pd {: RESULT = new Decl(pd); :} 
-                  | REC_DECL:rd  {: RESULT = new Decl(rd); :};
-                                  
+decl            ::= var_decl:vd  {: vd; :} 
+                  | proc_decl:pd {: pd; :} 
+                  | rec_decl:rd  {: rd; :};
 
 var_decl        ::= VAR ID:name COLON type:t ASSIGN exp:e
                         {: RESULT = new VarDecl(name, t, e); :}
                   | VAR ID:name COLON type:t
-                        {: RESULT = new VarDecl(name, t); :}
+                        {: RESULT = new VarDecl(name, t, null); :}
                   | VAR ID:name ASSIGN exp:e
-                        {: RESULT = new VarDecl(name, e); :}
-                  ;
+                        {: RESULT = new VarDecl(name, null, e); :};
 
-type            ::= FLOAT   {: RESULT = "float"; :}
-                  | INT     {: RESULT = "int"; :}
-                  | STRING  {: RESULT = "string"; :}
-                  | BOOL    {: RESULT = "bool"; :}
+type            ::= FLOAT   {: RESULT = "FLOAT"; :}
+                  | INT     {: RESULT = "INT"; :}
+                  | STRING  {: RESULT = "STRING"; :}
+                  | BOOL    {: RESULT = "BOOL"; :}
                   | ID:name {: RESULT =  name; :}
-                  | REF LPAR type:t RPAR {: RESULT = t; :}
+                  | REF LPAR type:t RPAR {: RESULT = t; :};
 
 proc_decl       ::= PROCEDURE ID:name 
-                    LPAR proc_decl_list:pdl RPAR 
-                    SEMI type:t
-                    BEGIN decl_list:dl IN stmt_list:sl END
-                    {: RESULT = new ProcDecl(name, pdl, t, dl, sl) :};
-                  | PROCEDURE ID:name 
-                    LPAR proc_decl_list:pdl RPAR 
-                    BEGIN stmt_list:sl END
-                    {: RESULT = new ProcDecl(name, pdl, sl) :};
-                  | PROCEDURE ID:name 
-                    LPAR proc_decl_list:pdl RPAR 
-                    BEGIN decl_list:dl IN stmt_list:sl END
-                    {: RESULT = new ProcDecl(name, pdl, dl, sl) :};
-                  | PROCEDURE ID:name 
-                    LPAR proc_decl_list:pdl RPAR 
-                    SEMI type:t
-                    BEGIN stmt_list:sl END
-                    {: RESULT = new ProcDecl(name, pdl, t, sl) :};
-                 
+                    LPAR optional_paramfields:pdl RPAR 
+                    optional_type:t
+                    BEGIN optional_decls:dl 
+                    stmt_list:sl END
+                    {: RESULT = new ProcDecl(name, pdl, t, dl, sl); :};
+
+optional_paramfields ::= paramfield_decl_list:pdl {: RESULT = pdl; :}
+                       | {: RESULT = null; :};
+
+optional_type        ::= COLON type:t {: RESULT = t; :}
+                       | {: RESULT = null; :};
+
+optional_decls       ::= decl_list:dl IN {: RESULT = dl; :}
+                       | {: RESULT = null; :};
+
+paramfield_decl_list ::= paramfield_decl:pfd 
+                          {: List<ParamfieldDecl> l = new LinkedList<ParamfieldDecl>();
+                              l.add(pfd); RESULT = l; :}
+                      | paramfield_decl_list:pdl COMMA paramfield_decl:pfd  
+                          {: pdl.add(pfd); RESULT = pdl; :};
+
+paramfield_decl   ::= ID:name COLON type:t {: RESULT = new ParamfieldDecl(name, t); :};
+
+rec_decl          ::= STRUCT ID:name LBRACKET rec_decl_list:rdl RBRACKET {: RESULT = new RecDecl(name, rdl); :} 
+                    | STRUCT ID:name LBRACKET RBRACKET                     {: RESULT = new RecDecl(name, null); :};
+
+rec_decl_list     ::= paramfield_decl:pfd SEMI 
+                        {: List<ParamfieldDecl> l = new LinkedList<ParamfieldDecl>();
+                            l.add(pfd); RESULT = l; :}
+                    | rec_decl_list:rdl paramfield_decl:pfd SEMI 
+                        {: rdl.add(pfd); RESULT = rdl; :};
+
+stmt_list         ::= stmt:s SEMI 
+                        {: List<Stmt> l = new LinkedList<Stmt>();
+                            l.add(s);
+                            RESULT = l; :}
+                    | stmt_list:sl stmt:s SEMI 
+                        {: sl.add(s); RESULT = sl; :};
+                    | {: RESULT = new LinkedList<Stmt>(); :};
 
 
-proc_decl_list  ::= paramfield_decl:pfd COMMA {: List<ParamfieldDecl> l = new LinkedList<ParamfieldDecl>();
-                                      l.add(pfd);
-                                      RESULT = l; :}                         
-                  | proc_decl_list:pdl paramfield_decl:pfd COMMA {: pdl.add(pfd); RESULT = pdl; :};
+exp               ::= exp:e1 log_op:o exp:e2      {: RESULT = new Exp(e1, o, e2); :} 
+                    | exp:e1 rel_op:o exp:exp2    {: RESULT = new Exp(e1, o, e2); :} 
+                    | exp:e1 arith_op:o exp:exp2  {: RESULT = new Exp(e1, o, e2); :} 
+
+                    | NOT exp:e                   {: RESULT = new Exp("!", e); :} 
+
+                    | literal:l                   {: RESULT = new Exp(l); :} 
+
+                    | call_stmt:c                 {: RESULT = new Exp(c); :} 
+                    | NEW ID:name                 {: RESULT = new Exp(name); :} 
+
+                    | var:v                       {: RESULT = new Exp(v); :} 
+
+                    | ref_var:e                   {: RESULT = new Exp(e); :} 
+                    | deref_var:e                 {: RESULT = new Exp(e); :} 
+
+                    | LPAR exp:e RPAR             {: RESULT = e; :};
 
 
-paramfield_decl   ::= ID:name COLON type:t {: RESULT = new ParamfieldDecl(name, t) :};
+ref_var           ::= REF LPAR var:v RPAR         {: RESULT = new RefVar(v); :}
+                    | REF LPAR ref_var:rv RPAR    {: RESULT = new RefVar(rv); :};
 
+deref_var         ::= DEREF LPAR var:v RPAR        {: RESULT = new DerefVar(v); :}
+                    | DEREF LPAR deref_var:dv RPAR {: RESULT = new DerefVar(dv); :};
 
-rec_decl          ::= STRUCT ID:name LBRACKET rec_decl_list:rdl RBRACKET    {: RESULT = new RecDecl(name, rdl); :} 
-                  | STRUCT ID:name LBRACKET RBRACKET                        {: RESULT = new RecDecl(name); :}
+var               ::= ID:name                  {: RESULT = new Var(name); :}
+                    | exp:e PERIOD ID:name     {: RESULT = new Var(e,name); :};
 
-rec_decl_list     ::= paramfield_decl:pfd SEMI {: List<ParamfieldDecl> l = new LinkedList<ParamfieldDecl>();
-                                      l.add(pfd);
-                                      RESULT = l; :}                         
-                  | rec_decl_list:rdl paramfield_decl:pfd SEMI {: rdl.add(pfd); RESULT = rdl; :};
+log_op            ::= AND                      {: RESULT = "&&; :}
+                    | OR                       {: RESULT = "||"; :};
 
+rel_op            ::= LESS                     {: RESULT = "<"; :}
+                    | LESSEQUAL                {: RESULT = "<="; :}
+                    | GREATER                  {: RESULT = ">"; :}
+                    | GREATEREQUAL             {: RESULT = ">="; :}
+                    | NOTEQUAL                 {: RESULT = "<>"; :};
 
-stmt_list         ::= stmt:s SEMI {: List<Stmt> l = new LinkedList<Stmt>();
-                                      l.add(s);
-                                      RESULT = l; :}                         
-                  | stmt_list:sl stmt:s SEMI {: sl.add(s); RESULT = sl; :};
-                  
+arith_op          ::= PLUS                     {: RESULT = "+"; :}
+                    | MINUS                    {: RESULT = "-"; :}
+                    | MULTIPLY                 {: RESULT = "*"; :}
+                    | SLASH                    {: RESULT = "/"; :}
+                    | EXPONENT                 {: RESULT = "^"; :};
 
-exp               ::= exp:e1 log_op:o exp:e2    {: RESULT = new Exp(e1, o, e2); :} 
-                  | NOT exp:e                   {: RESULT = new Exp(e); :} 
-                  | exp:e1 rel_op:o exp:exp2    {: RESULT = new Exp(e1, o, e2); :} 
-                  | exp:e1 arith_op:o exp:exp2  {: RESULT = new Exp(e1, o, e2); :} 
-                  | literal:e                   {: RESULT = new Exp(e); :} 
-                  | call_stmt:e                 {: RESULT = new Exp(e); :} 
-                  | NEW ID:name                 {: RESULT = new Exp(name); :} 
-                  | var:e                       {: RESULT = new Exp(e); :} 
-                  | ref_var:e                   {: RESULT = new Exp(e); :} 
-                  | deref_var:e                 {: RESULT = new Exp(e); :} 
-                  | LPAR exp:e RPAR             {: RESULT = new Exp(e); :} 
+literal           ::= float_literal:f          {: RESULT = new Literal(f); :}
+                    | int_literal:i            {: RESULT = new Literal(i); :}
+                    | string_literal:s         {: RESULT = new Literal(s); :}
+                    | bool_literal:b           {: RESULT = new Literal(b); :}
+                    | NULL                     {: RESULT = new Literal("null"); :};
 
-ref_var           ::= REF LPAR var:v RPAR       {: RESULT = new RefVar(v); :}
-                  | REF LPAR ref_var:rv RPAR    {: RESULT = new RefVar(rv); :}
+bool_literal      ::= TRUE                     {: RESULT = "true"; :}
+                    | FALSE                    {: RESULT = "false"; :};
 
-deref_var         ::= DEREF LPAR var:v RPAR     {: RESULT = new DerefVar(v); :}
-                  | DEREF LPAR deref_var:dv RPAR{: RESULT = new DerefVar(dv); :}
-
-var               ::= name:n                    {: RESULT = new Var(n); :}
-                  | exp:e PERIOD name:n         {: RESULT = new Var(e,n); :}
-
-log_op            ::= AND                       {: RESULT = "&&; :}
-                  | OR                          {: RESULT = "||"; :}
-
-rel_op            ::= LESS                      {: RESULT = "<"; :}
-                  | LESSEQUAL                   {: RESULT = "<="; :}
-                  | GREATER                     {: RESULT = ">"; :}
-                  | GREATEREQUAL                {: RESULT = ">="; :}
-                  | ANGLEBRACKETS               {: RESULT = "<>"; :}
-
-arith_op          ::= PLUS                      {: RESULT = "+"; :}
-                  | MINUS                       {: RESULT = "-"; :}
-                  | MULTIPLY                    {: RESULT = "*"; :}
-                  | SLASH                       {: RESULT = "/"; :}
-                  | CARET                       {: RESULT = "^"; :}
-
-literal           ::= float_literal:f           {: RESULT = new Literal(n); :}
-                  | int_literal:i               {: RESULT = new Literal(i); :}
-                  | string_literal:s            {: RESULT = new Literal(s); :}
-                  | bool_literal:b              {: RESULT = new Literal(b); :}
-                  | NULL                        {: RESULT = "null"; :}
-
-bool_literal      ::= TRUE                      {: RESULT = "true"; :}
-                  | FALSE                       {: RESULT = "false"; :}
-
-stmt              ::= assign_stmt:s             {: RESULT = new Stmt(s); :}
-                  | if_stmt:s                   {: RESULT = new Stmt(s); :}
-                  | while_stmt:s                {: RESULT = new Stmt(s); :}
-                  | return_stmt:s               {: RESULT = new Stmt(s); :}
-                  | call_stmt:s                 {: RESULT = new Stmt(s); :}
+stmt              ::= assign_stmt:s            {: RESULT = s; :}
+                    | if_stmt:s                {: RESULT = s; :}
+                    | while_stmt:s             {: RESULT = s; :}
+                    | return_stmt:s            {: RESULT = s; :}
+                    | call_stmt:s              {: RESULT = s; :};
 
 assign_stmt       ::= var:v ASSIGN exp:e        {: RESULT = new AssignStmt(v,e); :}
-                  | deref_var:v ASSIGN exp:e    {: RESULT = new AssignStmt(v,e); :}
+                    | deref_var:v ASSIGN exp:e  {: RESULT = new AssignStmt(v,e); :};
 
-if_stmt           ::= IF exp:e THEN stmt_list:sl FI   {: RESULT = new IfStmt(e,sl); :}
-                  | IF exp:e THEN stmt_list:sl1 ELSE stmt_list:sl2 FI  {: RESULT = new IfStmt(e,sl1,sl2); :}
+if_stmt           ::= IF exp:e THEN stmt_list:sl FI                      {: RESULT = new IfStmt(e,sl); :}
+                     | IF exp:e THEN stmt_list:sl1 ELSE stmt_list:sl2 FI {: RESULT = new IfStmt(e,sl1,sl2); :};
 
-while_stmt        ::= WHILE exp:e DO stmt_list:sl OD  {: RESULT = new WhileStmt(e,sl); :}
+while_stmt        ::= WHILE exp:e DO stmt_list:sl OD  {: RESULT = new WhileStmt(e,sl); :};
 
-return_stmt       ::= RETURN                    {: RESULT = new "return"; :}
-                  | RETURN exp:e                {: RESULT = new ReturnStmt(e); :}
+return_stmt       ::= RETURN                     {: RESULT = new ReturnStmt(); :}
+                    | RETURN exp:e               {: RESULT = new ReturnStmt(e); :};
 
-call_stmt         ::= ID:name LPAR exp_list:el RPAR   {: RESULT = new CallStmt(name, el); :}
+call_stmt         ::= ID:name LPAR exp_list:el RPAR 
+                      {: RESULT = new CallStmt(name, el); :};
 
-exp_list          ::= exp:e COMMA {: List<Exp> l = new LinkedList<Exp>();
-                                      l.add(s);
-                                      RESULT = l; :}                         
-                  | exp_list:el exp:e COMMA {: el.add(e); RESULT = el; :};
-
-
+exp_list          ::= exp:e
+                        {: List<Exp> l = new LinkedList<Exp>(); 
+                            l.add(e); RESULT = l; :}                         
+                    | exp_list:el COMMA exp:e 
+                        {: el.add(e); RESULT = el; :}
+                    | {: RESULT = new LinkedList<Exp>(); :};

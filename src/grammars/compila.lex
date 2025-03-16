@@ -56,7 +56,7 @@ Identifier = [:jletter:] [:jletterdigit:]*
         ">"                             { return symbol(sym.GREATER);}
         ">="                            { return symbol(sym.GREATEREQUAL);}
         "="                             { return symbol(sym.EQUAL);}
-        "<>"                            { return symbol(sym.ANGLEBRACKETS);}
+        "<>"                            { return symbol(sym.NOTEQUAL);}
         "+"                             { return symbol(sym.PLUS);}
         "-"                             { return symbol(sym.MINUS);}
         "*"                             { return symbol(sym.MULTIPLY);}
@@ -72,8 +72,6 @@ Identifier = [:jletter:] [:jletterdigit:]*
         "while"                         { return symbol(sym.WHILE);}
         "do"                            { return symbol(sym.DO);}
         "od"                            { return symbol(sym.OD);}
-
-
 }
 
 .                           { throw new Error("Illegal character '" + yytext() + "' at line " + yyline + ", column " + yycolumn + "."); }
