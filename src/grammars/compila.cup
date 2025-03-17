@@ -20,6 +20,7 @@ terminal                        LBRACKET, RBRACKET;
 terminal                        SEMI, COLON, PERIOD, RETURN;
 terminal String                 ID;
 terminal String                 STRING_LITERAL;
+terminal float                  FLOAT_LITERAL;
 terminal                        VAR, ASSIGN;
 terminal                        FLOAT, INT, STRING, BOOL, REF;
 terminal                        NOT;
@@ -88,9 +89,9 @@ decl_list       ::= decl:d SEMI
                   | decl_list:dl decl:d SEMI 
                       {: dl.add(d); RESULT = dl; :};
 
-decl            ::= var_decl:vd  {: vd; :} 
-                  | proc_decl:pd {: pd; :} 
-                  | rec_decl:rd  {: rd; :};
+decl            ::= var_decl:vd  {: RESULT = vd; :} 
+                  | proc_decl:pd {: RESULT = pd; :} 
+                  | rec_decl:rd  {: RESULT = rd; :};
 
 var_decl        ::= VAR ID:name COLON type:t ASSIGN exp:e
                         {: RESULT = new VarDecl(name, t, e); :}
@@ -131,7 +132,7 @@ paramfield_decl_list ::= paramfield_decl:pfd
 paramfield_decl   ::= ID:name COLON type:t {: RESULT = new ParamfieldDecl(name, t); :};
 
 rec_decl          ::= STRUCT ID:name LBRACKET rec_decl_list:rdl RBRACKET {: RESULT = new RecDecl(name, rdl); :} 
-                    | STRUCT ID:name LBRACKET RBRACKET                     {: RESULT = new RecDecl(name, null); :};
+                    | STRUCT ID:name LBRACKET RBRACKET                   {: RESULT = new RecDecl(name, null); :};
 
 rec_decl_list     ::= paramfield_decl:pfd SEMI 
                         {: List<ParamfieldDecl> l = new LinkedList<ParamfieldDecl>();
@@ -148,21 +149,20 @@ stmt_list         ::= stmt:s SEMI
                     | {: RESULT = new LinkedList<Stmt>(); :};
 
 
-exp               ::= exp:e1 log_op:o exp:e2      {: RESULT = new Exp(e1, o, e2); :} 
-                    | exp:e1 rel_op:o exp:exp2    {: RESULT = new Exp(e1, o, e2); :} 
-                    | exp:e1 arith_op:o exp:exp2  {: RESULT = new Exp(e1, o, e2); :} 
+exp               ::= exp:e1 log_op:o exp:e2      {: RESULT = new BinaryExp(e1, o, e2); :} 
+                    | exp:e1 rel_op:o exp:exp2    {: RESULT = new BinaryExp(e1, o, e2); :} 
+                    | exp:e1 arith_op:o exp:exp2  {: RESULT = new BinaryExp(e1, o, e2); :} 
 
-                    | NOT exp:e                   {: RESULT = new Exp("!", e); :} 
+                    | NOT exp:e                   {: RESULT = new NotExp(e); :} 
 
-                    | literal:l                   {: RESULT = new Exp(l); :} 
+                    | literal:l                   {: RESULT = l; :} 
 
-                    | call_stmt:c                 {: RESULT = new Exp(c); :} 
-                    | NEW ID:name                 {: RESULT = new Exp(name); :} 
+                    | call_stmt:c                 {: RESULT = new CallExp(c); :} 
+                    | NEW ID:name                 {: RESULT = new NewExp(name); :} 
 
-                    | var:v                       {: RESULT = new Exp(v); :} 
-
-                    | ref_var:e                   {: RESULT = new Exp(e); :} 
-                    | deref_var:e                 {: RESULT = new Exp(e); :} 
+                    | var:v                       {: RESULT = v; :} 
+                    | ref_var:e                   {: RESULT = e; :} 
+                    | deref_var:e                 {: RESULT = e; :} 
 
                     | LPAR exp:e RPAR             {: RESULT = e; :};
 
@@ -191,9 +191,9 @@ arith_op          ::= PLUS                     {: RESULT = "+"; :}
                     | SLASH                    {: RESULT = "/"; :}
                     | EXPONENT                 {: RESULT = "^"; :};
 
-literal           ::= float_literal:f          {: RESULT = new Literal(f); :}
-                    | int_literal:i            {: RESULT = new Literal(i); :}
-                    | string_literal:s         {: RESULT = new Literal(s); :}
+literal           ::= FLOAT_LITERAL:f          {: RESULT = new Literal(f); :}
+                    | INT_LITERAL:i            {: RESULT = new Literal(i); :}
+                    | STRING_LITERAL:s         {: RESULT = new Literal(s); :}
                     | bool_literal:b           {: RESULT = new Literal(b); :}
                     | NULL                     {: RESULT = new Literal("null"); :};
 

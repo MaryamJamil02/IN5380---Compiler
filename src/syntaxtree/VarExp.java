@@ -1,6 +1,6 @@
 package syntaxtree;
 
-public abstract class VarExp {
+public abstract class VarExp extends Exp {
     public abstract String printAst();
 }
 

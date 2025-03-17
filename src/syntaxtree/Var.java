@@ -18,7 +18,6 @@ public class Var extends VarExp {
       // (VAR ([EXP] NAME("x")))
       StringBuilder sb = new StringBuilder();
       sb.append("(VAR (");
-
       if (e != null) {
         sb.append(e.printAst() + " ");
       }

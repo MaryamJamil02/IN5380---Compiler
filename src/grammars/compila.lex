@@ -19,9 +19,18 @@ import java_cup.runtime.*;
   }
 
 %}
+
 LineTerminator = \r|\n|\r\n
 WhiteSpace = {LineTerminator} | [ \t\f]
+Comments = "//" ~{LineTerminator} | "*" ~"*"
+
 Identifier = [:jletter:] [:jletterdigit:]*
+
+IntLiteral = 0 | [1-9] [0-9]*
+FloatLiteral = {IntLiteral} ("." [0-9]+)?
+BoolLiteral = "true" | "false"
+
+StringChar = !["^""\n""\r""\""]
 
 %%
 <YYINITIAL>{
@@ -72,6 +81,16 @@ Identifier = [:jletter:] [:jletterdigit:]*
         "while"                         { return symbol(sym.WHILE);}
         "do"                            { return symbol(sym.DO);}
         "od"                            { return symbol(sym.OD);}
+        {IntLiteral}                    { return symbol(sym.INT_LITERAL,yytext()); }
+        "\""                            { string.setLength(0); yybegin(STRING); }
 }
 
-.                           { throw new Error("Illegal character '" + yytext() + "' at line " + yyline + ", column " + yycolumn + "."); }
+<STRING> {
+    {StringChar}*     {string.append(yytext()); }    
+    "\""              { yybegin(YYINITIAL); 
+                        return symbol(sym.STRING_LITERAL, string.toString()); }
+    "\n"|"\r"         { throw new Error("Illegal newline in string at line " + yyline + ", column " + yycolumn + ".");}
+}
+
+
+.                    { throw new Error("Illegal character '" + yytext() + "' at line " + yyline + ", column " + yycolumn + "."); }
