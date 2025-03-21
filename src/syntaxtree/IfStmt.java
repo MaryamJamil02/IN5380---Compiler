@@ -29,7 +29,7 @@ public class IfStmt extends Stmt {
         if (if_stmts != null) {
             sb.append("\n");
             for (Stmt s : if_stmts) {
-                sb.append("\t" + s.printAst() + "\n");
+                sb.append("\t\t" + s.printAst() + "\n");
             }
         } else {
             sb.append(" ");
@@ -39,7 +39,7 @@ public class IfStmt extends Stmt {
         if (else_stmts != null) {
             sb.append("ELSE(\n");
             for (Stmt s : else_stmts) {
-                sb.append("\t" + s.printAst() + "\n");
+                sb.append("\t\t" + s.printAst() + "\n");
             }
             sb.append(")");
         }

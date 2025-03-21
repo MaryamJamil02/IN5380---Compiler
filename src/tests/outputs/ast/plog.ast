@@ -1,0 +1,32 @@
+(PROGRAM (NAME plog)
+	(PROC_DECL (NAME("symbols") 
+
+		(PARAMFIELD_DECL (NAME("n") TYPE(INT)))
+		(PARAMFIELD_DECL (NAME("zz") TYPE(STRING))) NULL 
+		(VAR_DECL (NAME("i") TYPE(INT) NULL	))
+
+		(ASSIGN_STMT (VAR (NAME("i"))) (LITERAL (INT 0)))
+		(WHILE_STMT (WHILE(BINARY_EXP ((VAR (NAME("i"))) < (VAR (NAME("n"))))) DO(
+		(CALL_STMT (NAME("printstr") ARGS( (VAR (NAME("zz"))))))
+		(ASSIGN_STMT (VAR (NAME("i"))) (BINARY_EXP ((VAR (NAME("i"))) + (LITERAL (INT 1)))))
+)))
+	))
+	(PROC_DECL (NAME("skriv_plog") NULL NULL 
+		(VAR_DECL (NAME("h") TYPE(INT) NULL	))
+		(VAR_DECL (NAME("j") TYPE(INT) NULL	))
+
+		(ASSIGN_STMT (VAR (NAME("h"))) (LITERAL (INT 5)))
+		(ASSIGN_STMT (VAR (NAME("j"))) (LITERAL (INT 0)))
+		(WHILE_STMT (WHILE(BINARY_EXP ((VAR (NAME("j"))) < (VAR (NAME("h"))))) DO(
+		(CALL_STMT (NAME("symbols") ARGS( (VAR (NAME("j"))) (LITERAL (STRING " ")))))
+		(CALL_STMT (NAME("symbols") ARGS( (LITERAL (INT 1)) (LITERAL (STRING "X")))))
+		(CALL_STMT (NAME("symbols") ARGS( (BINARY_EXP ((BINARY_EXP ((VAR (NAME("h"))) - (BINARY_EXP ((VAR (NAME("j"))) - (LITERAL (INT 1)))))) * (LITERAL (INT 2)))) (LITERAL (STRING " ")))))
+		(CALL_STMT (NAME("symbols") ARGS( (LITERAL (INT 1)) (LITERAL (STRING "X")))))
+		(CALL_STMT (NAME("printline") ARGS( (LITERAL (STRING "")))))
+		(ASSIGN_STMT (VAR (NAME("j"))) (BINARY_EXP ((VAR (NAME("j"))) + (LITERAL (INT 1)))))
+)))
+	))
+	(PROC_DECL (NAME("main") NULL NULL NULL
+		(CALL_STMT (NAME("skriv_plog") ))
+	))
+)

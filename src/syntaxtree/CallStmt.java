@@ -11,6 +11,10 @@ public class CallStmt extends Stmt {
         this.exps = exps;
     }
 
+    public CallStmt(String name) {
+        this.name = name;
+    }
+
     @Override
     public String printAst() {
         // (CALL_STMT (NAME("x") [ARGS(List<Exp>)]))
@@ -19,10 +23,10 @@ public class CallStmt extends Stmt {
         sb.append("(CALL_STMT (");
         sb.append("NAME(\"" + name + "\") ");
 
-        if (!exps.isEmpty()) {
+        if (exps != null) {
             sb.append("ARGS(");
             for (Exp e : exps) {
-                sb.append("\t" + e.printAst() + "\n");
+                sb.append(" " + e.printAst());
             }
             sb.append(")");
         }

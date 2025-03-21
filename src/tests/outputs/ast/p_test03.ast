@@ -1,0 +1,5 @@
+(PROGRAM (NAME A_A)
+	(VAR_DECL (NAME("x") TYPE(x) NULL))
+	(VAR_DECL (NAME("x") TYPE(ref(x)) NULL))
+	(VAR_DECL (NAME("x") TYPE(ref(ref(x))) NULL))
+)

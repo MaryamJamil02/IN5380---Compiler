@@ -1,0 +1,50 @@
+(PROGRAM (NAME ComplexAddition)
+	(REC_DECL (NAME("Complex") 
+		(PARAMFIELD_DECL (NAME("Real") TYPE(FLOAT)))
+		(PARAMFIELD_DECL (NAME("Imag") TYPE(FLOAT)))
+	))
+	(PROC_DECL (NAME("Swap") 
+
+		(PARAMFIELD_DECL (NAME("a") TYPE(REF(INT))))
+		(PARAMFIELD_DECL (NAME("b") TYPE(REF(INT)))) NULL 
+		(VAR_DECL (NAME("tmp") TYPE(INT) NULL	))
+
+		(ASSIGN_STMT (VAR (NAME("tmp"))) (VAR (NAME("a"))))
+		(ASSIGN_STMT (VAR (NAME("a"))) (VAR (NAME("b"))))
+		(ASSIGN_STMT (VAR (NAME("b"))) (VAR (NAME("tmp"))))
+	))
+	(PROC_DECL (NAME("Add") 
+
+		(PARAMFIELD_DECL (NAME("a") TYPE(Complex)))
+		(PARAMFIELD_DECL (NAME("b") TYPE(Complex))) TYPE(Complex) 
+		(VAR_DECL (NAME("retval") TYPE(Complex) NULL	))
+
+		(ASSIGN_STMT (VAR (NAME("retval"))) (NEW_EXP (NAME("Complex"))))
+		(ASSIGN_STMT (VAR ((VAR (NAME("retval"))) NAME("Real"))) (BINARY_EXP ((VAR ((VAR (NAME("a"))) NAME("Real"))) + (VAR ((VAR (NAME("b"))) NAME("Real"))))))
+		(ASSIGN_STMT (VAR ((VAR (NAME("retval"))) NAME("Imag"))) (BINARY_EXP ((VAR ((VAR (NAME("a"))) NAME("Imag"))) + (VAR ((VAR (NAME("b"))) NAME("Imag"))))))
+		(RETURN_STMT (VAR (NAME("retval"))))
+	))
+	(PROC_DECL (NAME("Max") 
+
+		(PARAMFIELD_DECL (NAME("a") TYPE(INT)))
+		(PARAMFIELD_DECL (NAME("b") TYPE(INT))) TYPE(INT) NULL
+		(IF_STMT (COND(BINARY_EXP ((VAR (NAME("a"))) > (VAR (NAME("b"))))) THEN(
+		(RETURN_STMT (VAR (NAME("a"))))
+)))
+		(RETURN_STMT (VAR (NAME("b"))))
+	))
+	(PROC_DECL (NAME("main") NULL NULL 
+		(PROC_DECL (NAME("Square") 
+
+		(PARAMFIELD_DECL (NAME("val") TYPE(FLOAT))) TYPE(FLOAT) NULL
+		(RETURN_STMT (BINARY_EXP ((VAR (NAME("val"))) ^ (LITERAL (FLOAT 2.0)))))
+	))
+		(VAR_DECL (NAME("num") TYPE(FLOAT) NULL	))
+
+		(ASSIGN_STMT (VAR (NAME("num"))) (LITERAL (FLOAT 6.48074)))
+		(CALL_STMT (NAME("print_float") ARGS( (VAR (NAME("num"))))))
+		(CALL_STMT (NAME("print_str") ARGS( (LITERAL (STRING " squared is ")))))
+		(CALL_STMT (NAME("print_float") ARGS( (CALL_STMT (NAME("Square") ARGS( (VAR (NAME("num")))))))))
+		(RETURN_STMT ())
+	))
+)

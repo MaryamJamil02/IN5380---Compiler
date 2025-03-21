@@ -21,14 +21,13 @@ public class RecDecl extends Decl {
         if (paramfieldDecls != null){
             sb.append("\n");
             for (ParamfieldDecl p : paramfieldDecls) {
-                sb.append("\t" + p.printAst());
-                sb.append("\n");
+                sb.append("\t\t" + p.printAst() + "\n");
             }
         } else {
             sb.append("NULL");
         }
 
-        sb.append("))");
+        sb.append("\t))");
         return sb.toString();
     }
 }

@@ -99,8 +99,26 @@
 	<!-- Run the system  -->
 	<target name="run" depends="init">
 		<java classname="compiler.Compiler" classpathref="path-run">
-			<arg value="src/tests/dummyprograms/simpledummy.cmp"/> 
-			<arg value="src/tests/outputs/ast/simpledummy.ast"/>
+			<!-- <arg value="src/tests/errors/lexing/test10.cmp"/>
+			<arg value="src/tests/outputs/ast/l_test10.ast"/> -->
+
+			<!-- <arg value="src/tests/errors/parsing/test01.cmp"/>
+			<arg value="src/tests/outputs/ast/pe_test01.ast"/> -->
+
+			<!-- <arg value="src/tests/parsing/test08.cmp"/>
+			<arg value="src/tests/outputs/ast/p_test08.ast"/> -->
+
+			<arg value="src/tests/fullprograms/complexaddition.cmp"/>
+			<arg value="src/tests/outputs/ast/complexaddition.ast"/>
+
+			<!-- <arg value="src/tests/fullprograms/euclid.cmp"/>
+			<arg value="src/tests/outputs/ast/euclid.ast"/> -->
+
+			<!-- <arg value="src/tests/fullprograms/plog.cmp"/>
+			<arg value="src/tests/outputs/ast/plog.ast"/> -->
+
+			<!-- <arg value="src/tests/fullprograms/runme.cmp"/>
+			<arg value="src/tests/outputs/ast/runme.ast"/> -->
 		</java>
 	</target>
 </project>

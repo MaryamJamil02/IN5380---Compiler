@@ -17,6 +17,7 @@ public class ProcDecl extends Decl{
         this.sl = sl;
     }
 
+    @Override
     public String printAst() {
         /* (PROC_DECL (NAME("x") 
                        [List<ParamfieldDecl>] 
@@ -32,8 +33,7 @@ public class ProcDecl extends Decl{
         if (pdl != null) {
             sb.append("\n");
             for (ParamfieldDecl pf : pdl) {
-                sb.append("\t" + pf.printAst());
-                sb.append("\n");
+                sb.append("\n\t\t" + pf.printAst());
             }
         } else {
             sb.append("NULL");
@@ -50,7 +50,7 @@ public class ProcDecl extends Decl{
         if (dl != null) {
             sb.append("\n");
             for (Decl d : dl) {
-                sb.append("\t" + d.printAst());
+                sb.append("\t\t" + d.printAst());
                 sb.append("\n");
             }
         } else{
@@ -59,11 +59,11 @@ public class ProcDecl extends Decl{
 
         sb.append("\n");
         for (Stmt s : sl) {
-            sb.append("\t" + s.printAst());
+            sb.append("\t\t" + s.printAst());
             sb.append("\n");
         }
 
-        sb.append("))");
+        sb.append("\t))");
         return sb.toString();
     }
 }

@@ -23,7 +23,7 @@ public class WhileStmt extends Stmt {
         if (stmts != null) {
             sb.append("\n");
             for (Stmt s : stmts) {
-                sb.append("\t" + s.printAst() + "\n");
+                sb.append("\t\t" + s.printAst() + "\n");
             }
         } else {
             sb.append(" ");

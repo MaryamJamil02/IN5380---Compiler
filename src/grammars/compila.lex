@@ -8,6 +8,7 @@ import java_cup.runtime.*;
 %line
 %column
 %public
+%state STRING
 %{
  StringBuffer string = new StringBuffer();
 
@@ -22,55 +23,33 @@ import java_cup.runtime.*;
 
 LineTerminator = \r|\n|\r\n
 WhiteSpace = {LineTerminator} | [ \t\f]
-Comments = "//" ~{LineTerminator} | "*" ~"*"
+Comment = "//" ~{LineTerminator} | "(*" ~"*)"
 
-Identifier = [:jletter:] [:jletterdigit:]*
+Identifier = [A-Za-z]([A-Za-z0-9_]*[A-Za-z0-9])?
 
-IntLiteral = 0 | [1-9] [0-9]*
-FloatLiteral = {IntLiteral} ("." [0-9]+)?
-BoolLiteral = "true" | "false"
-
-StringChar = !["^""\n""\r""\""]
+IntLiteral = 0 | [1-9][0-9]*
+FloatLiteral = [0-9]+ \.[0-9]+
 
 %%
 <YYINITIAL>{
         {WhiteSpace}                    {  }
+        {Comment}                       {  }
+
         "program"                       { return symbol(sym.PROGRAM); }
         "struct"                        { return symbol(sym.STRUCT); }
+        "procedure"                     { return symbol(sym.PROCEDURE); }
         "begin"                         { return symbol(sym.BEGIN); }
         "end"                           { return symbol(sym.END); }
-        "("                             { return symbol(sym.LPAR); }
-        ")"                             { return symbol(sym.RPAR); }
-        ";"                             { return symbol(sym.SEMI); }
-        {Identifier}                    { return symbol(sym.ID,yytext()); }
-        "var"                           { return symbol(sym.VAR);}
-        "colon"                         { return symbol(sym.COLON);}
         "float"                         { return symbol(sym.FLOAT);}
         "int"                           { return symbol(sym.INT);}
         "string"                        { return symbol(sym.STRING);}
         "bool"                          { return symbol(sym.BOOL);}
         "ref"                           { return symbol(sym.REF);}
-        ":="                            { return symbol(sym.ASSIGN);}
+        "var"                           { return symbol(sym.VAR);}
         "in"                            { return symbol(sym.IN);}
-        "{"                             { return symbol(sym.LBRACKET);}
-        "}"                             { return symbol(sym.RBRACKET);}
         "not"                           { return symbol(sym.NOT);}
         "new"                           { return symbol(sym.NEW);}
         "deref"                         { return symbol(sym.DEREF);}
-        "."                             { return symbol(sym.PERIOD);}
-        "&&"                            { return symbol(sym.AND);}
-        "||"                            { return symbol(sym.OR);}
-        "<"                             { return symbol(sym.LESS);}
-        "<="                            { return symbol(sym.LESSEQUAL);}
-        ">"                             { return symbol(sym.GREATER);}
-        ">="                            { return symbol(sym.GREATEREQUAL);}
-        "="                             { return symbol(sym.EQUAL);}
-        "<>"                            { return symbol(sym.NOTEQUAL);}
-        "+"                             { return symbol(sym.PLUS);}
-        "-"                             { return symbol(sym.MINUS);}
-        "*"                             { return symbol(sym.MULTIPLY);}
-        "/"                             { return symbol(sym.SLASH);}
-        "^"                             { return symbol(sym.EXPONENT);}
         "null"                          { return symbol(sym.NULL);}
         "true"                          { return symbol(sym.TRUE);}
         "false"                         { return symbol(sym.FALSE);}
@@ -81,16 +60,43 @@ StringChar = !["^""\n""\r""\""]
         "while"                         { return symbol(sym.WHILE);}
         "do"                            { return symbol(sym.DO);}
         "od"                            { return symbol(sym.OD);}
-        {IntLiteral}                    { return symbol(sym.INT_LITERAL,yytext()); }
+        "return"                        { return symbol(sym.RETURN); }
+
+        {IntLiteral}                    { return symbol(sym.INT_LITERAL,Integer.parseInt(yytext())); }
+        {FloatLiteral}                  { return symbol(sym.FLOAT_LITERAL,Float.parseFloat(yytext())); }
+        {Identifier}                    { return symbol(sym.ID,yytext()); }
+
+        "("                             { return symbol(sym.LPAR); }
+        ")"                             { return symbol(sym.RPAR); }
+        ";"                             { return symbol(sym.SEMI); }
+        ":="                            { return symbol(sym.ASSIGN);}
+        ":"                             { return symbol(sym.COLON);}
+        "{"                             { return symbol(sym.LBRACKET);}
+        "}"                             { return symbol(sym.RBRACKET);}
+        "."                             { return symbol(sym.PERIOD);}
+        ","                             { return symbol(sym.COMMA);}
+        "&&"                            { return symbol(sym.AND);}
+        "||"                            { return symbol(sym.OR);}
+        "<="                            { return symbol(sym.LESSEQUAL);}
+        ">="                            { return symbol(sym.GREATEREQUAL);}
+        "<>"                            { return symbol(sym.NOTEQUAL);}
+        "<"                             { return symbol(sym.LESS);}
+        ">"                             { return symbol(sym.GREATER);}
+        "="                             { return symbol(sym.EQUAL);}
+        "+"                             { return symbol(sym.PLUS);}
+        "-"                             { return symbol(sym.MINUS);}
+        "*"                             { return symbol(sym.MULTIPLY);}
+        "/"                             { return symbol(sym.SLASH);}
+        "^"                             { return symbol(sym.EXPONENT);}
+
         "\""                            { string.setLength(0); yybegin(STRING); }
 }
 
 <STRING> {
-    {StringChar}*     {string.append(yytext()); }    
-    "\""              { yybegin(YYINITIAL); 
-                        return symbol(sym.STRING_LITERAL, string.toString()); }
-    "\n"|"\r"         { throw new Error("Illegal newline in string at line " + yyline + ", column " + yycolumn + ".");}
+    [^\"\n\r]*    { string.append(yytext()); }
+    "\""          { yybegin(YYINITIAL); 
+                    return symbol(sym.STRING_LITERAL,string.toString()); }
+    {LineTerminator}  { throw new Error("Illegal newline in string at line " + yyline + ", column " + yycolumn + "."); }
 }
-
 
 .                    { throw new Error("Illegal character '" + yytext() + "' at line " + yyline + ", column " + yycolumn + "."); }
