@@ -22,4 +22,4 @@ Open up a terminal window. Direct to the folder you want to download the project
 ```ant run```
 
 
-When you run the project, you are running a test called complexaddition.cmp. After the project has run successfully, there should be a file generated called complexaddition.ast in this directory: src/tests/outputs.
+When you run the project, you are running a test called complexaddition.cmp. After the project has run successfully, there should be a file generated called complexaddition.ast in this directory: src/tests/outputs/ast.
