@@ -26,7 +26,7 @@ public class CallStmt extends Stmt {
         if (exps != null) {
             sb.append("ARGS(");
             for (Exp e : exps) {
-                sb.append(" " + e.printAst());
+                sb.append(e.printAst());
             }
             sb.append(")");
         }

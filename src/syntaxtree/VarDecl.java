@@ -30,7 +30,7 @@ public class VarDecl extends Decl {
             sb.append("NULL");
         }
 
-        sb.append("\t))");
+        sb.append("))");
         return sb.toString();
     }
 }

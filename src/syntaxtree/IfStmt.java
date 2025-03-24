@@ -23,28 +23,28 @@ public class IfStmt extends Stmt {
         StringBuilder sb = new StringBuilder();
         sb.append("(IF_STMT (");
 
-        sb.append("COND" + cond.printAst() + " ");
+        sb.append("COND" + cond.printAst());
 
-        sb.append("THEN(");
+        sb.append("\n\t\t\tTHEN(");
         if (if_stmts != null) {
             sb.append("\n");
             for (Stmt s : if_stmts) {
-                sb.append("\t\t" + s.printAst() + "\n");
+                sb.append("\t\t\t\t" + s.printAst() + "\n");
             }
         } else {
             sb.append(" ");
         }
-        sb.append(")");
+        sb.append("\t\t\t)");
 
         if (else_stmts != null) {
-            sb.append("ELSE(\n");
+            sb.append("\n\t\t\tELSE(\n");
             for (Stmt s : else_stmts) {
-                sb.append("\t\t" + s.printAst() + "\n");
+                sb.append("\t\t\t\t" + s.printAst() + "\n");
             }
-            sb.append(")");
+            sb.append("\t\t\t)");
         }
 
-        sb.append("))");
+        sb.append("\t\t))");
         return sb.toString();
     }
 }

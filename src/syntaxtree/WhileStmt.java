@@ -4,7 +4,7 @@ import java.util.List;
 
 public class WhileStmt extends Stmt {
     Exp cond;
-    List<Stmt> stmts;   // May be null
+    List<Stmt> stmts;   // May be empty
 
     public WhileStmt(Exp cond, List<Stmt> stmts) {
         this.cond = cond;
@@ -17,18 +17,18 @@ public class WhileStmt extends Stmt {
         StringBuilder sb = new StringBuilder();
         sb.append("(WHILE_STMT (");
 
-        sb.append("WHILE" + cond.printAst() + " ");
+        sb.append("WHILE " + cond.printAst());
 
-        sb.append("DO(");
-        if (stmts != null) {
+        sb.append("\n\t\t\tDO (");
+        if (!stmts.isEmpty()) {
             sb.append("\n");
             for (Stmt s : stmts) {
-                sb.append("\t\t" + s.printAst() + "\n");
+                sb.append("\t\t\t\t" + s.printAst() + "\n");
             }
         } else {
             sb.append(" ");
         }
-        sb.append(")))");
+        sb.append("\t\t\t)))");
         return sb.toString();
     }
 }

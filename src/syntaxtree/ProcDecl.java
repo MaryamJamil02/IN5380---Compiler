@@ -31,7 +31,6 @@ public class ProcDecl extends Decl{
 
         // Optional list of paramfield decls
         if (pdl != null) {
-            sb.append("\n");
             for (ParamfieldDecl pf : pdl) {
                 sb.append("\n\t\t" + pf.printAst());
             }

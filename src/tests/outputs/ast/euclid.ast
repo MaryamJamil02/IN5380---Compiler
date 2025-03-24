@@ -1,30 +1,34 @@
 (PROGRAM (NAME euclid)
 	(PROC_DECL (NAME("gcd") 
-
 		(PARAMFIELD_DECL (NAME("a") TYPE(INT)))
 		(PARAMFIELD_DECL (NAME("b") TYPE(INT))) TYPE(INT) 
-		(VAR_DECL (NAME("res") TYPE(INT) NULL	))
+		(VAR_DECL (NAME("res") TYPE(INT) NULL))
 
-		(IF_STMT (COND(BINARY_EXP ((VAR (NAME("a"))) = (LITERAL (INT 0)))) THEN(
-		(ASSIGN_STMT (VAR (NAME("res"))) (VAR (NAME("b"))))
-)ELSE(
-		(WHILE_STMT (WHILE(BINARY_EXP ((VAR (NAME("b"))) <> (LITERAL (INT 0)))) DO(
-		(IF_STMT (COND(BINARY_EXP ((VAR (NAME("a"))) > (VAR (NAME("b"))))) THEN(
-		(ASSIGN_STMT (VAR (NAME("a"))) (BINARY_EXP ((VAR (NAME("a"))) - (VAR (NAME("b"))))))
-)ELSE(
-		(ASSIGN_STMT (VAR (NAME("b"))) (BINARY_EXP ((VAR (NAME("b"))) - (VAR (NAME("a"))))))
-)))
-)))
-		(ASSIGN_STMT (VAR (NAME("res"))) (VAR (NAME("a"))))
-)))
+		(IF_STMT (COND(BINARY_EXP ((VAR (NAME("a"))) = (LITERAL (INT 0))))
+			THEN(
+				(ASSIGN_STMT (VAR (NAME("res"))) (VAR (NAME("b"))))
+			)
+			ELSE(
+				(WHILE_STMT (WHILE (BINARY_EXP ((VAR (NAME("b"))) <> (LITERAL (INT 0))))
+			DO (
+				(IF_STMT (COND(BINARY_EXP ((VAR (NAME("a"))) > (VAR (NAME("b")))))
+			THEN(
+				(ASSIGN_STMT (VAR (NAME("a"))) (BINARY_EXP ((VAR (NAME("a"))) - (VAR (NAME("b"))))))
+			)
+			ELSE(
+				(ASSIGN_STMT (VAR (NAME("b"))) (BINARY_EXP ((VAR (NAME("b"))) - (VAR (NAME("a"))))))
+			)		))
+			)))
+				(ASSIGN_STMT (VAR (NAME("res"))) (VAR (NAME("a"))))
+			)		))
 		(RETURN_STMT (VAR (NAME("res"))))
 	))
 	(PROC_DECL (NAME("main") NULL NULL NULL
-		(CALL_STMT (NAME("printint") ARGS( (CALL_STMT (NAME("gcd") ARGS( (LITERAL (INT 6)) (LITERAL (INT 19))))))))
-		(CALL_STMT (NAME("printline") ARGS( (LITERAL (STRING "")))))
-		(CALL_STMT (NAME("printint") ARGS( (CALL_STMT (NAME("gcd") ARGS( (LITERAL (INT 6)) (LITERAL (INT 9))))))))
-		(CALL_STMT (NAME("printline") ARGS( (LITERAL (STRING "")))))
-		(CALL_STMT (NAME("printint") ARGS( (CALL_STMT (NAME("gcd") ARGS( (LITERAL (INT 629)) (LITERAL (INT 592))))))))
-		(CALL_STMT (NAME("printline") ARGS( (LITERAL (STRING "")))))
+		(CALL_STMT (NAME("printint") ARGS((CALL_STMT (NAME("gcd") ARGS((LITERAL (INT 6))(LITERAL (INT 19))))))))
+		(CALL_STMT (NAME("printline") ARGS((LITERAL (STRING "")))))
+		(CALL_STMT (NAME("printint") ARGS((CALL_STMT (NAME("gcd") ARGS((LITERAL (INT 6))(LITERAL (INT 9))))))))
+		(CALL_STMT (NAME("printline") ARGS((LITERAL (STRING "")))))
+		(CALL_STMT (NAME("printint") ARGS((CALL_STMT (NAME("gcd") ARGS((LITERAL (INT 629))(LITERAL (INT 592))))))))
+		(CALL_STMT (NAME("printline") ARGS((LITERAL (STRING "")))))
 	))
 )

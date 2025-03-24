@@ -9,8 +9,8 @@ begin
       var retval : Complex
   in
       retval := new Complex;
-      retval.Real := a.Real + b.Real;
-      retval.Imag := a.Imag + b.Imag;
+      retval.Real := a.Real + b.Real; // test
+      retval.Imag := a.Imag + b.Imag; (* test *)
       return retval
   end;
  
