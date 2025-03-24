@@ -7,7 +7,7 @@ Maryam Jamil (maryamj@uio.no)
 Open up a terminal window. Direct to the folder you want to download the project in and write these commands:
 
 ### To download the project/repo:
-git clone https://github.uio.no/compilerconstruction-inf5110/compila25-06.git
+```git clone https://github.uio.no/compilerconstruction-inf5110/compila25-06.git```
 
 ### Then to go into the right directory:
 cd compila-06
