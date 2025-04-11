@@ -18,4 +18,20 @@ public class AssignStmt extends Stmt {
         sb.append(")");
         return sb.toString();
     }
+
+    @Override
+    public void typeCheck(){
+        String varType = v.getType();
+        String expType = e.getType();
+
+        if (varType != expType && !isAssignmentCompatible(varType, expType)){
+            throw new TypeException("Cannot assign" + varType + " from " + expType);
+        }
+    }
+
+
+    @Override
+    public String getType(){
+       return  e.getType();
+    }
 }

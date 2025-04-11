@@ -30,4 +30,15 @@ public class RecDecl extends Decl {
         sb.append("\t))");
         return sb.toString();
     }
+
+    @Override
+    public void typeCheck() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'typeCheck'");
+    }
+
+    @Override
+    public String getType() {
+        
+    }
 }

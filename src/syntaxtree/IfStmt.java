@@ -47,4 +47,18 @@ public class IfStmt extends Stmt {
         sb.append("\t\t))");
         return sb.toString();
     }
+
+    @Override
+    public void typeCheck(){
+        String condType = cond.getType();
+
+        if (condType != "bool") {
+            throw new TypeException("Condition in an if statement must be of type bool");
+            
+        }
+    }
+
+    public String getType(){
+        return "x"; //usikker på om det er gettype i denne
+    }
 }

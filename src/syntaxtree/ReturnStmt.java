@@ -23,4 +23,21 @@ public class ReturnStmt extends Stmt{
         sb.append(")");
         return sb.toString();
     }
+
+
+    @Override
+    public void typeCheck() {
+    }
+
+
+    @Override
+    public String getType() {
+        if (e != null) {
+            return e.getType();
+        }
+
+        return null;
+    }
+
+    
 }

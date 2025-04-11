@@ -24,4 +24,24 @@ public class Var extends VarExp {
       sb.append("NAME(\"" + name + "\")))");
       return sb.toString();
   }
+
+  @Override
+  public void typeCheck() {
+      if (e != null) {
+      String expType = e.getType();
+
+      if (expType != "record") {
+        throw new TypeException("")
+        
+      }
+        
+    }
+
+  }
+
+  @Override
+  public String getType() {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'getType'");
+  }
 }

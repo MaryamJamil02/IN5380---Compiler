@@ -31,4 +31,14 @@ public class WhileStmt extends Stmt {
         sb.append("\t\t\t)))");
         return sb.toString();
     }
+
+    @Override
+    public void typeCheck(){
+        String condType = cond.getType();
+
+        if (condType != "bool") {
+            throw new TypeException("Condition in an While statement must be of type bool");
+            
+        }
+    }
 }

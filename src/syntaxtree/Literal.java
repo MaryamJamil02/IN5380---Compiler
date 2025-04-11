@@ -54,5 +54,29 @@ public class Literal extends Exp {
 
         sb.append("))");
         return sb.toString();
+    }
+
+    @Override
+    public void typeCheck() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'typeCheck'");
+    }
+
+    @Override
+    public String getType() {
+        switch (type) {
+            case FLOAT: 
+                return "float";
+            case INT:
+                return "int";
+            case BOOLEAN:
+                return "bool";
+            case STRING:
+                return "string";
+            case NULL:
+                return "null";
+        }
+
+        return null;
     }    
 }
