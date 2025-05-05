@@ -1,5 +1,7 @@
 package syntaxtree;
 
+import semantics.*;
+
 public class ReturnStmt extends Stmt{
     Exp e;
 
@@ -26,18 +28,10 @@ public class ReturnStmt extends Stmt{
 
 
     @Override
-    public void typeCheck() {
-    }
-
-
-    @Override
-    public String getType() {
+    public String typeCheck(SymbolTable st) {
         if (e != null) {
-            return e.getType();
+            return e.typeCheck(st);
         }
-
-        return null;
+        return "void";
     }
-
-    
 }

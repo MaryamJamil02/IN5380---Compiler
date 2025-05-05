@@ -1,5 +1,7 @@
 package syntaxtree;
 
+import semantics.*;
+
 public class NotExp extends Exp {
     Exp e;
 
@@ -16,18 +18,11 @@ public class NotExp extends Exp {
     }
 
     @Override
-    public void typeCheck() {
-       String expType = e.getType();
-
-       if (expType != "bool") {
-            throw new TypeException("Condition in an Not-expresson must be of type bool");
-       }
+    public String typeCheck(SymbolTable st) {
+        String expType = e.typeCheck(st);
+        if (!expType.equals("bool")) {
+            throw new Exception("Not-operator requires bool, found: " + expType);
+        }
+        return "bool";
     }
-
-    @Override
-    public String getType() {
-        return e.getType();
-    }
-
-    
 }

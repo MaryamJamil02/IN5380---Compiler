@@ -1,6 +1,9 @@
 package syntaxtree;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import semantics.*;
 
 public class CallStmt extends Stmt {
     String name;
@@ -33,5 +36,25 @@ public class CallStmt extends Stmt {
 
         sb.append("))");
         return sb.toString();
-    }    
+    }
+
+    @Override
+    public String typeCheck(SymbolTable st) {
+        List<String> eTypes = new ArrayList<>();
+        if (exps != null) {
+            for (Exp e : exps) {
+                eTypes.add(e.typeCheck(st));
+            }
+        }
+
+        Object procDecl = st.lookup(name);
+        if (procDecl == null) {
+            throw new TypeException("Procedure " + name + " is unknown.");
+        }
+        if (!(procDecl instanceof ProcDecl)) {
+            throw new Exception(name + " is called, but is not a procedure.");
+        }
+        
+        return "void";
+    }
 }

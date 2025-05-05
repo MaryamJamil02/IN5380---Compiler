@@ -1,5 +1,7 @@
 package syntaxtree;
 
+import semantics.*;
+
 public class VarDecl extends Decl {
     String name;
     String type; // Optional
@@ -33,4 +35,23 @@ public class VarDecl extends Decl {
         sb.append("))");
         return sb.toString();
     }
+
+    @Override
+    public String typeCheck(SymbolTable st) {
+
+        if (type != null) {
+            // "var" NAME ":" TYPE [ ":=" EXP ]
+            if (exp != null) {
+                String expT = exp.typeCheck(st);
+                if (!type.equals(expT)) {
+                    throw new TypeException("Variable type (" + type + ") and expression type (" + expT + ") don't match.");
+                }
+            }
+            return type;
+        }
+        else {
+            //  | "var" NAME ":=" EXP
+            return exp.typeCheck(st);
+        }
+    }    
 }

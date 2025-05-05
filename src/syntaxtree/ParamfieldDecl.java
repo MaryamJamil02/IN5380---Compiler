@@ -1,5 +1,7 @@
 package syntaxtree;
 
+import semantics.*;
+
 public class ParamfieldDecl {
     String name;
     String type;
@@ -17,5 +19,10 @@ public class ParamfieldDecl {
         sb.append("TYPE(" + this.type + ")");
         sb.append("))");
         return sb.toString();
+    }
+
+    public String typeCheck(SymbolTable st){
+        st.add(name, type);
+        return type;
     }
 }

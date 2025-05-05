@@ -1,5 +1,7 @@
 package syntaxtree;
 
+import semantics.*;
+
 public class AssignStmt extends Stmt {
     VarExp v;  // Either Var or DerefVar
     Exp e;
@@ -20,18 +22,18 @@ public class AssignStmt extends Stmt {
     }
 
     @Override
-    public void typeCheck(){
-        String varType = v.getType();
-        String expType = e.getType();
+    public String typeCheck(SymbolTable st){
+        String varType = v.typeCheck(st);
+        String expType = e.typeCheck(st);
 
-        if (varType != expType && !isAssignmentCompatible(varType, expType)){
+        if (!isAssignmentCompatible(varType, expType)){
             throw new TypeException("Cannot assign" + varType + " from " + expType);
         }
+        return varType;
     }
 
-
-    @Override
-    public String getType(){
-       return  e.getType();
+    private boolean isAssignmentCompatible(String v, String e) {
+        if (v.equals(e) || (v.equals("float") && e.equals("int"))) return true;
+        return false;
     }
 }

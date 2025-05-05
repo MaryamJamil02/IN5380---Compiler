@@ -159,9 +159,9 @@ exp               ::= NOT exp:e                   {: RESULT = new NotExp(e); :}
                     | NEW ID:name                 {: RESULT = new NewExp(name); :} 
                     | LPAR exp:e RPAR             {: RESULT = e; :}
 
-                    | exp:e1 log_op:o exp:e2      {: RESULT = new BinaryExp(e1, o, e2); :} 
-                    | exp:e1 rel_op:o exp:e2      {: RESULT = new BinaryExp(e1, o, e2); :} 
-                    | exp:e1 arith_op:o exp:e2    {: RESULT = new BinaryExp(e1, o, e2); :} 
+                    | exp:e1 log_op:o exp:e2      {: RESULT = new LogExp(e1, o, e2); :} 
+                    | exp:e1 rel_op:o exp:e2      {: RESULT = new RelExp(e1, o, e2); :} 
+                    | exp:e1 arith_op:o exp:e2    {: RESULT = new ArithExp(e1, o, e2); :} 
                     
                     | var:v                       {: RESULT = v; :} 
                     | ref_var:e                   {: RESULT = e; :} 

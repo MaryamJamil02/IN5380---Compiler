@@ -2,6 +2,8 @@ package syntaxtree;
 
 import java.util.List;
 
+import semantics.SymbolTable;
+
 public class ProcDecl extends Decl{
     String name;
     List<ParamfieldDecl> pdl; // Optional
@@ -64,5 +66,42 @@ public class ProcDecl extends Decl{
 
         sb.append("\t))");
         return sb.toString();
+    }
+
+    public String typeCheck(SymbolTable st) {
+        st.add(name, this);
+
+        // Create local scope for procedure definition
+        SymbolTable newSt = st.copy();
+
+        // Optional list of paramfield decls
+        if (pdl != null) {
+            for (ParamfieldDecl pf : pdl) {
+                pf.typeCheck(newSt);
+            }
+        }
+
+        // Optional decl list
+        if (dl != null) {
+            for (Decl d : dl) {
+                d.typeCheck(newSt);
+            }
+        }
+
+        Boolean hasReturn = false;
+
+        for (Stmt s : sl) {
+            s.typeCheck(newSt);
+
+            if (type != null && s instanceof ReturnStmt) {
+                String rType = s.getType();
+                if (rType != type) {
+                    throw new Exception("Return type " + rType + " does not match procedure type " + type);
+                }
+            }
+        }
+
+        if (type != null) return type;
+        return "";
     }
 }

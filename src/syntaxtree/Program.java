@@ -1,6 +1,7 @@
 package syntaxtree;
 
 import java.util.List;
+import semantics.*;
 
 public class Program {
 
@@ -26,5 +27,14 @@ public class Program {
 
         sb.append(")");
         return sb.toString();
+    }
+
+    public String typeCheck(SymbolTable st){
+        if (decls != null) {
+            for (Decl decl : decls) {
+                decl.typeCheck(st);
+            }
+        }
+        return "void";
     }
 }

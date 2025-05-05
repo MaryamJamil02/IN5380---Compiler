@@ -1,5 +1,7 @@
 package syntaxtree;
 
+import semantics.*;
+
 public class CallExp extends Exp {
     CallStmt cs;
 
@@ -12,5 +14,10 @@ public class CallExp extends Exp {
         StringBuilder sb = new StringBuilder();
         sb.append(cs.printAst());
         return sb.toString();
-    }    
+    }
+
+    @Override
+    public String typeCheck(SymbolTable st) {
+        return cs.typeCheck(st);
+    }
 }

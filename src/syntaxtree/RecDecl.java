@@ -1,6 +1,7 @@
 package syntaxtree;
 
 import java.util.List;
+import semantics.*;
 
 public class RecDecl extends Decl {
     String name;
@@ -32,13 +33,16 @@ public class RecDecl extends Decl {
     }
 
     @Override
-    public void typeCheck() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'typeCheck'");
-    }
+    public String typeCheck(SymbolTable st) {
+        st.add(name, this);
+        SymbolTable newSt = st.copy(); // local scope
 
-    @Override
-    public String getType() {
-        
+        if (paramfieldDecls != null){
+            for (ParamfieldDecl p : paramfieldDecls) {
+                p.typeCheck(newSt);
+            }
+        }
+
+        return "void";
     }
 }

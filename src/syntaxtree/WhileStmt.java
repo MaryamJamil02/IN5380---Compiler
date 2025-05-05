@@ -1,6 +1,7 @@
 package syntaxtree;
 
 import java.util.List;
+import semantics.*;
 
 public class WhileStmt extends Stmt {
     Exp cond;
@@ -33,12 +34,19 @@ public class WhileStmt extends Stmt {
     }
 
     @Override
-    public void typeCheck(){
-        String condType = cond.getType();
-
+    public String typeCheck(SymbolTable st){
+        String condType = cond.typeCheck(st);
         if (condType != "bool") {
-            throw new TypeException("Condition in an While statement must be of type bool");
-            
+            throw new TypeException("Condition in an While statement must be of type bool, found: " + condType);
         }
+
+        if (!stmts.isEmpty()) {
+            SymbolTable newSt = st.copy(); // local scope
+            for (Stmt s : stmts) {
+                s.typeCheck(newSt);
+            }
+        }
+
+        return "void";
     }
 }

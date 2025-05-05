@@ -1,7 +1,9 @@
 package syntaxtree;
 
+import semantics.*;
+
 public class Literal extends Exp {
-    enum Type { INT, FLOAT, BOOLEAN, STRING, NULL }
+    enum Type { INT, FLOAT, BOOL, STRING, NULL }
     Type type;
 
     float f;
@@ -21,7 +23,7 @@ public class Literal extends Exp {
 
     public Literal(boolean b) {
         this.b = b;
-        this.type = Type.BOOLEAN;
+        this.type = Type.BOOL;
     }
 
     public Literal(String s) {
@@ -44,8 +46,8 @@ public class Literal extends Exp {
                 sb.append("FLOAT " + f); break;
             case INT:
                 sb.append("INT " + i); break;
-            case BOOLEAN:
-                sb.append("BOOLEAN " + b); break;
+            case BOOL:
+                sb.append("BOOL " + b); break;
             case STRING:
                 sb.append("STRING \"" + s + "\""); break;
             case NULL:
@@ -57,26 +59,21 @@ public class Literal extends Exp {
     }
 
     @Override
-    public void typeCheck() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'typeCheck'");
-    }
+    public String typeCheck(SymbolTable st) {
+        // always well-typed
 
-    @Override
-    public String getType() {
         switch (type) {
             case FLOAT: 
                 return "float";
             case INT:
                 return "int";
-            case BOOLEAN:
+            case BOOL:
                 return "bool";
             case STRING:
                 return "string";
             case NULL:
                 return "null";
         }
-
         return null;
-    }    
+    } 
 }

@@ -1,9 +1,11 @@
 package syntaxtree;
 
+import semantics.*;
+
 public abstract class Stmt {
     public abstract String printAst();
-    public abstract void typeCheck();
-    public abstract String getType();
+    public abstract String typeCheck(SymbolTable st);
+    // public abstract String getType();
 }
 
 // Subclasses:

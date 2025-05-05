@@ -1,6 +1,7 @@
 package syntaxtree;
 
 import java.util.List;
+import semantics.*;
 
 public class IfStmt extends Stmt {
     Exp cond;
@@ -49,16 +50,31 @@ public class IfStmt extends Stmt {
     }
 
     @Override
-    public void typeCheck(){
-        String condType = cond.getType();
+    public String typeCheck(SymbolTable st){
+        String condType = cond.typeCheck(st);
 
-        if (condType != "bool") {
-            throw new TypeException("Condition in an if statement must be of type bool");
-            
+        if (!condType.equals("bool")) {
+            throw new TypeException("Condition in an if statement must be of type bool, found: " + condType);
         }
+
+        if (if_stmts != null) {
+            SymbolTable newSt = st.copy();
+            for (Stmt s : if_stmts) {
+                s.typeCheck(newSt);
+            }
+        } 
+        if (else_stmts != null) {
+            SymbolTable newSt = st.copy();
+            for (Stmt s : else_stmts) {
+                s.typeCheck(newSt);
+            }
+        }
+
+        return "void";
     }
 
-    public String getType(){
-        return "x"; //usikker på om det er gettype i denne
-    }
+    // @Override
+    // public String getType(){
+    //     return "x"; //usikker på om det er gettype i denne
+    // }
 }

@@ -6,6 +6,7 @@ import bytecode.CodeFile;
 
 import syntaxtree.*;
 import parser.*;
+import semantics.*; // symboltable
 
 // That's the version of Compiler.java for Oblig 2.
 // It's extended compared to the version of
@@ -36,7 +37,12 @@ public class Compiler {
             // Do something here?
             throw e; // Or something.
         }
+
+        SymbolTable st = new SymbolTable();
+        
         // Check semanics.
+        program.typeCheck(st);
+
         if(false){ // If it is all ok:
             writeAST(program);
             generateCode(program);
