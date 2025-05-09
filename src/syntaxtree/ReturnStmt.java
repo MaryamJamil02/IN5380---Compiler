@@ -3,7 +3,7 @@ package syntaxtree;
 import semantics.*;
 
 public class ReturnStmt extends Stmt{
-    Exp e;
+    Exp e; // optional
 
     public ReturnStmt () {
 

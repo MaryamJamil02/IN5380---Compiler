@@ -20,13 +20,9 @@ public class DerefVar extends VarExp {
 
     @Override
     public String typeCheck(SymbolTable st) {
-        return var.typeCheck(st);
-    }
+        String withRef = var.typeCheck(st);
 
-    @Override
-    public String getType() {
-        // Remove 'REF(' in front of type 
-        String withRef = var.getType();
+        // Remove 'REF(' in front of type?
         return withRef.substring(4, withRef.length()-1);
     }
 }

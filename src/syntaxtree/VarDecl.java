@@ -38,6 +38,10 @@ public class VarDecl extends Decl {
 
     @Override
     public String typeCheck(SymbolTable st) {
+        if (st.lookupV(name) != null) {
+            throw new TypeException("Illegal double declaration: Variable " + name + " already exists.");
+        }
+        st.addV(name, this);
 
         if (type != null) {
             // "var" NAME ":" TYPE [ ":=" EXP ]
@@ -50,7 +54,7 @@ public class VarDecl extends Decl {
             return type;
         }
         else {
-            //  | "var" NAME ":=" EXP
+            // "var" NAME ":=" EXP
             return exp.typeCheck(st);
         }
     }    

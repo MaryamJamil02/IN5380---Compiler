@@ -34,7 +34,11 @@ public class RecDecl extends Decl {
 
     @Override
     public String typeCheck(SymbolTable st) {
-        st.add(name, this);
+        if (st.lookupR(name) != null) {
+            throw new TypeException("Illegal double declaration: Record " + name + " already exists.");
+        }
+        st.addR(name, this);
+
         SymbolTable newSt = st.copy(); // local scope
 
         if (paramfieldDecls != null){

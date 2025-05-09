@@ -47,14 +47,29 @@ public class CallStmt extends Stmt {
             }
         }
 
-        Object procDecl = st.lookup(name);
-        if (procDecl == null) {
+        // Check if the procedure exists
+        ProcDecl procedure = st.lookupP(name);
+        if (procedure == null) {
             throw new TypeException("Procedure " + name + " is unknown.");
         }
-        if (!(procDecl instanceof ProcDecl)) {
-            throw new Exception(name + " is called, but is not a procedure.");
+
+        // The number and types of the parameters of a procedure must coincide
+        List<ParamfieldDecl> parameters = procedure.pdl != null ? procedure.pdl : new ArrayList<>();
+
+        int expsSize = exps != null ? exps.size() : 0;
+        if (parameters.size() != expsSize) {
+            throw new TypeException("Procedure " + name + " was called with too many/too few arguments.");
         }
-        
+        for (int i = 0; i < expsSize; i++) {
+            String expected = parameters.get(i).type;
+            String actual   = eTypes.get(i);
+            if (!expected.equals(actual)) {
+                throw new TypeException("Expected parameter type " +  expected + ", but found " + actual);
+            }
+        }
+
+        String type = procedure.type;
+        if (type != null) return type;
         return "void";
     }
 }

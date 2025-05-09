@@ -29,7 +29,7 @@ public class LogExp extends Exp {
         String e1Type = e1.typeCheck(st);;
         String e2Type = e2.typeCheck(st);
 
-        if (e1Type.equals("bool") && e2Type.equals("bool")) {
+        if (!e1Type.equals("bool") || !e2Type.equals("bool")) {
             throw new Exception("Cannot perform '" + op + "'' on types " + e1Type + " and " + e2Type);
         }
 

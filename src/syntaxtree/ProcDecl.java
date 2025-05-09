@@ -1,5 +1,6 @@
 package syntaxtree;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import semantics.SymbolTable;
@@ -68,40 +69,81 @@ public class ProcDecl extends Decl{
         return sb.toString();
     }
 
+
     public String typeCheck(SymbolTable st) {
-        st.add(name, this);
+        if (st.lookupP(name) != null) {
+            throw new TypeException("Illegal double declaration: Procedure " + name + " already exists.");
+        }
+        st.addP(name, this);
 
         // Create local scope for procedure definition
         SymbolTable newSt = st.copy();
 
         // Optional list of paramfield decls
+        List<String> pNames = new ArrayList<>();
         if (pdl != null) {
             for (ParamfieldDecl pf : pdl) {
                 pf.typeCheck(newSt);
+
+                // All formal parameters of one procedure must have distinct names
+                if (pNames.contains(pf.name)) {
+                    throw new TypeException("Found duplicate parameter names " + pf.name + " in procedure " + name);
+                }
+
+                pNames.add(pf.name);
             }
         }
 
         // Optional decl list
+        List<String> localNames = new ArrayList<>(pNames);
         if (dl != null) {
             for (Decl d : dl) {
+                String dName = d.name;
+                if (localNames.contains(dName)) {
+                    throw new TypeException("Name collision: Local declaration " + dName +
+                                            " conflicts with a paramter in procedure " + name);
+                }
+                localNames.add(dName);
                 d.typeCheck(newSt);
             }
         }
 
-        Boolean hasReturn = false;
+        
+        for (int i = 0; i < sl.size(); i++ ) {
+            Stmt s = sl.get(i);
+            String stmtT = s.typeCheck(newSt);
 
-        for (Stmt s : sl) {
-            s.typeCheck(newSt);
+            boolean isLast = i == sl.size()-1;
+            boolean isReturn = s instanceof ReturnStmt;
 
-            if (type != null && s instanceof ReturnStmt) {
-                String rType = s.getType();
-                if (rType != type) {
-                    throw new Exception("Return type " + rType + " does not match procedure type " + type);
+            // return must be the last statement in the procedure’s body.
+            if (!isLast && isReturn) {
+                throw new TypeException("Only last statement in procedure can be return.");
+            } 
+            
+            if (isLast) {
+                // If a procedure has declared a return type, its body is required to have a return statement
+                if (type != null) {
+                    if(!isReturn) {
+                        throw new TypeException("Last statement must be a return.");
+                    }
+                
+                    // Actual return type must correspond to the expected return type
+                    if (!stmtT.equals(type)) {
+                        throw new TypeException("Return type " + stmtT + " does not match procedure type " + type);
+                    } 
+                } 
+                
+                // Can have a return statement without type if the return value is void
+                else {
+                    if (isReturn && !stmtT.equals("void")) {
+                        throw new TypeException("Procedure must return void if no return type is declared, found: " + stmtT);
+                    }
                 }
             }
         }
 
         if (type != null) return type;
-        return "";
+        return "void";
     }
 }

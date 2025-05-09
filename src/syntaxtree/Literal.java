@@ -60,7 +60,7 @@ public class Literal extends Exp {
 
     @Override
     public String typeCheck(SymbolTable st) {
-        // always well-typed
+        // literals are always well-typed
 
         switch (type) {
             case FLOAT: 
@@ -73,7 +73,8 @@ public class Literal extends Exp {
                 return "string";
             case NULL:
                 return "null";
+            default:
+                throw new Exception("This should never happen...");
         }
-        return null;
     } 
 }

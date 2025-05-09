@@ -26,7 +26,7 @@ public class ArithExp extends Exp {
     public String typeCheck(SymbolTable st) {
         // ARITH_OP -> "+" | "-" | "*" | "/" | "^"
 
-        String e1Type = e1.typeCheck(st);;
+        String e1Type = e1.typeCheck(st);
         String e2Type = e2.typeCheck(st);
 
         if (isCompatible(e1Type, e2Type)) {
@@ -44,10 +44,5 @@ public class ArithExp extends Exp {
             }
         }
         return false;
-    }
-
-
-    public String getType(){
-        return "";
     }
 }

@@ -22,7 +22,6 @@ public class ParamfieldDecl {
     }
 
     public String typeCheck(SymbolTable st){
-        st.add(name, type);
         return type;
     }
 }

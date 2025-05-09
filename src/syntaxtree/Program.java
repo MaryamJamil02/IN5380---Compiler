@@ -30,11 +30,20 @@ public class Program {
     }
 
     public String typeCheck(SymbolTable st){
+        // Each program must have a procedure named main.
+        boolean hasMain = false;
+
         if (decls != null) {
             for (Decl decl : decls) {
                 decl.typeCheck(st);
+                if (decl.name.equals("main")) hasMain = true;
             }
         }
+
+        if (!hasMain) {
+            throw new TypeException("Found no procedure named main.");
+        }
+
         return "void";
     }
 }
