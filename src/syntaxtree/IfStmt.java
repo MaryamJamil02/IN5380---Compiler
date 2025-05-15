@@ -50,7 +50,7 @@ public class IfStmt extends Stmt {
     }
 
     @Override
-    public String typeCheck(SymbolTable st){
+    public String typeCheck(SymbolTable st) throws TypeException {
         String condType = cond.typeCheck(st);
 
         if (!condType.equals("bool")) {
@@ -72,9 +72,4 @@ public class IfStmt extends Stmt {
 
         return "void";
     }
-
-    // @Override
-    // public String getType(){
-    //     return "x"; //usikker på om det er gettype i denne
-    // }
 }

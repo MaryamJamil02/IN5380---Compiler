@@ -23,14 +23,14 @@ public class RelExp extends Exp {
     }
 
 
-    public String typeCheck(SymbolTable st) {
+    public String typeCheck(SymbolTable st) throws TypeException{
         // REL_OP -> "<" | "<=" | ">" | ">=" | "=" | "<>"
 
         String e1Type = e1.typeCheck(st);;
         String e2Type = e2.typeCheck(st);
 
-        if (isCompatible(e1Type, e2Type)) {
-            throw new Exception("Cannot perform '" + op + "'' on types " + e1Type + " and " + e2Type);
+        if (!isCompatible(e1Type, e2Type)) {
+            throw new TypeException("Cannot perform '" + op + "' on types " + e1Type + " and " + e2Type);
         }
 
         return "bool";

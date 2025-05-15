@@ -1,6 +1,8 @@
 package syntaxtree;
 
 import java.util.List;
+
+import bytecode.*;
 import semantics.*;
 
 public class Program {
@@ -29,14 +31,16 @@ public class Program {
         return sb.toString();
     }
 
-    public String typeCheck(SymbolTable st){
+    public String typeCheck(SymbolTable st) throws TypeException{
         // Each program must have a procedure named main.
         boolean hasMain = false;
 
         if (decls != null) {
             for (Decl decl : decls) {
                 decl.typeCheck(st);
-                if (decl.name.equals("main")) hasMain = true;
+                if (decl instanceof ProcDecl) {
+                    if (decl.name.equals("main")) hasMain = true;
+                }
             }
         }
 
@@ -45,5 +49,15 @@ public class Program {
         }
 
         return "void";
+    }
+
+    // CodeFile codeFile = new CodeFile();
+    // program.generateCode(codeFile);
+    public void generateCode(CodeFile codeFile) {
+        if (decls != null) {
+            for (Decl decl : decls) {
+                // decl.generateCode(codeFile);
+            }
+        }
     }
 }

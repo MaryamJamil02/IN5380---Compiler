@@ -8,6 +8,8 @@
 		<echo>clean                		- Cleans up the project</echo>
 		<echo>build                		- Build compiler</echo>
 		<echo>run                  		- Run compiler</echo>
+		<echo>srun                      - Run semantic tests</echo>
+		<echo>sfrun                     - Run semantic fail tests</echo>
 	</target>
 
 	<!-- Path definitions -->
@@ -89,7 +91,7 @@
 		 classpathref="path-cup"
 		 sourcepath="${dir.src}">
 	    <compilerarg value="-Xlint:unchecked"/>
-	    <compilerarg value="-Xli:unchecked"/>	    
+	    <compilerarg value="-Xlint:unchecked"/>	    
 	  </javac>
 	</target>
 
@@ -108,8 +110,8 @@
 			<!-- <arg value="src/tests/parsing/test08.cmp"/>
 			<arg value="src/tests/outputs/ast/p_test08.ast"/> -->
 
-			<arg value="src/tests/fullprograms/complexaddition.cmp"/>
-			<arg value="src/tests/outputs/ast/complexaddition.ast"/>
+			<!-- <arg value="src/tests/fullprograms/complexaddition.cmp"/>
+			<arg value="src/tests/outputs/ast/complexaddition.ast"/> -->
 
 			<!-- <arg value="src/tests/fullprograms/euclid.cmp"/>
 			<arg value="src/tests/outputs/ast/euclid.ast"/> -->
@@ -117,8 +119,159 @@
 			<!-- <arg value="src/tests/fullprograms/plog.cmp"/>
 			<arg value="src/tests/outputs/ast/plog.ast"/> -->
 
-			<!-- <arg value="src/tests/fullprograms/runme.cmp"/>
-			<arg value="src/tests/outputs/ast/runme.ast"/> -->
+			<arg value="src/tests/fullprograms/runme.cmp"/>
+			<arg value="src/tests/outputs/ast/runme.ast"/>
+			<arg value="src/tests/outputs/bin/runme.bin"/> 
 		</java>
 	</target>
+
+	<target name="srun" depends="init">
+		<java classname="compiler.Compiler" classpathref="path-run">
+			<!-- <arg value="src/tests/semanticanalysis/noerrors/test1.cmp"/>
+			<arg value="src/tests/outputs/ast/test1.ast"/>
+			<arg value="src/tests/outputs/bin/test1.bin"/> -->
+
+			<!-- <arg value="src/tests/semanticanalysis/noerrors/test3.cmp"/>
+			<arg value="src/tests/outputs/ast/test3.ast"/>
+			<arg value="src/tests/outputs/bin/test3.bin"/> -->
+
+			<!-- <arg value="src/tests/semanticanalysis/noerrors/test4.cmp"/>
+			<arg value="src/tests/outputs/ast/test4.ast"/>
+			<arg value="src/tests/outputs/bin/test4.bin"/> -->
+
+			<arg value="src/tests/semanticanalysis/noerrors/test5.cmp"/>
+			<arg value="src/tests/outputs/ast/test5.ast"/>
+			<arg value="src/tests/outputs/bin/test5.bin"/> 
+
+		</java>
+	</target>
+
+	<target name="sfrun" depends="init">
+		<java classname="compiler.Compiler" classpathref="path-run">
+			<arg value="src/tests/semanticanalysis/errors/general1_fail.cmp"/>
+			<arg value="src/tests/outputs/ast/general1_fail.ast"/>
+			<arg value="src/tests/outputs/bin/general1_fail.bin"/>
+
+			<!-- <arg value="src/tests/semanticanalysis/errors/general2_fail.cmp"/>
+			<arg value="src/tests/outputs/ast/general2_fail.ast"/>
+			<arg value="src/tests/outputs/bin/general2_fail.bin"/> -->
+
+			<!-- <arg value="src/tests/semanticanalysis/errors/general3_fail.cmp"/>
+			<arg value="src/tests/outputs/ast/general3_fail.ast"/>
+			<arg value="src/tests/outputs/bin/general3_fail.bin"/> -->
+			
+			<!-- <arg value="src/tests/semanticanalysis/errors/general4_fail.cmp"/>
+			<arg value="src/tests/outputs/ast/general4_fail.ast"/>
+			<arg value="src/tests/outputs/bin/general4_fail.bin"/> -->
+
+			<!-- <arg value="src/tests/semanticanalysis/errors/general5_fail.cmp"/>
+			<arg value="src/tests/outputs/ast/general5_fail.ast"/>
+			<arg value="src/tests/outputs/bin/general5_fail.bin"/> -->
+
+
+
+			<!-- <arg value="src/tests/semanticanalysis/errors/procedure_unknown_returntype_fail.cmp"/>
+			<arg value="src/tests/outputs/ast/procedure_unknown_returntype_fail.ast"/>
+			<arg value="src/tests/outputs/bin/procedure_unknown_returntype_fail.bin"/> -->
+
+
+
+			<!-- <arg value="src/tests/semanticanalysis/errors/procedure2_fail.cmp"/>
+			<arg value="src/tests/outputs/ast/procedure2_fail.ast"/>
+			<arg value="src/tests/outputs/bin/procedure2_fail.bin"/> -->
+
+			<!-- <arg value="src/tests/semanticanalysis/errors/procedure3_fail.cmp"/>
+			<arg value="src/tests/outputs/ast/procedure3_fail.ast"/>
+			<arg value="src/tests/outputs/bin/procedure3_fail.bin"/> -->
+
+			<!-- <arg value="src/tests/semanticanalysis/errors/procedure4_fail.cmp"/>
+			<arg value="src/tests/outputs/ast/procedure4_fail.ast"/>
+			<arg value="src/tests/outputs/bin/procedure4_fail.bin"/> -->
+
+			<!-- <arg value="src/tests/semanticanalysis/errors/procedure5_fail.cmp"/>
+			<arg value="src/tests/outputs/ast/procedure5_fail.ast"/>
+			<arg value="src/tests/outputs/bin/procedure5_fail.bin"/> -->
+
+
+
+			<!-- <arg value="src/tests/semanticanalysis/errors/return_contradicting_expression_fail.cmp"/>
+			<arg value="src/tests/outputs/ast/return_contradicting_expression_fail.ast"/>
+			<arg value="src/tests/outputs/bin/return_contradicting_expression_fail.bin"/> -->
+
+
+
+			<!-- <arg value="src/tests/semanticanalysis/errors/type1_fail.cmp"/>
+			<arg value="src/tests/outputs/ast/type1_fail.ast"/>
+			<arg value="src/tests/outputs/bin/type1_fail.bin"/> -->
+
+			<!-- <arg value="src/tests/semanticanalysis/errors/type2_fail.cmp"/>
+			<arg value="src/tests/outputs/ast/type2_fail.ast"/>
+			<arg value="src/tests/outputs/bin/type2_fail.bin"/> -->
+
+			<!-- <arg value="src/tests/semanticanalysis/errors/type3_fail.cmp"/>
+			<arg value="src/tests/outputs/ast/type3_fail.ast"/>
+			<arg value="src/tests/outputs/bin/type3_fail.bin"/> -->
+			
+			<!-- <arg value="src/tests/semanticanalysis/errors/type4_fail.cmp"/>
+			<arg value="src/tests/outputs/ast/type4_fail.ast"/>
+			<arg value="src/tests/outputs/bin/type4_fail.bin"/> -->
+
+			<!-- <arg value="src/tests/semanticanalysis/errors/type5_fail.cmp"/>
+			<arg value="src/tests/outputs/ast/type5_fail.ast"/>
+			<arg value="src/tests/outputs/bin/type5_fail.bin"/> -->
+
+			<!-- <arg value="src/tests/semanticanalysis/errors/type6_fail.cmp"/>
+			<arg value="src/tests/outputs/ast/type6_fail.ast"/>
+			<arg value="src/tests/outputs/bin/type6_fail.bin"/> -->
+
+			<!-- <arg value="src/tests/semanticanalysis/errors/type7_fail.cmp"/>
+			<arg value="src/tests/outputs/ast/type7_fail.ast"/>
+			<arg value="src/tests/outputs/bin/type7_fail.bin"/> -->
+
+
+
+			<!-- <arg value="src/tests/semanticanalysis/errors/undeclared_new_argument_fail.cmp"/>
+			<arg value="src/tests/outputs/ast/undeclared_new_argument_fail.ast"/>
+			<arg value="src/tests/outputs/bin/undeclared_new_argument_fail.bin"/> -->
+			
+			<!-- <arg value="src/tests/semanticanalysis/errors/undeclared_struct_fail.cmp"/>
+			<arg value="src/tests/outputs/ast/undeclared_struct_fail.ast"/>
+			<arg value="src/tests/outputs/bin/undeclared_struct_fail.bin"/> -->
+
+			<!-- <arg value="src/tests/semanticanalysis/errors/undeclared_struct_var_fail.cmp"/>
+			<arg value="src/tests/outputs/ast/undeclared_struct_var_fail.ast"/>
+			<arg value="src/tests/outputs/bin/undeclared_struct_var_fail.bin"/> -->
+
+
+
+			<!-- <arg value="src/tests/semanticanalysis/errors/variable_scope_shadow_fail.cmp"/>
+			<arg value="src/tests/outputs/ast/variable_scope_shadow_fail.ast"/>
+			<arg value="src/tests/outputs/bin/variable_scope_shadow_fail.bin"/> -->
+			
+
+
+			<!-- <arg value="src/tests/semanticanalysis/errors/wrong_arith_operand_type_fail.cmp"/>
+			<arg value="src/tests/outputs/ast/wrong_arith_operand_type_fail.ast"/>
+			<arg value="src/tests/outputs/bin/wrong_arith_operand_type_fail.bin"/> -->
+			
+			<!-- <arg value="src/tests/semanticanalysis/errors/wrong_log_exp_type_fail.cmp"/>
+			<arg value="src/tests/outputs/ast/wrong_log_exp_type_fail.ast"/>
+			<arg value="src/tests/outputs/bin/wrong_log_exp_type_fail.bin"/> -->
+			
+			<!-- <arg value="src/tests/semanticanalysis/errors/wrong_new_arg_type_fail.cmp"/>
+			<arg value="src/tests/outputs/ast/wrong_new_arg_type_fail.ast"/>
+			<arg value="src/tests/outputs/bin/type5_wrong_new_arg_type_failfail.bin"/> -->
+			
+			<!-- <arg value="src/tests/semanticanalysis/errors/wrong_not_operand_type_fail.cmp"/>
+			<arg value="src/tests/outputs/ast/wrong_not_operand_type_fail.ast"/>
+			<arg value="src/tests/outputs/bin/wrong_not_operand_type_fail.bin"/> -->
+
+			<!-- <arg value="src/tests/semanticanalysis/errors/wrong_rel_operand_type_fail.cmp"/>
+			<arg value="src/tests/outputs/ast/wrong_rel_operand_type_fail.ast"/>
+			<arg value="src/tests/outputs/bin/wrong_rel_operand_type_fail.bin"/>			 -->
+			
+		</java>
+	</target>
+
+
 </project>

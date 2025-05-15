@@ -1,12 +1,13 @@
 package syntaxtree;
 
-import semantics.SymbolTable;
+import bytecode.*;
+import semantics.*;
 
 public abstract class Decl {
     String name;
     public abstract String printAst();
-    public abstract String typeCheck(SymbolTable st);
-    // public abstract String getType();
+    public abstract String typeCheck(SymbolTable st) throws TypeException;
+    public abstract void generatedCode(CodeFile codefile);
 }
 
 // Subclasses: VarDecl, RecDecl, ProcDecl

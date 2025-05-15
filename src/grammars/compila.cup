@@ -104,12 +104,12 @@ var_decl        ::= VAR ID:name COLON type:t ASSIGN exp:e
                   | VAR ID:name ASSIGN exp:e
                         {: RESULT = new VarDecl(name, null, e); :};
 
-type            ::= FLOAT   {: RESULT = "FLOAT";  :}
-                  | INT     {: RESULT = "INT";    :}
-                  | STRING  {: RESULT = "STRING"; :}
-                  | BOOL    {: RESULT = "BOOL";   :}
+type            ::= FLOAT   {: RESULT = "float";  :}
+                  | INT     {: RESULT = "int";    :}
+                  | STRING  {: RESULT = "string"; :}
+                  | BOOL    {: RESULT = "bool";   :}
                   | ID:name {: RESULT =  name;    :}
-                  | REF LPAR type:t RPAR {: RESULT = "REF(" + t + ")"; :};
+                  | REF LPAR type:t RPAR {: RESULT = "ref(" + t + ")"; :};
 
 proc_decl       ::= PROCEDURE ID:name 
                     LPAR optional_paramfields:pdl RPAR 

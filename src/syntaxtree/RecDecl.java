@@ -4,7 +4,7 @@ import java.util.List;
 import semantics.*;
 
 public class RecDecl extends Decl {
-    String name;
+    // String name;
     List<ParamfieldDecl> paramfieldDecls; // Optional
 
     public RecDecl (String name, List<ParamfieldDecl> paramfieldDecls) {
@@ -33,7 +33,7 @@ public class RecDecl extends Decl {
     }
 
     @Override
-    public String typeCheck(SymbolTable st) {
+    public String typeCheck(SymbolTable st) throws TypeException{
         if (st.lookupR(name) != null) {
             throw new TypeException("Illegal double declaration: Record " + name + " already exists.");
         }

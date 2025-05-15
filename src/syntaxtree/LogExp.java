@@ -23,14 +23,14 @@ public class LogExp extends Exp {
     }
 
 
-    public String typeCheck(SymbolTable st) {
+    public String typeCheck(SymbolTable st) throws TypeException {
         // LOG_OP -> "&&" | "||"
 
         String e1Type = e1.typeCheck(st);;
         String e2Type = e2.typeCheck(st);
 
         if (!e1Type.equals("bool") || !e2Type.equals("bool")) {
-            throw new Exception("Cannot perform '" + op + "'' on types " + e1Type + " and " + e2Type);
+            throw new TypeException("Cannot perform '" + op + "' on types " + e1Type + " and " + e2Type);
         }
 
         return "bool";

@@ -28,7 +28,7 @@ public class ReturnStmt extends Stmt{
 
 
     @Override
-    public String typeCheck(SymbolTable st) {
+    public String typeCheck(SymbolTable st) throws TypeException{
         if (e != null) {
             return e.typeCheck(st);
         }

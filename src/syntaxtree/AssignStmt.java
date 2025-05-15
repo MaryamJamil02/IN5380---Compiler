@@ -22,12 +22,12 @@ public class AssignStmt extends Stmt {
     }
 
     @Override
-    public String typeCheck(SymbolTable st){
+    public String typeCheck(SymbolTable st) throws TypeException {
         String varType = v.typeCheck(st);
         String expType = e.typeCheck(st);
 
         if (!isAssignmentCompatible(varType, expType)){
-            throw new TypeException("Cannot assign" + varType + " from " + expType);
+            throw new TypeException("Cannot assign " + expType + " to " + varType);
         }
         return varType;
     }

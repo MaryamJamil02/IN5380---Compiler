@@ -59,7 +59,7 @@ public class Literal extends Exp {
     }
 
     @Override
-    public String typeCheck(SymbolTable st) {
+    public String typeCheck(SymbolTable st) throws TypeException {
         // literals are always well-typed
 
         switch (type) {
@@ -74,7 +74,7 @@ public class Literal extends Exp {
             case NULL:
                 return "null";
             default:
-                throw new Exception("This should never happen...");
+                throw new TypeException("This should never happen...");
         }
     } 
 }

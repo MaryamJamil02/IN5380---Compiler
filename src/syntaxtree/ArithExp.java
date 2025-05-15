@@ -22,15 +22,15 @@ public class ArithExp extends Exp {
         return sb.toString();
     }
 
-
-    public String typeCheck(SymbolTable st) {
+    @Override
+    public String typeCheck(SymbolTable st) throws TypeException {
         // ARITH_OP -> "+" | "-" | "*" | "/" | "^"
 
         String e1Type = e1.typeCheck(st);
         String e2Type = e2.typeCheck(st);
 
-        if (isCompatible(e1Type, e2Type)) {
-            throw new Exception("Cannot perform '" + op + "'' on types " + e1Type + " and " + e2Type);
+        if (!isCompatible(e1Type, e2Type)) {
+            throw new TypeException("Cannot perform '" + op + "' on types " + e1Type + " and " + e2Type);
         }
 
         if (op.equals("^") || e1Type.equals("float") || e2Type.equals("float")) return "float";

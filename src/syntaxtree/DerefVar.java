@@ -19,10 +19,14 @@ public class DerefVar extends VarExp {
     }
 
     @Override
-    public String typeCheck(SymbolTable st) {
-        String withRef = var.typeCheck(st);
+    public String typeCheck(SymbolTable st) throws TypeException {
+        String withRef = var.typeCheck(st);        
+        if (!withRef.startsWith("ref(")) {
+            throw new TypeException("Cannot dereference something that's not a reference, " + withRef);
+        }
 
-        // Remove 'REF(' in front of type?
-        return withRef.substring(4, withRef.length()-1);
+        // Remove 'ref(' in front of type
+        String withoutRef = withRef.substring(3); // "(type)"
+        return withoutRef.substring(1, withoutRef.length() - 1);
     }
 }

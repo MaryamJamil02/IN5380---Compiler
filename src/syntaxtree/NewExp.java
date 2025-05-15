@@ -20,7 +20,7 @@ public class NewExp extends Exp {
     }
 
     @Override
-    public String typeCheck(SymbolTable st){
+    public String typeCheck(SymbolTable st) throws TypeException {
         if (st.lookupR(name) == null) {
             throw new TypeException("Record type " + name + " is unknown.");
         }

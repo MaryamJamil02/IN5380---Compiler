@@ -4,19 +4,9 @@ import java.util.HashMap;
 import syntaxtree.*;
 
 public class SymbolTable {
-    HashMap<String, VarDecl> variables;     // name: (type, value)
+    HashMap<String, VarDecl> variables;    // name: (type, value)
     HashMap<String, ProcDecl> procedures;  // name: ProcDecl
     HashMap<String, RecDecl> records;      // name: RecDecl
-
-    // private class Pair<String, Object> {
-    //     public final String type;
-    //     public final Object value;
-
-    //     public Pair(String type, Object value) {
-    //         this.type = type;
-    //         this.value = value;
-    //     }
-    // }
 
     public SymbolTable() {
         this.variables = new HashMap<>();
@@ -43,15 +33,18 @@ public class SymbolTable {
         return records.get(name);
     }
 
-    public void addV(String name, Object type) {
+    public void addV(String name, VarDecl type) {
+        // if (variables.get(name) != null) throw new TypeException("Variable " + name + " is already defined.");
         variables.put(name, type);
     }
 
      public void addP(String name, ProcDecl p) {
+        // if (procedures.get(name) != null) throw new TypeException("Procedure " + name + " is already defined.");
         procedures.put(name, p);
     }
 
      public void addR(String name, RecDecl p) {
+        // if (records.get(name) != null) throw new TypeException("Struct " + name + " is already defined.");
         records.put(name, p);
     }
 

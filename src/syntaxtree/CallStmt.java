@@ -39,7 +39,7 @@ public class CallStmt extends Stmt {
     }
 
     @Override
-    public String typeCheck(SymbolTable st) {
+    public String typeCheck(SymbolTable st) throws TypeException {
         List<String> eTypes = new ArrayList<>();
         if (exps != null) {
             for (Exp e : exps) {
@@ -63,7 +63,7 @@ public class CallStmt extends Stmt {
         for (int i = 0; i < expsSize; i++) {
             String expected = parameters.get(i).type;
             String actual   = eTypes.get(i);
-            if (!expected.equals(actual)) {
+            if (!expected.equals(actual) && !(expected.equals("float") && actual.equals("int"))) {
                 throw new TypeException("Expected parameter type " +  expected + ", but found " + actual);
             }
         }

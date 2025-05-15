@@ -18,10 +18,10 @@ public class NotExp extends Exp {
     }
 
     @Override
-    public String typeCheck(SymbolTable st) {
+    public String typeCheck(SymbolTable st) throws TypeException {
         String expType = e.typeCheck(st);
         if (!expType.equals("bool")) {
-            throw new Exception("Not-operator requires bool, found: " + expType);
+            throw new TypeException("Not-operator requires bool, found: " + expType);
         }
         return "bool";
     }

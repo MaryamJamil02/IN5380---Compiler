@@ -3,10 +3,10 @@ package syntaxtree;
 import java.util.ArrayList;
 import java.util.List;
 
-import semantics.SymbolTable;
+import semantics.*;
 
 public class ProcDecl extends Decl{
-    String name;
+    // String name;
     List<ParamfieldDecl> pdl; // Optional
     String type;              // Optional
     List<Decl> dl;            // Optional
@@ -70,7 +70,7 @@ public class ProcDecl extends Decl{
     }
 
 
-    public String typeCheck(SymbolTable st) {
+    public String typeCheck(SymbolTable st) throws TypeException{
         if (st.lookupP(name) != null) {
             throw new TypeException("Illegal double declaration: Procedure " + name + " already exists.");
         }
@@ -78,6 +78,8 @@ public class ProcDecl extends Decl{
 
         // Create local scope for procedure definition
         SymbolTable newSt = st.copy();
+
+        // Formal parameters count as declarations local to the procedure body.
 
         // Optional list of paramfield decls
         List<String> pNames = new ArrayList<>();
@@ -89,8 +91,9 @@ public class ProcDecl extends Decl{
                 if (pNames.contains(pf.name)) {
                     throw new TypeException("Found duplicate parameter names " + pf.name + " in procedure " + name);
                 }
-
                 pNames.add(pf.name);
+                
+                newSt.addV(pf.name, new VarDecl(pf.name, pf.type, null));
             }
         }
 
@@ -99,9 +102,10 @@ public class ProcDecl extends Decl{
         if (dl != null) {
             for (Decl d : dl) {
                 String dName = d.name;
+
                 if (localNames.contains(dName)) {
-                    throw new TypeException("Name collision: Local declaration " + dName +
-                                            " conflicts with a paramter in procedure " + name);
+                    throw new TypeException("Name collision: Local declaration '" + dName +
+                                            "' conflicts with a parameter in procedure '" + name + "'");
                 }
                 localNames.add(dName);
                 d.typeCheck(newSt);
@@ -111,7 +115,7 @@ public class ProcDecl extends Decl{
         
         for (int i = 0; i < sl.size(); i++ ) {
             Stmt s = sl.get(i);
-            String stmtT = s.typeCheck(newSt);
+            String stmtT = s.typeCheck(newSt); // statement type
 
             boolean isLast = i == sl.size()-1;
             boolean isReturn = s instanceof ReturnStmt;
@@ -131,7 +135,7 @@ public class ProcDecl extends Decl{
                     // Actual return type must correspond to the expected return type
                     if (!stmtT.equals(type)) {
                         throw new TypeException("Return type " + stmtT + " does not match procedure type " + type);
-                    } 
+                    }
                 } 
                 
                 // Can have a return statement without type if the return value is void

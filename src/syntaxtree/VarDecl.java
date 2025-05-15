@@ -3,7 +3,7 @@ package syntaxtree;
 import semantics.*;
 
 public class VarDecl extends Decl {
-    String name;
+    // String name;
     String type; // Optional
     Exp exp;     // Optional
     
@@ -37,7 +37,7 @@ public class VarDecl extends Decl {
     }
 
     @Override
-    public String typeCheck(SymbolTable st) {
+    public String typeCheck(SymbolTable st) throws TypeException{
         if (st.lookupV(name) != null) {
             throw new TypeException("Illegal double declaration: Variable " + name + " already exists.");
         }

@@ -1,6 +1,9 @@
 package compiler;
 
 import java.io.*;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
 
 import bytecode.CodeFile;
 
@@ -20,6 +23,7 @@ public class Compiler {
     private String binFilename = null;
     public String syntaxError;
     public String error;
+
     public Compiler(String inFilename, String astFilename, String binFilename){
         this.inFilename = inFilename;
         this.astFilename = astFilename;
@@ -39,13 +43,20 @@ public class Compiler {
         }
 
         SymbolTable st = new SymbolTable();
+        addStandardLibrary(st);
         
         // Check semanics.
-        program.typeCheck(st);
+        try {
+            program.typeCheck(st);
+            System.out.println("> TYPE CHECKER SUCCEEDED!!!! YAYYY");
+        } catch (TypeException e) {
+            // Do something here?
+            throw e;
+        }
 
         if(false){ // If it is all ok:
             writeAST(program);
-            generateCode(program);
+            // generateCode(program);
             return 0;
         } else if (false){ // If there is a SYNTAX ERROR (Should not get that for the tests):
             return 1;
@@ -58,11 +69,36 @@ public class Compiler {
         bufferedWriter.write(program.printAst());
         bufferedWriter.close();
     }
+
+
+    // public ProcDecl(String name, List<ParamfieldDecl> pdl, String type, List<Decl> dl, List<Stmt> sl) {
+    public void addStandardLibrary(SymbolTable st) {
+        ParamfieldDecl intParam =  new ParamfieldDecl("i", "int");
+        ParamfieldDecl floatParam =  new ParamfieldDecl("f", "float");
+        ParamfieldDecl stringParam =  new ParamfieldDecl("s", "string");
+
+
+        st.addP("readint",    new ProcDecl("readint", null, "int", null,  new ArrayList<>()));
+        st.addP("readfloat",  new ProcDecl("readfloat", null, "float", null,  new ArrayList<>()));
+        st.addP("readchar",   new ProcDecl("readchar", null, "int", null, new ArrayList<>()));
+        st.addP("readstring", new ProcDecl("readstring", null, "string", null, new ArrayList<>()));
+        st.addP("readline",   new ProcDecl("readline", null, "string", null, new ArrayList<>()));
+
+        st.addP("printint", new ProcDecl("printint", new ArrayList<>(List.of(intParam)), "int", null, new ArrayList<>()));
+        st.addP("printfloat", new ProcDecl("printfloat", new ArrayList<>(List.of(floatParam)), "float", null, new ArrayList<>()));
+        st.addP("printstr", new ProcDecl("printstr", new ArrayList<>(List.of(stringParam)), "string", null, new ArrayList<>()));
+        st.addP("printline", new ProcDecl("printline", new ArrayList<>(List.of(stringParam)), "string", null, new ArrayList<>()));
+    }
+
+
+
     private void generateCode(Program program) throws Exception {
         CodeFile codeFile = new CodeFile();
         program.generateCode(codeFile);
+
         byte[] bytecode = codeFile.getBytecode();
         DataOutputStream stream = new DataOutputStream(new FileOutputStream (this.binFilename));
+        
         stream.write(bytecode);
         stream.close();
     }

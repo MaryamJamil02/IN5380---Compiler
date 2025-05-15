@@ -34,7 +34,7 @@ public class WhileStmt extends Stmt {
     }
 
     @Override
-    public String typeCheck(SymbolTable st){
+    public String typeCheck(SymbolTable st) throws TypeException{
         String condType = cond.typeCheck(st);
         if (condType != "bool") {
             throw new TypeException("Condition in an While statement must be of type bool, found: " + condType);

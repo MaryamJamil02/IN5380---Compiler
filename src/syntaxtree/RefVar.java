@@ -19,12 +19,8 @@ public class RefVar extends VarExp{
     }
 
     @Override
-    public String typeCheck(SymbolTable st) {
-        var.typeCheck(st);
-    }
-
-    @Override
-    public String getType() {
-        return "REF(" + var.getType() + ")";
+    public String typeCheck(SymbolTable st) throws TypeException {
+        String type = var.typeCheck(st);
+        return "ref(" + type + ")";
     }
 }
