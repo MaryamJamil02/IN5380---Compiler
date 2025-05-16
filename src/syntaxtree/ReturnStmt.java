@@ -1,13 +1,17 @@
 package syntaxtree;
 
+import bytecode.*;
+import bytecode.instructions.*;
+
 import semantics.*;
 
-public class ReturnStmt extends Stmt{
+public class ReturnStmt extends Stmt {
     Exp e; // optional
 
-    public ReturnStmt () {
+    public ReturnStmt() {
 
     }
+
     public ReturnStmt(Exp e) {
         this.e = e;
     }
@@ -26,12 +30,20 @@ public class ReturnStmt extends Stmt{
         return sb.toString();
     }
 
-
     @Override
-    public String typeCheck(SymbolTable st) throws TypeException{
+    public String typeCheck(SymbolTable st) throws TypeException {
         if (e != null) {
             return e.typeCheck(st);
         }
         return "void";
+    }
+
+    @Override
+    public void generateCode(CodeProcedure codeProcedure) {
+        if (e != null) {
+            e.generateCode(codeProcedure);
+        }
+
+        codeProcedure.addInstruction(new RETURN());
     }
 }

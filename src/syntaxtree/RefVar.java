@@ -1,13 +1,18 @@
 package syntaxtree;
 
+import bytecode.*;
+import bytecode.CodeProcedure;
 import semantics.*;
 
-public class RefVar extends VarExp{
+public class RefVar extends VarExp {
     VarExp var; // Either Var or RefVar
+
+    String type; // Set during type checking
 
     public RefVar(Var var) {
         this.var = var;
     }
+
     public RefVar(RefVar var) {
         this.var = var;
     }
@@ -21,6 +26,22 @@ public class RefVar extends VarExp{
     @Override
     public String typeCheck(SymbolTable st) throws TypeException {
         String type = var.typeCheck(st);
-        return "ref(" + type + ")";
+        this.type = "ref(" + type + ")";
+        return getType();
+    }
+
+    @Override
+    public String getType() {
+        return type;
+    }
+
+    @Override
+    public void generateCode(CodeProcedure codeProcedure) {
+        var.generateCode(codeProcedure);
+    }
+
+    @Override
+    public void generateCodeStore(CodeProcedure codeProcedure) {
+        var.generateCodeStore(codeProcedure);
     }
 }

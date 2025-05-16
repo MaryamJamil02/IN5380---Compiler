@@ -250,6 +250,7 @@ public class CodeProcedure {
 	totalSize += 8;
 	byte[] nameBytes = this.name.getBytes();
 	totalSize+=nameBytes.length;
+
 	byte[] typeBytes = this.returnType.getBytecode();
 	totalSize+=typeBytes.length;
         byte[] bytes = new byte[totalSize];

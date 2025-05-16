@@ -1,0 +1,13 @@
+(PROGRAM (NAME test5)
+	(PROC_DECL (NAME("Proc") 
+		(PARAMFIELD_DECL (NAME("a") TYPE(ref(int)))) TYPE(void) NULL
+		(ASSIGN_STMT (DEREF_VAR (VAR (NAME("a")))) (LITERAL (INT 42)))
+	))
+	(PROC_DECL (NAME("main") NULL TYPE(void) 
+		(VAR_DECL (NAME("a") TYPE(int) NULL))
+
+		(ASSIGN_STMT (VAR (NAME("a"))) (LITERAL (INT 32)))
+		(CALL_STMT (NAME("Proc") ARGS((REF_VAR (VAR (NAME("a")))))))
+		(CALL_STMT (NAME("printint") ARGS((VAR (NAME("a"))))))
+	))
+)

@@ -1,0 +1,21 @@
+(PROGRAM (NAME test4)
+	(PROC_DECL (NAME("Sum") 
+		(PARAMFIELD_DECL (NAME("v1") TYPE(float)))
+		(PARAMFIELD_DECL (NAME("v2") TYPE(float))) TYPE(float) NULL
+		(RETURN_STMT (ARITH_EXP ((VAR (NAME("v1"))) + (VAR (NAME("v2"))))))
+	))
+	(PROC_DECL (NAME("main") NULL TYPE(void) 
+		(PROC_DECL (NAME("InnerSum") 
+		(PARAMFIELD_DECL (NAME("v1") TYPE(int)))
+		(PARAMFIELD_DECL (NAME("v2") TYPE(int))) TYPE(int) NULL
+		(RETURN_STMT (ARITH_EXP ((VAR (NAME("v1"))) + (VAR (NAME("v2"))))))
+	))
+		(VAR_DECL (NAME("f") TYPE(float) NULL))
+		(VAR_DECL (NAME("v") TYPE(int) NULL))
+
+		(ASSIGN_STMT (VAR (NAME("f"))) (CALL_STMT (NAME("Sum") ARGS((LITERAL (FLOAT 41.5))(LITERAL (FLOAT 0.5))))))
+		(ASSIGN_STMT (VAR (NAME("v"))) (CALL_STMT (NAME("InnerSum") ARGS((LITERAL (INT 40))(LITERAL (INT 2))))))
+		(CALL_STMT (NAME("printfloat") ARGS((VAR (NAME("f"))))))
+		(CALL_STMT (NAME("printint") ARGS((VAR (NAME("v"))))))
+	))
+)

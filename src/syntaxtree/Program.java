@@ -3,6 +3,7 @@ package syntaxtree;
 import java.util.List;
 
 import bytecode.*;
+import bytecode.type.*;
 import semantics.*;
 
 public class Program {
@@ -15,7 +16,7 @@ public class Program {
         this.name = name;
     }
 
-    public String printAst(){  // "pretty" printing 
+    public String printAst() { // "pretty" printing
         StringBuilder sb = new StringBuilder();
         sb.append("(PROGRAM ");
         sb.append("(NAME " + this.name + ")");
@@ -31,7 +32,7 @@ public class Program {
         return sb.toString();
     }
 
-    public String typeCheck(SymbolTable st) throws TypeException{
+    public String typeCheck(SymbolTable st) throws TypeException {
         // Each program must have a procedure named main.
         boolean hasMain = false;
 
@@ -39,7 +40,8 @@ public class Program {
             for (Decl decl : decls) {
                 decl.typeCheck(st);
                 if (decl instanceof ProcDecl) {
-                    if (decl.name.equals("main")) hasMain = true;
+                    if (decl.name.equals("main"))
+                        hasMain = true;
                 }
             }
         }
@@ -51,13 +53,61 @@ public class Program {
         return "void";
     }
 
-    // CodeFile codeFile = new CodeFile();
-    // program.generateCode(codeFile);
     public void generateCode(CodeFile codeFile) {
+
+        addStandardLibrary(codeFile);
+
         if (decls != null) {
             for (Decl decl : decls) {
-                // decl.generateCode(codeFile);
+                decl.generateCode(codeFile);
             }
         }
+
+        codeFile.setMain("main");
+    }
+
+    private void addStandardLibrary(CodeFile codeFile) {
+
+        // Input procedures
+        CodeProcedure readInt = new CodeProcedure("readint", IntType.TYPE, codeFile);
+        codeFile.addProcedure("readint");
+        codeFile.updateProcedure(readInt);
+
+        CodeProcedure readfloat = new CodeProcedure("readfloat", FloatType.TYPE, codeFile);
+        codeFile.addProcedure("readfloat");
+        codeFile.updateProcedure(readfloat);
+
+        CodeProcedure readchar = new CodeProcedure("readchar", IntType.TYPE, codeFile);
+        codeFile.addProcedure("readchar");
+        codeFile.updateProcedure(readchar);
+
+        CodeProcedure readstring = new CodeProcedure("readstring", StringType.TYPE, codeFile);
+        codeFile.addProcedure("readstring");
+        codeFile.updateProcedure(readstring);
+
+        CodeProcedure readline = new CodeProcedure("readline", StringType.TYPE, codeFile);
+        codeFile.addProcedure("readline");
+        codeFile.updateProcedure(readline);
+
+        // Output procedures
+        CodeProcedure printint = new CodeProcedure("printint", VoidType.TYPE, codeFile);
+        printint.addParameter("i", IntType.TYPE);
+        codeFile.addProcedure("printint");
+        codeFile.updateProcedure(printint);
+
+        CodeProcedure printfloat = new CodeProcedure("printfloat", VoidType.TYPE, codeFile);
+        printint.addParameter("f", FloatType.TYPE);
+        codeFile.addProcedure("printfloat");
+        codeFile.updateProcedure(printfloat);
+
+        CodeProcedure printstr = new CodeProcedure("printstr", VoidType.TYPE, codeFile);
+        printint.addParameter("s", StringType.TYPE);
+        codeFile.addProcedure("printstr");
+        codeFile.updateProcedure(printstr);
+
+        CodeProcedure printline = new CodeProcedure("printline", VoidType.TYPE, codeFile);
+        printint.addParameter("s", StringType.TYPE);
+        codeFile.addProcedure("printline");
+        codeFile.updateProcedure(printline);
     }
 }

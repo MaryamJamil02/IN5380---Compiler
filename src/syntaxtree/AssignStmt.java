@@ -1,12 +1,13 @@
 package syntaxtree;
 
+import bytecode.*;
 import semantics.*;
 
 public class AssignStmt extends Stmt {
-    VarExp v;  // Either Var or DerefVar
+    VarExp v; // Either Var or DerefVar
     Exp e;
 
-    public AssignStmt (VarExp v, Exp e) {
+    public AssignStmt(VarExp v, Exp e) {
         this.v = v;
         this.e = e;
     }
@@ -26,14 +27,21 @@ public class AssignStmt extends Stmt {
         String varType = v.typeCheck(st);
         String expType = e.typeCheck(st);
 
-        if (!isAssignmentCompatible(varType, expType)){
+        if (!isAssignmentCompatible(varType, expType)) {
             throw new TypeException("Cannot assign " + expType + " to " + varType);
         }
         return varType;
     }
 
     private boolean isAssignmentCompatible(String v, String e) {
-        if (v.equals(e) || (v.equals("float") && e.equals("int"))) return true;
+        if (v.equals(e) || (v.equals("float") && e.equals("int")))
+            return true;
         return false;
+    }
+
+    @Override
+    public void generateCode(CodeProcedure codeProcedure) {
+        e.generateCode(codeProcedure);
+        v.generateCodeStore(codeProcedure);
     }
 }

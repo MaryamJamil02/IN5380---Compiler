@@ -3,6 +3,8 @@ package syntaxtree;
 import java.util.ArrayList;
 import java.util.List;
 
+import bytecode.*;
+import bytecode.instructions.CALL;
 import semantics.*;
 
 public class CallStmt extends Stmt {
@@ -62,14 +64,28 @@ public class CallStmt extends Stmt {
         }
         for (int i = 0; i < expsSize; i++) {
             String expected = parameters.get(i).type;
-            String actual   = eTypes.get(i);
+            String actual = eTypes.get(i);
             if (!expected.equals(actual) && !(expected.equals("float") && actual.equals("int"))) {
-                throw new TypeException("Expected parameter type " +  expected + ", but found " + actual);
+                throw new TypeException("Expected parameter type " + expected + ", but found " + actual);
             }
         }
 
         String type = procedure.type;
-        if (type != null) return type;
+        if (type != null)
+            return type;
         return "void";
+    }
+
+    @Override
+    public void generateCode(CodeProcedure codeProcedure) {
+
+        if (exps != null) {
+            for (Exp e : exps) {
+                e.generateCode(codeProcedure);
+            }
+        }
+
+        codeProcedure.addInstruction(new CALL(codeProcedure.procedureNumber(name)));
+
     }
 }

@@ -1,5 +1,6 @@
 package syntaxtree;
 
+import bytecode.*;
 import semantics.*;
 
 public class ParamfieldDecl {
@@ -21,7 +22,16 @@ public class ParamfieldDecl {
         return sb.toString();
     }
 
-    public String typeCheck(SymbolTable st){
+    public String typeCheck(SymbolTable st) {
         return type;
+    }
+
+    public void generateCode(CodeProcedure codeProcedure) {
+        int structRef = codeProcedure.structNumber(type);
+        codeProcedure.addParameter(name, new RuntimeType(type, structRef).type);
+    }
+
+    public void generateCode(CodeStruct codeStruct) {
+        codeStruct.addVariable(name, new RuntimeType(type, 0).type);
     }
 }

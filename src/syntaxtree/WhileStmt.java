@@ -1,11 +1,14 @@
 package syntaxtree;
 
 import java.util.List;
+
+import bytecode.instructions.*;
+import bytecode.*;
 import semantics.*;
 
 public class WhileStmt extends Stmt {
     Exp cond;
-    List<Stmt> stmts;   // May be empty
+    List<Stmt> stmts; // May be empty
 
     public WhileStmt(Exp cond, List<Stmt> stmts) {
         this.cond = cond;
@@ -34,7 +37,7 @@ public class WhileStmt extends Stmt {
     }
 
     @Override
-    public String typeCheck(SymbolTable st) throws TypeException{
+    public String typeCheck(SymbolTable st) throws TypeException {
         String condType = cond.typeCheck(st);
         if (condType != "bool") {
             throw new TypeException("Condition in an While statement must be of type bool, found: " + condType);
@@ -48,5 +51,27 @@ public class WhileStmt extends Stmt {
         }
 
         return "void";
+    }
+
+    @Override
+    public void generateCode(CodeProcedure codeProcedure) {
+        int start = codeProcedure.addInstruction(new NOP());
+
+        cond.generateCode(codeProcedure);
+
+        int exit = codeProcedure.addInstruction(new JMPFALSE(0)); // placeholder
+
+        // Loop body
+        for (Stmt s : stmts) {
+            s.generateCode(codeProcedure);
+        }
+
+        // Jump back to start
+        codeProcedure.addInstruction(new JMP(start));
+
+        // Fix exit label
+        int offset = codeProcedure.addInstruction(new NOP());
+
+        codeProcedure.replaceInstruction(exit, new JMPFALSE(offset));
     }
 }

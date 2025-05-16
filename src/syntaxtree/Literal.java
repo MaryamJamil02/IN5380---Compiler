@@ -1,9 +1,15 @@
 package syntaxtree;
 
+import bytecode.*;
+import bytecode.instructions.*;
+
 import semantics.*;
 
 public class Literal extends Exp {
-    enum Type { INT, FLOAT, BOOL, STRING, NULL }
+    enum Type {
+        INT, FLOAT, BOOL, STRING, NULL
+    }
+
     Type type;
 
     float f;
@@ -42,16 +48,21 @@ public class Literal extends Exp {
         sb.append("(LITERAL (");
 
         switch (type) {
-            case FLOAT: 
-                sb.append("FLOAT " + f); break;
+            case FLOAT:
+                sb.append("FLOAT " + f);
+                break;
             case INT:
-                sb.append("INT " + i); break;
+                sb.append("INT " + i);
+                break;
             case BOOL:
-                sb.append("BOOL " + b); break;
+                sb.append("BOOL " + b);
+                break;
             case STRING:
-                sb.append("STRING \"" + s + "\""); break;
+                sb.append("STRING \"" + s + "\"");
+                break;
             case NULL:
-                sb.append("NULL"); break;
+                sb.append("NULL");
+                break;
         }
 
         sb.append("))");
@@ -61,9 +72,13 @@ public class Literal extends Exp {
     @Override
     public String typeCheck(SymbolTable st) throws TypeException {
         // literals are always well-typed
+        return getType();
+    }
 
+    @Override
+    public String getType() {
         switch (type) {
-            case FLOAT: 
+            case FLOAT:
                 return "float";
             case INT:
                 return "int";
@@ -74,7 +89,31 @@ public class Literal extends Exp {
             case NULL:
                 return "null";
             default:
-                throw new TypeException("This should never happen...");
+                return ""; // This should never happen
         }
-    } 
+    }
+
+    @Override
+    public void generateCode(CodeProcedure codeProcedure) {
+        switch (type) {
+            case FLOAT:
+                codeProcedure.addInstruction(new PUSHFLOAT(f));
+                break;
+            case INT:
+                codeProcedure.addInstruction(new PUSHINT(i));
+                break;
+            case BOOL:
+                codeProcedure.addInstruction(new PUSHBOOL(b));
+                break;
+            case STRING:
+                int constId = codeProcedure.addStringConstant(s);
+                codeProcedure.addInstruction(new PUSHSTRING(constId));
+                break;
+            case NULL:
+                codeProcedure.addInstruction(new PUSHNULL());
+                break;
+            default:
+                return; // This should never happen
+        }
+    }
 }

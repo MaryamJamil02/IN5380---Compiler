@@ -5,8 +5,10 @@ import semantics.*;
 
 public abstract class Stmt {
     public abstract String printAst();
+
     public abstract String typeCheck(SymbolTable st) throws TypeException;
-    public abstract void generateCode(CodeFile codeFile); 
+
+    public abstract void generateCode(CodeProcedure codeProcedure);
     // public abstract String getType();
 }
 

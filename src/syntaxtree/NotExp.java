@@ -1,5 +1,7 @@
 package syntaxtree;
 
+import bytecode.instructions.*;
+import bytecode.*;
 import semantics.*;
 
 public class NotExp extends Exp {
@@ -23,6 +25,17 @@ public class NotExp extends Exp {
         if (!expType.equals("bool")) {
             throw new TypeException("Not-operator requires bool, found: " + expType);
         }
+
+        return getType();
+    }
+
+    public String getType() {
         return "bool";
+    }
+
+    @Override
+    public void generateCode(CodeProcedure codeProcedure) {
+        e.generateCode(codeProcedure);
+        codeProcedure.addInstruction(new NOT());
     }
 }

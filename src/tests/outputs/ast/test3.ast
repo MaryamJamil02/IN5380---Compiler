@@ -1,0 +1,13 @@
+(PROGRAM (NAME test3)
+	(REC_DECL (NAME("Foo") 
+		(PARAMFIELD_DECL (NAME("Attr") TYPE(int)))
+	))
+	(PROC_DECL (NAME("main") NULL TYPE(void) 
+		(VAR_DECL (NAME("f") TYPE(Foo) NULL))
+
+		(ASSIGN_STMT (VAR (NAME("f"))) (NEW_EXP (NAME("Foo"))))
+		(ASSIGN_STMT (VAR ((VAR (NAME("f"))) NAME("Attr"))) (LITERAL (INT 42)))
+		(CALL_STMT (NAME("printint") ARGS((VAR ((VAR (NAME("f"))) NAME("Attr"))))))
+		(CALL_STMT (NAME("printfloat") ARGS((VAR ((VAR (NAME("f"))) NAME("Attr"))))))
+	))
+)

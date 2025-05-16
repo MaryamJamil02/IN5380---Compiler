@@ -2,10 +2,15 @@ package syntaxtree;
 
 import semantics.*;
 import java.util.List;
+
+import bytecode.CodeFile;
+import bytecode.CodeProcedure;
+
 import java.util.ArrayList;
 
 public class CallExp extends Exp {
     CallStmt cs;
+    String type; // Set in type check
 
     public CallExp(CallStmt cs) {
         this.cs = cs;
@@ -42,16 +47,29 @@ public class CallExp extends Exp {
         }
         for (int i = 0; i < expsSize; i++) {
             String expected = parameters.get(i).type;
-            String actual   = eTypes.get(i);
+            String actual = eTypes.get(i);
 
-            //if expected is float and 
+            // if expected is float and
             if (!expected.equals(actual) && !(expected.equals("float") && actual.equals("int"))) {
-                throw new TypeException("Expected parameter type " +  expected + ", but found " + actual);
+                throw new TypeException("Expected parameter type " + expected + ", but found " + actual);
             }
         }
 
-        String type = procedure.type;
-        if (type != null) return type;
-        throw new TypeException("Function call must have return type when used in an expression.");
+        this.type = procedure.type;
+        if (type == null) {
+            throw new TypeException("Function call must have return type when used in an expression.");
+        }
+        return getType();
     }
+
+    @Override
+    public String getType() {
+        return type;
+    }
+
+    @Override
+    public void generateCode(CodeProcedure codeProcedure) {
+        cs.generateCode(codeProcedure);
+    }
+
 }

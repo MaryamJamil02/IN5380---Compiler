@@ -1,11 +1,16 @@
 package syntaxtree;
 
+import bytecode.*;
+import bytecode.instructions.*;
+
 import semantics.*;
 
 public class ArithExp extends Exp {
     Exp e1;
-    String op; 
+    String op;
     Exp e2;
+
+    String type; // set during type check
 
     public ArithExp(Exp e1, String op, Exp e2) {
         this.e1 = e1;
@@ -33,8 +38,12 @@ public class ArithExp extends Exp {
             throw new TypeException("Cannot perform '" + op + "' on types " + e1Type + " and " + e2Type);
         }
 
-        if (op.equals("^") || e1Type.equals("float") || e2Type.equals("float")) return "float";
-        return "int";
+        if (op.equals("^") || e1Type.equals("float") || e2Type.equals("float")) {
+            this.type = "float";
+        } else {
+            this.type = "int";
+        }
+        return getType();
     }
 
     private boolean isCompatible(String e1Type, String e2Type) {
@@ -44,5 +53,36 @@ public class ArithExp extends Exp {
             }
         }
         return false;
+    }
+
+    @Override
+    public String getType() {
+        return type;
+    }
+
+    @Override
+    public void generateCode(CodeProcedure cp) {
+        e1.generateCode(cp);
+        e2.generateCode(cp);
+
+        switch (op) {
+            case "+":
+                cp.addInstruction(new ADD());
+                break;
+            case "-":
+                cp.addInstruction(new SUB());
+                break;
+            case "*":
+                cp.addInstruction(new MUL());
+                break;
+            case "/":
+                cp.addInstruction(new DIV());
+                break;
+            case "^":
+                cp.addInstruction(new EXP());
+                break;
+            default:
+                throw new RuntimeException("Unknown arith op: " + op);
+        }
     }
 }

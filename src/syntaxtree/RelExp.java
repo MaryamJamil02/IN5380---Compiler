@@ -1,10 +1,12 @@
 package syntaxtree;
 
 import semantics.*;
+import bytecode.*;
+import bytecode.instructions.*;;
 
 public class RelExp extends Exp {
     Exp e1;
-    String op; 
+    String op;
     Exp e2;
 
     public RelExp(Exp e1, String op, Exp e2) {
@@ -22,18 +24,19 @@ public class RelExp extends Exp {
         return sb.toString();
     }
 
-
-    public String typeCheck(SymbolTable st) throws TypeException{
+    @Override
+    public String typeCheck(SymbolTable st) throws TypeException {
         // REL_OP -> "<" | "<=" | ">" | ">=" | "=" | "<>"
 
-        String e1Type = e1.typeCheck(st);;
+        String e1Type = e1.typeCheck(st);
+        ;
         String e2Type = e2.typeCheck(st);
 
         if (!isCompatible(e1Type, e2Type)) {
             throw new TypeException("Cannot perform '" + op + "' on types " + e1Type + " and " + e2Type);
         }
 
-        return "bool";
+        return getType();
     }
 
     private boolean isCompatible(String e1Type, String e2Type) {
@@ -43,5 +46,40 @@ public class RelExp extends Exp {
             }
         }
         return false;
+    }
+
+    @Override
+    public String getType() {
+        return "bool";
+    }
+
+    @Override
+    public void generateCode(CodeProcedure cp) {
+        e1.generateCode(cp);
+        e2.generateCode(cp);
+
+        // "<" | "<=" | ">" | ">=" | "=" | "<>"
+        switch (op) {
+            case "<":
+                cp.addInstruction(new LT());
+                break;
+            case "<=":
+                cp.addInstruction(new LTEQ());
+                break;
+            case ">":
+                cp.addInstruction(new GT());
+                break;
+            case ">=":
+                cp.addInstruction(new GTEQ());
+                break;
+            case "=":
+                cp.addInstruction(new EQ());
+                break;
+            case "<>":
+                cp.addInstruction(new NEQ());
+                break;
+            default:
+                throw new RuntimeException("Unknown relational op: " + op);
+        }
     }
 }
